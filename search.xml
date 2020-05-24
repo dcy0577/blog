@@ -112,51 +112,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/blog/2020/05/11/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Python一些语法备忘</title>
-    <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="1-if-else"><a href="#1-if-else" class="headerlink" title="1. if else"></a>1. if else</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">x&#x3D;1</span><br><span class="line">y&#x3D;&#39;hello&#39;</span><br><span class="line">if x&#x3D;&#x3D;1 or y&#x3D;&#x3D;&#39;hello&#39;:</span><br><span class="line">	x&#x3D;x+1</span><br><span class="line">	y&#x3D;y+&#39;world&#39;</span><br><span class="line">else:</span><br><span class="line">	pass</span><br></pre></td></tr></table></figure>
-<h3 id="2-Python特色语句：for-else"><a href="#2-Python特色语句：for-else" class="headerlink" title="2. Python特色语句：for else"></a>2. Python特色语句：for else</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from math import sqrt</span><br><span class="line">for n in range(99,81,-1):</span><br><span class="line">	root &#x3D; sqrt(n)</span><br><span class="line">	if root &#x3D; int(root):</span><br><span class="line">		print(n)</span><br><span class="line">		break</span><br><span class="line">else:</span><br><span class="line">	print(&#39;didnt find it!&#39;)</span><br></pre></td></tr></table></figure>
-<p>这条else语句对应的是知for，不是if，这个是python特有的语句。 break表示打断最近的loop, 而if不是loop，打断的是for loop， 即在for循环中，如果没有从任何一个break中退出，则会执行和for对应的else 只要从break中退出了，则else部分不执行。<br>这段话如果用C++来实现，则如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(i&#x3D;99;i&gt;81;i--) </span><br><span class="line">&#123; </span><br><span class="line">	root&#x3D;sqrt(i); </span><br><span class="line">	if(root&#x3D;&#x3D;int(root)) </span><br><span class="line">	&#123; </span><br><span class="line">		std::cout&lt;&lt;i; </span><br><span class="line">		break; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line">if(i&#x3D;&#x3D;81) &#x2F;&#x2F;边界判断 </span><br><span class="line">std::cout&lt;&lt;&quot;didn&#39;t find it!&quot;&lt;&lt;std::endl;</span><br></pre></td></tr></table></figure>
-<h3 id="3-Definations"><a href="#3-Definations" class="headerlink" title="3. Definations"></a>3. Definations</h3><p>aList = []  列表，相当于c++中的arry/vector<br>aDictionary = {}  字典, 相当于c++中的map<br>aTuple = ()  元组, 只读的，不能修改，不能像list一样有append，remove等操作</p>
-<h3 id="4-遍历输出"><a href="#4-遍历输出" class="headerlink" title="4. 遍历输出"></a>4. 遍历输出</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for i in aList:</span><br><span class="line">	print(i)</span><br><span class="line"></span><br><span class="line">for key, value in aDictionary.item()</span><br><span class="line">	print(key, value)</span><br><span class="line"></span><br><span class="line">#Access Value in Dictionary by the Keys</span><br><span class="line">value &#x3D; aDictionary[‘key’]  #Key muss be string!</span><br></pre></td></tr></table></figure>
-<h3 id="5-args-kwargs"><a href="#5-args-kwargs" class="headerlink" title="5. *args, **kwargs"></a>5. <code>*args</code>, <code>**kwargs</code></h3><p><code>*args</code>是位置参数，<code>**kwargs</code>是关建字参数。<code>*args</code>用来收集各种参数，其名字没有实际出现在函数签名的括号中， <code>**kwargs</code>代表了各个dictionary等关系，其名字没有实际出现在括号中，所以有了这两个东西可以在函数input括号里输入各种不同的参数而不止局限于几个自己命名的参数</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def test_kwargs(first, *args, **kwargs):</span><br><span class="line">	print(&#39;required argument&#39;, first)</span><br><span class="line">	for v in args:</span><br><span class="line">		print(&#39;optional argument (*args):&#39;, v)</span><br><span class="line">	for k, v in kwargs.item():</span><br><span class="line">		print(&#39;optional argument %s (*kwargs): %s&#39;, %(k,v))</span><br><span class="line"></span><br><span class="line">test_kwargs(1,2,3,4,k1&#x3D;5,k2&#x3D;6)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">required argument: 1</span><br><span class="line">optional argument (*args): 2</span><br><span class="line">optional argument (*args): 3</span><br><span class="line">optional argument (*args): 4</span><br><span class="line">optional argument k2 (*kwargs): 6</span><br><span class="line">optional argument k1 (*kwargs): 5</span><br></pre></td></tr></table></figure>
-<h3 id="6-装饰器"><a href="#6-装饰器" class="headerlink" title="6. 装饰器"></a>6. 装饰器</h3><p>装饰器本质上是一个 Python 函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能，装饰器的返回值也是一个函数/类对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def decarator(func):</span><br><span class="line">	def wrapper(*args):</span><br><span class="line">		#可以此处添加功能如</span><br><span class="line">		print(&#39;add funtion 1&#39;)</span><br><span class="line">		return func(*args)</span><br><span class="line">	return wrapper</span><br><span class="line"></span><br><span class="line">@decarator</span><br><span class="line">def test(*args):</span><br><span class="line">	print(&#39;i have&#39;, *args)</span><br><span class="line"></span><br><span class="line">test(&#39;dsds&#39;,3,&#39;abc&#39;)</span><br><span class="line">输出结果：</span><br><span class="line">add funtion 1</span><br><span class="line">i have dsds 3 abc</span><br></pre></td></tr></table></figure>
-<h3 id="7-列表推导式"><a href="#7-列表推导式" class="headerlink" title="7. 列表推导式"></a>7. 列表推导式</h3><p>基本语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new_list &#x3D; [expression(i) for i in old_list if condition(i)]</span><br></pre></td></tr></table></figure>
-<p>翻译成for循环：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new_list &#x3D; []</span><br><span class="line">for i in old_list:</span><br><span class="line">	if(condition):</span><br><span class="line">		new_list.append(expression(i))</span><br></pre></td></tr></table></figure>
-<h3 id="8-类"><a href="#8-类" class="headerlink" title="8. 类"></a>8. 类</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class person:</span><br><span class="line">	def __int__(self, name, age):</span><br><span class="line">		self.name_ &#x3D; name</span><br><span class="line">		self.age_ &#x3D; age</span><br><span class="line">	def getName(self):</span><br><span class="line">		print(self.name_)</span><br><span class="line">		return self.name_</span><br><span class="line">	def getAge(self):</span><br><span class="line">		print(self.age_)</span><br><span class="line">		return self.age_</span><br><span class="line">	def rename(self, new_name):</span><br><span class="line">		self.name_ &#x3D; new_name</span><br><span class="line">		return self.name_</span><br><span class="line"></span><br><span class="line">p &#x3D; person(&#39;tom&#39;,34)</span><br><span class="line">p.getName()</span><br><span class="line">p.rename(&#39;alex&#39;)</span><br></pre></td></tr></table></figure>
-<p>•<code>__init__()</code>被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，相当于构造函数，一定要有self<br>•self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数, 这里于c++不同，空括号函数不能直接空着，而是要在定义时加入self<br>•self.name_ 加下滑线表示属性私有<br>•方法函数前面如果加个装饰器@property， 则调用时候直接调用函数名，不用加括号。例如直接调用p.getAge 不用加括号后面<br>•继承语法:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Student(Person):</span><br><span class="line">	pass  #pass啥都不做，就是占个位</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>markdown的一些语法</title>
     <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
@@ -206,6 +161,33 @@
       </tags>
   </entry>
   <entry>
+    <title>Python一些语法备忘</title>
+    <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="1-if-else"><a href="#1-if-else" class="headerlink" title="1. if else"></a>1. if else</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">x&#x3D;1</span><br><span class="line">y&#x3D;&#39;hello&#39;</span><br><span class="line">if x&#x3D;&#x3D;1 or y&#x3D;&#x3D;&#39;hello&#39;:</span><br><span class="line">	x&#x3D;x+1</span><br><span class="line">	y&#x3D;y+&#39;world&#39;</span><br><span class="line">else:</span><br><span class="line">	pass</span><br></pre></td></tr></table></figure>
+<h3 id="2-Python特色语句：for-else"><a href="#2-Python特色语句：for-else" class="headerlink" title="2. Python特色语句：for else"></a>2. Python特色语句：for else</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from math import sqrt</span><br><span class="line">for n in range(99,81,-1):</span><br><span class="line">	root &#x3D; sqrt(n)</span><br><span class="line">	if root &#x3D; int(root):</span><br><span class="line">		print(n)</span><br><span class="line">		break</span><br><span class="line">else:</span><br><span class="line">	print(&#39;didnt find it!&#39;)</span><br></pre></td></tr></table></figure>
+<p>这条else语句对应的是知for，不是if，这个是python特有的语句。 break表示打断最近的loop, 而if不是loop，打断的是for loop， 即在for循环中，如果没有从任何一个break中退出，则会执行和for对应的else 只要从break中退出了，则else部分不执行。<br>这段话如果用C++来实现，则如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(i&#x3D;99;i&gt;81;i--) </span><br><span class="line">&#123; </span><br><span class="line">	root&#x3D;sqrt(i); </span><br><span class="line">	if(root&#x3D;&#x3D;int(root)) </span><br><span class="line">	&#123; </span><br><span class="line">		std::cout&lt;&lt;i; </span><br><span class="line">		break; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line">if(i&#x3D;&#x3D;81) &#x2F;&#x2F;边界判断 </span><br><span class="line">std::cout&lt;&lt;&quot;didn&#39;t find it!&quot;&lt;&lt;std::endl;</span><br></pre></td></tr></table></figure>
+<h3 id="3-Definations"><a href="#3-Definations" class="headerlink" title="3. Definations"></a>3. Definations</h3><p>aList = []  列表，相当于c++中的arry/vector<br>aDictionary = {}  字典, 相当于c++中的map<br>aTuple = ()  元组, 只读的，不能修改，不能像list一样有append，remove等操作</p>
+<h3 id="4-遍历输出"><a href="#4-遍历输出" class="headerlink" title="4. 遍历输出"></a>4. 遍历输出</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for i in aList:</span><br><span class="line">	print(i)</span><br><span class="line"></span><br><span class="line">for key, value in aDictionary.item()</span><br><span class="line">	print(key, value)</span><br><span class="line"></span><br><span class="line">#Access Value in Dictionary by the Keys</span><br><span class="line">value &#x3D; aDictionary[‘key’]  #Key muss be string!</span><br></pre></td></tr></table></figure>
+<h3 id="5-args-kwargs"><a href="#5-args-kwargs" class="headerlink" title="5. *args, **kwargs"></a>5. <code>*args</code>, <code>**kwargs</code></h3><p><code>*args</code>是位置参数，<code>**kwargs</code>是关建字参数。<code>*args</code>用来收集各种参数，其名字没有实际出现在函数签名的括号中， <code>**kwargs</code>代表了各个dictionary等关系，其名字没有实际出现在括号中，所以有了这两个东西可以在函数input括号里输入各种不同的参数而不止局限于几个自己命名的参数</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def test_kwargs(first, *args, **kwargs):</span><br><span class="line">	print(&#39;required argument&#39;, first)</span><br><span class="line">	for v in args:</span><br><span class="line">		print(&#39;optional argument (*args):&#39;, v)</span><br><span class="line">	for k, v in kwargs.item():</span><br><span class="line">		print(&#39;optional argument %s (*kwargs): %s&#39;, %(k,v))</span><br><span class="line"></span><br><span class="line">test_kwargs(1,2,3,4,k1&#x3D;5,k2&#x3D;6)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">required argument: 1</span><br><span class="line">optional argument (*args): 2</span><br><span class="line">optional argument (*args): 3</span><br><span class="line">optional argument (*args): 4</span><br><span class="line">optional argument k2 (*kwargs): 6</span><br><span class="line">optional argument k1 (*kwargs): 5</span><br></pre></td></tr></table></figure>
+<h3 id="6-装饰器"><a href="#6-装饰器" class="headerlink" title="6. 装饰器"></a>6. 装饰器</h3><p>装饰器本质上是一个 Python 函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能，装饰器的返回值也是一个函数/类对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def decarator(func):</span><br><span class="line">	def wrapper(*args):</span><br><span class="line">		#可以此处添加功能如</span><br><span class="line">		print(&#39;add funtion 1&#39;)</span><br><span class="line">		return func(*args)</span><br><span class="line">	return wrapper</span><br><span class="line"></span><br><span class="line">@decarator</span><br><span class="line">def test(*args):</span><br><span class="line">	print(&#39;i have&#39;, *args)</span><br><span class="line"></span><br><span class="line">test(&#39;dsds&#39;,3,&#39;abc&#39;)</span><br><span class="line">输出结果：</span><br><span class="line">add funtion 1</span><br><span class="line">i have dsds 3 abc</span><br></pre></td></tr></table></figure>
+<h3 id="7-列表推导式"><a href="#7-列表推导式" class="headerlink" title="7. 列表推导式"></a>7. 列表推导式</h3><p>基本语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new_list &#x3D; [expression(i) for i in old_list if condition(i)]</span><br></pre></td></tr></table></figure>
+<p>翻译成for循环：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new_list &#x3D; []</span><br><span class="line">for i in old_list:</span><br><span class="line">	if(condition):</span><br><span class="line">		new_list.append(expression(i))</span><br></pre></td></tr></table></figure>
+<h3 id="8-类"><a href="#8-类" class="headerlink" title="8. 类"></a>8. 类</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class person:</span><br><span class="line">	def __int__(self, name, age):</span><br><span class="line">		self.name_ &#x3D; name</span><br><span class="line">		self.age_ &#x3D; age</span><br><span class="line">	def getName(self):</span><br><span class="line">		print(self.name_)</span><br><span class="line">		return self.name_</span><br><span class="line">	def getAge(self):</span><br><span class="line">		print(self.age_)</span><br><span class="line">		return self.age_</span><br><span class="line">	def rename(self, new_name):</span><br><span class="line">		self.name_ &#x3D; new_name</span><br><span class="line">		return self.name_</span><br><span class="line"></span><br><span class="line">p &#x3D; person(&#39;tom&#39;,34)</span><br><span class="line">p.getName()</span><br><span class="line">p.rename(&#39;alex&#39;)</span><br></pre></td></tr></table></figure>
+<p>•<code>__init__()</code>被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，相当于构造函数，一定要有self<br>•self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数, 这里于c++不同，空括号函数不能直接空着，而是要在定义时加入self<br>•self.name_ 加下滑线表示属性私有<br>•方法函数前面如果加个装饰器@property， 则调用时候直接调用函数名，不用加括号。例如直接调用p.getAge 不用加括号后面<br>•继承语法:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Student(Person):</span><br><span class="line">	pass  #pass啥都不做，就是占个位</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>revit族学习笔记</title>
     <url>/blog/2020/05/22/revit%E6%97%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<ul>
@@ -213,12 +195,13 @@
 </li>
 <li><p>框选了重叠的物体可以使用过滤器Filter来分离</p>
 </li>
-<li><p>设置快捷键Q给对齐AL<br><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590261024/%E5%BB%BA%E6%97%8F%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B_t4syka.png" alt="建族基本流程" title="建族基本流程"></p>
+<li><p>设置快捷键Q给对齐AL</p>
 </li>
+</ul>
+<h2 id="建族基本流程"><a href="#建族基本流程" class="headerlink" title="建族基本流程"></a>建族基本流程</h2><p>  <img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590261024/%E5%BB%BA%E6%97%8F%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B_t4syka.png" alt="建族基本流程" title="建族基本流程"></p>
+<ul>
 <li><p>注意族污染： 在项目内修改编辑族，要注意其族文件是保存在本地还是服务器上，覆盖族文件时候要慎重</p>
-</li>
-<li><p>族的可见性控制方法：</p>
-<ol>
+<h2 id="族的可见性控制方法："><a href="#族的可见性控制方法：" class="headerlink" title="族的可见性控制方法："></a>族的可见性控制方法：</h2><ol>
 <li><p>Ansicht-Sichtbarkeit/Grafiken-Beschriftungskategorien里面控制标高Ebenen显示, 使其不要显示，防止族与标高线对齐，而不是参照平面线。</p>
 </li>
 <li><p>针对族图元：点击图元，左侧属性栏Grafiken-Sichtbar, 不勾表示在载入项目后不可见，族中可见；若要在族中也不可见，可在下面横栏上点Sichtbarkeit von vorschau预览可见性</p>
@@ -238,17 +221,86 @@
 </ul>
 </li>
 </ol>
-</li>
-<li><p>族的架构</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590266853/%E6%97%8F%E7%9A%84%E4%B8%89%E5%B1%82%E5%88%86%E7%B1%BB_isfwy4.png" alt="族的三层分类"></p>
-<p>族样板Vorlagen; 族类别Familienkategorien; 族类型Familientypen</p>
+<h2 id="族的架构"><a href="#族的架构" class="headerlink" title="族的架构"></a>族的架构</h2><p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590266853/%E6%97%8F%E7%9A%84%E4%B8%89%E5%B1%82%E5%88%86%E7%B1%BB_isfwy4.png" alt="族的三层分类"></p>
+<p>族样板Vorlagen; 族类别（和族参数）Familienkategorien und Parameter; 族类型Familientypen</p>
 </li>
 <li><p>族样板 .rft 分类</p>
 <p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590267920/123_e1x0ky.png" alt></p>
 <p>基于线里面有linie，基于面例如基于工作平面</p>
 </li>
 </ul>
-]]></content>
+<h2 id="族类别和族参数"><a href="#族类别和族参数" class="headerlink" title="族类别和族参数"></a>族类别和族参数</h2><p>不同族类别下面对应不同的族参数，例常规模型类别的族参数有：</p>
+<ol>
+<li>基于工作平面： 基于依附一个面的</li>
+<li>总是垂直：呈绝对角度90</li>
+<li>可将钢筋附着于主体：现在建的族以后可不可以用来配钢筋</li>
+<li>加载时剪切的空心：建族时候是不是预先给未来主体掏一个洞。建族时候在族上一侧开个洞口，加载到项目中后其一侧如果有主体如墙等，就会在墙上自动开洞</li>
+<li><strong>共享</strong>：嵌套族会用到。是否共享取决于构件未来是否要单独进入材料表里面</li>
+<li>OmniClass编号：建筑信息编码 <a href="https://bimbox.top/1822.html" target="_blank" rel="noopener">https://bimbox.top/1822.html</a></li>
+<li>房间计算点： 族是否作为构件被统计到房间表里</li>
+<li>常规模型或家具类别的族在立面图里不能旋转，解决方法是用其他族类别如管道配件，结构连接，然后一定要勾选总是垂直。</li>
+</ol>
+<p><strong>子类别</strong>：点击族内图元，属性栏标识数据。定义子类别：管理-对象样式-模型对象，里面的二级菜单就是子类别，可以自己新建定义。载入项目中后，可以通过在VG里是否勾选来控制图元可见性。所以如果族在载入项目的时候，需要对族的某一部分设置不同的线型线宽和可见性，可以考虑使用子类别功能。</p>
+<h2 id="建立形体"><a href="#建立形体" class="headerlink" title="建立形体"></a>建立形体</h2><p><span style="color:red;"><strong>绘制任何一个形体前，要先绘制相应的参照平面referenzebene。原因是想通过参照平面与形体边的锁定，来通过控制参照平面从而控制形体。因为后面设置的族参数一般是控制参照平面的</strong></span></p>
+<p>另外，二维图形不用自己手绘，可以导入CAD图纸，然后利用拾取线来绘制</p>
+<h4 id="拉伸-Extrusion"><a href="#拉伸-Extrusion" class="headerlink" title="拉伸 Extrusion"></a>拉伸 Extrusion</h4><ul>
+<li><strong>绘制任何一个形体前(如拉伸)，要先绘制相应的参照平面referenzebene。原因是想通过参照平面与形体边的锁定，来通过控制参照平面从而控制形体。因为后面设置的族参数一般是控制参照平面的</strong></li>
+<li>revit 有默认的二维和三维的绘图模式。当从平面图切换到3D图再切回来时，默认还是三维绘图模式，此时点击二维图元和参照平面不会出现小锁，要双击图元使其变粉即默认返回二维绘图模式，然后进行加锁。</li>
+</ul>
+<h4 id="融合-Verschmelzen"><a href="#融合-Verschmelzen" class="headerlink" title="融合 Verschmelzen"></a>融合 Verschmelzen</h4><ul>
+<li>在不同的平面绘制不一样的二维形体，revit自动在三维空间将其融合成为三维实体。</li>
+<li>注意画二维形体时也要绘制参照平面！</li>
+<li>形体高度在左边属性栏里调，erste ende 和 zweite ende, 底部画完后点上方oben bearbeiten画上边的图形</li>
+<li>通过在修改-拆分图元（element teilen) 可以在二维图形上按照自己所需获得顶点</li>
+<li>通过scheitelpunkte bearbeiten编辑顶点可以控制上下图形上的各个顶点怎么互相连接</li>
+<li>融合二维图形内部不能掏洞，然而拉伸可以</li>
+</ul>
+<h4 id="旋转-Rotieren"><a href="#旋转-Rotieren" class="headerlink" title="旋转  Rotieren"></a>旋转  Rotieren</h4><ul>
+<li>需要编辑边界线Begrenzungslinie和轴线Achsenlinie</li>
+<li>边界线必须闭合，边界线定义转动的图形，轴线为绕那个轴转</li>
+<li>转动角度可点击图元在属性中改变：起始角度，约束角度</li>
+</ul>
+<h4 id="放样-Sweep"><a href="#放样-Sweep" class="headerlink" title="放样 Sweep"></a>放样 Sweep</h4><ul>
+<li>拉伸是特殊的放样，拉伸是直线拉，放样是曲线拉</li>
+<li>需要用到路径Pfad和轮廓Profil即横截面</li>
+</ul>
+<h4 id="放样融合-Sweep-Verschmelzen"><a href="#放样融合-Sweep-Verschmelzen" class="headerlink" title="放样融合 Sweep - Verschmelzen"></a>放样融合 Sweep - Verschmelzen</h4><ul>
+<li>同样需要编辑pfad和profil，不同的是这里有两个轮廓，红点表示轮廓平面和路径的交点</li>
+<li>和融合一样，圆图形默认有两个端点，想要改变端点个数，编辑轮廓用拆分图元</li>
+</ul>
+<h4 id="空心形状-Abzugskorperforemen"><a href="#空心形状-Abzugskorperforemen" class="headerlink" title="空心形状 Abzugskörperforemen"></a>空心形状 Abzugskörperforemen</h4><ul>
+<li>用来给实心形体开洞的，通过拉伸，融合等方法，做减法。</li>
+</ul>
+<h4 id="符号线Modelllinie和模型线Symbolische-Linie"><a href="#符号线Modelllinie和模型线Symbolische-Linie" class="headerlink" title="符号线Modelllinie和模型线Symbolische Linie"></a>符号线Modelllinie和模型线Symbolische Linie</h4><ul>
+<li>符号线是画在哪个视图里，就仅在这个视图里显示；模型线是在任意视图里都可以显示</li>
+<li>符号线在Bschriften里面，模型线在Erstellen里面</li>
+<li>点击符号线和模型线，在上面的修改面板里两线可以互相转换：linie konvertieren。 可以通过这个功能使模型线在一些视图中可见而另一些视图不可见，例如门。</li>
+</ul>
+<h4 id="构件Bauteil"><a href="#构件Bauteil" class="headerlink" title="构件Bauteil"></a>构件Bauteil</h4><ul>
+<li>所有实体族都可以被称为构件</li>
+<li>放置构件时自动选择最近载入的那个族</li>
+<li>嵌套族中会用到</li>
+</ul>
+<h4 id="工作平面Arbeitsebene和面ebene"><a href="#工作平面Arbeitsebene和面ebene" class="headerlink" title="工作平面Arbeitsebene和面ebene"></a>工作平面Arbeitsebene和面ebene</h4><ul>
+<li>先在建referenzebene, 然后festlegen选中其做工作平面，Arbeitsebene anzeigen显示工作平面</li>
+<li>面是创建的实体上的面</li>
+</ul>
+<h4 id="模型组-Modellgruppe"><a href="#模型组-Modellgruppe" class="headerlink" title="模型组 Modellgruppe"></a>模型组 Modellgruppe</h4><ul>
+<li>打成的组和族可在右侧项目浏览器中找到</li>
+</ul>
+<h4 id="参照线referenzlinie和参照平面referenzebene"><a href="#参照线referenzlinie和参照平面referenzebene" class="headerlink" title="参照线referenzlinie和参照平面referenzebene"></a>参照线referenzlinie和参照平面referenzebene</h4><ul>
+<li>参照面无论绘制多长，其都是一个无限延伸的平面，而参照线有长度属性</li>
+<li>参照线可以拖动从而改变角度和宽度，可以用来定义族的参数如长度角度</li>
+<li>参照面可以用来规定物体平移的参数，参照线可以用来规定物体长度和角度</li>
+</ul>
+<h4 id="洞口Offnung"><a href="#洞口Offnung" class="headerlink" title="洞口Öffnung"></a>洞口Öffnung</h4><ul>
+<li>在主体开洞，不是在族中开洞，要基于主体的族类型才可用</li>
+<li>可以直接做个洞口族，其他什么都不画，直接载入项目里给主题开洞口</li>
+</ul>
+<h4 id="控件Steuerelement（小工具）"><a href="#控件Steuerelement（小工具）" class="headerlink" title="控件Steuerelement（小工具）"></a>控件Steuerelement（小工具）</h4><ul>
+<li>小箭头放到族里以后改变构件的方向。当把族载入项目后，点击族点击这几个小箭头可以控制改变族的位置方向。</li>
+</ul>
+<h2 id="修改命令Andern"><a href="#修改命令Andern" class="headerlink" title="修改命令Ändern"></a>修改命令Ändern</h2>]]></content>
       <categories>
         <category>revit</category>
       </categories>
