@@ -89,7 +89,7 @@
 <meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590266853/%E6%97%8F%E7%9A%84%E4%B8%89%E5%B1%82%E5%88%86%E7%B1%BB_isfwy4.png">
 <meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590267920/123_e1x0ky.png">
 <meta property="article:published_time" content="2020-05-22T19:00:44.000Z">
-<meta property="article:modified_time" content="2020-05-24T20:26:09.041Z">
+<meta property="article:modified_time" content="2020-05-24T21:28:34.528Z">
 <meta property="article:author" content="Changyu Du">
 <meta property="article:tag" content="revit">
 <meta name="twitter:card" content="summary">
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.8k
+                  2.3k
                 </span>
               
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  7
                 </span>
               
             </div>
@@ -449,10 +449,10 @@
 <li><p>设置快捷键Q给对齐AL</p>
 </li>
 </ul>
-<h2 id="建族基本流程"><a href="#建族基本流程" class="headerlink" title="建族基本流程"></a>建族基本流程</h2><p>  <img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590261024/%E5%BB%BA%E6%97%8F%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B_t4syka.png" alt="建族基本流程" title="建族基本流程"></p>
+<h3 id="建族基本流程"><a href="#建族基本流程" class="headerlink" title="建族基本流程"></a>建族基本流程</h3><p>  <img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590261024/%E5%BB%BA%E6%97%8F%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B_t4syka.png" alt="建族基本流程" title="建族基本流程"></p>
 <ul>
 <li><p>注意族污染： 在项目内修改编辑族，要注意其族文件是保存在本地还是服务器上，覆盖族文件时候要慎重</p>
-<h2 id="族的可见性控制方法："><a href="#族的可见性控制方法：" class="headerlink" title="族的可见性控制方法："></a>族的可见性控制方法：</h2><ol>
+<h3 id="族的可见性控制方法："><a href="#族的可见性控制方法：" class="headerlink" title="族的可见性控制方法："></a>族的可见性控制方法：</h3><ol>
 <li><p>Ansicht-Sichtbarkeit/Grafiken-Beschriftungskategorien里面控制标高Ebenen显示, 使其不要显示，防止族与标高线对齐，而不是参照平面线。</p>
 </li>
 <li><p>针对族图元：点击图元，左侧属性栏Grafiken-Sichtbar, 不勾表示在载入项目后不可见，族中可见；若要在族中也不可见，可在下面横栏上点Sichtbarkeit von vorschau预览可见性</p>
@@ -472,7 +472,7 @@
 </ul>
 </li>
 </ol>
-<h2 id="族的架构"><a href="#族的架构" class="headerlink" title="族的架构"></a>族的架构</h2><p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590266853/%E6%97%8F%E7%9A%84%E4%B8%89%E5%B1%82%E5%88%86%E7%B1%BB_isfwy4.png" alt="族的三层分类"></p>
+<h3 id="族的架构"><a href="#族的架构" class="headerlink" title="族的架构"></a>族的架构</h3><p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590266853/%E6%97%8F%E7%9A%84%E4%B8%89%E5%B1%82%E5%88%86%E7%B1%BB_isfwy4.png" alt="族的三层分类"></p>
 <p>族样板Vorlagen; 族类别（和族参数）Familienkategorien und Parameter; 族类型Familientypen</p>
 </li>
 <li><p>族样板 .rft 分类</p>
@@ -480,7 +480,7 @@
 <p>基于线里面有linie，基于面例如基于工作平面</p>
 </li>
 </ul>
-<h2 id="族类别和族参数"><a href="#族类别和族参数" class="headerlink" title="族类别和族参数"></a>族类别和族参数</h2><p>不同族类别下面对应不同的族参数，例常规模型类别的族参数有：</p>
+<h3 id="族类别和族参数"><a href="#族类别和族参数" class="headerlink" title="族类别和族参数"></a>族类别和族参数</h3><p>不同族类别下面对应不同的族参数，例常规模型类别的族参数有：</p>
 <ol>
 <li>基于工作平面： 基于依附一个面的</li>
 <li>总是垂直：呈绝对角度90</li>
@@ -492,7 +492,7 @@
 <li>常规模型或家具类别的族在立面图里不能旋转，解决方法是用其他族类别如管道配件，结构连接，然后一定要勾选总是垂直。</li>
 </ol>
 <p><strong>子类别</strong>：点击族内图元，属性栏标识数据。定义子类别：管理-对象样式-模型对象，里面的二级菜单就是子类别，可以自己新建定义。载入项目中后，可以通过在VG里是否勾选来控制图元可见性。所以如果族在载入项目的时候，需要对族的某一部分设置不同的线型线宽和可见性，可以考虑使用子类别功能。</p>
-<h2 id="建立形体"><a href="#建立形体" class="headerlink" title="建立形体"></a>建立形体</h2><p><span style="color:red;"><strong>绘制任何一个形体前，要先绘制相应的参照平面referenzebene。原因是想通过参照平面与形体边的锁定，来通过控制参照平面从而控制形体。因为后面设置的族参数一般是控制参照平面的</strong></span></p>
+<h3 id="建立形体"><a href="#建立形体" class="headerlink" title="建立形体"></a>建立形体</h3><p><span style="color:red;"><strong>绘制任何一个形体前，要先绘制相应的参照平面referenzebene。原因是想通过参照平面与形体边的锁定，来通过控制参照平面从而控制形体。因为后面设置的族参数一般是控制参照平面的</strong></span></p>
 <p>另外，二维图形不用自己手绘，可以导入CAD图纸，然后利用拾取线来绘制</p>
 <h4 id="拉伸-Extrusion"><a href="#拉伸-Extrusion" class="headerlink" title="拉伸 Extrusion"></a>拉伸 Extrusion</h4><ul>
 <li><strong>绘制任何一个形体前(如拉伸)，要先绘制相应的参照平面referenzebene。原因是想通过参照平面与形体边的锁定，来通过控制参照平面从而控制形体。因为后面设置的族参数一般是控制参照平面的</strong></li>
@@ -551,7 +551,31 @@
 <h4 id="控件Steuerelement（小工具）"><a href="#控件Steuerelement（小工具）" class="headerlink" title="控件Steuerelement（小工具）"></a>控件Steuerelement（小工具）</h4><ul>
 <li>小箭头放到族里以后改变构件的方向。当把族载入项目后，点击族点击这几个小箭头可以控制改变族的位置方向。</li>
 </ul>
-<h2 id="修改命令Andern"><a href="#修改命令Andern" class="headerlink" title="修改命令Ändern"></a>修改命令Ändern</h2>
+<h3 id="修改命令Andern"><a href="#修改命令Andern" class="headerlink" title="修改命令Ändern"></a>修改命令Ändern</h3><h4 id="剪切Schnitt"><a href="#剪切Schnitt" class="headerlink" title="剪切Schnitt"></a>剪切Schnitt</h4><ul>
+<li>必须是一个实心主体和一个空心主体</li>
+<li>高级用法：如果想要把一个水槽放到桌子上，希望水槽下面的桌子自动开洞，可以在水槽族里加一个空心形状，但在族内不与水槽实体剪切。将整个族载入项目，注意要在族参数中勾选beim Laden mit Abkzugskörper schneiden, 载入后使用剪切命令，拿桌子减去空心形状。</li>
+</ul>
+<h4 id="连接verbinden"><a href="#连接verbinden" class="headerlink" title="连接verbinden"></a>连接verbinden</h4><ul>
+<li>将两个相交的物体连接成一个物体</li>
+</ul>
+<h4 id="拆分面-Flachen-trennen"><a href="#拆分面-Flachen-trennen" class="headerlink" title="拆分面 Flächen trennen"></a>拆分面 Flächen trennen</h4><ul>
+<li>在一个面上拆分出一小块，然后可用下面的farben使拆分出来的部分显示不同的材质</li>
+</ul>
+<h3 id="偏移-Versatz"><a href="#偏移-Versatz" class="headerlink" title="偏移 Versatz"></a>偏移 Versatz</h3><ul>
+<li>只能偏移墙或线，不能偏移族模型, 需要双击点进图元里面变粉才能用。勾选kopieren则为复制一个，不勾就是移动原来的</li>
+<li>分grafisch和nummerisch。前者移动鼠标确定偏移位置，后者输入距离。在底下栏调选。</li>
+</ul>
+<h3 id="修剪延伸stutzen-und-dehnen"><a href="#修剪延伸stutzen-und-dehnen" class="headerlink" title="修剪延伸stutzen und dehnen"></a>修剪延伸stutzen und dehnen</h3><ul>
+<li>修剪延伸成角 stutzen und dehnen für ecke 相当于把修剪和延伸和在一起操作了，<strong>注意鼠标选择线的不同段表示了要保留哪段</strong>，没选的剪掉。</li>
+<li>修剪延伸单个/多个图元 是把修剪延伸分开来操作，类似于第一遍操作完是延伸，在同一点图标再操作就为修剪</li>
+</ul>
+<h4 id="阵列Reihe"><a href="#阵列Reihe" class="headerlink" title="阵列Reihe"></a>阵列Reihe</h4><ul>
+<li>注意是否勾选成组并关联， 可以弧形阵列radial, winkel角度里面填阵列总共弧形要占的范围角度多大。阵列完了的这一套东西可以解组，不然改一个全部都改</li>
+</ul>
+<h4 id="黄尺子测量和尺寸标注测量"><a href="#黄尺子测量和尺寸标注测量" class="headerlink" title="黄尺子测量和尺寸标注测量"></a>黄尺子测量和尺寸标注测量</h4><ul>
+<li>黄尺子点下面栏kette可以连续测量，但是不会留下尺寸标注。下面的尺寸标注测量则会留下标注，可用来设定族参数。</li>
+</ul>
+
       
     </div>
     
@@ -766,7 +790,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#建族基本流程"><span class="nav-number">1.</span> <span class="nav-text">建族基本流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#族的可见性控制方法："><span class="nav-number">2.</span> <span class="nav-text">族的可见性控制方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#族的架构"><span class="nav-number">3.</span> <span class="nav-text">族的架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#族类别和族参数"><span class="nav-number">4.</span> <span class="nav-text">族类别和族参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立形体"><span class="nav-number">5.</span> <span class="nav-text">建立形体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#拉伸-Extrusion"><span class="nav-number">5.0.1.</span> <span class="nav-text">拉伸 Extrusion</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#融合-Verschmelzen"><span class="nav-number">5.0.2.</span> <span class="nav-text">融合 Verschmelzen</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#旋转-Rotieren"><span class="nav-number">5.0.3.</span> <span class="nav-text">旋转  Rotieren</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#放样-Sweep"><span class="nav-number">5.0.4.</span> <span class="nav-text">放样 Sweep</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#放样融合-Sweep-Verschmelzen"><span class="nav-number">5.0.5.</span> <span class="nav-text">放样融合 Sweep - Verschmelzen</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空心形状-Abzugskorperforemen"><span class="nav-number">5.0.6.</span> <span class="nav-text">空心形状 Abzugskörperforemen</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#符号线Modelllinie和模型线Symbolische-Linie"><span class="nav-number">5.0.7.</span> <span class="nav-text">符号线Modelllinie和模型线Symbolische Linie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构件Bauteil"><span class="nav-number">5.0.8.</span> <span class="nav-text">构件Bauteil</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工作平面Arbeitsebene和面ebene"><span class="nav-number">5.0.9.</span> <span class="nav-text">工作平面Arbeitsebene和面ebene</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模型组-Modellgruppe"><span class="nav-number">5.0.10.</span> <span class="nav-text">模型组 Modellgruppe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参照线referenzlinie和参照平面referenzebene"><span class="nav-number">5.0.11.</span> <span class="nav-text">参照线referenzlinie和参照平面referenzebene</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#洞口Offnung"><span class="nav-number">5.0.12.</span> <span class="nav-text">洞口Öffnung</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控件Steuerelement（小工具）"><span class="nav-number">5.0.13.</span> <span class="nav-text">控件Steuerelement（小工具）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改命令Andern"><span class="nav-number">6.</span> <span class="nav-text">修改命令Ändern</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#建族基本流程"><span class="nav-number">1.</span> <span class="nav-text">建族基本流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#族的可见性控制方法："><span class="nav-number">2.</span> <span class="nav-text">族的可见性控制方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#族的架构"><span class="nav-number">3.</span> <span class="nav-text">族的架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#族类别和族参数"><span class="nav-number">4.</span> <span class="nav-text">族类别和族参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立形体"><span class="nav-number">5.</span> <span class="nav-text">建立形体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#拉伸-Extrusion"><span class="nav-number">5.1.</span> <span class="nav-text">拉伸 Extrusion</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#融合-Verschmelzen"><span class="nav-number">5.2.</span> <span class="nav-text">融合 Verschmelzen</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#旋转-Rotieren"><span class="nav-number">5.3.</span> <span class="nav-text">旋转  Rotieren</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#放样-Sweep"><span class="nav-number">5.4.</span> <span class="nav-text">放样 Sweep</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#放样融合-Sweep-Verschmelzen"><span class="nav-number">5.5.</span> <span class="nav-text">放样融合 Sweep - Verschmelzen</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空心形状-Abzugskorperforemen"><span class="nav-number">5.6.</span> <span class="nav-text">空心形状 Abzugskörperforemen</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#符号线Modelllinie和模型线Symbolische-Linie"><span class="nav-number">5.7.</span> <span class="nav-text">符号线Modelllinie和模型线Symbolische Linie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构件Bauteil"><span class="nav-number">5.8.</span> <span class="nav-text">构件Bauteil</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工作平面Arbeitsebene和面ebene"><span class="nav-number">5.9.</span> <span class="nav-text">工作平面Arbeitsebene和面ebene</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模型组-Modellgruppe"><span class="nav-number">5.10.</span> <span class="nav-text">模型组 Modellgruppe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参照线referenzlinie和参照平面referenzebene"><span class="nav-number">5.11.</span> <span class="nav-text">参照线referenzlinie和参照平面referenzebene</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#洞口Offnung"><span class="nav-number">5.12.</span> <span class="nav-text">洞口Öffnung</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控件Steuerelement（小工具）"><span class="nav-number">5.13.</span> <span class="nav-text">控件Steuerelement（小工具）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改命令Andern"><span class="nav-number">6.</span> <span class="nav-text">修改命令Ändern</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#剪切Schnitt"><span class="nav-number">6.1.</span> <span class="nav-text">剪切Schnitt</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接verbinden"><span class="nav-number">6.2.</span> <span class="nav-text">连接verbinden</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拆分面-Flachen-trennen"><span class="nav-number">6.3.</span> <span class="nav-text">拆分面 Flächen trennen</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#偏移-Versatz"><span class="nav-number">7.</span> <span class="nav-text">偏移 Versatz</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修剪延伸stutzen-und-dehnen"><span class="nav-number">8.</span> <span class="nav-text">修剪延伸stutzen und dehnen</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#阵列Reihe"><span class="nav-number">8.1.</span> <span class="nav-text">阵列Reihe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#黄尺子测量和尺寸标注测量"><span class="nav-number">8.2.</span> <span class="nav-text">黄尺子测量和尺寸标注测量</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -800,7 +824,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.4k</span>
+    <span title="Site words total count">5.9k</span>
   
 </div>
 
