@@ -1,39 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Python一些语法备忘</title>
-    <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="1-if-else"><a href="#1-if-else" class="headerlink" title="1. if else"></a>1. if else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span></span><br><span class="line">y=<span class="string">'hello'</span></span><br><span class="line"><span class="keyword">if</span> x==<span class="number">1</span> <span class="keyword">or</span> y==<span class="string">'hello'</span>:</span><br><span class="line">	x=x+<span class="number">1</span></span><br><span class="line">	y=y+<span class="string">'world'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-Python特色语句：for-else"><a href="#2-Python特色语句：for-else" class="headerlink" title="2. Python特色语句：for else"></a>2. Python特色语句：for else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">99</span>,<span class="number">81</span>,<span class="number">-1</span>):</span><br><span class="line">	root = sqrt(n)</span><br><span class="line">	<span class="keyword">if</span> root = int(root):</span><br><span class="line">		print(n)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	print(<span class="string">'didnt find it!'</span>)</span><br></pre></td></tr></table></figure>
-<p>这条else语句对应的是知for，不是if，这个是python特有的语句。 break表示打断最近的loop, 而if不是loop，打断的是for loop， 即在for循环中，如果没有从任何一个break中退出，则会执行和for对应的else 只要从break中退出了，则else部分不执行。<br>这段话如果用C++来实现，则如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">99</span>;i&gt;<span class="number">81</span>;i--) </span><br><span class="line">&#123; </span><br><span class="line">	root=<span class="built_in">sqrt</span>(i); </span><br><span class="line">	<span class="keyword">if</span>(root==<span class="keyword">int</span>(root)) </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;i; </span><br><span class="line">		<span class="keyword">break</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span>(i==<span class="number">81</span>) <span class="comment">//边界判断 </span></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">"didn't find it!"</span>&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="3-Definations"><a href="#3-Definations" class="headerlink" title="3. Definations"></a>3. Definations</h3><p>aList = []  列表，相当于c++中的arry/vector<br>aDictionary = {}  字典, 相当于c++中的map<br>aTuple = ()  元组, 只读的，不能修改，不能像list一样有append，remove等操作</p>
-<h3 id="4-遍历输出"><a href="#4-遍历输出" class="headerlink" title="4. 遍历输出"></a>4. 遍历输出</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aList:</span><br><span class="line">	print(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> aDictionary.item()</span><br><span class="line">	print(key, value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Access Value in Dictionary by the Keys</span></span><br><span class="line">value = aDictionary[‘key’]  <span class="comment">#Key muss be string!</span></span><br></pre></td></tr></table></figure>
-<h3 id="5-args-kwargs"><a href="#5-args-kwargs" class="headerlink" title="5. *args, **kwargs"></a>5. <code>*args</code>, <code>**kwargs</code></h3><p><code>*args</code>是位置参数，<code>**kwargs</code>是关建字参数。<code>*args</code>用来收集各种参数，其名字没有实际出现在函数签名的括号中， <code>**kwargs</code>代表了各个dictionary等关系，其名字没有实际出现在括号中，所以有了这两个东西可以在函数input括号里输入各种不同的参数而不止局限于几个自己命名的参数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_kwargs</span><span class="params">(first, *args, **kwargs)</span>:</span></span><br><span class="line">	print(<span class="string">'required argument'</span>, first)</span><br><span class="line">	<span class="keyword">for</span> v <span class="keyword">in</span> args:</span><br><span class="line">		print(<span class="string">'optional argument (*args):'</span>, v)</span><br><span class="line">	<span class="keyword">for</span> k, v <span class="keyword">in</span> kwargs.item():</span><br><span class="line">		print(<span class="string">'optional argument %s (*kwargs): %s'</span>, %(k,v))</span><br><span class="line"></span><br><span class="line">test_kwargs(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,k1=<span class="number">5</span>,k2=<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#required argument: 1</span></span><br><span class="line"><span class="comment">#optional argument (*args): 2</span></span><br><span class="line"><span class="comment">#optional argument (*args): 3</span></span><br><span class="line"><span class="comment">#optional argument (*args): 4</span></span><br><span class="line"><span class="comment">#optional argument k2 (*kwargs): 6</span></span><br><span class="line"><span class="comment">#optional argument k1 (*kwargs): 5</span></span><br></pre></td></tr></table></figure>
-<h3 id="6-装饰器"><a href="#6-装饰器" class="headerlink" title="6. 装饰器"></a>6. 装饰器</h3><p>装饰器本质上是一个 Python 函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能，装饰器的返回值也是一个函数/类对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decarator</span><span class="params">(func)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args)</span>:</span></span><br><span class="line">		<span class="comment">#可以此处添加功能如</span></span><br><span class="line">		print(<span class="string">'add funtion 1'</span>)</span><br><span class="line">		<span class="keyword">return</span> func(*args)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@decarator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(*args)</span>:</span></span><br><span class="line">	print(<span class="string">'i have'</span>, *args)</span><br><span class="line"></span><br><span class="line">test(<span class="string">'dsds'</span>,<span class="number">3</span>,<span class="string">'abc'</span>)</span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#add funtion 1</span></span><br><span class="line"><span class="comment">#i have dsds 3 abc</span></span><br></pre></td></tr></table></figure>
-<h3 id="7-列表推导式"><a href="#7-列表推导式" class="headerlink" title="7. 列表推导式"></a>7. 列表推导式</h3><p>基本语法：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = [expression(i) <span class="keyword">for</span> i <span class="keyword">in</span> old_list <span class="keyword">if</span> condition(i)]</span><br></pre></td></tr></table></figure>
-<p>翻译成for循环：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> old_list:</span><br><span class="line">	<span class="keyword">if</span>(condition):</span><br><span class="line">		new_list.append(expression(i))</span><br></pre></td></tr></table></figure>
-<h3 id="8-类"><a href="#8-类" class="headerlink" title="8. 类"></a>8. 类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__int__</span><span class="params">(self, name, age)</span>:</span></span><br><span class="line">		self.name_ = name</span><br><span class="line">		self.age_ = age</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getName</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.name_)</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getAge</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.age_)</span><br><span class="line">		<span class="keyword">return</span> self.age_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">rename</span><span class="params">(self, new_name)</span>:</span></span><br><span class="line">		self.name_ = new_name</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line"></span><br><span class="line">p = person(<span class="string">'tom'</span>,<span class="number">34</span>)</span><br><span class="line">p.getName()</span><br><span class="line">p.rename(<span class="string">'alex'</span>)</span><br></pre></td></tr></table></figure>
-<p>•<code>__init__()</code>被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，相当于构造函数，一定要有self<br>•self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数, 这里于c++不同，空括号函数不能直接空着，而是要在定义时加入self<br>•self.name_ 加下滑线表示属性私有<br>•方法函数前面如果加个装饰器@property， 则调用时候直接调用函数名，不用加括号。例如直接调用p.getAge 不用加括号后面<br>•继承语法:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(Person)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span>  <span class="comment">#pass啥都不做，就是占个位</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leistungsphasen备忘</title>
-    <url>/blog/2020/05/25/Leistungsphasen/</url>
-    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" alt title="Leistungsphasen 1-9"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Dynamo学习笔记</title>
     <url>/blog/2020/05/22/Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</url>
     <content><![CDATA[<ul>
@@ -92,55 +59,6 @@
       </tags>
   </entry>
   <entry>
-    <title>markdown的一些语法</title>
-    <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
-<p>注：标准语法一般在#后跟个空格再写文字</p>
-<h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h2 id="2-1-无序列表（前带圆点）"><a href="#2-1-无序列表（前带圆点）" class="headerlink" title="2.1 无序列表（前带圆点）"></a>2.1 无序列表（前带圆点）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 列表内容</span><br><span class="line">+ 列表内容</span><br><span class="line">* 列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<ul>
-<li>列表1</li>
-</ul>
-<ul>
-<li>列表2</li>
-</ul>
-<ul>
-<li>列表3</li>
-</ul>
-<h2 id="2-1-有序列表（前带数字）"><a href="#2-1-有序列表（前带数字）" class="headerlink" title="2.1 有序列表（前带数字）"></a>2.1 有序列表（前带数字）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 列表内容</span><br><span class="line">2. 列表内容</span><br><span class="line">3. 列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<ol>
-<li>列表1</li>
-<li>列表2</li>
-<li>列表3</li>
-</ol>
-<h1 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3. 代码块"></a>3. 代码块</h1><p>在代码段落上下两行分别插入三个反逗号，若要代码高亮则要在反逗号后面注明是什么语言。 </p>
-<h1 id="4-插入图片所需代码"><a href="#4-插入图片所需代码" class="headerlink" title="4. 插入图片所需代码"></a>4. 插入图片所需代码</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![图片注释](图片地址 &#39;&#39;图片标题&#39;&#39;)</span><br><span class="line"></span><br><span class="line">图片注释就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片标题是当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
-<p>例：<br>插入本地图片<br><img src="/blog/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/abc.png" alt="test picture"><br><code>![test picture](./Dynamo学习笔记-1/abc.png)</code> 好像不管用…所以我把所有图片存到了云盘<br><code>&quot;&quot;</code> ？？？</p>
-<h1 id="5-改变字体颜色"><a href="#5-改变字体颜色" class="headerlink" title="5. 改变字体颜色"></a>5. 改变字体颜色</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span style&#x3D;&quot;color:red;&quot;&gt;</span><br><span class="line">#回车换行后命令失效</span><br></pre></td></tr></table></figure>
-<p><span style="color:red;"> 改变字体颜色至红</span></p>
-<h1 id="6-字体"><a href="#6-字体" class="headerlink" title="6. 字体"></a>6. 字体</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">**这是加粗的文字**</span><br><span class="line">*这是倾斜的文字*&#96;</span><br><span class="line">***这是斜体加粗的文字***</span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
-<p>例：<br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del></p>
-<h1 id="7-引用"><a href="#7-引用" class="headerlink" title="7. 引用"></a>7. 引用</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这是引用的内容</p>
-<blockquote>
-<p>这是引用的内容</p>
-</blockquote>
-</blockquote>
-<h1 id="8-分割线"><a href="#8-分割线" class="headerlink" title="8. 分割线"></a>8. 分割线</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="9-链接"><a href="#9-链接" class="headerlink" title="9. 链接"></a>9. 链接</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[超链接名](超链接地址)</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">参考资料</a></p>
-]]></content>
-      <categories>
-        <category>markdown</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Excel数据处理</title>
     <url>/blog/2020/05/22/Excel%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</url>
     <content><![CDATA[<h3 id="数据-分列"><a href="#数据-分列" class="headerlink" title="数据-分列"></a>数据-分列</h3><p>用于统一一列中的数据类型，两种数据类型互相转换方法(常规型，文本型)<br><strong>数据透视表</strong>，行，列，值，筛选条件 -&gt; <strong>切片器</strong>更好实现: 点击数据透视表中任意一格，插入切片器，同样适用于透视表对应的图表，点击切片器，数据可视化</p>
@@ -194,19 +112,107 @@
       </tags>
   </entry>
   <entry>
-    <title>revit族学习笔记</title>
-    <url>/blog/2020/05/22/revit%E6%97%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <title>Leistungsphasen备忘</title>
+    <url>/blog/2020/05/25/Leistungsphasen/</url>
+    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" alt title="Leistungsphasen 1-9"></p>
+]]></content>
+      <categories>
+        <category>informations</category>
+      </categories>
+      <tags>
+        <tag>LP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python一些语法备忘</title>
+    <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="1-if-else"><a href="#1-if-else" class="headerlink" title="1. if else"></a>1. if else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span></span><br><span class="line">y=<span class="string">'hello'</span></span><br><span class="line"><span class="keyword">if</span> x==<span class="number">1</span> <span class="keyword">or</span> y==<span class="string">'hello'</span>:</span><br><span class="line">	x=x+<span class="number">1</span></span><br><span class="line">	y=y+<span class="string">'world'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-Python特色语句：for-else"><a href="#2-Python特色语句：for-else" class="headerlink" title="2. Python特色语句：for else"></a>2. Python特色语句：for else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">99</span>,<span class="number">81</span>,<span class="number">-1</span>):</span><br><span class="line">	root = sqrt(n)</span><br><span class="line">	<span class="keyword">if</span> root = int(root):</span><br><span class="line">		print(n)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	print(<span class="string">'didnt find it!'</span>)</span><br></pre></td></tr></table></figure>
+<p>这条else语句对应的是知for，不是if，这个是python特有的语句。 break表示打断最近的loop, 而if不是loop，打断的是for loop， 即在for循环中，如果没有从任何一个break中退出，则会执行和for对应的else 只要从break中退出了，则else部分不执行。<br>这段话如果用C++来实现，则如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">99</span>;i&gt;<span class="number">81</span>;i--) </span><br><span class="line">&#123; </span><br><span class="line">	root=<span class="built_in">sqrt</span>(i); </span><br><span class="line">	<span class="keyword">if</span>(root==<span class="keyword">int</span>(root)) </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;i; </span><br><span class="line">		<span class="keyword">break</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span>(i==<span class="number">81</span>) <span class="comment">//边界判断 </span></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">"didn't find it!"</span>&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="3-Definations"><a href="#3-Definations" class="headerlink" title="3. Definations"></a>3. Definations</h3><p>aList = []  列表，相当于c++中的arry/vector<br>aDictionary = {}  字典, 相当于c++中的map<br>aTuple = ()  元组, 只读的，不能修改，不能像list一样有append，remove等操作</p>
+<h3 id="4-遍历输出"><a href="#4-遍历输出" class="headerlink" title="4. 遍历输出"></a>4. 遍历输出</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aList:</span><br><span class="line">	print(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> aDictionary.item()</span><br><span class="line">	print(key, value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Access Value in Dictionary by the Keys</span></span><br><span class="line">value = aDictionary[‘key’]  <span class="comment">#Key muss be string!</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-args-kwargs"><a href="#5-args-kwargs" class="headerlink" title="5. *args, **kwargs"></a>5. <code>*args</code>, <code>**kwargs</code></h3><p><code>*args</code>是位置参数，<code>**kwargs</code>是关建字参数。<code>*args</code>用来收集各种参数，其名字没有实际出现在函数签名的括号中， <code>**kwargs</code>代表了各个dictionary等关系，其名字没有实际出现在括号中，所以有了这两个东西可以在函数input括号里输入各种不同的参数而不止局限于几个自己命名的参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_kwargs</span><span class="params">(first, *args, **kwargs)</span>:</span></span><br><span class="line">	print(<span class="string">'required argument'</span>, first)</span><br><span class="line">	<span class="keyword">for</span> v <span class="keyword">in</span> args:</span><br><span class="line">		print(<span class="string">'optional argument (*args):'</span>, v)</span><br><span class="line">	<span class="keyword">for</span> k, v <span class="keyword">in</span> kwargs.item():</span><br><span class="line">		print(<span class="string">'optional argument %s (*kwargs): %s'</span>, %(k,v))</span><br><span class="line"></span><br><span class="line">test_kwargs(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,k1=<span class="number">5</span>,k2=<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#required argument: 1</span></span><br><span class="line"><span class="comment">#optional argument (*args): 2</span></span><br><span class="line"><span class="comment">#optional argument (*args): 3</span></span><br><span class="line"><span class="comment">#optional argument (*args): 4</span></span><br><span class="line"><span class="comment">#optional argument k2 (*kwargs): 6</span></span><br><span class="line"><span class="comment">#optional argument k1 (*kwargs): 5</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-装饰器"><a href="#6-装饰器" class="headerlink" title="6. 装饰器"></a>6. 装饰器</h3><p>装饰器本质上是一个 Python 函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能，装饰器的返回值也是一个函数/类对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decarator</span><span class="params">(func)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args)</span>:</span></span><br><span class="line">		<span class="comment">#可以此处添加功能如</span></span><br><span class="line">		print(<span class="string">'add funtion 1'</span>)</span><br><span class="line">		<span class="keyword">return</span> func(*args)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@decarator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(*args)</span>:</span></span><br><span class="line">	print(<span class="string">'i have'</span>, *args)</span><br><span class="line"></span><br><span class="line">test(<span class="string">'dsds'</span>,<span class="number">3</span>,<span class="string">'abc'</span>)</span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#add funtion 1</span></span><br><span class="line"><span class="comment">#i have dsds 3 abc</span></span><br></pre></td></tr></table></figure>
+<h3 id="7-列表推导式"><a href="#7-列表推导式" class="headerlink" title="7. 列表推导式"></a>7. 列表推导式</h3><p>基本语法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = [expression(i) <span class="keyword">for</span> i <span class="keyword">in</span> old_list <span class="keyword">if</span> condition(i)]</span><br></pre></td></tr></table></figure>
+<p>翻译成for循环：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> old_list:</span><br><span class="line">	<span class="keyword">if</span>(condition):</span><br><span class="line">		new_list.append(expression(i))</span><br></pre></td></tr></table></figure>
+<h3 id="8-类"><a href="#8-类" class="headerlink" title="8. 类"></a>8. 类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__int__</span><span class="params">(self, name, age)</span>:</span></span><br><span class="line">		self.name_ = name</span><br><span class="line">		self.age_ = age</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getName</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.name_)</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getAge</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.age_)</span><br><span class="line">		<span class="keyword">return</span> self.age_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">rename</span><span class="params">(self, new_name)</span>:</span></span><br><span class="line">		self.name_ = new_name</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line"></span><br><span class="line">p = person(<span class="string">'tom'</span>,<span class="number">34</span>)</span><br><span class="line">p.getName()</span><br><span class="line">p.rename(<span class="string">'alex'</span>)</span><br></pre></td></tr></table></figure>
+<p>•<code>__init__()</code>被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，相当于构造函数，一定要有self<br>•self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数, 这里于c++不同，空括号函数不能直接空着，而是要在定义时加入self<br>•self.name_ 加下滑线表示属性私有<br>•方法函数前面如果加个装饰器@property， 则调用时候直接调用函数名，不用加括号。例如直接调用p.getAge 不用加括号后面<br>•继承语法:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(Person)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span>  <span class="comment">#pass啥都不做，就是占个位</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown的一些语法</title>
+    <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
+<p>注：标准语法一般在#后跟个空格再写文字</p>
+<h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h2 id="2-1-无序列表（前带圆点）"><a href="#2-1-无序列表（前带圆点）" class="headerlink" title="2.1 无序列表（前带圆点）"></a>2.1 无序列表（前带圆点）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 列表内容</span><br><span class="line">+ 列表内容</span><br><span class="line">* 列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<ul>
+<li>列表1</li>
+</ul>
+<ul>
+<li>列表2</li>
+</ul>
+<ul>
+<li>列表3</li>
+</ul>
+<h2 id="2-1-有序列表（前带数字）"><a href="#2-1-有序列表（前带数字）" class="headerlink" title="2.1 有序列表（前带数字）"></a>2.1 有序列表（前带数字）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 列表内容</span><br><span class="line">2. 列表内容</span><br><span class="line">3. 列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<ol>
+<li>列表1</li>
+<li>列表2</li>
+<li>列表3</li>
+</ol>
+<h1 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3. 代码块"></a>3. 代码块</h1><p>在代码段落上下两行分别插入三个反逗号，若要代码高亮则要在反逗号后面注明是什么语言。 </p>
+<h1 id="4-插入图片所需代码"><a href="#4-插入图片所需代码" class="headerlink" title="4. 插入图片所需代码"></a>4. 插入图片所需代码</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![图片注释](图片地址 &#39;&#39;图片标题&#39;&#39;)</span><br><span class="line"></span><br><span class="line">图片注释就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片标题是当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
+<p>例：<br>插入本地图片<br><img src="/blog/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/abc.png" alt="test picture"><br><code>![test picture](./Dynamo学习笔记-1/abc.png)</code> 好像不管用…所以我把所有图片存到了云盘<br><code>&quot;&quot;</code> ？？？</p>
+<h1 id="5-改变字体颜色"><a href="#5-改变字体颜色" class="headerlink" title="5. 改变字体颜色"></a>5. 改变字体颜色</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span style&#x3D;&quot;color:red;&quot;&gt;</span><br><span class="line">#回车换行后命令失效</span><br></pre></td></tr></table></figure>
+<p><span style="color:red;"> 改变字体颜色至红</span></p>
+<h1 id="6-字体"><a href="#6-字体" class="headerlink" title="6. 字体"></a>6. 字体</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">**这是加粗的文字**</span><br><span class="line">*这是倾斜的文字*&#96;</span><br><span class="line">***这是斜体加粗的文字***</span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
+<p>例：<br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del></p>
+<h1 id="7-引用"><a href="#7-引用" class="headerlink" title="7. 引用"></a>7. 引用</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<p>这是引用的内容</p>
+</blockquote>
+</blockquote>
+<h1 id="8-分割线"><a href="#8-分割线" class="headerlink" title="8. 分割线"></a>8. 分割线</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="9-链接"><a href="#9-链接" class="headerlink" title="9. 链接"></a>9. 链接</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[超链接名](超链接地址)</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">参考资料</a></p>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Revit族学习笔记</title>
+    <url>/blog/2020/05/26/revit%E6%97%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<ul>
 <li><p>tab键可以选择一个物体上的一部分点或面</p>
 </li>
 <li><p>框选了重叠的物体可以使用过滤器Filter来分离</p>
 </li>
 <li><p>设置快捷键Q给对齐AL</p>
+<h3 id="建族基本流程"><a href="#建族基本流程" class="headerlink" title="建族基本流程"></a>建族基本流程</h3><p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590261024/%E5%BB%BA%E6%97%8F%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B_t4syka.png" alt="建族基本流程" title="建族基本流程"></p>
+</li>
+<li><p>注意族污染： 在项目内修改编辑族，要注意其族文件是保存在本地还是服务器上，覆盖族文件时候要慎重</p>
 </li>
 </ul>
-<h3 id="建族基本流程"><a href="#建族基本流程" class="headerlink" title="建族基本流程"></a>建族基本流程</h3><p>  <img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590261024/%E5%BB%BA%E6%97%8F%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B_t4syka.png" alt="建族基本流程" title="建族基本流程"></p>
-<ul>
-<li><p>注意族污染： 在项目内修改编辑族，要注意其族文件是保存在本地还是服务器上，覆盖族文件时候要慎重</p>
 <h3 id="族的可见性控制方法："><a href="#族的可见性控制方法：" class="headerlink" title="族的可见性控制方法："></a>族的可见性控制方法：</h3><ol>
 <li><p>Ansicht-Sichtbarkeit/Grafiken-Beschriftungskategorien里面控制标高Ebenen显示, 使其不要显示，防止族与标高线对齐，而不是参照平面线。</p>
 </li>
@@ -229,12 +235,11 @@
 </ol>
 <h3 id="族的架构"><a href="#族的架构" class="headerlink" title="族的架构"></a>族的架构</h3><p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590266853/%E6%97%8F%E7%9A%84%E4%B8%89%E5%B1%82%E5%88%86%E7%B1%BB_isfwy4.png" alt="族的三层分类"></p>
 <p>族样板Vorlagen; 族类别（和族参数）Familienkategorien und Parameter; 族类型Familientypen</p>
-</li>
-<li><p>族样板 .rft 分类</p>
+<ul>
+<li>族样板 .rft 分类</li>
+</ul>
 <p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590267920/123_e1x0ky.png" alt></p>
 <p>基于线里面有linie，基于面例如基于工作平面</p>
-</li>
-</ul>
 <h3 id="族类别和族参数"><a href="#族类别和族参数" class="headerlink" title="族类别和族参数"></a>族类别和族参数</h3><p>不同族类别下面对应不同的族参数，例常规模型类别的族参数有：</p>
 <ol>
 <li>基于工作平面： 基于依附一个面的</li>
@@ -289,7 +294,7 @@
 </ul>
 <h4 id="工作平面Arbeitsebene和面ebene"><a href="#工作平面Arbeitsebene和面ebene" class="headerlink" title="工作平面Arbeitsebene和面ebene"></a>工作平面Arbeitsebene和面ebene</h4><ul>
 <li>先在建referenzebene, 然后festlegen选中其做工作平面，Arbeitsebene anzeigen显示工作平面</li>
-<li>面是创建的实体上的面</li>
+<li>面ebene是创建的实体上的面</li>
 </ul>
 <h4 id="模型组-Modellgruppe"><a href="#模型组-Modellgruppe" class="headerlink" title="模型组 Modellgruppe"></a>模型组 Modellgruppe</h4><ul>
 <li>打成的组和族可在右侧项目浏览器中找到</li>
@@ -329,6 +334,32 @@
 </ul>
 <h4 id="黄尺子测量和尺寸标注测量"><a href="#黄尺子测量和尺寸标注测量" class="headerlink" title="黄尺子测量和尺寸标注测量"></a>黄尺子测量和尺寸标注测量</h4><ul>
 <li>黄尺子点下面栏kette可以连续测量，但是不会留下尺寸标注。下面的尺寸标注测量则会留下标注，可用来设定族参数。</li>
+</ul>
+<h3 id="工作平面Arbeitsebene"><a href="#工作平面Arbeitsebene" class="headerlink" title="工作平面Arbeitsebene"></a>工作平面Arbeitsebene</h3><ul>
+<li>工作平面： 物体绘制的一开始放在哪个平面上，跟物体没有绑定的关系</li>
+<li>可以点选物体，用上方菜单的拾取新的平面，将物体放在预设好的工作平面或实体面上。若要取消与面的关联，可点击菜单里的编辑工作平面，取消关联。</li>
+</ul>
+<h3 id="参照平面referenzebene"><a href="#参照平面referenzebene" class="headerlink" title="参照平面referenzebene"></a>参照平面referenzebene</h3><ul>
+<li>参照平面： 物体的某一部分贴在这个面上，然后物体跟随这个面变形或者运动</li>
+<li><span style="color:red;"><strong>建立族参数的逻辑： 建立形体 -&gt; 画参照平面 -&gt; 给参照面加上尺寸标注 -&gt; 给尺寸标注赋予参数</strong></span></li>
+<li><strong>不要在创建形体时候在草图模式里画参照平面，而是要出了草图模式后再画参照平面，与画好了的形体边绑定。</strong></li>
+<li>参照面子类别主要用来规定不同颜色和线型从而区分不同参照面</li>
+<li>参照面属性里的<strong>是参照Ist eine Referenz</strong><ol>
+<li>非参照： 将参照面将丧失作为参照面的功能当载入项目里的时候</li>
+<li>强参照：将族载入项目中时，强参照的边会与项目中的其他物体产生临时尺寸，方便定位，但一个族一般只有一条。弱参照反之就不会。</li>
+</ol>
+</li>
+<li>属性栏里面定义原点bestimmt ursprung: 两个勾选了的参照面的交点就是族的原点，即以后载入项目后鼠标的位置。</li>
+<li><strong>出现错误 不能满足约束， 原因是一条边被多个参照面约束，但是一个边只能绑定一个参照面。解决这个问题，要点下面小栏里的显示约束Abhängigkeit anzeigen，找出这个边是否以及被其他参照面约束过了。</strong></li>
+</ul>
+<h3 id="参照线-referenzlinie"><a href="#参照线-referenzlinie" class="headerlink" title="参照线 referenzlinie"></a>参照线 referenzlinie</h3><ul>
+<li>参照线的端点上也可以设置工作平面，是垂直于参照线的，<strong>按tab键选中端点</strong></li>
+</ul>
+<h4 id="族参数之参数属性：族参数-amp-共享参数"><a href="#族参数之参数属性：族参数-amp-共享参数" class="headerlink" title="族参数之参数属性：族参数&amp;共享参数"></a>族参数之参数属性：族参数&amp;共享参数</h4><ul>
+<li>族类型面板中设置族参数，可以新建编辑参数</li>
+<li><strong>参数类型有族参数Familienparameter和共享参数gemeinsam genutzter parameter, 族参数不能进入明细表bauteilliste里即可用字段verfügbare Felder中不会出现（明细表再ansicht里创建），但共享参数可以参与统计</strong></li>
+<li><strong>共享参数需要txt文档，可以点击bearbeiten新创建一个txt文档。然后再编辑共享参数的页面，先建立参数组gruppe，再建立参数parameter，所有参数都应在某一个参数族下</strong></li>
+<li><strong>小技巧</strong>：共享参数可以不与实体产生联系，即不用在实体上实现，却可以进入明细表进行统计，所以对于一些参数可以直接建共享参数统计而不一定要在几何上有所表达，可以偷懒。</li>
 </ul>
 ]]></content>
       <categories>
