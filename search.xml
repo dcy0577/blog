@@ -59,15 +59,56 @@
       </tags>
   </entry>
   <entry>
-    <title>Leistungsphasen备忘</title>
-    <url>/blog/2020/05/25/Leistungsphasen/</url>
-    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" alt title="Leistungsphasen 1-9"></p>
+    <title>Excel数据处理</title>
+    <url>/blog/2020/05/22/Excel%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h3 id="数据-分列"><a href="#数据-分列" class="headerlink" title="数据-分列"></a>数据-分列</h3><p>用于统一一列中的数据类型，两种数据类型互相转换方法(常规型，文本型)<br><strong>数据透视表</strong>，行，列，值，筛选条件 -&gt; <strong>切片器</strong>更好实现: 点击数据透视表中任意一格，插入切片器，同样适用于透视表对应的图表，点击切片器，数据可视化</p>
+<h3 id="条件格式—数据条，"><a href="#条件格式—数据条，" class="headerlink" title="条件格式—数据条，"></a>条件格式—数据条，</h3><p>突出显示单元格根据不同规则如重复值，大于小于等等</p>
+<h3 id="自定义排序："><a href="#自定义排序：" class="headerlink" title="自定义排序："></a>自定义排序：</h3><ol>
+<li>手动选取表格范围，勾选数据包含表头，则表头不会作为数据参与排序</li>
+<li>选项-高级-拉到最底-自定义序列，可以手动输入定义在自定义排序中需要的次序</li>
+</ol>
+<h3 id="筛选："><a href="#筛选：" class="headerlink" title="筛选："></a>筛选：</h3><ol>
+<li>数字筛选</li>
+<li>自动筛选： 表达且的关系，高级筛选可表达或和且的关系：复制至同一行为且的条件，不同行为或的条件</li>
+</ol>
+<h3 id="分类汇总："><a href="#分类汇总：" class="headerlink" title="分类汇总："></a>分类汇总：</h3><p>先排序再分类汇总，就不会漏；有三个层级，按左侧加号展开。可以有2种分类汇总，注意不要替换当前分类。 汇总数据无法直接复制，开始查找和选择，定位条件仅可见单元格/对象为除了数据外的图片等。</p>
+<h3 id="公式与基础函数"><a href="#公式与基础函数" class="headerlink" title="公式与基础函数"></a>公式与基础函数</h3><p>开始-查找和选择-定位条件-空值-求和/数据-分类汇总<br>开始-计数count只能计算数字不能计算文本，counta可以计算数字和文本。<br>不能拖拽时，先选中区域，在第一个输入公式，control+enter。<br>数据-模拟分析-单变量求解，目标值。</p>
+<h3 id="Vlookup"><a href="#Vlookup" class="headerlink" title="Vlookup"></a>Vlookup</h3><p>通过id找公司名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x3D;vloopup(a1,a:b,查找数据的列数，0表示精确查找&#x2F;1表示近似匹配）</span><br><span class="line">&#x3D;vlookup（要匹配的范围，原数据里范围到原数据里匹配的范围，匹配的列数，精确度0）</span><br></pre></td></tr></table></figure>
+<p>数据区间（10%会用到）近似匹配，只有数字之间才有，只找小于等于自己的最大值<br>不同格式（文本和常规数字）之间不能直接vlookup，常规转文本 加<code>&amp;“”</code> 文本转常规加<code>*1</code></p>
+<h3 id="Match和Index函数"><a href="#Match和Index函数" class="headerlink" title="Match和Index函数"></a>Match和Index函数</h3><p>match函数-找，index函数-取<br>index（查询的终极对象所在范围，match（查询的原始对象，查询原始对象范围，0））<br>拖拽时-右键-不带格式填充</p>
+<h3 id="使用函数进行统计"><a href="#使用函数进行统计" class="headerlink" title="使用函数进行统计"></a>使用函数进行统计</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sumif（条件区域，条件，需求区域）:求和</span><br><span class="line">Countif （需要区域，条件）:计数</span><br><span class="line">sumif（选择所有区域，条件，固定f4条件）:变态能力解决多列循环数据问题：原始数据格式不连贯，进行多次sumif操作麻烦</span><br><span class="line">sumifs处理多个条件函数，按照括号里提示选择</span><br><span class="line">Countifs: 多条件的vlookup，写函数要左对齐，原始数据前面加一列生成条件，vlookup（要匹配的范围，原数据里范围到原数据里匹配的范围，匹配的列数，精确度0）</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用日期函数"><a href="#使用日期函数" class="headerlink" title="使用日期函数"></a>使用日期函数</h3><ol>
+<li>推算日期，给开始，给间隔，算结束（反之也可）<br>日期+天数直接可以算<br>日期+月数 <code>date（year，month+月数，day)</code><br>日期推算固定算法-先拆后组</li>
+<li>日期间隔，已知开始和结束日期<br><code>=DATEDIF(A2,B2+1更精准,”y/m/d“)</code> </li>
+<li>标记快到期的数据<br>选中数据，复制，选择性粘贴-值，条件格式，介于，=today()，=today()+15,颜色</li>
+</ol>
+<h3 id="使用表格"><a href="#使用表格" class="headerlink" title="使用表格"></a>使用表格</h3><ol>
+<li>表格与数据透视表<br>数据透视表，数据更新如何抓取数据 （如今的数据叫数据清单list/记录）<br>插入，表格，再做数据透视表可以自动更新</li>
+<li>表格与函数<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x3D;VLOOKUP(D2,J:K,2,0)</span><br><span class="line">&#x3D;IFNA(VLOOKUP(D11,J:K,2,0),&quot;&quot;)</span><br></pre></td></tr></table></figure></li>
+<li>表格与图表<br>思路一样，把list专程table</li>
+</ol>
+<h3 id="文档安全性设置"><a href="#文档安全性设置" class="headerlink" title="文档安全性设置"></a>文档安全性设置</h3><ol>
+<li>防止其他用户在表格中乱写<br>针对固定数据范围的限制：报销金额，只允许输入500～1000的整数<br>数据-数据验证/数据有效性-设置，数据-数据验证-出错警告</li>
+<li>工作表保护-防止用户乱删<br>审阅-保护工作表<br>公式-手工录入，一半保护一半不保护<br>右键-设置单元格格式-保护-取消锁定，审阅-保护工作表-依旧可以随便改<br>锁定属性仅针对于写值<br>右键-设置单元格格式-保护-取消锁定（允许写入任何值），审阅-保护工作表-允许的动作勾选</li>
+</ol>
+<h3 id="邮件合并工具"><a href="#邮件合并工具" class="headerlink" title="邮件合并工具"></a>邮件合并工具</h3><ol>
+<li>员工信息表，word更适合打印,每页一个人的信息<br>邮件-选择收件人（把word和excel建立联系）-现有收件人-选择要链接的excel-改动的地方要插入合并域-选择<br>预览结果-滚动条 完成并合并-编辑单个文档-全部<br>邮件-统一模版-抓取数据-批量打印</li>
+<li>考试卷子<br>建立连接，出完题，邮件-开始邮件合并-目录<br>邮件合并工具-抓取数据-做好布局-合并文档</li>
+</ol>
+<h3 id="数据不规范的话"><a href="#数据不规范的话" class="headerlink" title="数据不规范的话"></a>数据不规范的话</h3><ol>
+<li>不能做透视</li>
+<li>不能vlookup</li>
+<li>动态员工信息查询做不了</li>
+<li>word无法抓取数据</li>
+</ol>
 ]]></content>
       <categories>
-        <category>informations</category>
+        <category>Excel</category>
       </categories>
       <tags>
-        <tag>LP</tag>
+        <tag>Excel</tag>
       </tags>
   </entry>
   <entry>
@@ -108,6 +149,18 @@
       </categories>
       <tags>
         <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leistungsphasen备忘</title>
+    <url>/blog/2020/05/25/Leistungsphasen/</url>
+    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" alt title="Leistungsphasen 1-9"></p>
+]]></content>
+      <categories>
+        <category>informations</category>
+      </categories>
+      <tags>
+        <tag>LP</tag>
       </tags>
   </entry>
   <entry>
@@ -157,6 +210,33 @@
       </categories>
       <tags>
         <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python一些语法备忘</title>
+    <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="1-if-else"><a href="#1-if-else" class="headerlink" title="1. if else"></a>1. if else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span></span><br><span class="line">y=<span class="string">'hello'</span></span><br><span class="line"><span class="keyword">if</span> x==<span class="number">1</span> <span class="keyword">or</span> y==<span class="string">'hello'</span>:</span><br><span class="line">	x=x+<span class="number">1</span></span><br><span class="line">	y=y+<span class="string">'world'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-Python特色语句：for-else"><a href="#2-Python特色语句：for-else" class="headerlink" title="2. Python特色语句：for else"></a>2. Python特色语句：for else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">99</span>,<span class="number">81</span>,<span class="number">-1</span>):</span><br><span class="line">	root = sqrt(n)</span><br><span class="line">	<span class="keyword">if</span> root = int(root):</span><br><span class="line">		print(n)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	print(<span class="string">'didnt find it!'</span>)</span><br></pre></td></tr></table></figure>
+<p>这条else语句对应的是知for，不是if，这个是python特有的语句。 break表示打断最近的loop, 而if不是loop，打断的是for loop， 即在for循环中，如果没有从任何一个break中退出，则会执行和for对应的else 只要从break中退出了，则else部分不执行。<br>这段话如果用C++来实现，则如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">99</span>;i&gt;<span class="number">81</span>;i--) </span><br><span class="line">&#123; </span><br><span class="line">	root=<span class="built_in">sqrt</span>(i); </span><br><span class="line">	<span class="keyword">if</span>(root==<span class="keyword">int</span>(root)) </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;i; </span><br><span class="line">		<span class="keyword">break</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span>(i==<span class="number">81</span>) <span class="comment">//边界判断 </span></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">"didn't find it!"</span>&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="3-Definations"><a href="#3-Definations" class="headerlink" title="3. Definations"></a>3. Definations</h3><p>aList = []  列表，相当于c++中的arry/vector<br>aDictionary = {}  字典, 相当于c++中的map<br>aTuple = ()  元组, 只读的，不能修改，不能像list一样有append，remove等操作</p>
+<h3 id="4-遍历输出"><a href="#4-遍历输出" class="headerlink" title="4. 遍历输出"></a>4. 遍历输出</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aList:</span><br><span class="line">	print(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> aDictionary.item()</span><br><span class="line">	print(key, value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Access Value in Dictionary by the Keys</span></span><br><span class="line">value = aDictionary[‘key’]  <span class="comment">#Key muss be string!</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-args-kwargs"><a href="#5-args-kwargs" class="headerlink" title="5. *args, **kwargs"></a>5. <code>*args</code>, <code>**kwargs</code></h3><p><code>*args</code>是位置参数，<code>**kwargs</code>是关建字参数。<code>*args</code>用来收集各种参数，其名字没有实际出现在函数签名的括号中， <code>**kwargs</code>代表了各个dictionary等关系，其名字没有实际出现在括号中，所以有了这两个东西可以在函数input括号里输入各种不同的参数而不止局限于几个自己命名的参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_kwargs</span><span class="params">(first, *args, **kwargs)</span>:</span></span><br><span class="line">	print(<span class="string">'required argument'</span>, first)</span><br><span class="line">	<span class="keyword">for</span> v <span class="keyword">in</span> args:</span><br><span class="line">		print(<span class="string">'optional argument (*args):'</span>, v)</span><br><span class="line">	<span class="keyword">for</span> k, v <span class="keyword">in</span> kwargs.item():</span><br><span class="line">		print(<span class="string">'optional argument %s (*kwargs): %s'</span>, %(k,v))</span><br><span class="line"></span><br><span class="line">test_kwargs(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,k1=<span class="number">5</span>,k2=<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#required argument: 1</span></span><br><span class="line"><span class="comment">#optional argument (*args): 2</span></span><br><span class="line"><span class="comment">#optional argument (*args): 3</span></span><br><span class="line"><span class="comment">#optional argument (*args): 4</span></span><br><span class="line"><span class="comment">#optional argument k2 (*kwargs): 6</span></span><br><span class="line"><span class="comment">#optional argument k1 (*kwargs): 5</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-装饰器"><a href="#6-装饰器" class="headerlink" title="6. 装饰器"></a>6. 装饰器</h3><p>装饰器本质上是一个 Python 函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能，装饰器的返回值也是一个函数/类对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decarator</span><span class="params">(func)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args)</span>:</span></span><br><span class="line">		<span class="comment">#可以此处添加功能如</span></span><br><span class="line">		print(<span class="string">'add funtion 1'</span>)</span><br><span class="line">		<span class="keyword">return</span> func(*args)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@decarator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(*args)</span>:</span></span><br><span class="line">	print(<span class="string">'i have'</span>, *args)</span><br><span class="line"></span><br><span class="line">test(<span class="string">'dsds'</span>,<span class="number">3</span>,<span class="string">'abc'</span>)</span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#add funtion 1</span></span><br><span class="line"><span class="comment">#i have dsds 3 abc</span></span><br></pre></td></tr></table></figure>
+<h3 id="7-列表推导式"><a href="#7-列表推导式" class="headerlink" title="7. 列表推导式"></a>7. 列表推导式</h3><p>基本语法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = [expression(i) <span class="keyword">for</span> i <span class="keyword">in</span> old_list <span class="keyword">if</span> condition(i)]</span><br></pre></td></tr></table></figure>
+<p>翻译成for循环：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> old_list:</span><br><span class="line">	<span class="keyword">if</span>(condition):</span><br><span class="line">		new_list.append(expression(i))</span><br></pre></td></tr></table></figure>
+<h3 id="8-类"><a href="#8-类" class="headerlink" title="8. 类"></a>8. 类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__int__</span><span class="params">(self, name, age)</span>:</span></span><br><span class="line">		self.name_ = name</span><br><span class="line">		self.age_ = age</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getName</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.name_)</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getAge</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.age_)</span><br><span class="line">		<span class="keyword">return</span> self.age_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">rename</span><span class="params">(self, new_name)</span>:</span></span><br><span class="line">		self.name_ = new_name</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line"></span><br><span class="line">p = person(<span class="string">'tom'</span>,<span class="number">34</span>)</span><br><span class="line">p.getName()</span><br><span class="line">p.rename(<span class="string">'alex'</span>)</span><br></pre></td></tr></table></figure>
+<p>•<code>__init__()</code>被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，相当于构造函数，一定要有self<br>•self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数, 这里于c++不同，空括号函数不能直接空着，而是要在定义时加入self<br>•self.name_ 加下滑线表示属性私有<br>•方法函数前面如果加个装饰器@property， 则调用时候直接调用函数名，不用加括号。例如直接调用p.getAge 不用加括号后面<br>•继承语法:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(Person)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span>  <span class="comment">#pass啥都不做，就是占个位</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -368,86 +448,6 @@
       </categories>
       <tags>
         <tag>revit</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Excel数据处理</title>
-    <url>/blog/2020/05/22/Excel%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h3 id="数据-分列"><a href="#数据-分列" class="headerlink" title="数据-分列"></a>数据-分列</h3><p>用于统一一列中的数据类型，两种数据类型互相转换方法(常规型，文本型)<br><strong>数据透视表</strong>，行，列，值，筛选条件 -&gt; <strong>切片器</strong>更好实现: 点击数据透视表中任意一格，插入切片器，同样适用于透视表对应的图表，点击切片器，数据可视化</p>
-<h3 id="条件格式—数据条，"><a href="#条件格式—数据条，" class="headerlink" title="条件格式—数据条，"></a>条件格式—数据条，</h3><p>突出显示单元格根据不同规则如重复值，大于小于等等</p>
-<h3 id="自定义排序："><a href="#自定义排序：" class="headerlink" title="自定义排序："></a>自定义排序：</h3><ol>
-<li>手动选取表格范围，勾选数据包含表头，则表头不会作为数据参与排序</li>
-<li>选项-高级-拉到最底-自定义序列，可以手动输入定义在自定义排序中需要的次序</li>
-</ol>
-<h3 id="筛选："><a href="#筛选：" class="headerlink" title="筛选："></a>筛选：</h3><ol>
-<li>数字筛选</li>
-<li>自动筛选： 表达且的关系，高级筛选可表达或和且的关系：复制至同一行为且的条件，不同行为或的条件</li>
-</ol>
-<h3 id="分类汇总："><a href="#分类汇总：" class="headerlink" title="分类汇总："></a>分类汇总：</h3><p>先排序再分类汇总，就不会漏；有三个层级，按左侧加号展开。可以有2种分类汇总，注意不要替换当前分类。 汇总数据无法直接复制，开始查找和选择，定位条件仅可见单元格/对象为除了数据外的图片等。</p>
-<h3 id="公式与基础函数"><a href="#公式与基础函数" class="headerlink" title="公式与基础函数"></a>公式与基础函数</h3><p>开始-查找和选择-定位条件-空值-求和/数据-分类汇总<br>开始-计数count只能计算数字不能计算文本，counta可以计算数字和文本。<br>不能拖拽时，先选中区域，在第一个输入公式，control+enter。<br>数据-模拟分析-单变量求解，目标值。</p>
-<h3 id="Vlookup"><a href="#Vlookup" class="headerlink" title="Vlookup"></a>Vlookup</h3><p>通过id找公司名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x3D;vloopup(a1,a:b,查找数据的列数，0表示精确查找&#x2F;1表示近似匹配）</span><br><span class="line">&#x3D;vlookup（要匹配的范围，原数据里范围到原数据里匹配的范围，匹配的列数，精确度0）</span><br></pre></td></tr></table></figure>
-<p>数据区间（10%会用到）近似匹配，只有数字之间才有，只找小于等于自己的最大值<br>不同格式（文本和常规数字）之间不能直接vlookup，常规转文本 加<code>&amp;“”</code> 文本转常规加<code>*1</code></p>
-<h3 id="Match和Index函数"><a href="#Match和Index函数" class="headerlink" title="Match和Index函数"></a>Match和Index函数</h3><p>match函数-找，index函数-取<br>index（查询的终极对象所在范围，match（查询的原始对象，查询原始对象范围，0））<br>拖拽时-右键-不带格式填充</p>
-<h3 id="使用函数进行统计"><a href="#使用函数进行统计" class="headerlink" title="使用函数进行统计"></a>使用函数进行统计</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sumif（条件区域，条件，需求区域）:求和</span><br><span class="line">Countif （需要区域，条件）:计数</span><br><span class="line">sumif（选择所有区域，条件，固定f4条件）:变态能力解决多列循环数据问题：原始数据格式不连贯，进行多次sumif操作麻烦</span><br><span class="line">sumifs处理多个条件函数，按照括号里提示选择</span><br><span class="line">Countifs: 多条件的vlookup，写函数要左对齐，原始数据前面加一列生成条件，vlookup（要匹配的范围，原数据里范围到原数据里匹配的范围，匹配的列数，精确度0）</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用日期函数"><a href="#使用日期函数" class="headerlink" title="使用日期函数"></a>使用日期函数</h3><ol>
-<li>推算日期，给开始，给间隔，算结束（反之也可）<br>日期+天数直接可以算<br>日期+月数 <code>date（year，month+月数，day)</code><br>日期推算固定算法-先拆后组</li>
-<li>日期间隔，已知开始和结束日期<br><code>=DATEDIF(A2,B2+1更精准,”y/m/d“)</code> </li>
-<li>标记快到期的数据<br>选中数据，复制，选择性粘贴-值，条件格式，介于，=today()，=today()+15,颜色</li>
-</ol>
-<h3 id="使用表格"><a href="#使用表格" class="headerlink" title="使用表格"></a>使用表格</h3><ol>
-<li>表格与数据透视表<br>数据透视表，数据更新如何抓取数据 （如今的数据叫数据清单list/记录）<br>插入，表格，再做数据透视表可以自动更新</li>
-<li>表格与函数<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x3D;VLOOKUP(D2,J:K,2,0)</span><br><span class="line">&#x3D;IFNA(VLOOKUP(D11,J:K,2,0),&quot;&quot;)</span><br></pre></td></tr></table></figure></li>
-<li>表格与图表<br>思路一样，把list专程table</li>
-</ol>
-<h3 id="文档安全性设置"><a href="#文档安全性设置" class="headerlink" title="文档安全性设置"></a>文档安全性设置</h3><ol>
-<li>防止其他用户在表格中乱写<br>针对固定数据范围的限制：报销金额，只允许输入500～1000的整数<br>数据-数据验证/数据有效性-设置，数据-数据验证-出错警告</li>
-<li>工作表保护-防止用户乱删<br>审阅-保护工作表<br>公式-手工录入，一半保护一半不保护<br>右键-设置单元格格式-保护-取消锁定，审阅-保护工作表-依旧可以随便改<br>锁定属性仅针对于写值<br>右键-设置单元格格式-保护-取消锁定（允许写入任何值），审阅-保护工作表-允许的动作勾选</li>
-</ol>
-<h3 id="邮件合并工具"><a href="#邮件合并工具" class="headerlink" title="邮件合并工具"></a>邮件合并工具</h3><ol>
-<li>员工信息表，word更适合打印,每页一个人的信息<br>邮件-选择收件人（把word和excel建立联系）-现有收件人-选择要链接的excel-改动的地方要插入合并域-选择<br>预览结果-滚动条 完成并合并-编辑单个文档-全部<br>邮件-统一模版-抓取数据-批量打印</li>
-<li>考试卷子<br>建立连接，出完题，邮件-开始邮件合并-目录<br>邮件合并工具-抓取数据-做好布局-合并文档</li>
-</ol>
-<h3 id="数据不规范的话"><a href="#数据不规范的话" class="headerlink" title="数据不规范的话"></a>数据不规范的话</h3><ol>
-<li>不能做透视</li>
-<li>不能vlookup</li>
-<li>动态员工信息查询做不了</li>
-<li>word无法抓取数据</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Excel</category>
-      </categories>
-      <tags>
-        <tag>Excel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python一些语法备忘</title>
-    <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="1-if-else"><a href="#1-if-else" class="headerlink" title="1. if else"></a>1. if else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span></span><br><span class="line">y=<span class="string">'hello'</span></span><br><span class="line"><span class="keyword">if</span> x==<span class="number">1</span> <span class="keyword">or</span> y==<span class="string">'hello'</span>:</span><br><span class="line">	x=x+<span class="number">1</span></span><br><span class="line">	y=y+<span class="string">'world'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-Python特色语句：for-else"><a href="#2-Python特色语句：for-else" class="headerlink" title="2. Python特色语句：for else"></a>2. Python特色语句：for else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">99</span>,<span class="number">81</span>,<span class="number">-1</span>):</span><br><span class="line">	root = sqrt(n)</span><br><span class="line">	<span class="keyword">if</span> root = int(root):</span><br><span class="line">		print(n)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	print(<span class="string">'didnt find it!'</span>)</span><br></pre></td></tr></table></figure>
-<p>这条else语句对应的是知for，不是if，这个是python特有的语句。 break表示打断最近的loop, 而if不是loop，打断的是for loop， 即在for循环中，如果没有从任何一个break中退出，则会执行和for对应的else 只要从break中退出了，则else部分不执行。<br>这段话如果用C++来实现，则如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">99</span>;i&gt;<span class="number">81</span>;i--) </span><br><span class="line">&#123; </span><br><span class="line">	root=<span class="built_in">sqrt</span>(i); </span><br><span class="line">	<span class="keyword">if</span>(root==<span class="keyword">int</span>(root)) </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;i; </span><br><span class="line">		<span class="keyword">break</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span>(i==<span class="number">81</span>) <span class="comment">//边界判断 </span></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">"didn't find it!"</span>&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="3-Definations"><a href="#3-Definations" class="headerlink" title="3. Definations"></a>3. Definations</h3><p>aList = []  列表，相当于c++中的arry/vector<br>aDictionary = {}  字典, 相当于c++中的map<br>aTuple = ()  元组, 只读的，不能修改，不能像list一样有append，remove等操作</p>
-<h3 id="4-遍历输出"><a href="#4-遍历输出" class="headerlink" title="4. 遍历输出"></a>4. 遍历输出</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aList:</span><br><span class="line">	print(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> aDictionary.item()</span><br><span class="line">	print(key, value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Access Value in Dictionary by the Keys</span></span><br><span class="line">value = aDictionary[‘key’]  <span class="comment">#Key muss be string!</span></span><br></pre></td></tr></table></figure>
-<h3 id="5-args-kwargs"><a href="#5-args-kwargs" class="headerlink" title="5. *args, **kwargs"></a>5. <code>*args</code>, <code>**kwargs</code></h3><p><code>*args</code>是位置参数，<code>**kwargs</code>是关建字参数。<code>*args</code>用来收集各种参数，其名字没有实际出现在函数签名的括号中， <code>**kwargs</code>代表了各个dictionary等关系，其名字没有实际出现在括号中，所以有了这两个东西可以在函数input括号里输入各种不同的参数而不止局限于几个自己命名的参数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_kwargs</span><span class="params">(first, *args, **kwargs)</span>:</span></span><br><span class="line">	print(<span class="string">'required argument'</span>, first)</span><br><span class="line">	<span class="keyword">for</span> v <span class="keyword">in</span> args:</span><br><span class="line">		print(<span class="string">'optional argument (*args):'</span>, v)</span><br><span class="line">	<span class="keyword">for</span> k, v <span class="keyword">in</span> kwargs.item():</span><br><span class="line">		print(<span class="string">'optional argument %s (*kwargs): %s'</span>, %(k,v))</span><br><span class="line"></span><br><span class="line">test_kwargs(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,k1=<span class="number">5</span>,k2=<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#required argument: 1</span></span><br><span class="line"><span class="comment">#optional argument (*args): 2</span></span><br><span class="line"><span class="comment">#optional argument (*args): 3</span></span><br><span class="line"><span class="comment">#optional argument (*args): 4</span></span><br><span class="line"><span class="comment">#optional argument k2 (*kwargs): 6</span></span><br><span class="line"><span class="comment">#optional argument k1 (*kwargs): 5</span></span><br></pre></td></tr></table></figure>
-<h3 id="6-装饰器"><a href="#6-装饰器" class="headerlink" title="6. 装饰器"></a>6. 装饰器</h3><p>装饰器本质上是一个 Python 函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能，装饰器的返回值也是一个函数/类对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decarator</span><span class="params">(func)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args)</span>:</span></span><br><span class="line">		<span class="comment">#可以此处添加功能如</span></span><br><span class="line">		print(<span class="string">'add funtion 1'</span>)</span><br><span class="line">		<span class="keyword">return</span> func(*args)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@decarator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(*args)</span>:</span></span><br><span class="line">	print(<span class="string">'i have'</span>, *args)</span><br><span class="line"></span><br><span class="line">test(<span class="string">'dsds'</span>,<span class="number">3</span>,<span class="string">'abc'</span>)</span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#add funtion 1</span></span><br><span class="line"><span class="comment">#i have dsds 3 abc</span></span><br></pre></td></tr></table></figure>
-<h3 id="7-列表推导式"><a href="#7-列表推导式" class="headerlink" title="7. 列表推导式"></a>7. 列表推导式</h3><p>基本语法：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = [expression(i) <span class="keyword">for</span> i <span class="keyword">in</span> old_list <span class="keyword">if</span> condition(i)]</span><br></pre></td></tr></table></figure>
-<p>翻译成for循环：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> old_list:</span><br><span class="line">	<span class="keyword">if</span>(condition):</span><br><span class="line">		new_list.append(expression(i))</span><br></pre></td></tr></table></figure>
-<h3 id="8-类"><a href="#8-类" class="headerlink" title="8. 类"></a>8. 类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__int__</span><span class="params">(self, name, age)</span>:</span></span><br><span class="line">		self.name_ = name</span><br><span class="line">		self.age_ = age</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getName</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.name_)</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getAge</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.age_)</span><br><span class="line">		<span class="keyword">return</span> self.age_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">rename</span><span class="params">(self, new_name)</span>:</span></span><br><span class="line">		self.name_ = new_name</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line"></span><br><span class="line">p = person(<span class="string">'tom'</span>,<span class="number">34</span>)</span><br><span class="line">p.getName()</span><br><span class="line">p.rename(<span class="string">'alex'</span>)</span><br></pre></td></tr></table></figure>
-<p>•<code>__init__()</code>被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，相当于构造函数，一定要有self<br>•self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数, 这里于c++不同，空括号函数不能直接空着，而是要在定义时加入self<br>•self.name_ 加下滑线表示属性私有<br>•方法函数前面如果加个装饰器@property， 则调用时候直接调用函数名，不用加括号。例如直接调用p.getAge 不用加括号后面<br>•继承语法:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(Person)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span>  <span class="comment">#pass啥都不做，就是占个位</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
       </tags>
   </entry>
 </search>
