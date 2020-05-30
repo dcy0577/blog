@@ -324,43 +324,27 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown插入数学公式</title>
-    <url>/blog/2020/05/22/Markdown%E6%8F%92%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
-    <content><![CDATA[<p>原生的Hexo并不支持数学公式的显示，需要加载Mathjax插件。MathJax使用网络字体（大部分浏览器都支持）去产生高质量的排版，使其在所有分辨率都可缩放和显示，这远比使用包含公式的图片要有效得多。使用MathJax显示数学公式是基于文本的，而非图片。它可以被搜索引擎使用，这意味着方程式和页面上的文字一样是可以被搜索的。 MathJax允许页面作者使用TeX、LaTeX符号和 MathML 或者 AsciiMath 去书写公式。</p>
-<a id="more"></a>
-<h2 id="需要在文章头添加mathjax开关"><a href="#需要在文章头添加mathjax开关" class="headerlink" title="需要在文章头添加mathjax开关"></a>需要在文章头添加mathjax开关</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: Markdown插入数学公式</span><br><span class="line">date:</span><br><span class="line">tags: markdown</span><br><span class="line">categories: markdown</span><br><span class="line">mathjax: true</span><br></pre></td></tr></table></figure>
-
-<h2 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$x_1$$</span><br><span class="line"></span><br><span class="line">$$x_1^2$$</span><br><span class="line"></span><br><span class="line">$$x^2_1$$</span><br><span class="line"></span><br><span class="line">$$x_&#123;22&#125;^&#123;(n)&#125;$$</span><br><span class="line"></span><br><span class="line">$$x_&#123;123&#125;^&#123;1234&#125;$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>x_1<br>$$</p>
-<p>$$<br>x_1^2<br>$$</p>
-<p>$$<br>x_{22}^{(n)}<br>$$</p>
-<p>$$<br>x_{123}^{1234}<br>$$</p>
-<h2 id="分式"><a href="#分式" class="headerlink" title="分式"></a>分式</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$\frac&#123;x+y&#125;&#123;2&#125;$$</span><br><span class="line"></span><br><span class="line">$$\frac&#123;1&#125;&#123;1+\frac&#123;1&#125;&#123;2&#125;&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\frac{x+y}{2}<br>$$</p>
-<p>$$<br>\frac{1}{1+\frac{1}{2}}<br>$$</p>
-<h2 id="根式"><a href="#根式" class="headerlink" title="根式"></a>根式</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$\sqrt&#123;2&#125;&lt;\sqrt[3]&#123;3&#125;$$</span><br><span class="line"></span><br><span class="line">$$\sqrt&#123;1+\sqrt[p]&#123;1+a^2&#125;&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\sqrt{2}&lt;\sqrt[3]{3}<br>$$</p>
-<p>$$<br>\sqrt{1+\sqrt[p]{1+a^2}}<br>$$</p>
-<h2 id="求和"><a href="#求和" class="headerlink" title="求和"></a>求和</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$\sum_&#123;k&#x3D;1&#125;^&#123;n&#125;\frac&#123;1&#125;&#123;k&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\sum_{k=1}^{n}\frac{1}{k}<br>$$</p>
-<h2 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$\int_a^b f(x)dx$$</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\int_a^b f(x)dx<br>$$</p>
-<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$\begin&#123;bmatrix&#125;1 &amp; 2\\\\3 &amp;4\end&#123;bmatrix&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\begin{bmatrix}1 &amp; 2\\3 &amp;4\end{bmatrix}<br>$$</p>
-<h2 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h2><p>$$<br>\begin{array}{|c|c|c|c|c|c|c|c|}<br>\hline<br>{\alpha} &amp; {\backslash alpha} &amp; {\theta} &amp; {\backslash theta} &amp; {o} &amp; {o} &amp; {\upsilon} &amp; {\backslash upsilon} \\<br>\hline<br>{\beta} &amp; {\backslash beta} &amp; {\vartheta} &amp; {\backslash vartheta} &amp; {\pi} &amp; {\backslash pi} &amp; {\phi} &amp; {\backslash phi} \\<br>\hline<br>{\gamma} &amp; {\backslash gamma} &amp; {\iota} &amp; {\backslash iota} &amp; {\varpi} &amp; {\backslash varpi} &amp; {\varphi} &amp; {\backslash varphi} \\<br>\hline<br>{\delta} &amp; {\backslash delta} &amp; {\kappa} &amp; {\backslash kappa} &amp; {\rho} &amp; {\backslash rho} &amp; {\chi} &amp; {\backslash chi} \\<br>\hline<br>{\epsilon} &amp; {\backslash epsilon} &amp; {\lambda} &amp; {\backslash lambda} &amp; {\varrho} &amp; {\backslash varrho} &amp; {\psi} &amp; {\backslash psi} \\<br>\hline<br>{\varepsilon} &amp; {\backslash varepsilon} &amp; {\mu} &amp; {\backslash mu} &amp; {\sigma} &amp; {\backslash sigma} &amp; {\omega} &amp; {\backslash omega} \\<br>\hline<br>{\zeta} &amp; {\backslash zeta} &amp; {\nu} &amp; {\backslash nu} &amp; {\varsigma} &amp; {\backslash varsigma} &amp; {} &amp; {} \\<br>\hline<br>{\eta} &amp; {\backslash eta} &amp; {\xi} &amp; {\backslash xi} &amp; {\tau} &amp; {\backslash tau} &amp; {} &amp; {} \\<br>\hline<br>{\Gamma} &amp; {\backslash Gamma} &amp; {\Lambda} &amp; {\backslash Lambda} &amp; {\Sigma} &amp; {\backslash Sigma} &amp; {\Psi} &amp; {\backslash Psi} \\<br>\hline<br>{\Delta} &amp; {\backslash Delta} &amp; {\Xi} &amp; {\backslash Xi} &amp; {\Upsilon} &amp; {\backslash Upsilon} &amp; {\Omega} &amp; {\backslash Omega} \\<br>\hline<br>{\Omega} &amp; {\backslash Omega} &amp; {\Pi} &amp; {\backslash Pi} &amp; {\Phi} &amp; {\backslash Phi} &amp; {} &amp; {} \\<br>\hline<br>\end{array}<br>$$</p>
-<h4 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h4><p><a href="https://juejin.im/post/5a6721bd518825733201c4a2" target="_blank" rel="noopener">https://juejin.im/post/5a6721bd518825733201c4a2</a></p>
-<p><a href="https://github.com/mk43/BlogResource/blob/master/LaTex/LATEX数学符号表.pdf" target="_blank" rel="noopener">https://github.com/mk43/BlogResource/blob/master/LaTex/LATEX%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7%E8%A1%A8.pdf</a></p>
+    <title>Leistungsphasen备忘</title>
+    <url>/blog/2020/05/25/Leistungsphasen/</url>
+    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" alt title="Leistungsphasen 1-9"></p>
+<h2 id="LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung"><a href="#LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung" class="headerlink" title="LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung"></a>LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung</h2><p>Der Bauantrag ist schriftlich bei der unteren Bauaufsichtsbehörde einzureichen. Mit dem Bauantrag sind alle für die Beurteilung des Bauvorhabens und die Bearbeitung des Bauantrags erforderlichen Unterlagen (Bauvorlagen) einzureichen. Näheres regeln in Deutschland die entsprechenden Rechtsverordnungen der Bundesländer (Bauvorlagenverordnungen).</p>
+<p>Ein Bauantrag besteht in Deutschland meist aus folgenden Teilen:</p>
+<ol>
+<li>Eingabeplan mit Grundrissen, Ansichten und Schnitten im Maßstab 1:100</li>
+<li>Bauantragsformular</li>
+<li>Baubeschreibung</li>
+<li>statistischer Erhebungsbogen</li>
+<li>Wärmeschutznachweis</li>
+<li>Standsicherheitsnachweis (Statische Berechnung, Statik)</li>
+<li>amtlicher Lageplan zum Bauantrag, meist im Maßstab 1:200 (kleinere Maßstäbe nur bei großen Grundstücken)</li>
+<li>ggf. weiteren notwendigen Nachweisen und Angaben, die zur Erteilung der Genehmigung von der Bauaufsichtsbehörde gefordert werden.</li>
+</ol>
 ]]></content>
       <categories>
-        <category>markdown</category>
+        <category>informations</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
+        <tag>LP</tag>
       </tags>
   </entry>
   <entry>
@@ -417,30 +401,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Leistungsphasen备忘</title>
-    <url>/blog/2020/05/25/Leistungsphasen/</url>
-    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" alt title="Leistungsphasen 1-9"></p>
-<h2 id="LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung"><a href="#LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung" class="headerlink" title="LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung"></a>LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung</h2><p>Der Bauantrag ist schriftlich bei der unteren Bauaufsichtsbehörde einzureichen. Mit dem Bauantrag sind alle für die Beurteilung des Bauvorhabens und die Bearbeitung des Bauantrags erforderlichen Unterlagen (Bauvorlagen) einzureichen. Näheres regeln in Deutschland die entsprechenden Rechtsverordnungen der Bundesländer (Bauvorlagenverordnungen).</p>
-<p>Ein Bauantrag besteht in Deutschland meist aus folgenden Teilen:</p>
-<ol>
-<li>Eingabeplan mit Grundrissen, Ansichten und Schnitten im Maßstab 1:100</li>
-<li>Bauantragsformular</li>
-<li>Baubeschreibung</li>
-<li>statistischer Erhebungsbogen</li>
-<li>Wärmeschutznachweis</li>
-<li>Standsicherheitsnachweis (Statische Berechnung, Statik)</li>
-<li>amtlicher Lageplan zum Bauantrag, meist im Maßstab 1:200 (kleinere Maßstäbe nur bei großen Grundstücken)</li>
-<li>ggf. weiteren notwendigen Nachweisen und Angaben, die zur Erteilung der Genehmigung von der Bauaufsichtsbehörde gefordert werden.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>informations</category>
-      </categories>
-      <tags>
-        <tag>LP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python一些语法备忘</title>
     <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>总结了一些Python的语法</p>
@@ -468,6 +428,46 @@
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown插入数学公式</title>
+    <url>/blog/2020/05/22/Markdown%E6%8F%92%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
+    <content><![CDATA[<p>原生的Hexo并不支持数学公式的显示，需要加载Mathjax插件。MathJax使用网络字体（大部分浏览器都支持）去产生高质量的排版，使其在所有分辨率都可缩放和显示，这远比使用包含公式的图片要有效得多。使用MathJax显示数学公式是基于文本的，而非图片。它可以被搜索引擎使用，这意味着方程式和页面上的文字一样是可以被搜索的。 MathJax允许页面作者使用TeX、LaTeX符号和 MathML 或者 AsciiMath 去书写公式。</p>
+<a id="more"></a>
+<h2 id="需要在文章头添加mathjax开关"><a href="#需要在文章头添加mathjax开关" class="headerlink" title="需要在文章头添加mathjax开关"></a>需要在文章头添加mathjax开关</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: Markdown插入数学公式</span><br><span class="line">date:</span><br><span class="line">tags: markdown</span><br><span class="line">categories: markdown</span><br><span class="line">mathjax: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$x_1$$</span><br><span class="line"></span><br><span class="line">$$x_1^2$$</span><br><span class="line"></span><br><span class="line">$$x^2_1$$</span><br><span class="line"></span><br><span class="line">$$x_&#123;22&#125;^&#123;(n)&#125;$$</span><br><span class="line"></span><br><span class="line">$$x_&#123;123&#125;^&#123;1234&#125;$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>x_1<br>$$</p>
+<p>$$<br>x_1^2<br>$$</p>
+<p>$$<br>x_{22}^{(n)}<br>$$</p>
+<p>$$<br>x_{123}^{1234}<br>$$</p>
+<h2 id="分式"><a href="#分式" class="headerlink" title="分式"></a>分式</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$\frac&#123;x+y&#125;&#123;2&#125;$$</span><br><span class="line"></span><br><span class="line">$$\frac&#123;1&#125;&#123;1+\frac&#123;1&#125;&#123;2&#125;&#125;$$</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\frac{x+y}{2}<br>$$</p>
+<p>$$<br>\frac{1}{1+\frac{1}{2}}<br>$$</p>
+<h2 id="根式"><a href="#根式" class="headerlink" title="根式"></a>根式</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$\sqrt&#123;2&#125;&lt;\sqrt[3]&#123;3&#125;$$</span><br><span class="line"></span><br><span class="line">$$\sqrt&#123;1+\sqrt[p]&#123;1+a^2&#125;&#125;$$</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\sqrt{2}&lt;\sqrt[3]{3}<br>$$</p>
+<p>$$<br>\sqrt{1+\sqrt[p]{1+a^2}}<br>$$</p>
+<h2 id="求和"><a href="#求和" class="headerlink" title="求和"></a>求和</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$\sum_&#123;k&#x3D;1&#125;^&#123;n&#125;\frac&#123;1&#125;&#123;k&#125;$$</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\sum_{k=1}^{n}\frac{1}{k}<br>$$</p>
+<h2 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$\int_a^b f(x)dx$$</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\int_a^b f(x)dx<br>$$</p>
+<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$\begin&#123;bmatrix&#125;1 &amp; 2\\\\3 &amp;4\end&#123;bmatrix&#125;$$</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\begin{bmatrix}1 &amp; 2\\3 &amp;4\end{bmatrix}<br>$$</p>
+<h2 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h2><p>$$<br>\begin{array}{|c|c|c|c|c|c|c|c|}<br>\hline<br>{\alpha} &amp; {\backslash alpha} &amp; {\theta} &amp; {\backslash theta} &amp; {o} &amp; {o} &amp; {\upsilon} &amp; {\backslash upsilon} \\<br>\hline<br>{\beta} &amp; {\backslash beta} &amp; {\vartheta} &amp; {\backslash vartheta} &amp; {\pi} &amp; {\backslash pi} &amp; {\phi} &amp; {\backslash phi} \\<br>\hline<br>{\gamma} &amp; {\backslash gamma} &amp; {\iota} &amp; {\backslash iota} &amp; {\varpi} &amp; {\backslash varpi} &amp; {\varphi} &amp; {\backslash varphi} \\<br>\hline<br>{\delta} &amp; {\backslash delta} &amp; {\kappa} &amp; {\backslash kappa} &amp; {\rho} &amp; {\backslash rho} &amp; {\chi} &amp; {\backslash chi} \\<br>\hline<br>{\epsilon} &amp; {\backslash epsilon} &amp; {\lambda} &amp; {\backslash lambda} &amp; {\varrho} &amp; {\backslash varrho} &amp; {\psi} &amp; {\backslash psi} \\<br>\hline<br>{\varepsilon} &amp; {\backslash varepsilon} &amp; {\mu} &amp; {\backslash mu} &amp; {\sigma} &amp; {\backslash sigma} &amp; {\omega} &amp; {\backslash omega} \\<br>\hline<br>{\zeta} &amp; {\backslash zeta} &amp; {\nu} &amp; {\backslash nu} &amp; {\varsigma} &amp; {\backslash varsigma} &amp; {} &amp; {} \\<br>\hline<br>{\eta} &amp; {\backslash eta} &amp; {\xi} &amp; {\backslash xi} &amp; {\tau} &amp; {\backslash tau} &amp; {} &amp; {} \\<br>\hline<br>{\Gamma} &amp; {\backslash Gamma} &amp; {\Lambda} &amp; {\backslash Lambda} &amp; {\Sigma} &amp; {\backslash Sigma} &amp; {\Psi} &amp; {\backslash Psi} \\<br>\hline<br>{\Delta} &amp; {\backslash Delta} &amp; {\Xi} &amp; {\backslash Xi} &amp; {\Upsilon} &amp; {\backslash Upsilon} &amp; {\Omega} &amp; {\backslash Omega} \\<br>\hline<br>{\Omega} &amp; {\backslash Omega} &amp; {\Pi} &amp; {\backslash Pi} &amp; {\Phi} &amp; {\backslash Phi} &amp; {} &amp; {} \\<br>\hline<br>\end{array}<br>$$</p>
+<h4 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h4><p><a href="https://juejin.im/post/5a6721bd518825733201c4a2" target="_blank" rel="noopener">https://juejin.im/post/5a6721bd518825733201c4a2</a></p>
+<p><a href="https://github.com/mk43/BlogResource/blob/master/LaTex/LATEX数学符号表.pdf" target="_blank" rel="noopener">https://github.com/mk43/BlogResource/blob/master/LaTex/LATEX%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7%E8%A1%A8.pdf</a></p>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -520,6 +520,102 @@
       </categories>
       <tags>
         <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于simplex算法的非线性优化</title>
+    <url>/blog/2020/05/30/%E5%9F%BA%E4%BA%8Esimplex%E7%AE%97%E6%B3%95%E7%9A%84%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<h1 id="Non-linear-Optimisation-Linearisation"><a href="#Non-linear-Optimisation-Linearisation" class="headerlink" title="Non-linear Optimisation/Linearisation"></a>Non-linear Optimisation/Linearisation</h1><h2 id="1-1-Assignment"><a href="#1-1-Assignment" class="headerlink" title="1.1           Assignment"></a>1.1           Assignment</h2><p>In the lecture script the following assignment is given: Within the activities to rearrange the outside facilities of an IGA (‘Internationale Gartenausstellung’) area at several locations one of two mobile units – a mobile drill unit and a mobile crane - will be required. Since installation efforts are high a many operations as possible should be combined to one more extended operation. Yet, shifting single activities to fit into the lager operation also requires effort leading to a two-dimensional optimisation problem: The construction period will be 3 years and these data are given furthermore:</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852710/Optimiereung/1_uuxxiy.png" alt></p>
+<p>Elaborate, how many assignments are optimally to be combined. Therefore, linearise the target function regarding total cost sufficiently accurate and use the Simplex-Algorithm to calculate.</p>
+<h2 id="1-2-The-Target-Functions"><a href="#1-2-The-Target-Functions" class="headerlink" title="1.2           The Target Functions"></a>1.2           The Target Functions</h2><p>After collating the information in the above task, we can obtain the parameters needed to build the target functions and mark them in red in the following table. The local cost c is obtained by multiplying the parameter  s1  by the parameter s2. In addition, based on the total number of assignments and the construction period, we can get the number of assignments e in one year. </p>
+<p>Table 1.1 Parameters of target functions</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th>mobile dill</th>
+<th>mobile crane</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Fixed cost  E (€)</td>
+<td>1250</td>
+<td>1915</td>
+</tr>
+<tr>
+<td align="left">duration s1 (h)</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr>
+<td align="left">cost/h  s2  (€/h)</td>
+<td>450</td>
+<td>250</td>
+</tr>
+<tr>
+<td align="left">local cost  c (€)</td>
+<td>1800</td>
+<td>750</td>
+</tr>
+<tr>
+<td align="left">relocate device cost (€) s3</td>
+<td>100</td>
+<td>70</td>
+</tr>
+<tr>
+<td align="left">Total number of assignments e</td>
+<td>90</td>
+<td>150</td>
+</tr>
+<tr>
+<td align="left">construction period (a)</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td align="left">number of assignments  e (in one  year)</td>
+<td>30</td>
+<td>50</td>
+</tr>
+<tr>
+<td align="left">cost v for reschedule an assignment (€/day)</td>
+<td>47</td>
+<td>35</td>
+</tr>
+</tbody></table>
+<p>The formula of the Target function is as follows. It mainly describes the relationship between the number of assignments and the cost. It is obviously non-linear.<br>$$<br>k = E<em>e/x+e</em>(c+s_3)+x/5<em>v</em>365<br>$$<br>By substituting the values in the above table into the formula, the cost curve k1 of mobile drill and the cost curve k2 of mobile crane can be obtained respectively:</p>
+<p>mobile drill k1:<br>$$<br>k(x)=  37500/x+3431x+57000<br>$$<br>mobile crane k2:<br>$$<br>k(x)=  95750/x+2555x+41000<br>$$<br>Table 1.2 Excel-table: Costs for different x</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852709/Optimiereung/231_lkuhu6.png" alt></p>
+<p>Figure 1.1 Cost curves k1 and k2</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530172644434_ggju3v.png" alt></p>
+<h2 id="1-3-Linearisation"><a href="#1-3-Linearisation" class="headerlink" title="1.3           Linearisation"></a>1.3           Linearisation</h2><h3 id="1-3-1-General-Approach"><a href="#1-3-1-General-Approach" class="headerlink" title="1.3.1        General Approach"></a>1.3.1        General Approach</h3><p>Non-linear target functions can be modified using linearization approach. The principle of this approach is replacing the non-linear function by polygonal chains. The function can be written as a summation over terms which contain only one variable each. Then these terms can be approximated as polygonal chain. (Eber, 10/2018) Hence, a function G (x1, x2 ,…xi) needs to be given as: </p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530172915979_tm1kik.png" alt> <img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530172938109_llyscb.png" alt></p>
+<p>Then each of the terms can be approximated:</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530172951156_auepkj.png" alt></p>
+<h3 id="1-3-2-Linearisation-mobile-drill-k1"><a href="#1-3-2-Linearisation-mobile-drill-k1" class="headerlink" title="1.3.2        Linearisation mobile drill k1"></a>1.3.2        Linearisation mobile drill k1</h3><p>From the table and diagram in the previous chapter we can estimate the range where the optimal number of assignments is located. So we intercepted the curve of the target function in the x range of 1 to 11, and then divided x in 10 intervals form 1 to 11.</p>
+<p>Figure 1.3 Divide x in 10 intervals</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530173000798_sd7iwr.png" alt><br>$$<br>k(x)=  37500/x+3431x+57000<br>$$<br><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590853827/Optimiereung/123123_kgcdor.png" alt></p>
+<p>In order to simplify the polynomial, the constant terms such as k(1), k(2),…k(10) can be ignored because they don’t influence our x - value. In addition, (x-1), (x-2),…(x-10) in the polynomial are equivalent to x1, x2,… x10. From the above two points we can simplify the polynomial and make it to our new target function as follows:</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590853827/Optimiereung/23144_hkwkjc.png" alt></p>
+<p>The new boundary conditions:<br>$$<br>0≤x_1,x_2,…x_{10}≤1<br>$$<br>We can now solve this linear problem using the online simplex calculator: (<a href="https://linprog.com/main-simplex-method/result" target="_blank" rel="noopener">https://linprog.com/main-simplex-method/result</a>)</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530173013193_sitym2.png" alt></p>
+<p>which means:<br>$$<br>x_1=x_2=1,x_3…x_{10}=0<br>$$<br>Figure 1.4 Using polygonal chain to find x</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530173019715_kgqo70.png" alt><br>$$<br>∴x=1+[1+1]=3,k(3)=79793<br>$$<br><strong>Solution:</strong> For mobile drill, 3 assignments per year cause the least cost.</p>
+<h3 id="1-3-3-Linearisation-mobile-crane-k2"><a href="#1-3-3-Linearisation-mobile-crane-k2" class="headerlink" title="1.3.3       Linearisation mobile crane k2"></a>1.3.3       Linearisation mobile crane k2</h3><p>Similar to the mobile drill we also intercepted the curve of the target function in the x range of 1 to 11, and then divided x in 10 intervals from 1 to 11.<br>$$<br>k(x)=  95750/x+2555x+41000<br>$$<br><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590853827/Optimiereung/21312412_e7nhzx.png" alt></p>
+<p>Simplify the polynomial to get new target function:</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590853827/Optimiereung/3123_gji19b.png" alt></p>
+<p>Boundary conditions:<br>$$<br>0≤x_1,x_2,…x_{10}≤1<br>$$<br>Solve this linear problem using the online simplex calculator: (<a href="https://linprog.com/main-simplex-method/result" target="_blank" rel="noopener">https://linprog.com/main-simplex-method/result</a>)</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530173027453_jbew8r.png" alt></p>
+<p>which means:<br>$$<br>x_1=x_2=x_3=x_4=x_5=1,x_6…x_{10}=0<br>$$<br>Figure 1.5 Using polygonal chain to find x</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852676/Optimiereung/image-20200530173035374_zwp1if.png" alt><br>$$<br>∴x=1+[1+1+1+1+1]=6,k(6)=72288.33<br>$$<br><strong>Solution:</strong> For mobile crane, 6 assignments per year cause the least cost.</p>
+<h2 id="1-4-Conclusion"><a href="#1-4-Conclusion" class="headerlink" title="1.4           Conclusion"></a>1.4           Conclusion</h2><p>According to the calculation, the optimal assignment combination is: 3 assignments per year for mobile drill + 6 assignments per year for mobile crane. The cost of this combination is 152,081.33€ per year.</p>
+]]></content>
+      <categories>
+        <category>Optimiereungsverfahren</category>
+      </categories>
+      <tags>
+        <tag>Optimierungsverfahren</tag>
       </tags>
   </entry>
   <entry>
