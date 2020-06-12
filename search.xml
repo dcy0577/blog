@@ -19,6 +19,30 @@
       </tags>
   </entry>
   <entry>
+    <title>Leistungsphasen备忘</title>
+    <url>/blog/2020/05/25/Leistungsphasen/</url>
+    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" alt title="Leistungsphasen 1-9"></p>
+<h2 id="LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung"><a href="#LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung" class="headerlink" title="LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung"></a>LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung</h2><p>Der Bauantrag ist schriftlich bei der unteren Bauaufsichtsbehörde einzureichen. Mit dem Bauantrag sind alle für die Beurteilung des Bauvorhabens und die Bearbeitung des Bauantrags erforderlichen Unterlagen (Bauvorlagen) einzureichen. Näheres regeln in Deutschland die entsprechenden Rechtsverordnungen der Bundesländer (Bauvorlagenverordnungen).</p>
+<p>Ein Bauantrag besteht in Deutschland meist aus folgenden Teilen:</p>
+<ol>
+<li>Eingabeplan mit Grundrissen, Ansichten und Schnitten im Maßstab 1:100</li>
+<li>Bauantragsformular</li>
+<li>Baubeschreibung</li>
+<li>statistischer Erhebungsbogen</li>
+<li>Wärmeschutznachweis</li>
+<li>Standsicherheitsnachweis (Statische Berechnung, Statik)</li>
+<li>amtlicher Lageplan zum Bauantrag, meist im Maßstab 1:200 (kleinere Maßstäbe nur bei großen Grundstücken)</li>
+<li>ggf. weiteren notwendigen Nachweisen und Angaben, die zur Erteilung der Genehmigung von der Bauaufsichtsbehörde gefordert werden.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>informations</category>
+      </categories>
+      <tags>
+        <tag>LP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Dynamo学习笔记</title>
     <url>/blog/2020/05/22/Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</url>
     <content><![CDATA[<ul>
@@ -77,79 +101,287 @@
       </tags>
   </entry>
   <entry>
-    <title>Leistungsphasen备忘</title>
-    <url>/blog/2020/05/25/Leistungsphasen/</url>
-    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" alt title="Leistungsphasen 1-9"></p>
-<h2 id="LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung"><a href="#LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung" class="headerlink" title="LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung"></a>LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung</h2><p>Der Bauantrag ist schriftlich bei der unteren Bauaufsichtsbehörde einzureichen. Mit dem Bauantrag sind alle für die Beurteilung des Bauvorhabens und die Bearbeitung des Bauantrags erforderlichen Unterlagen (Bauvorlagen) einzureichen. Näheres regeln in Deutschland die entsprechenden Rechtsverordnungen der Bundesländer (Bauvorlagenverordnungen).</p>
-<p>Ein Bauantrag besteht in Deutschland meist aus folgenden Teilen:</p>
+    <title>BIM的一些基础概念整理</title>
+    <url>/blog/2020/05/30/BIM%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<p>基于课堂资料整理汇总了一些基本概念。</p>
+<a id="more"></a>
+
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/1_tnsgfn.png" alt></p>
+<p>3D Geometric model: 3D wireframe + 3D surface models + 3D solid models</p>
+<p>Solid model : explicit models  + implicit models</p>
+<h3 id="Explicit-models"><a href="#Explicit-models" class="headerlink" title="Explicit models"></a>Explicit models</h3><p>Boundary representation: describe a solid by means of its boundary, basic components: faces, edges, vertices</p>
+<p>Example:</p>
 <ol>
-<li>Eingabeplan mit Grundrissen, Ansichten und Schnitten im Maßstab 1:100</li>
-<li>Bauantragsformular</li>
-<li>Baubeschreibung</li>
-<li>statistischer Erhebungsbogen</li>
-<li>Wärmeschutznachweis</li>
-<li>Standsicherheitsnachweis (Statische Berechnung, Statik)</li>
-<li>amtlicher Lageplan zum Bauantrag, meist im Maßstab 1:200 (kleinere Maßstäbe nur bei großen Grundstücken)</li>
-<li>ggf. weiteren notwendigen Nachweisen und Angaben, die zur Erteilung der Genehmigung von der Bauaufsichtsbehörde gefordert werden.</li>
+<li><p>Triangulated Face Set : 缺点: </p>
+<ul>
+<li><p>only plane faces </p>
+</li>
+<li><p>curved surfaces -&gt; many triangles </p>
+</li>
+<li><p>vertices are stored multiple times </p>
+</li>
+<li><p>neighbourhood relationships are not stored -&gt; gaps and overlaps are hard to detect</p>
+</li>
+</ul>
+</li>
+<li><p>Indexed Face Set: IFC  </p>
+<ul>
+<li>vertex coordinates are stored only once </li>
+<li>each vertex gets an ID (=Index) </li>
+<li>faces refer to indices</li>
+</ul>
+</li>
+<li><p>High-end Boundary Models: </p>
+<ul>
+<li>additional edge table </li>
+<li>faces refer to edges, edges refer to vertices </li>
+<li>each edge is referred by two faces; consistency checks </li>
+<li>allows to describe curved edges</li>
+</ul>
+</li>
 </ol>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/3_eqeew1.png" alt></p>
+<p><strong>ACIS</strong> is a <a href="https://en.wikipedia.org/wiki/Geometric_modeling_kernel" target="_blank" rel="noopener">geometric modeling kernel</a>, SAT file read it</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/4_gokpjf.png" alt></p>
+<h3 id="Implicit-Models"><a href="#Implicit-Models" class="headerlink" title="Implicit Models"></a>Implicit Models</h3><p>Extrusion 推 and Rotation Geometry几何图形 to build a solid</p>
+<h4 id="Constructive-Solid-Geometry-CSG"><a href="#Constructive-Solid-Geometry-CSG" class="headerlink" title="Constructive Solid Geometry (CSG)"></a>Constructive Solid Geometry (CSG)</h4><ul>
+<li>set of primitive objects </li>
+<li>combination by Boolean operations (union, intersection, difference) </li>
+<li>tree structure</li>
+</ul>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590846748/BIM/1231_mkzcxs.png" alt></p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/5_uoiesj.png" alt></p>
+<h3 id="Parametric-Modeling"><a href="#Parametric-Modeling" class="headerlink" title="Parametric Modeling"></a>Parametric Modeling</h3><h4 id="Object-based-parametric-modelling-autocad-architecture"><a href="#Object-based-parametric-modelling-autocad-architecture" class="headerlink" title="Object-based parametric modelling: autocad architecture"></a><strong>Object-based parametric modelling</strong>: autocad architecture</h4><ul>
+<li><p>parameters = attributes of objects defining shape and/or location</p>
+</li>
+<li><p>objects have pre-defined geometric and non-geometric attributes</p>
+</li>
+<li><p>Advantages : pre-defined types offer tight integration of geometry and semantics-&gt; important for downstream applications </p>
+</li>
+<li><p>Limitations : inflexibility regarding „non standard“ types / shapes</p>
+</li>
+</ul>
+<h4 id="Sketch-based-parametric-modelling-autocad"><a href="#Sketch-based-parametric-modelling-autocad" class="headerlink" title="Sketch-based parametric modelling: autocad"></a><strong>Sketch-based parametric modelling:</strong> autocad</h4><ul>
+<li><p>Parameters = explicitly defined parameters of the geometric model</p>
+</li>
+<li><p>Advantages: 1. very powerful constraint system 2. rapid development of the parametric model Limitations</p>
+</li>
+<li><p>Limitations : 1. no semantics 2. complexity can become very high (hardly manageable)</p>
+</li>
+</ul>
+<h4 id="Graph-based-parametric-modeling-rhnio"><a href="#Graph-based-parametric-modeling-rhnio" class="headerlink" title="Graph-based parametric modeling: rhnio"></a><strong>Graph-based parametric modeling:</strong> rhnio</h4><ul>
+<li><p>Parametrics = Location and shape of model elements is steered by visual program </p>
+</li>
+<li><p>Advantages: widely adopted by designers; form-finding process </p>
+</li>
+<li><p>Limitations: pure 3D, no semantics -&gt;no standards-conforming drawings -&gt; limited usability for downstream applications (simulations etc.)</p>
+</li>
+</ul>
+<h4 id="Parametric-BIM-Modelers-revit"><a href="#Parametric-BIM-Modelers-revit" class="headerlink" title="Parametric BIM Modelers: revit"></a><strong>Parametric BIM Modelers:</strong> revit</h4><ul>
+<li>combine object-based modeling with parametric geometry -&gt; user define families</li>
+</ul>
+<p>-&gt; <strong>Object-oriented Modeling:</strong>  Objects combining geometry and semantics</p>
+<ul>
+<li>Catalogue of parametric object types (Walls, Columns, Doors, Windows, etc.) </li>
+<li>objects have geometric and non-geometric attributes </li>
+<li>necessary for downstream applications (simulation, analysis, quantity take-off) </li>
+</ul>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/6_rgptkj.png" alt></p>
+<h3 id="Industry-Foundation-Classes-IFC"><a href="#Industry-Foundation-Classes-IFC" class="headerlink" title="Industry Foundation Classes (IFC)"></a>Industry Foundation Classes (IFC)</h3><ul>
+<li><p>standardized data model for the exchange of Building Information Models -&gt; geometry and semantics!!</p>
+</li>
+<li><p>IFC is based on the ISO-Standard STEP (ISO 10303) </p>
+</li>
+<li><p>STEP: <strong>ST</strong>andard for the <strong>E</strong>xchange of <strong>P</strong>roduct model data: Product Model = Geometry + Semantics</p>
+</li>
+</ul>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/7_lxjolm.png" alt></p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/8_dvbkoo.png" alt></p>
+<h3 id="Model-View-Definition-MVD"><a href="#Model-View-Definition-MVD" class="headerlink" title="Model View Definition (MVD)"></a>Model View Definition (MVD)</h3><ul>
+<li><p>a model view defines a subset of the full IFC schema; 以下是Pre-defined IFC Model Views by buildingSMART </p>
+</li>
+<li><p>IFC 2x3:  - Coordination view - Structural analysis view - Facility management handover view </p>
+</li>
+<li><p>IFC 4: - Reference view - Design Transfer View</p>
+</li>
+</ul>
+<h3 id="Standard-IFC-Export-from-Revit"><a href="#Standard-IFC-Export-from-Revit" class="headerlink" title="Standard IFC-Export from Revit"></a>Standard IFC-Export from Revit</h3><p>All user-defined Revit Families will be exported as <em>IfcBuildingElementProxy,</em> Revit-Parameters will not exported correctly / completely</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/9_tlac26.png" alt></p>
+<p><strong>Solution:</strong> Use of familiy parameters IfcExportAs / IfcExportType </p>
+<ul>
+<li><p>IfcExportAs (sets a specific IFC class or prevents export: DontExport) </p>
+</li>
+<li><p>IfcExportType (sets a defined type [subcategory] of an IFC class)</p>
+</li>
+</ul>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/10_fefza5.png" alt></p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/11_llivns.png" alt></p>
+<h3 id="Sustainability"><a href="#Sustainability" class="headerlink" title="Sustainability"></a>Sustainability</h3><p>Green building certification system; DGNB; BIM 又多了2个D</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/12_mjwdfq.png" alt></p>
+<p><strong>Daylight factor (DF)</strong> </p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/13_yhnw8d.png" alt></p>
+<p>It is defined as the ratio of the indoor illuminance to the outdoor horizontal illuminance under the overcast CIE sky. The major weakness of the daylight factor is that the orientation of the investigated building does not influence the daylight factor since the CIE reference sky is rotationally invariant and independent of the geographical latitude of the investigated building.</p>
+<h3 id="Daylight-Autonomy-DA"><a href="#Daylight-Autonomy-DA" class="headerlink" title="Daylight Autonomy (DA)"></a>Daylight Autonomy (DA)</h3><p>The daylight autonomy at a point in a building is defined as the percentage of occupied hours per year, when the minimum illuminance level can be maintained by daylight alone.单独仅使用自然光照的时间百分比 In contrast to the more commonly used daylight factor, the daylight autonomy considers all sky conditions throughout the year. A daylight autonomy of 70% for a work place with working hours on weekdays between 8 a.m. and 6 p.m. and a minimum illuminance levels of 500 lux implies that the occupant can – in principle – work 70% of the year by daylight alone.</p>
+<h3 id="Useful-Daylight-Illuminances-UDI"><a href="#Useful-Daylight-Illuminances-UDI" class="headerlink" title="Useful Daylight Illuminances (UDI)"></a>Useful Daylight Illuminances (UDI)</h3><p>As its name suggests, it aims to determine when daylight levels are ‘useful’ for the occupant, i.e. neither too dark（&lt; 100 lux）nor too bright (&gt;2000 lux). Based on the upper and lower thresholds of 2000 lux and 100 lux, UDI results in three metrics, i.e. the percentages of the occupied times of the year when the UDI was achieved (100-2000lux), fell-short (&lt;100 lux), or was exceeded (&gt; 2000 lux).</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845966/BIM/14_tpyy5g.png" alt></p>
+<h3 id="spatial-Daylight-Autonomy-sDA"><a href="#spatial-Daylight-Autonomy-sDA" class="headerlink" title="spatial Daylight Autonomy (sDA)"></a>spatial Daylight Autonomy (sDA)</h3><p>sDA is the percent of analysis points across the analysis area that meet or exceed _DLAIllumThresholds value (set to 300 lux for LEED) for at least 50% of the analysis period. One number for the space.</p>
+<h3 id="LCA"><a href="#LCA" class="headerlink" title="LCA"></a>LCA</h3><p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/15_smhrlz.png" alt></p>
+<h3 id="Collaboration"><a href="#Collaboration" class="headerlink" title="Collaboration"></a><strong>Collaboration</strong></h3><h4 id="Synchronous-collaboration"><a href="#Synchronous-collaboration" class="headerlink" title="Synchronous collaboration"></a>Synchronous collaboration</h4><ul>
+<li><p>simultaneous work on the same subject </p>
+</li>
+<li><p>examples: Google Docs, Microsoft OneDrive (Collaborative writing) </p>
+</li>
+</ul>
+<h4 id="Asynchronous-collaboration"><a href="#Asynchronous-collaboration" class="headerlink" title="Asynchronous collaboration"></a>Asynchronous collaboration</h4><ul>
+<li><p>temporally separated collaboration </p>
+</li>
+<li><p>examples: email, DropBox; <strong>major form of collaboration in design &amp; engineering</strong></p>
+</li>
+</ul>
+<h4 id="Synchronous-collaboration-1"><a href="#Synchronous-collaboration-1" class="headerlink" title="Synchronous collaboration"></a>Synchronous collaboration</h4><ul>
+<li><p>explicit synchronization = invoked by the user </p>
+</li>
+<li><p>implicit synchronization = done automatically in the background </p>
+</li>
+</ul>
+<p>Concurrency Control: Locks prevent the simultaneous modification of the same object.</p>
+<p><u>retrieve lock-&gt; modification -&gt;release lock</u></p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/16_kmuw6j.png" alt></p>
+<h4 id="Issue-Tracking-in-asynchronous-collaboration"><a href="#Issue-Tracking-in-asynchronous-collaboration" class="headerlink" title="Issue Tracking in asynchronous collaboration"></a>Issue Tracking in asynchronous collaboration</h4><ul>
+<li><p>Errors / issues to the responsible model authors </p>
+</li>
+<li><p>BIM Collaboration Format (BCF)</p>
+</li>
+</ul>
+<h3 id="BIM-Collaboration-Format-BCF-Usage-of-BCF-for-Issue-Management"><a href="#BIM-Collaboration-Format-BCF-Usage-of-BCF-for-Issue-Management" class="headerlink" title="BIM Collaboration Format (BCF) : Usage of BCF for Issue Management"></a>BIM Collaboration Format (BCF) : Usage of BCF for Issue Management</h3><ul>
+<li>BuildingSMART standard </li>
+<li>transports issues <ul>
+<li>Request for Information (RFI) </li>
+<li>Request for Change (RFC) </li>
+</ul>
+</li>
+<li>very helpful technology for cross-discipline coordination </li>
+<li>ZIP-File containing : <ul>
+<li>XML-File: which model element are highlighted, shown, hidden; camera position, direction and zoom ; textual description of the issue </li>
+<li>Screenshot</li>
+</ul>
+</li>
+</ul>
+<h3 id="Common-Data-Environment-CDE-defines-principles-of-how-models-are-stored-and-accessed-in-a-central-system"><a href="#Common-Data-Environment-CDE-defines-principles-of-how-models-are-stored-and-accessed-in-a-central-system" class="headerlink" title="Common Data Environment (CDE) : defines principles of how models are stored and accessed in a central system"></a><strong>Common Data Environment (CDE) :</strong> defines principles of how models are stored and accessed in a central system</h3><ul>
+<li>sub-models are created independently</li>
+<li>merged in regular intervals into a coordination model </li>
+<li>resolve all clashes </li>
+<li>model statuses: - work in progress (WIP) - shared - published - archived </li>
+<li>transition between statuses requires approval</li>
+</ul>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/17_n8rouk.png" alt></p>
+<h3 id="BS-PAS-1192-2-2013-gt-BIM-project-execution"><a href="#BS-PAS-1192-2-2013-gt-BIM-project-execution" class="headerlink" title="BS PAS 1192-2:2013 -&gt; BIM project execution"></a>BS PAS 1192-2:2013 -&gt; BIM project execution</h3><ul>
+<li>describes general BIM practices </li>
+<li>BIM project procurement; BIM requirements; data management </li>
+<li>leaves details to individual projects </li>
+<li>used throughout out the world as basis for BIM contracts</li>
+</ul>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845963/BIM/19_hmypkm.png" alt></p>
+<p>Start point of BIM project: <strong>Employer‘s Information Requirements (EIR):</strong> they set out clearly to the bidder <strong>what models are required</strong> and <strong>what the purposes of the models will be ; defines goals of the BIM project, define BIM use cases, define model content, e.g. level of development, classification system</strong> </p>
+<h3 id="Level-of-Development-LOD-Level-of-Geometry-Level-of-Information"><a href="#Level-of-Development-LOD-Level-of-Geometry-Level-of-Information" class="headerlink" title="Level of Development (LOD) : Level of Geometry + Level of Information"></a>Level of Development (LOD) : Level of Geometry + Level of Information</h3><p> <img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/20_z7szrv.png" alt></p>
+<ul>
+<li>LOD100: symbol or other generic representation. </li>
+<li>LOD200: approximate quantities, size, shape, location, and orientation. </li>
+<li>LOD300: specific system, object or assembly </li>
+<li>LOD350: and interfaces with other building systems. </li>
+<li>LOD400: with detailing, fabrication, assembly, and installation information. </li>
+<li>LOD500: The Model Element is a <strong>field verified r</strong>epresentation in terms of size, shape, location, quantity, and orientation.</li>
+</ul>
+<p><strong>There is no strict correspondence between LODs and design phases:</strong> project models at any stage of delivery will invariably contain elements at different levels of development.</p>
+<h3 id="Classification-Systems"><a href="#Classification-Systems" class="headerlink" title="Classification Systems :"></a>Classification Systems :</h3><p>OmniClass (US), Uniclass (UK), DIN276 (DE), ASB-ING</p>
+<h3 id="BIM-Execution-Plan-（BEP）"><a href="#BIM-Execution-Plan-（BEP）" class="headerlink" title="BIM Execution Plan （BEP）"></a>BIM Execution Plan （BEP）</h3><ul>
+<li><p>Created by the bidder(投标人) in response to the <strong>Employer’s Information Requirements (EIR)</strong></p>
+</li>
+<li><p>Typically includes detailed information: </p>
+<ul>
+<li>BIM use cases: </li>
+<li>BIM workflow and data management </li>
+<li>Model contents: model elements, classification, levels of detail, file formats, coordinate system, etc. </li>
+<li>Delivery: responsibilities, milestones, 2D and 3D, etc</li>
+</ul>
+</li>
+<li><p>Master Information Delivery Plan：part of BEP, lists information deliverables </p>
+</li>
+</ul>
+<h3 id="Information-Delivery-Manual-IDM"><a href="#Information-Delivery-Manual-IDM" class="headerlink" title="Information Delivery Manual (IDM):"></a>Information Delivery Manual (IDM):</h3><ul>
+<li><p>describes processes and information flows for planning, constructing and operating buildings</p>
+</li>
+<li><p>definition of the information, which is exchanged between the participants</p>
+</li>
+<li><p>the resulting document forms the basis for contracts and software implementation / certification</p>
+</li>
+<li><p>describes processes and exchange requirements </p>
+</li>
+<li><p>Business Process Modeling Notation (BPMN) </p>
+</li>
+</ul>
+<h3 id="Model-View-Definition-MVD-1"><a href="#Model-View-Definition-MVD-1" class="headerlink" title="Model View Definition (MVD)"></a>Model View Definition (MVD)</h3><ul>
+<li><p>technical implementation for specifying data needs </p>
+</li>
+<li><p>defines a subset of the IFC schema </p>
+</li>
+<li><p>for realizing a specific data-exchange scenario</p>
+</li>
+</ul>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/21_n0rpqr.png" alt></p>
+<h3 id="BuildingSMART-Development-and-maintenance-of-international-standards-for-open-BIM"><a href="#BuildingSMART-Development-and-maintenance-of-international-standards-for-open-BIM" class="headerlink" title="BuildingSMART: Development and maintenance of international standards for open BIM"></a>BuildingSMART: Development and maintenance of international standards for open BIM</h3><ul>
+<li>Processes - information delivery manuals </li>
+<li>Data Dictionary - it maintains the <strong>International Framework for Dictionaries</strong> (IFD) Library </li>
+<li>Data model - the organization manages the software neutral <strong>Industry Foundation Classes (IFC)</strong> data model </li>
+<li>BIM Collaboration Format - structured file format suited to issue tracking (BCF) </li>
+</ul>
+<h3 id="CityGML-City-Geography-Markup-Language"><a href="#CityGML-City-Geography-Markup-Language" class="headerlink" title="CityGML = City Geography Markup Language"></a>CityGML = City Geography Markup Language</h3><p>Standard for storing and transferring virtual 3D city and regional models, Representation in four aspects - <strong>geometry , topology, semantics and appearance for all 3D geo-objects</strong></p>
+<p>UIM – Urban Information Model : It aims at modeling the knowledge of urban environment.</p>
+<p>CIM – City Information Model</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/22_wy7fl0.png" alt></p>
 ]]></content>
       <categories>
-        <category>informations</category>
+        <category>BIM</category>
       </categories>
       <tags>
-        <tag>LP</tag>
+        <tag>BIM</tag>
       </tags>
   </entry>
   <entry>
-    <title>Markdown的一些语法</title>
-    <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
-<p>注：标准语法一般在#后跟个空格再写文字</p>
-<h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h2 id="2-1-无序列表（前带圆点）"><a href="#2-1-无序列表（前带圆点）" class="headerlink" title="2.1 无序列表（前带圆点）"></a>2.1 无序列表（前带圆点）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">- </span>列表内容</span><br><span class="line"><span class="bullet">+ </span>列表内容</span><br><span class="line"><span class="bullet">* </span>列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<ul>
-<li>列表1</li>
+    <title>Revit二次开发</title>
+    <url>/blog/2020/06/12/Revit%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<h2 id="开发环境配置"><a href="#开发环境配置" class="headerlink" title="开发环境配置"></a>开发环境配置</h2><ul>
+<li>Visual Studio 2019, .Net桌面开发</li>
+<li>Revit 2019</li>
+<li>Revit 2019 SDK(software development kit) : 在Add-In Manager文档内修改配置文件Autodesk.AddInManager.addin，在[TARGET]中写入文件当前路径。复制配置文件C:\ProgramData\Autodesk\Revit\Addins\2019。写入的配置文件出现在revit-附加模块-外部工具中。</li>
 </ul>
-<ul>
-<li>列表2</li>
-</ul>
-<ul>
-<li>列表3</li>
-</ul>
-<h2 id="2-1-有序列表（前带数字）"><a href="#2-1-有序列表（前带数字）" class="headerlink" title="2.1 有序列表（前带数字）"></a>2.1 有序列表（前带数字）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1. </span>列表内容</span><br><span class="line"><span class="bullet">2. </span>列表内容</span><br><span class="line"><span class="bullet">3. </span>列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<ol>
-<li>列表1</li>
-<li>列表2</li>
-<li>列表3</li>
+<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><ol>
+<li><p>VS中新建.Net frameworkl Class Libraray(类库) 项目</p>
+</li>
+<li><p>在reference里面添加新的引用，浏览到revit安装目录下，添加RevitAPI.dll和RevitAPIUI.dll</p>
+</li>
+<li><p>选中两个dll去到属性里面把复制本地copy local改成false</p>
+</li>
+<li><p>代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using Autodesk.Revit.Attributes;</span><br><span class="line">using Autodesk.Revit.DB;</span><br><span class="line">using Autodesk.Revit.UI;</span><br><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace HelloWorld</span><br><span class="line">&#123;</span><br><span class="line">    [Transaction(TransactionMode.Manual)]</span><br><span class="line">    public class HelloRevit : IExternalCommand</span><br><span class="line">    &#123;</span><br><span class="line">        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)</span><br><span class="line">        &#123;</span><br><span class="line">            TaskDialog.Show(&quot;Window&quot;, &quot;Hello World!&quot;);</span><br><span class="line">            return Result.Succeeded;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Build - Build solution; Output中可查看生成的dll路径, 将其复制</p>
+</li>
+<li><p>打开revit，选择addin-manager,load中输入路径载入dll文件，选择run后即可加载运行。</p>
+</li>
 </ol>
-<h1 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3. 代码块"></a>3. 代码块</h1><p>在代码段落上下两行分别插入三个反逗号，若要代码高亮则要在反逗号后面注明是什么语言。 </p>
-<h1 id="4-插入图片所需代码"><a href="#4-插入图片所需代码" class="headerlink" title="4. 插入图片所需代码"></a>4. 插入图片所需代码</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">描述</span>](<span class="link">图片链接 ''图片标题''</span>)</span><br><span class="line">![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>) 连续写就是并排显示图片</span><br><span class="line"></span><br><span class="line">描述就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片标题是当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
-<p>例：<br>插入本地图片<br><img src="/blog/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/abc.png" alt="test picture"><br><code>![test picture](./Dynamo学习笔记-1/abc.png)</code> 好像不管用…所以我把所有图片存到了云盘<br><code>&quot;&quot;</code> ？？？</p>
-<h1 id="5-改变字体颜色"><a href="#5-改变字体颜色" class="headerlink" title="5. 改变字体颜色"></a>5. 改变字体颜色</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color:red;"</span>&gt;</span></span></span><br><span class="line"><span class="section">#回车换行后命令失效</span></span><br></pre></td></tr></table></figure>
-<p><span style="color:red;"> 改变字体颜色至红</span></p>
-<h1 id="6-字体"><a href="#6-字体" class="headerlink" title="6. 字体"></a>6. 字体</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**这是加粗的文字**</span></span><br><span class="line"><span class="emphasis">*这是倾斜的文字*</span>`</span><br><span class="line"><span class="strong">***这是斜体加粗的文字**</span>*</span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
-<p>例：<br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del></p>
-<h1 id="7-引用"><a href="#7-引用" class="headerlink" title="7. 引用"></a>7. 引用</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这是引用的内容</p>
-<blockquote>
-<p>这是引用的内容</p>
-</blockquote>
-</blockquote>
-<h1 id="8-分割线"><a href="#8-分割线" class="headerlink" title="8. 分割线"></a>8. 分割线</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="9-生成首页摘要"><a href="#9-生成首页摘要" class="headerlink" title="9. 生成首页摘要"></a>9. 生成首页摘要</h1><p>在Markdown文档中添加<code>&lt;!-- more --&gt;</code>，代码上面的全是摘要</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这里是摘要</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- more --&gt;</span></span></span><br><span class="line">这里是正文</span><br></pre></td></tr></table></figure>
+<h2 id="C-的一些基础"><a href="#C-的一些基础" class="headerlink" title="C#的一些基础"></a>C#的一些基础</h2><p>驼峰命名法：首字母小写，后面单词首字母大写</p>
+<p>帕斯卡命名法：首字母大写，后面单词首字母也大写</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace ConsoleAppTest</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        public static float GetPrice(int cout1, float singelPrice1, int cout2, float singelPrice2)</span><br><span class="line">        &#123;</span><br><span class="line">            float totalPrice &#x3D; cout1 * singelPrice1 + cout2 * singelPrice2;</span><br><span class="line">            Console.WriteLine(&quot;this is:&quot;+ totalPrice);&#x2F;&#x2F;输出语法</span><br><span class="line">            return totalPrice;</span><br><span class="line">        &#125;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            GetPrice(2, 2.5f, 4, 3.5f);&#x2F;&#x2F;小数编译器默认double双精度类型，float要在数字后加f</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="10-链接"><a href="#10-链接" class="headerlink" title="10. 链接"></a>10. 链接</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">超链接名</span>](<span class="link">超链接地址</span>)</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">本文参考资料</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;类</span><br><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace ConsoleAppTest</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        public class Human</span><br><span class="line">        &#123;</span><br><span class="line">            public Human(String name, Gender gender, int age) &#x2F;&#x2F;构造函数,不写的话会自动构建空的默认构造函数</span><br><span class="line">            &#123;</span><br><span class="line">                Name &#x3D; name;</span><br><span class="line">                Gender &#x3D; gender;</span><br><span class="line">                Age &#x3D; age;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            public static long Population &#x3D; 700000000000; &#x2F;&#x2F;静态字段可以通过类名直接调用，而不用跟非静态字段一样实例化类;方法也同理，如果方法是修饰整个类的，那么就加static</span><br><span class="line">            public int age; &#x2F;&#x2F;字段</span><br><span class="line">            public int Age &#x2F;&#x2F;属性Property,相当于字段的升级版，可以对字段进行一些控制</span><br><span class="line">            &#123;</span><br><span class="line">                get &#123; return age; &#125; &#x2F;&#x2F;get 访问器获取age</span><br><span class="line">                set                 &#x2F;&#x2F;set 访问器控制字段age,age如果小于0,则输出19</span><br><span class="line">                &#123;</span><br><span class="line">                    if (value &lt; 0)</span><br><span class="line">                        age &#x3D; 19;</span><br><span class="line">                    else</span><br><span class="line">                        age &#x3D; value;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            public string Name &#123; get; set; &#125;&#x2F;&#x2F;属性，不加get,set就是字段，但此处set没做修改，写成字段方式效果一样</span><br><span class="line">            public Gender Gender &#123; get; set; &#125;&#x2F;&#x2F;属性 &#x2F;&#x2F; 枚举类型定义在class外</span><br><span class="line">           </span><br><span class="line">            public void Greeting() &#x2F;&#x2F;方法</span><br><span class="line">            &#123;</span><br><span class="line">                string words &#x3D; string.Format(&quot;hello, my name is &#123;0&#125;, I am &#123;1&#125; years old, I am a &#123;2&#125;&quot;, Name, Age, Gender); &#x2F;&#x2F;string的一种替换转换</span><br><span class="line">                string words1 &#x3D; $&quot;hello, my name is &#123;Name&#125;, I am &#123;Age&#125; years old, I am a &#123;Gender&#125;&quot;; &#x2F;&#x2F; 简便写法，效果同上</span><br><span class="line">                Console.WriteLine(words);</span><br><span class="line">                Console.WriteLine(words1);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        public enum Gender &#123; Male, Female &#125; &#x2F;&#x2F;枚举类型定义</span><br><span class="line">        public class Student : Human &#x2F;&#x2F;继承</span><br><span class="line">        &#123;</span><br><span class="line">            public Student(string name, Gender gender, int age) : base(name, gender, age) &#x2F;&#x2F;母类有构造函数时候派生类也需要有相应的</span><br><span class="line">            &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Human person1 &#x3D; new Human(&quot;Tom&quot;,Gender.Male,17); &#x2F;&#x2F;有构造函数后这个括号不能空白,枚举类型的调用方法；实例化</span><br><span class="line">            person1.Age &#x3D; 27;</span><br><span class="line">            person1.Greeting();</span><br><span class="line">            Console.WriteLine(Human.Population);</span><br><span class="line">            Student student &#x3D; new Student(&quot;jack&quot;, Gender.Male, 20);</span><br><span class="line">            student.Greeting();</span><br><span class="line">            Console.WriteLine(Student.Population);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>markdown</category>
+        <category>Revit, C#</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
+        <tag>Revit, C#</tag>
       </tags>
   </entry>
   <entry>
@@ -405,280 +637,55 @@
       </tags>
   </entry>
   <entry>
-    <title>BIM的一些基础概念整理</title>
-    <url>/blog/2020/05/30/BIM%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<p>基于课堂资料整理汇总了一些基本概念。</p>
-<a id="more"></a>
-
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/1_tnsgfn.png" alt></p>
-<p>3D Geometric model: 3D wireframe + 3D surface models + 3D solid models</p>
-<p>Solid model : explicit models  + implicit models</p>
-<h3 id="Explicit-models"><a href="#Explicit-models" class="headerlink" title="Explicit models"></a>Explicit models</h3><p>Boundary representation: describe a solid by means of its boundary, basic components: faces, edges, vertices</p>
-<p>Example:</p>
+    <title>Markdown的一些语法</title>
+    <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
+<p>注：标准语法一般在#后跟个空格再写文字</p>
+<h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h2 id="2-1-无序列表（前带圆点）"><a href="#2-1-无序列表（前带圆点）" class="headerlink" title="2.1 无序列表（前带圆点）"></a>2.1 无序列表（前带圆点）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">- </span>列表内容</span><br><span class="line"><span class="bullet">+ </span>列表内容</span><br><span class="line"><span class="bullet">* </span>列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<ul>
+<li>列表1</li>
+</ul>
+<ul>
+<li>列表2</li>
+</ul>
+<ul>
+<li>列表3</li>
+</ul>
+<h2 id="2-1-有序列表（前带数字）"><a href="#2-1-有序列表（前带数字）" class="headerlink" title="2.1 有序列表（前带数字）"></a>2.1 有序列表（前带数字）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1. </span>列表内容</span><br><span class="line"><span class="bullet">2. </span>列表内容</span><br><span class="line"><span class="bullet">3. </span>列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
+<p>例：</p>
 <ol>
-<li><p>Triangulated Face Set : 缺点: </p>
-<ul>
-<li><p>only plane faces </p>
-</li>
-<li><p>curved surfaces -&gt; many triangles </p>
-</li>
-<li><p>vertices are stored multiple times </p>
-</li>
-<li><p>neighbourhood relationships are not stored -&gt; gaps and overlaps are hard to detect</p>
-</li>
-</ul>
-</li>
-<li><p>Indexed Face Set: IFC  </p>
-<ul>
-<li>vertex coordinates are stored only once </li>
-<li>each vertex gets an ID (=Index) </li>
-<li>faces refer to indices</li>
-</ul>
-</li>
-<li><p>High-end Boundary Models: </p>
-<ul>
-<li>additional edge table </li>
-<li>faces refer to edges, edges refer to vertices </li>
-<li>each edge is referred by two faces; consistency checks </li>
-<li>allows to describe curved edges</li>
-</ul>
-</li>
+<li>列表1</li>
+<li>列表2</li>
+<li>列表3</li>
 </ol>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/3_eqeew1.png" alt></p>
-<p><strong>ACIS</strong> is a <a href="https://en.wikipedia.org/wiki/Geometric_modeling_kernel" target="_blank" rel="noopener">geometric modeling kernel</a>, SAT file read it</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/4_gokpjf.png" alt></p>
-<h3 id="Implicit-Models"><a href="#Implicit-Models" class="headerlink" title="Implicit Models"></a>Implicit Models</h3><p>Extrusion 推 and Rotation Geometry几何图形 to build a solid</p>
-<h4 id="Constructive-Solid-Geometry-CSG"><a href="#Constructive-Solid-Geometry-CSG" class="headerlink" title="Constructive Solid Geometry (CSG)"></a>Constructive Solid Geometry (CSG)</h4><ul>
-<li>set of primitive objects </li>
-<li>combination by Boolean operations (union, intersection, difference) </li>
-<li>tree structure</li>
-</ul>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590846748/BIM/1231_mkzcxs.png" alt></p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/5_uoiesj.png" alt></p>
-<h3 id="Parametric-Modeling"><a href="#Parametric-Modeling" class="headerlink" title="Parametric Modeling"></a>Parametric Modeling</h3><h4 id="Object-based-parametric-modelling-autocad-architecture"><a href="#Object-based-parametric-modelling-autocad-architecture" class="headerlink" title="Object-based parametric modelling: autocad architecture"></a><strong>Object-based parametric modelling</strong>: autocad architecture</h4><ul>
-<li><p>parameters = attributes of objects defining shape and/or location</p>
-</li>
-<li><p>objects have pre-defined geometric and non-geometric attributes</p>
-</li>
-<li><p>Advantages : pre-defined types offer tight integration of geometry and semantics-&gt; important for downstream applications </p>
-</li>
-<li><p>Limitations : inflexibility regarding „non standard“ types / shapes</p>
-</li>
-</ul>
-<h4 id="Sketch-based-parametric-modelling-autocad"><a href="#Sketch-based-parametric-modelling-autocad" class="headerlink" title="Sketch-based parametric modelling: autocad"></a><strong>Sketch-based parametric modelling:</strong> autocad</h4><ul>
-<li><p>Parameters = explicitly defined parameters of the geometric model</p>
-</li>
-<li><p>Advantages: 1. very powerful constraint system 2. rapid development of the parametric model Limitations</p>
-</li>
-<li><p>Limitations : 1. no semantics 2. complexity can become very high (hardly manageable)</p>
-</li>
-</ul>
-<h4 id="Graph-based-parametric-modeling-rhnio"><a href="#Graph-based-parametric-modeling-rhnio" class="headerlink" title="Graph-based parametric modeling: rhnio"></a><strong>Graph-based parametric modeling:</strong> rhnio</h4><ul>
-<li><p>Parametrics = Location and shape of model elements is steered by visual program </p>
-</li>
-<li><p>Advantages: widely adopted by designers; form-finding process </p>
-</li>
-<li><p>Limitations: pure 3D, no semantics -&gt;no standards-conforming drawings -&gt; limited usability for downstream applications (simulations etc.)</p>
-</li>
-</ul>
-<h4 id="Parametric-BIM-Modelers-revit"><a href="#Parametric-BIM-Modelers-revit" class="headerlink" title="Parametric BIM Modelers: revit"></a><strong>Parametric BIM Modelers:</strong> revit</h4><ul>
-<li>combine object-based modeling with parametric geometry -&gt; user define families</li>
-</ul>
-<p>-&gt; <strong>Object-oriented Modeling:</strong>  Objects combining geometry and semantics</p>
-<ul>
-<li>Catalogue of parametric object types (Walls, Columns, Doors, Windows, etc.) </li>
-<li>objects have geometric and non-geometric attributes </li>
-<li>necessary for downstream applications (simulation, analysis, quantity take-off) </li>
-</ul>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/6_rgptkj.png" alt></p>
-<h3 id="Industry-Foundation-Classes-IFC"><a href="#Industry-Foundation-Classes-IFC" class="headerlink" title="Industry Foundation Classes (IFC)"></a>Industry Foundation Classes (IFC)</h3><ul>
-<li><p>standardized data model for the exchange of Building Information Models -&gt; geometry and semantics!!</p>
-</li>
-<li><p>IFC is based on the ISO-Standard STEP (ISO 10303) </p>
-</li>
-<li><p>STEP: <strong>ST</strong>andard for the <strong>E</strong>xchange of <strong>P</strong>roduct model data: Product Model = Geometry + Semantics</p>
-</li>
-</ul>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/7_lxjolm.png" alt></p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/8_dvbkoo.png" alt></p>
-<h3 id="Model-View-Definition-MVD"><a href="#Model-View-Definition-MVD" class="headerlink" title="Model View Definition (MVD)"></a>Model View Definition (MVD)</h3><ul>
-<li><p>a model view defines a subset of the full IFC schema; 以下是Pre-defined IFC Model Views by buildingSMART </p>
-</li>
-<li><p>IFC 2x3:  - Coordination view - Structural analysis view - Facility management handover view </p>
-</li>
-<li><p>IFC 4: - Reference view - Design Transfer View</p>
-</li>
-</ul>
-<h3 id="Standard-IFC-Export-from-Revit"><a href="#Standard-IFC-Export-from-Revit" class="headerlink" title="Standard IFC-Export from Revit"></a>Standard IFC-Export from Revit</h3><p>All user-defined Revit Families will be exported as <em>IfcBuildingElementProxy,</em> Revit-Parameters will not exported correctly / completely</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/9_tlac26.png" alt></p>
-<p><strong>Solution:</strong> Use of familiy parameters IfcExportAs / IfcExportType </p>
-<ul>
-<li><p>IfcExportAs (sets a specific IFC class or prevents export: DontExport) </p>
-</li>
-<li><p>IfcExportType (sets a defined type [subcategory] of an IFC class)</p>
-</li>
-</ul>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/10_fefza5.png" alt></p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/11_llivns.png" alt></p>
-<h3 id="Sustainability"><a href="#Sustainability" class="headerlink" title="Sustainability"></a>Sustainability</h3><p>Green building certification system; DGNB; BIM 又多了2个D</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/12_mjwdfq.png" alt></p>
-<p><strong>Daylight factor (DF)</strong> </p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/13_yhnw8d.png" alt></p>
-<p>It is defined as the ratio of the indoor illuminance to the outdoor horizontal illuminance under the overcast CIE sky. The major weakness of the daylight factor is that the orientation of the investigated building does not influence the daylight factor since the CIE reference sky is rotationally invariant and independent of the geographical latitude of the investigated building.</p>
-<h3 id="Daylight-Autonomy-DA"><a href="#Daylight-Autonomy-DA" class="headerlink" title="Daylight Autonomy (DA)"></a>Daylight Autonomy (DA)</h3><p>The daylight autonomy at a point in a building is defined as the percentage of occupied hours per year, when the minimum illuminance level can be maintained by daylight alone.单独仅使用自然光照的时间百分比 In contrast to the more commonly used daylight factor, the daylight autonomy considers all sky conditions throughout the year. A daylight autonomy of 70% for a work place with working hours on weekdays between 8 a.m. and 6 p.m. and a minimum illuminance levels of 500 lux implies that the occupant can – in principle – work 70% of the year by daylight alone.</p>
-<h3 id="Useful-Daylight-Illuminances-UDI"><a href="#Useful-Daylight-Illuminances-UDI" class="headerlink" title="Useful Daylight Illuminances (UDI)"></a>Useful Daylight Illuminances (UDI)</h3><p>As its name suggests, it aims to determine when daylight levels are ‘useful’ for the occupant, i.e. neither too dark（&lt; 100 lux）nor too bright (&gt;2000 lux). Based on the upper and lower thresholds of 2000 lux and 100 lux, UDI results in three metrics, i.e. the percentages of the occupied times of the year when the UDI was achieved (100-2000lux), fell-short (&lt;100 lux), or was exceeded (&gt; 2000 lux).</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845966/BIM/14_tpyy5g.png" alt></p>
-<h3 id="spatial-Daylight-Autonomy-sDA"><a href="#spatial-Daylight-Autonomy-sDA" class="headerlink" title="spatial Daylight Autonomy (sDA)"></a>spatial Daylight Autonomy (sDA)</h3><p>sDA is the percent of analysis points across the analysis area that meet or exceed _DLAIllumThresholds value (set to 300 lux for LEED) for at least 50% of the analysis period. One number for the space.</p>
-<h3 id="LCA"><a href="#LCA" class="headerlink" title="LCA"></a>LCA</h3><p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/15_smhrlz.png" alt></p>
-<h3 id="Collaboration"><a href="#Collaboration" class="headerlink" title="Collaboration"></a><strong>Collaboration</strong></h3><h4 id="Synchronous-collaboration"><a href="#Synchronous-collaboration" class="headerlink" title="Synchronous collaboration"></a>Synchronous collaboration</h4><ul>
-<li><p>simultaneous work on the same subject </p>
-</li>
-<li><p>examples: Google Docs, Microsoft OneDrive (Collaborative writing) </p>
-</li>
-</ul>
-<h4 id="Asynchronous-collaboration"><a href="#Asynchronous-collaboration" class="headerlink" title="Asynchronous collaboration"></a>Asynchronous collaboration</h4><ul>
-<li><p>temporally separated collaboration </p>
-</li>
-<li><p>examples: email, DropBox; <strong>major form of collaboration in design &amp; engineering</strong></p>
-</li>
-</ul>
-<h4 id="Synchronous-collaboration-1"><a href="#Synchronous-collaboration-1" class="headerlink" title="Synchronous collaboration"></a>Synchronous collaboration</h4><ul>
-<li><p>explicit synchronization = invoked by the user </p>
-</li>
-<li><p>implicit synchronization = done automatically in the background </p>
-</li>
-</ul>
-<p>Concurrency Control: Locks prevent the simultaneous modification of the same object.</p>
-<p><u>retrieve lock-&gt; modification -&gt;release lock</u></p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/16_kmuw6j.png" alt></p>
-<h4 id="Issue-Tracking-in-asynchronous-collaboration"><a href="#Issue-Tracking-in-asynchronous-collaboration" class="headerlink" title="Issue Tracking in asynchronous collaboration"></a>Issue Tracking in asynchronous collaboration</h4><ul>
-<li><p>Errors / issues to the responsible model authors </p>
-</li>
-<li><p>BIM Collaboration Format (BCF)</p>
-</li>
-</ul>
-<h3 id="BIM-Collaboration-Format-BCF-Usage-of-BCF-for-Issue-Management"><a href="#BIM-Collaboration-Format-BCF-Usage-of-BCF-for-Issue-Management" class="headerlink" title="BIM Collaboration Format (BCF) : Usage of BCF for Issue Management"></a>BIM Collaboration Format (BCF) : Usage of BCF for Issue Management</h3><ul>
-<li>BuildingSMART standard </li>
-<li>transports issues <ul>
-<li>Request for Information (RFI) </li>
-<li>Request for Change (RFC) </li>
-</ul>
-</li>
-<li>very helpful technology for cross-discipline coordination </li>
-<li>ZIP-File containing : <ul>
-<li>XML-File: which model element are highlighted, shown, hidden; camera position, direction and zoom ; textual description of the issue </li>
-<li>Screenshot</li>
-</ul>
-</li>
-</ul>
-<h3 id="Common-Data-Environment-CDE-defines-principles-of-how-models-are-stored-and-accessed-in-a-central-system"><a href="#Common-Data-Environment-CDE-defines-principles-of-how-models-are-stored-and-accessed-in-a-central-system" class="headerlink" title="Common Data Environment (CDE) : defines principles of how models are stored and accessed in a central system"></a><strong>Common Data Environment (CDE) :</strong> defines principles of how models are stored and accessed in a central system</h3><ul>
-<li>sub-models are created independently</li>
-<li>merged in regular intervals into a coordination model </li>
-<li>resolve all clashes </li>
-<li>model statuses: - work in progress (WIP) - shared - published - archived </li>
-<li>transition between statuses requires approval</li>
-</ul>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/17_n8rouk.png" alt></p>
-<h3 id="BS-PAS-1192-2-2013-gt-BIM-project-execution"><a href="#BS-PAS-1192-2-2013-gt-BIM-project-execution" class="headerlink" title="BS PAS 1192-2:2013 -&gt; BIM project execution"></a>BS PAS 1192-2:2013 -&gt; BIM project execution</h3><ul>
-<li>describes general BIM practices </li>
-<li>BIM project procurement; BIM requirements; data management </li>
-<li>leaves details to individual projects </li>
-<li>used throughout out the world as basis for BIM contracts</li>
-</ul>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845963/BIM/19_hmypkm.png" alt></p>
-<p>Start point of BIM project: <strong>Employer‘s Information Requirements (EIR):</strong> they set out clearly to the bidder <strong>what models are required</strong> and <strong>what the purposes of the models will be ; defines goals of the BIM project, define BIM use cases, define model content, e.g. level of development, classification system</strong> </p>
-<h3 id="Level-of-Development-LOD-Level-of-Geometry-Level-of-Information"><a href="#Level-of-Development-LOD-Level-of-Geometry-Level-of-Information" class="headerlink" title="Level of Development (LOD) : Level of Geometry + Level of Information"></a>Level of Development (LOD) : Level of Geometry + Level of Information</h3><p> <img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/20_z7szrv.png" alt></p>
-<ul>
-<li>LOD100: symbol or other generic representation. </li>
-<li>LOD200: approximate quantities, size, shape, location, and orientation. </li>
-<li>LOD300: specific system, object or assembly </li>
-<li>LOD350: and interfaces with other building systems. </li>
-<li>LOD400: with detailing, fabrication, assembly, and installation information. </li>
-<li>LOD500: The Model Element is a <strong>field verified r</strong>epresentation in terms of size, shape, location, quantity, and orientation.</li>
-</ul>
-<p><strong>There is no strict correspondence between LODs and design phases:</strong> project models at any stage of delivery will invariably contain elements at different levels of development.</p>
-<h3 id="Classification-Systems"><a href="#Classification-Systems" class="headerlink" title="Classification Systems :"></a>Classification Systems :</h3><p>OmniClass (US), Uniclass (UK), DIN276 (DE), ASB-ING</p>
-<h3 id="BIM-Execution-Plan-（BEP）"><a href="#BIM-Execution-Plan-（BEP）" class="headerlink" title="BIM Execution Plan （BEP）"></a>BIM Execution Plan （BEP）</h3><ul>
-<li><p>Created by the bidder(投标人) in response to the <strong>Employer’s Information Requirements (EIR)</strong></p>
-</li>
-<li><p>Typically includes detailed information: </p>
-<ul>
-<li>BIM use cases: </li>
-<li>BIM workflow and data management </li>
-<li>Model contents: model elements, classification, levels of detail, file formats, coordinate system, etc. </li>
-<li>Delivery: responsibilities, milestones, 2D and 3D, etc</li>
-</ul>
-</li>
-<li><p>Master Information Delivery Plan：part of BEP, lists information deliverables </p>
-</li>
-</ul>
-<h3 id="Information-Delivery-Manual-IDM"><a href="#Information-Delivery-Manual-IDM" class="headerlink" title="Information Delivery Manual (IDM):"></a>Information Delivery Manual (IDM):</h3><ul>
-<li><p>describes processes and information flows for planning, constructing and operating buildings</p>
-</li>
-<li><p>definition of the information, which is exchanged between the participants</p>
-</li>
-<li><p>the resulting document forms the basis for contracts and software implementation / certification</p>
-</li>
-<li><p>describes processes and exchange requirements </p>
-</li>
-<li><p>Business Process Modeling Notation (BPMN) </p>
-</li>
-</ul>
-<h3 id="Model-View-Definition-MVD-1"><a href="#Model-View-Definition-MVD-1" class="headerlink" title="Model View Definition (MVD)"></a>Model View Definition (MVD)</h3><ul>
-<li><p>technical implementation for specifying data needs </p>
-</li>
-<li><p>defines a subset of the IFC schema </p>
-</li>
-<li><p>for realizing a specific data-exchange scenario</p>
-</li>
-</ul>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/21_n0rpqr.png" alt></p>
-<h3 id="BuildingSMART-Development-and-maintenance-of-international-standards-for-open-BIM"><a href="#BuildingSMART-Development-and-maintenance-of-international-standards-for-open-BIM" class="headerlink" title="BuildingSMART: Development and maintenance of international standards for open BIM"></a>BuildingSMART: Development and maintenance of international standards for open BIM</h3><ul>
-<li>Processes - information delivery manuals </li>
-<li>Data Dictionary - it maintains the <strong>International Framework for Dictionaries</strong> (IFD) Library </li>
-<li>Data model - the organization manages the software neutral <strong>Industry Foundation Classes (IFC)</strong> data model </li>
-<li>BIM Collaboration Format - structured file format suited to issue tracking (BCF) </li>
-</ul>
-<h3 id="CityGML-City-Geography-Markup-Language"><a href="#CityGML-City-Geography-Markup-Language" class="headerlink" title="CityGML = City Geography Markup Language"></a>CityGML = City Geography Markup Language</h3><p>Standard for storing and transferring virtual 3D city and regional models, Representation in four aspects - <strong>geometry , topology, semantics and appearance for all 3D geo-objects</strong></p>
-<p>UIM – Urban Information Model : It aims at modeling the knowledge of urban environment.</p>
-<p>CIM – City Information Model</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/22_wy7fl0.png" alt></p>
+<h1 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3. 代码块"></a>3. 代码块</h1><p>在代码段落上下两行分别插入三个反逗号，若要代码高亮则要在反逗号后面注明是什么语言。 </p>
+<h1 id="4-插入图片所需代码"><a href="#4-插入图片所需代码" class="headerlink" title="4. 插入图片所需代码"></a>4. 插入图片所需代码</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">描述</span>](<span class="link">图片链接 ''图片标题''</span>)</span><br><span class="line">![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>) 连续写就是并排显示图片</span><br><span class="line"></span><br><span class="line">描述就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片标题是当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
+<p>例：<br>插入本地图片<br><img src="/blog/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/abc.png" alt="test picture"><br><code>![test picture](./Dynamo学习笔记-1/abc.png)</code> 好像不管用…所以我把所有图片存到了云盘<br><code>&quot;&quot;</code> ？？？</p>
+<h1 id="5-改变字体颜色"><a href="#5-改变字体颜色" class="headerlink" title="5. 改变字体颜色"></a>5. 改变字体颜色</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color:red;"</span>&gt;</span></span></span><br><span class="line"><span class="section">#回车换行后命令失效</span></span><br></pre></td></tr></table></figure>
+<p><span style="color:red;"> 改变字体颜色至红</span></p>
+<h1 id="6-字体"><a href="#6-字体" class="headerlink" title="6. 字体"></a>6. 字体</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**这是加粗的文字**</span></span><br><span class="line"><span class="emphasis">*这是倾斜的文字*</span>`</span><br><span class="line"><span class="strong">***这是斜体加粗的文字**</span>*</span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
+<p>例：<br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del></p>
+<h1 id="7-引用"><a href="#7-引用" class="headerlink" title="7. 引用"></a>7. 引用</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<p>这是引用的内容</p>
+</blockquote>
+</blockquote>
+<h1 id="8-分割线"><a href="#8-分割线" class="headerlink" title="8. 分割线"></a>8. 分割线</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="9-生成首页摘要"><a href="#9-生成首页摘要" class="headerlink" title="9. 生成首页摘要"></a>9. 生成首页摘要</h1><p>在Markdown文档中添加<code>&lt;!-- more --&gt;</code>，代码上面的全是摘要</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这里是摘要</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- more --&gt;</span></span></span><br><span class="line">这里是正文</span><br></pre></td></tr></table></figure>
+
+<h1 id="10-链接"><a href="#10-链接" class="headerlink" title="10. 链接"></a>10. 链接</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">超链接名</span>](<span class="link">超链接地址</span>)</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">本文参考资料</a></p>
 ]]></content>
       <categories>
-        <category>BIM</category>
+        <category>markdown</category>
       </categories>
       <tags>
-        <tag>BIM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python一些语法备忘</title>
-    <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>总结了一些Python的语法</p>
-<a id="more"></a>
-
-<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="1-if-else"><a href="#1-if-else" class="headerlink" title="1. if else"></a>1. if else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span></span><br><span class="line">y=<span class="string">'hello'</span></span><br><span class="line"><span class="keyword">if</span> x==<span class="number">1</span> <span class="keyword">or</span> y==<span class="string">'hello'</span>:</span><br><span class="line">	x=x+<span class="number">1</span></span><br><span class="line">	y=y+<span class="string">'world'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-Python特色语句：for-else"><a href="#2-Python特色语句：for-else" class="headerlink" title="2. Python特色语句：for else"></a>2. Python特色语句：for else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">99</span>,<span class="number">81</span>,<span class="number">-1</span>):</span><br><span class="line">	root = sqrt(n)</span><br><span class="line">	<span class="keyword">if</span> root = int(root):</span><br><span class="line">		print(n)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	print(<span class="string">'didnt find it!'</span>)</span><br></pre></td></tr></table></figure>
-<p>这条else语句对应的是知for，不是if，这个是python特有的语句。 break表示打断最近的loop, 而if不是loop，打断的是for loop， 即在for循环中，如果没有从任何一个break中退出，则会执行和for对应的else 只要从break中退出了，则else部分不执行。<br>这段话如果用C++来实现，则如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">99</span>;i&gt;<span class="number">81</span>;i--) </span><br><span class="line">&#123; </span><br><span class="line">	root=<span class="built_in">sqrt</span>(i); </span><br><span class="line">	<span class="keyword">if</span>(root==<span class="keyword">int</span>(root)) </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;i; </span><br><span class="line">		<span class="keyword">break</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span>(i==<span class="number">81</span>) <span class="comment">//边界判断 </span></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">"didn't find it!"</span>&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="3-Definations"><a href="#3-Definations" class="headerlink" title="3. Definations"></a>3. Definations</h3><p>aList = []  列表，相当于c++中的arry/vector<br>aDictionary = {}  字典, 相当于c++中的map<br>aTuple = ()  元组, 只读的，不能修改，不能像list一样有append，remove等操作</p>
-<h3 id="4-遍历输出"><a href="#4-遍历输出" class="headerlink" title="4. 遍历输出"></a>4. 遍历输出</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aList:</span><br><span class="line">	print(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> aDictionary.item()</span><br><span class="line">	print(key, value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Access Value in Dictionary by the Keys</span></span><br><span class="line">value = aDictionary[‘key’]  <span class="comment">#Key muss be string!</span></span><br></pre></td></tr></table></figure>
-<h3 id="5-args-kwargs"><a href="#5-args-kwargs" class="headerlink" title="5. *args, **kwargs"></a>5. <code>*args</code>, <code>**kwargs</code></h3><p><code>*args</code>是位置参数，<code>**kwargs</code>是关建字参数。<code>*args</code>用来收集各种参数，其名字没有实际出现在函数签名的括号中， <code>**kwargs</code>代表了各个dictionary等关系，其名字没有实际出现在括号中，所以有了这两个东西可以在函数input括号里输入各种不同的参数而不止局限于几个自己命名的参数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_kwargs</span><span class="params">(first, *args, **kwargs)</span>:</span></span><br><span class="line">	print(<span class="string">'required argument'</span>, first)</span><br><span class="line">	<span class="keyword">for</span> v <span class="keyword">in</span> args:</span><br><span class="line">		print(<span class="string">'optional argument (*args):'</span>, v)</span><br><span class="line">	<span class="keyword">for</span> k, v <span class="keyword">in</span> kwargs.item():</span><br><span class="line">		print(<span class="string">'optional argument %s (*kwargs): %s'</span>, %(k,v))</span><br><span class="line"></span><br><span class="line">test_kwargs(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,k1=<span class="number">5</span>,k2=<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#required argument: 1</span></span><br><span class="line"><span class="comment">#optional argument (*args): 2</span></span><br><span class="line"><span class="comment">#optional argument (*args): 3</span></span><br><span class="line"><span class="comment">#optional argument (*args): 4</span></span><br><span class="line"><span class="comment">#optional argument k2 (*kwargs): 6</span></span><br><span class="line"><span class="comment">#optional argument k1 (*kwargs): 5</span></span><br></pre></td></tr></table></figure>
-<h3 id="6-装饰器"><a href="#6-装饰器" class="headerlink" title="6. 装饰器"></a>6. 装饰器</h3><p>装饰器本质上是一个 Python 函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能，装饰器的返回值也是一个函数/类对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decarator</span><span class="params">(func)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args)</span>:</span></span><br><span class="line">		<span class="comment">#可以此处添加功能如</span></span><br><span class="line">		print(<span class="string">'add funtion 1'</span>)</span><br><span class="line">		<span class="keyword">return</span> func(*args)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@decarator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(*args)</span>:</span></span><br><span class="line">	print(<span class="string">'i have'</span>, *args)</span><br><span class="line"></span><br><span class="line">test(<span class="string">'dsds'</span>,<span class="number">3</span>,<span class="string">'abc'</span>)</span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#add funtion 1</span></span><br><span class="line"><span class="comment">#i have dsds 3 abc</span></span><br></pre></td></tr></table></figure>
-<h3 id="7-列表推导式"><a href="#7-列表推导式" class="headerlink" title="7. 列表推导式"></a>7. 列表推导式</h3><p>基本语法：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = [expression(i) <span class="keyword">for</span> i <span class="keyword">in</span> old_list <span class="keyword">if</span> condition(i)]</span><br></pre></td></tr></table></figure>
-<p>翻译成for循环：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> old_list:</span><br><span class="line">	<span class="keyword">if</span>(condition):</span><br><span class="line">		new_list.append(expression(i))</span><br></pre></td></tr></table></figure>
-<h3 id="8-类"><a href="#8-类" class="headerlink" title="8. 类"></a>8. 类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__int__</span><span class="params">(self, name, age)</span>:</span></span><br><span class="line">		self.name_ = name</span><br><span class="line">		self.age_ = age</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getName</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.name_)</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getAge</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.age_)</span><br><span class="line">		<span class="keyword">return</span> self.age_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">rename</span><span class="params">(self, new_name)</span>:</span></span><br><span class="line">		self.name_ = new_name</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line"></span><br><span class="line">p = person(<span class="string">'tom'</span>,<span class="number">34</span>)</span><br><span class="line">p.getName()</span><br><span class="line">p.rename(<span class="string">'alex'</span>)</span><br></pre></td></tr></table></figure>
-<p>•<code>__init__()</code>被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，相当于构造函数，一定要有self<br>•self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数, 这里于c++不同，空括号函数不能直接空着，而是要在定义时加入self<br>•self.name_ 加下滑线表示属性私有<br>•方法函数前面如果加个装饰器@property， 则调用时候直接调用函数名，不用加括号。例如直接调用p.getAge 不用加括号后面<br>•继承语法:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(Person)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span>  <span class="comment">#pass啥都不做，就是占个位</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -732,6 +739,36 @@
       </categories>
       <tags>
         <tag>Excel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python一些语法备忘</title>
+    <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>总结了一些Python的语法</p>
+<a id="more"></a>
+
+<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="1-if-else"><a href="#1-if-else" class="headerlink" title="1. if else"></a>1. if else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span></span><br><span class="line">y=<span class="string">'hello'</span></span><br><span class="line"><span class="keyword">if</span> x==<span class="number">1</span> <span class="keyword">or</span> y==<span class="string">'hello'</span>:</span><br><span class="line">	x=x+<span class="number">1</span></span><br><span class="line">	y=y+<span class="string">'world'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-Python特色语句：for-else"><a href="#2-Python特色语句：for-else" class="headerlink" title="2. Python特色语句：for else"></a>2. Python特色语句：for else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">99</span>,<span class="number">81</span>,<span class="number">-1</span>):</span><br><span class="line">	root = sqrt(n)</span><br><span class="line">	<span class="keyword">if</span> root = int(root):</span><br><span class="line">		print(n)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	print(<span class="string">'didnt find it!'</span>)</span><br></pre></td></tr></table></figure>
+<p>这条else语句对应的是知for，不是if，这个是python特有的语句。 break表示打断最近的loop, 而if不是loop，打断的是for loop， 即在for循环中，如果没有从任何一个break中退出，则会执行和for对应的else 只要从break中退出了，则else部分不执行。<br>这段话如果用C++来实现，则如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">99</span>;i&gt;<span class="number">81</span>;i--) </span><br><span class="line">&#123; </span><br><span class="line">	root=<span class="built_in">sqrt</span>(i); </span><br><span class="line">	<span class="keyword">if</span>(root==<span class="keyword">int</span>(root)) </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;i; </span><br><span class="line">		<span class="keyword">break</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span>(i==<span class="number">81</span>) <span class="comment">//边界判断 </span></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">"didn't find it!"</span>&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="3-Definations"><a href="#3-Definations" class="headerlink" title="3. Definations"></a>3. Definations</h3><p>aList = []  列表，相当于c++中的arry/vector<br>aDictionary = {}  字典, 相当于c++中的map<br>aTuple = ()  元组, 只读的，不能修改，不能像list一样有append，remove等操作</p>
+<h3 id="4-遍历输出"><a href="#4-遍历输出" class="headerlink" title="4. 遍历输出"></a>4. 遍历输出</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aList:</span><br><span class="line">	print(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> aDictionary.item()</span><br><span class="line">	print(key, value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Access Value in Dictionary by the Keys</span></span><br><span class="line">value = aDictionary[‘key’]  <span class="comment">#Key muss be string!</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-args-kwargs"><a href="#5-args-kwargs" class="headerlink" title="5. *args, **kwargs"></a>5. <code>*args</code>, <code>**kwargs</code></h3><p><code>*args</code>是位置参数，<code>**kwargs</code>是关建字参数。<code>*args</code>用来收集各种参数，其名字没有实际出现在函数签名的括号中， <code>**kwargs</code>代表了各个dictionary等关系，其名字没有实际出现在括号中，所以有了这两个东西可以在函数input括号里输入各种不同的参数而不止局限于几个自己命名的参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_kwargs</span><span class="params">(first, *args, **kwargs)</span>:</span></span><br><span class="line">	print(<span class="string">'required argument'</span>, first)</span><br><span class="line">	<span class="keyword">for</span> v <span class="keyword">in</span> args:</span><br><span class="line">		print(<span class="string">'optional argument (*args):'</span>, v)</span><br><span class="line">	<span class="keyword">for</span> k, v <span class="keyword">in</span> kwargs.item():</span><br><span class="line">		print(<span class="string">'optional argument %s (*kwargs): %s'</span>, %(k,v))</span><br><span class="line"></span><br><span class="line">test_kwargs(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,k1=<span class="number">5</span>,k2=<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#required argument: 1</span></span><br><span class="line"><span class="comment">#optional argument (*args): 2</span></span><br><span class="line"><span class="comment">#optional argument (*args): 3</span></span><br><span class="line"><span class="comment">#optional argument (*args): 4</span></span><br><span class="line"><span class="comment">#optional argument k2 (*kwargs): 6</span></span><br><span class="line"><span class="comment">#optional argument k1 (*kwargs): 5</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-装饰器"><a href="#6-装饰器" class="headerlink" title="6. 装饰器"></a>6. 装饰器</h3><p>装饰器本质上是一个 Python 函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能，装饰器的返回值也是一个函数/类对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decarator</span><span class="params">(func)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args)</span>:</span></span><br><span class="line">		<span class="comment">#可以此处添加功能如</span></span><br><span class="line">		print(<span class="string">'add funtion 1'</span>)</span><br><span class="line">		<span class="keyword">return</span> func(*args)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@decarator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(*args)</span>:</span></span><br><span class="line">	print(<span class="string">'i have'</span>, *args)</span><br><span class="line"></span><br><span class="line">test(<span class="string">'dsds'</span>,<span class="number">3</span>,<span class="string">'abc'</span>)</span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#add funtion 1</span></span><br><span class="line"><span class="comment">#i have dsds 3 abc</span></span><br></pre></td></tr></table></figure>
+<h3 id="7-列表推导式"><a href="#7-列表推导式" class="headerlink" title="7. 列表推导式"></a>7. 列表推导式</h3><p>基本语法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = [expression(i) <span class="keyword">for</span> i <span class="keyword">in</span> old_list <span class="keyword">if</span> condition(i)]</span><br></pre></td></tr></table></figure>
+<p>翻译成for循环：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> old_list:</span><br><span class="line">	<span class="keyword">if</span>(condition):</span><br><span class="line">		new_list.append(expression(i))</span><br></pre></td></tr></table></figure>
+<h3 id="8-类"><a href="#8-类" class="headerlink" title="8. 类"></a>8. 类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__int__</span><span class="params">(self, name, age)</span>:</span></span><br><span class="line">		self.name_ = name</span><br><span class="line">		self.age_ = age</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getName</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.name_)</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getAge</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.age_)</span><br><span class="line">		<span class="keyword">return</span> self.age_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">rename</span><span class="params">(self, new_name)</span>:</span></span><br><span class="line">		self.name_ = new_name</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line"></span><br><span class="line">p = person(<span class="string">'tom'</span>,<span class="number">34</span>)</span><br><span class="line">p.getName()</span><br><span class="line">p.rename(<span class="string">'alex'</span>)</span><br></pre></td></tr></table></figure>
+<p>•<code>__init__()</code>被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，相当于构造函数，一定要有self<br>•self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数, 这里于c++不同，空括号函数不能直接空着，而是要在定义时加入self<br>•self.name_ 加下滑线表示属性私有<br>•方法函数前面如果加个装饰器@property， 则调用时候直接调用函数名，不用加括号。例如直接调用p.getAge 不用加括号后面<br>•继承语法:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(Person)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span>  <span class="comment">#pass啥都不做，就是占个位</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -1066,6 +1103,10 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x3D;IF ( AND (x &#x3D; 1 , y &#x3D; 2), 8 , 3 )</span><br><span class="line">&#x3D;IF ( OR ( A &#x3D; 1 , B &#x3D; 3 ) , 8 , 3 )</span><br><span class="line">&#x3D;IF ( NOT ( A &#x3D; 1 , B &#x3D; 3 ) , 8 , 3 )</span><br><span class="line">&#x2F;&#x2F;IF公式同样可用嵌套：</span><br><span class="line">B&#x3D;IF ( A &lt; 30 , 2, IF (A&lt; 45, 3, IF ( A&lt; 55, 5 , 8 ) ) )</span><br></pre></td></tr></table></figure>
 
 </li>
+</ul>
+<h3 id="官方的遮阳棚实例族"><a href="#官方的遮阳棚实例族" class="headerlink" title="官方的遮阳棚实例族"></a>官方的遮阳棚实例族</h3><ul>
+<li>学习别人做的族时，查看族参数先看没有公式的，便于理解</li>
+<li>而且要活用上方搜索菜单，可输入没有公式的参数，看其出现在了哪些参数公式中</li>
 </ul>
 <h3 id="轮廓族"><a href="#轮廓族" class="headerlink" title="轮廓族"></a>轮廓族</h3><p>用在哪些地方？</p>
 <ul>
