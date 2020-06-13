@@ -19,30 +19,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Leistungsphasen备忘</title>
-    <url>/blog/2020/05/25/Leistungsphasen/</url>
-    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" alt title="Leistungsphasen 1-9"></p>
-<h2 id="LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung"><a href="#LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung" class="headerlink" title="LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung"></a>LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung</h2><p>Der Bauantrag ist schriftlich bei der unteren Bauaufsichtsbehörde einzureichen. Mit dem Bauantrag sind alle für die Beurteilung des Bauvorhabens und die Bearbeitung des Bauantrags erforderlichen Unterlagen (Bauvorlagen) einzureichen. Näheres regeln in Deutschland die entsprechenden Rechtsverordnungen der Bundesländer (Bauvorlagenverordnungen).</p>
-<p>Ein Bauantrag besteht in Deutschland meist aus folgenden Teilen:</p>
-<ol>
-<li>Eingabeplan mit Grundrissen, Ansichten und Schnitten im Maßstab 1:100</li>
-<li>Bauantragsformular</li>
-<li>Baubeschreibung</li>
-<li>statistischer Erhebungsbogen</li>
-<li>Wärmeschutznachweis</li>
-<li>Standsicherheitsnachweis (Statische Berechnung, Statik)</li>
-<li>amtlicher Lageplan zum Bauantrag, meist im Maßstab 1:200 (kleinere Maßstäbe nur bei großen Grundstücken)</li>
-<li>ggf. weiteren notwendigen Nachweisen und Angaben, die zur Erteilung der Genehmigung von der Bauaufsichtsbehörde gefordert werden.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>informations</category>
-      </categories>
-      <tags>
-        <tag>LP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Dynamo学习笔记</title>
     <url>/blog/2020/05/22/Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</url>
     <content><![CDATA[<ul>
@@ -348,40 +324,27 @@
       </tags>
   </entry>
   <entry>
-    <title>Revit二次开发</title>
-    <url>/blog/2020/06/12/Revit%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<h2 id="开发环境配置"><a href="#开发环境配置" class="headerlink" title="开发环境配置"></a>开发环境配置</h2><ul>
-<li>Visual Studio 2019, .Net桌面开发</li>
-<li>Revit 2019</li>
-<li>Revit 2019 SDK(software development kit) : 在Add-In Manager文档内修改配置文件Autodesk.AddInManager.addin，在[TARGET]中写入文件当前路径。复制配置文件C:\ProgramData\Autodesk\Revit\Addins\2019。写入的配置文件出现在revit-附加模块-外部工具中。</li>
-</ul>
-<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><ol>
-<li><p>VS中新建.Net frameworkl Class Libraray(类库) 项目</p>
-</li>
-<li><p>在reference里面添加新的引用，浏览到revit安装目录下，添加RevitAPI.dll和RevitAPIUI.dll</p>
-</li>
-<li><p>选中两个dll去到属性里面把复制本地copy local改成false</p>
-</li>
-<li><p>代码</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using Autodesk.Revit.Attributes;</span><br><span class="line">using Autodesk.Revit.DB;</span><br><span class="line">using Autodesk.Revit.UI;</span><br><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace HelloWorld</span><br><span class="line">&#123;</span><br><span class="line">    [Transaction(TransactionMode.Manual)]</span><br><span class="line">    public class HelloRevit : IExternalCommand</span><br><span class="line">    &#123;</span><br><span class="line">        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)</span><br><span class="line">        &#123;</span><br><span class="line">            TaskDialog.Show(&quot;Window&quot;, &quot;Hello World!&quot;);</span><br><span class="line">            return Result.Succeeded;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Build - Build solution; Output中可查看生成的dll路径, 将其复制</p>
-</li>
-<li><p>打开revit，选择addin-manager,load中输入路径载入dll文件，选择run后即可加载运行。</p>
-</li>
+    <title>Leistungsphasen备忘</title>
+    <url>/blog/2020/05/25/Leistungsphasen/</url>
+    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" alt title="Leistungsphasen 1-9"></p>
+<h2 id="LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung"><a href="#LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung" class="headerlink" title="LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung"></a>LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung</h2><p>Der Bauantrag ist schriftlich bei der unteren Bauaufsichtsbehörde einzureichen. Mit dem Bauantrag sind alle für die Beurteilung des Bauvorhabens und die Bearbeitung des Bauantrags erforderlichen Unterlagen (Bauvorlagen) einzureichen. Näheres regeln in Deutschland die entsprechenden Rechtsverordnungen der Bundesländer (Bauvorlagenverordnungen).</p>
+<p>Ein Bauantrag besteht in Deutschland meist aus folgenden Teilen:</p>
+<ol>
+<li>Eingabeplan mit Grundrissen, Ansichten und Schnitten im Maßstab 1:100</li>
+<li>Bauantragsformular</li>
+<li>Baubeschreibung</li>
+<li>statistischer Erhebungsbogen</li>
+<li>Wärmeschutznachweis</li>
+<li>Standsicherheitsnachweis (Statische Berechnung, Statik)</li>
+<li>amtlicher Lageplan zum Bauantrag, meist im Maßstab 1:200 (kleinere Maßstäbe nur bei großen Grundstücken)</li>
+<li>ggf. weiteren notwendigen Nachweisen und Angaben, die zur Erteilung der Genehmigung von der Bauaufsichtsbehörde gefordert werden.</li>
 </ol>
-<h2 id="C-的一些基础"><a href="#C-的一些基础" class="headerlink" title="C#的一些基础"></a>C#的一些基础</h2><p>驼峰命名法：首字母小写，后面单词首字母大写</p>
-<p>帕斯卡命名法：首字母大写，后面单词首字母也大写</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace ConsoleAppTest</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        public static float GetPrice(int cout1, float singelPrice1, int cout2, float singelPrice2)</span><br><span class="line">        &#123;</span><br><span class="line">            float totalPrice &#x3D; cout1 * singelPrice1 + cout2 * singelPrice2;</span><br><span class="line">            Console.WriteLine(&quot;this is:&quot;+ totalPrice);&#x2F;&#x2F;输出语法</span><br><span class="line">            return totalPrice;</span><br><span class="line">        &#125;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            GetPrice(2, 2.5f, 4, 3.5f);&#x2F;&#x2F;小数编译器默认double双精度类型，float要在数字后加f</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;类</span><br><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace ConsoleAppTest</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        public class Human</span><br><span class="line">        &#123;</span><br><span class="line">            public Human(String name, Gender gender, int age) &#x2F;&#x2F;构造函数,不写的话会自动构建空的默认构造函数</span><br><span class="line">            &#123;</span><br><span class="line">                Name &#x3D; name;</span><br><span class="line">                Gender &#x3D; gender;</span><br><span class="line">                Age &#x3D; age;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            public static long Population &#x3D; 700000000000; &#x2F;&#x2F;静态字段可以通过类名直接调用，而不用跟非静态字段一样实例化类;方法也同理，如果方法是修饰整个类的，那么就加static</span><br><span class="line">            public int age; &#x2F;&#x2F;字段</span><br><span class="line">            public int Age &#x2F;&#x2F;属性Property,相当于字段的升级版，可以对字段进行一些控制</span><br><span class="line">            &#123;</span><br><span class="line">                get &#123; return age; &#125; &#x2F;&#x2F;get 访问器获取age</span><br><span class="line">                set                 &#x2F;&#x2F;set 访问器控制字段age,age如果小于0,则输出19</span><br><span class="line">                &#123;</span><br><span class="line">                    if (value &lt; 0)</span><br><span class="line">                        age &#x3D; 19;</span><br><span class="line">                    else</span><br><span class="line">                        age &#x3D; value;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            public string Name &#123; get; set; &#125;&#x2F;&#x2F;属性，不加get,set就是字段，但此处set没做修改，写成字段方式效果一样</span><br><span class="line">            public Gender Gender &#123; get; set; &#125;&#x2F;&#x2F;属性 &#x2F;&#x2F; 枚举类型定义在class外</span><br><span class="line">           </span><br><span class="line">            public void Greeting() &#x2F;&#x2F;方法</span><br><span class="line">            &#123;</span><br><span class="line">                string words &#x3D; string.Format(&quot;hello, my name is &#123;0&#125;, I am &#123;1&#125; years old, I am a &#123;2&#125;&quot;, Name, Age, Gender); &#x2F;&#x2F;string的一种替换转换</span><br><span class="line">                string words1 &#x3D; $&quot;hello, my name is &#123;Name&#125;, I am &#123;Age&#125; years old, I am a &#123;Gender&#125;&quot;; &#x2F;&#x2F; 简便写法，效果同上</span><br><span class="line">                Console.WriteLine(words);</span><br><span class="line">                Console.WriteLine(words1);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        public enum Gender &#123; Male, Female &#125; &#x2F;&#x2F;枚举类型定义</span><br><span class="line">        public class Student : Human &#x2F;&#x2F;继承</span><br><span class="line">        &#123;</span><br><span class="line">            public Student(string name, Gender gender, int age) : base(name, gender, age) &#x2F;&#x2F;母类有构造函数时候派生类也需要有相应的</span><br><span class="line">            &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Human person1 &#x3D; new Human(&quot;Tom&quot;,Gender.Male,17); &#x2F;&#x2F;有构造函数后这个括号不能空白,枚举类型的调用方法；实例化</span><br><span class="line">            person1.Age &#x3D; 27;</span><br><span class="line">            person1.Greeting();</span><br><span class="line">            Console.WriteLine(Human.Population);</span><br><span class="line">            Student student &#x3D; new Student(&quot;jack&quot;, Gender.Male, 20);</span><br><span class="line">            student.Greeting();</span><br><span class="line">            Console.WriteLine(Student.Population);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <categories>
-        <category>Revit, C#</category>
+        <category>informations</category>
       </categories>
       <tags>
-        <tag>Revit, C#</tag>
+        <tag>LP</tag>
       </tags>
   </entry>
   <entry>
@@ -637,55 +600,40 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown的一些语法</title>
-    <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
-<p>注：标准语法一般在#后跟个空格再写文字</p>
-<h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h2 id="2-1-无序列表（前带圆点）"><a href="#2-1-无序列表（前带圆点）" class="headerlink" title="2.1 无序列表（前带圆点）"></a>2.1 无序列表（前带圆点）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">- </span>列表内容</span><br><span class="line"><span class="bullet">+ </span>列表内容</span><br><span class="line"><span class="bullet">* </span>列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<ul>
-<li>列表1</li>
+    <title>Revit二次开发</title>
+    <url>/blog/2020/06/12/Revit%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<h2 id="开发环境配置"><a href="#开发环境配置" class="headerlink" title="开发环境配置"></a>开发环境配置</h2><ul>
+<li>Visual Studio 2019, .Net桌面开发</li>
+<li>Revit 2019</li>
+<li>Revit 2019 SDK(software development kit) : 在Add-In Manager文档内修改配置文件Autodesk.AddInManager.addin，在[TARGET]中写入文件当前路径。复制配置文件C:\ProgramData\Autodesk\Revit\Addins\2019。写入的配置文件出现在revit-附加模块-外部工具中。</li>
 </ul>
-<ul>
-<li>列表2</li>
-</ul>
-<ul>
-<li>列表3</li>
-</ul>
-<h2 id="2-1-有序列表（前带数字）"><a href="#2-1-有序列表（前带数字）" class="headerlink" title="2.1 有序列表（前带数字）"></a>2.1 有序列表（前带数字）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1. </span>列表内容</span><br><span class="line"><span class="bullet">2. </span>列表内容</span><br><span class="line"><span class="bullet">3. </span>列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<ol>
-<li>列表1</li>
-<li>列表2</li>
-<li>列表3</li>
+<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><ol>
+<li><p>VS中新建.Net frameworkl Class Libraray(类库) 项目</p>
+</li>
+<li><p>在reference里面添加新的引用，浏览到revit安装目录下，添加RevitAPI.dll和RevitAPIUI.dll</p>
+</li>
+<li><p>选中两个dll去到属性里面把复制本地copy local改成false</p>
+</li>
+<li><p>代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using Autodesk.Revit.Attributes;</span><br><span class="line">using Autodesk.Revit.DB;</span><br><span class="line">using Autodesk.Revit.UI;</span><br><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace HelloWorld</span><br><span class="line">&#123;</span><br><span class="line">    [Transaction(TransactionMode.Manual)]</span><br><span class="line">    public class HelloRevit : IExternalCommand</span><br><span class="line">    &#123;</span><br><span class="line">        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)</span><br><span class="line">        &#123;</span><br><span class="line">            TaskDialog.Show(&quot;Window&quot;, &quot;Hello World!&quot;);</span><br><span class="line">            return Result.Succeeded;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Build - Build solution; Output中可查看生成的dll路径, 将其复制</p>
+</li>
+<li><p>打开revit，选择addin-manager,load中输入路径载入dll文件，选择run后即可加载运行。</p>
+</li>
 </ol>
-<h1 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3. 代码块"></a>3. 代码块</h1><p>在代码段落上下两行分别插入三个反逗号，若要代码高亮则要在反逗号后面注明是什么语言。 </p>
-<h1 id="4-插入图片所需代码"><a href="#4-插入图片所需代码" class="headerlink" title="4. 插入图片所需代码"></a>4. 插入图片所需代码</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">描述</span>](<span class="link">图片链接 ''图片标题''</span>)</span><br><span class="line">![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>) 连续写就是并排显示图片</span><br><span class="line"></span><br><span class="line">描述就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片标题是当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
-<p>例：<br>插入本地图片<br><img src="/blog/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/abc.png" alt="test picture"><br><code>![test picture](./Dynamo学习笔记-1/abc.png)</code> 好像不管用…所以我把所有图片存到了云盘<br><code>&quot;&quot;</code> ？？？</p>
-<h1 id="5-改变字体颜色"><a href="#5-改变字体颜色" class="headerlink" title="5. 改变字体颜色"></a>5. 改变字体颜色</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color:red;"</span>&gt;</span></span></span><br><span class="line"><span class="section">#回车换行后命令失效</span></span><br></pre></td></tr></table></figure>
-<p><span style="color:red;"> 改变字体颜色至红</span></p>
-<h1 id="6-字体"><a href="#6-字体" class="headerlink" title="6. 字体"></a>6. 字体</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**这是加粗的文字**</span></span><br><span class="line"><span class="emphasis">*这是倾斜的文字*</span>`</span><br><span class="line"><span class="strong">***这是斜体加粗的文字**</span>*</span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
-<p>例：<br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del></p>
-<h1 id="7-引用"><a href="#7-引用" class="headerlink" title="7. 引用"></a>7. 引用</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这是引用的内容</p>
-<blockquote>
-<p>这是引用的内容</p>
-</blockquote>
-</blockquote>
-<h1 id="8-分割线"><a href="#8-分割线" class="headerlink" title="8. 分割线"></a>8. 分割线</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="9-生成首页摘要"><a href="#9-生成首页摘要" class="headerlink" title="9. 生成首页摘要"></a>9. 生成首页摘要</h1><p>在Markdown文档中添加<code>&lt;!-- more --&gt;</code>，代码上面的全是摘要</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这里是摘要</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- more --&gt;</span></span></span><br><span class="line">这里是正文</span><br></pre></td></tr></table></figure>
+<h2 id="C-的一些基础"><a href="#C-的一些基础" class="headerlink" title="C#的一些基础"></a>C#的一些基础</h2><p>驼峰命名法：首字母小写，后面单词首字母大写</p>
+<p>帕斯卡命名法：首字母大写，后面单词首字母也大写</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace ConsoleAppTest</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        public static float GetPrice(int cout1, float singelPrice1, int cout2, float singelPrice2)</span><br><span class="line">        &#123;</span><br><span class="line">            float totalPrice &#x3D; cout1 * singelPrice1 + cout2 * singelPrice2;</span><br><span class="line">            Console.WriteLine(&quot;this is:&quot;+ totalPrice);&#x2F;&#x2F;输出语法</span><br><span class="line">            return totalPrice;</span><br><span class="line">        &#125;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            GetPrice(2, 2.5f, 4, 3.5f);&#x2F;&#x2F;小数编译器默认double双精度类型，float要在数字后加f</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="10-链接"><a href="#10-链接" class="headerlink" title="10. 链接"></a>10. 链接</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">超链接名</span>](<span class="link">超链接地址</span>)</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">本文参考资料</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;类</span><br><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace ConsoleAppTest</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        public class Human</span><br><span class="line">        &#123;</span><br><span class="line">            public Human(String name, Gender gender, int age) &#x2F;&#x2F;构造函数,不写的话会自动构建空的默认构造函数</span><br><span class="line">            &#123;</span><br><span class="line">                Name &#x3D; name;</span><br><span class="line">                Gender &#x3D; gender;</span><br><span class="line">                Age &#x3D; age;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            public static long Population &#x3D; 700000000000; &#x2F;&#x2F;静态字段可以通过类名直接调用，而不用跟非静态字段一样实例化类;方法也同理，如果方法是修饰整个类的，那么就加static</span><br><span class="line">            public int age; &#x2F;&#x2F;字段</span><br><span class="line">            public int Age &#x2F;&#x2F;属性Property,相当于字段的升级版，可以对字段进行一些控制</span><br><span class="line">            &#123;</span><br><span class="line">                get &#123; return age; &#125; &#x2F;&#x2F;get 访问器获取age</span><br><span class="line">                set                 &#x2F;&#x2F;set 访问器控制字段age,age如果小于0,则输出19</span><br><span class="line">                &#123;</span><br><span class="line">                    if (value &lt; 0)</span><br><span class="line">                        age &#x3D; 19;</span><br><span class="line">                    else</span><br><span class="line">                        age &#x3D; value;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            public string Name &#123; get; set; &#125;&#x2F;&#x2F;属性，不加get,set就是字段，但此处set没做修改，写成字段方式效果一样</span><br><span class="line">            public Gender Gender &#123; get; set; &#125;&#x2F;&#x2F;属性 &#x2F;&#x2F; 枚举类型定义在class外</span><br><span class="line">           </span><br><span class="line">            public void Greeting() &#x2F;&#x2F;方法</span><br><span class="line">            &#123;</span><br><span class="line">                string words &#x3D; string.Format(&quot;hello, my name is &#123;0&#125;, I am &#123;1&#125; years old, I am a &#123;2&#125;&quot;, Name, Age, Gender); &#x2F;&#x2F;string的一种替换转换</span><br><span class="line">                string words1 &#x3D; $&quot;hello, my name is &#123;Name&#125;, I am &#123;Age&#125; years old, I am a &#123;Gender&#125;&quot;; &#x2F;&#x2F; 简便写法，效果同上</span><br><span class="line">                Console.WriteLine(words);</span><br><span class="line">                Console.WriteLine(words1);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        public enum Gender &#123; Male, Female &#125; &#x2F;&#x2F;枚举类型定义</span><br><span class="line">        public class Student : Human &#x2F;&#x2F;继承</span><br><span class="line">        &#123;</span><br><span class="line">            public Student(string name, Gender gender, int age) : base(name, gender, age) &#x2F;&#x2F;母类有构造函数时候派生类也需要有相应的</span><br><span class="line">            &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Human person1 &#x3D; new Human(&quot;Tom&quot;,Gender.Male,17); &#x2F;&#x2F;有构造函数后这个括号不能空白,枚举类型的调用方法；实例化</span><br><span class="line">            person1.Age &#x3D; 27;</span><br><span class="line">            person1.Greeting();</span><br><span class="line">            Console.WriteLine(Human.Population);</span><br><span class="line">            Student student &#x3D; new Student(&quot;jack&quot;, Gender.Male, 20);</span><br><span class="line">            student.Greeting();</span><br><span class="line">            Console.WriteLine(Student.Population);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>markdown</category>
+        <category>Revit, C#</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
+        <tag>Revit, C#</tag>
       </tags>
   </entry>
   <entry>
@@ -769,6 +717,58 @@
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown的一些语法</title>
+    <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
+<p>注：标准语法一般在#后跟个空格再写文字</p>
+<h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h2 id="2-1-无序列表（前带圆点）"><a href="#2-1-无序列表（前带圆点）" class="headerlink" title="2.1 无序列表（前带圆点）"></a>2.1 无序列表（前带圆点）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">- </span>列表内容</span><br><span class="line"><span class="bullet">+ </span>列表内容</span><br><span class="line"><span class="bullet">* </span>列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<ul>
+<li>列表1</li>
+</ul>
+<ul>
+<li>列表2</li>
+</ul>
+<ul>
+<li>列表3</li>
+</ul>
+<h2 id="2-1-有序列表（前带数字）"><a href="#2-1-有序列表（前带数字）" class="headerlink" title="2.1 有序列表（前带数字）"></a>2.1 有序列表（前带数字）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1. </span>列表内容</span><br><span class="line"><span class="bullet">2. </span>列表内容</span><br><span class="line"><span class="bullet">3. </span>列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<ol>
+<li>列表1</li>
+<li>列表2</li>
+<li>列表3</li>
+</ol>
+<h1 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3. 代码块"></a>3. 代码块</h1><p>在代码段落上下两行分别插入三个反逗号，若要代码高亮则要在反逗号后面注明是什么语言。 </p>
+<h1 id="4-插入图片所需代码"><a href="#4-插入图片所需代码" class="headerlink" title="4. 插入图片所需代码"></a>4. 插入图片所需代码</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">描述</span>](<span class="link">图片链接 ''图片标题''</span>)</span><br><span class="line">![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>) 连续写就是并排显示图片</span><br><span class="line"></span><br><span class="line">描述就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片标题是当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
+<p>例：<br>插入本地图片<br><img src="/blog/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/abc.png" alt="test picture"><br><code>![test picture](./Dynamo学习笔记-1/abc.png)</code> 好像不管用…所以我把所有图片存到了云盘<br><code>&quot;&quot;</code> ？？？</p>
+<h1 id="5-改变字体颜色"><a href="#5-改变字体颜色" class="headerlink" title="5. 改变字体颜色"></a>5. 改变字体颜色</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color:red;"</span>&gt;</span></span></span><br><span class="line"><span class="section">#回车换行后命令失效</span></span><br></pre></td></tr></table></figure>
+<p><span style="color:red;"> 改变字体颜色至红</span></p>
+<h1 id="6-字体"><a href="#6-字体" class="headerlink" title="6. 字体"></a>6. 字体</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**这是加粗的文字**</span></span><br><span class="line"><span class="emphasis">*这是倾斜的文字*</span>`</span><br><span class="line"><span class="strong">***这是斜体加粗的文字**</span>*</span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
+<p>例：<br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del></p>
+<h1 id="7-引用"><a href="#7-引用" class="headerlink" title="7. 引用"></a>7. 引用</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<p>这是引用的内容</p>
+</blockquote>
+</blockquote>
+<h1 id="8-分割线"><a href="#8-分割线" class="headerlink" title="8. 分割线"></a>8. 分割线</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="9-生成首页摘要"><a href="#9-生成首页摘要" class="headerlink" title="9. 生成首页摘要"></a>9. 生成首页摘要</h1><p>在Markdown文档中添加<code>&lt;!-- more --&gt;</code>，代码上面的全是摘要</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这里是摘要</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- more --&gt;</span></span></span><br><span class="line">这里是正文</span><br></pre></td></tr></table></figure>
+
+<h1 id="10-链接"><a href="#10-链接" class="headerlink" title="10. 链接"></a>10. 链接</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">超链接名</span>](<span class="link">超链接地址</span>)</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">本文参考资料</a></p>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
