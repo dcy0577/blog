@@ -19,64 +19,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Dynamo学习笔记</title>
-    <url>/blog/2020/05/22/Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</url>
-    <content><![CDATA[<ul>
-<li>dynamo里单位是毫米</li>
-<li>var[][]表示的数据类型为二维数组，即至少有L3的列表</li>
-<li>CSV：Comma-Separated Values 用逗号分隔的数据形式，input进dynamo用节点csv import </li>
-<li>创建标高：level</li>
-<li><span style="color:red;">节点<strong>set parameter by name</strong>: 通过看revit图元中属性中的参数名字给这个参数赋值；<br>节点<strong>get parameter value by name</strong>: 可以输入参数名字来提取参数的值</span></li>
-<li><span style="color:green;">节点<strong>filter by bool mask</strong>: mask中输入一系列bool值可以筛选ture的进in里 false进out里</span></li>
-<li>ToLower : 大写转小写</li>
-<li>string类型转bool可以用==，判断俩string是不是一致，一致输出的就是bool true, 否则 bool false</li>
-<li>节点floorplan: 根据标高level创建平面视图</li>
-<li>节点type: 看值的类型</li>
-<li>如果出现结果有问题但没有报错可能是lacing连缀有问题要更改</li>
-<li>节点geometry.translate: 位移</li>
-<li>快捷键ctrl + G: 把几个模块整合成一个组</li>
-<li>鼠标右键preview 预览之前的，把其去钩表示显示最新的</li>
-<li><span style="color:red;">节点<strong>point at parameter</strong>： 根据设置的节点向量个数和曲线curve得到曲线上的点</span></li>
-<li><span style="color:red;">code block 中创建一个简单list的语法：0..1..#24：表示起始0，终点1，一共24项，注意#不能忘记</span></li>
-<li>节点Drop: 去掉list中的某个项，注意list的分级</li>
-<li>节点line: 画线，起点终点</li>
-<li>节点flatten: 把多层级的list拍平，可以用来改变list的层级结构</li>
-<li>节点plane by three points: 通过三个点来创建平面，平面不显示，但于线相交用geomery.intersect可以显示出点。</li>
-<li>节点geometry.translate也可以用来阵列具体做法是在例如z轴输入一个list,里面储存了递增的距离，如0..300..#30, 则为阵列30份，直到高度300</li>
-<li>节点polycurve by point: 根据点来画多段线弧线</li>
-<li><span style="color:red;">节点<strong>list.schiftIndices</strong>: 输入amount 1表示把列表的最后一个项放到第一位，其他的往后退一位；输入amount 2表示把列表的最后两项放到前两位，其他的往后退2位，以此类推</span></li>
-<li>节点<strong>list.transpose</strong>:转制，行变列，列变行</li>
-<li>list.count： 输出list的长度</li>
-<li><span style="color:red;">节点<strong>curve.sweepAsSolid</strong>: 输入闭合的曲线（作为截面），和线作为拉伸路径（注意这里的必须输入的是一个curve如line,bspline,nurb而不是polycurve 因为poly本质是个list），拉伸为一个实体，输入的东西可为列表，则批量拉伸</span></li>
-<li>line.byTangency创建curve的切线</li>
-<li>line.direction: 获得线方向上的向量</li>
-<li>将dynamo中的模型输入revit使其变成一个族实例用DirectSchape.ByGeometry</li>
-<li>code block 中是使用的design script即dynamo 自己的语言<ul>
-<li><span style="color:red;">code block 创建list：<ul>
-<li>codeblock 提取列表元素： a[0]<br>  [1,2,3,4] 直接输出list 1，2，3，4<br>  0..100..10; 首项..末项..项差 -&gt; range<br>  0..#100..10; 首相..项数..项差 -&gt; sequence<br>  0..100..#10； 首相..末项..项数</li>
-</ul>
-</span></li>
-</ul>
-</li>
-<li>用节点python script 可输入python code</li>
-<li><span style="color:blue;">revit中族的一个树状结构，里面包含了其的4层信息，所以想通过dynamo逆向提取revit模型中的信息或特定模型，逻辑上应该是<ol>
-<li>先找到根即category -&gt; 命令categories</li>
-<li>细化过滤筛选family type -&gt; 命令all placed family types of category</li>
-<li>筛选得到instance -&gt; 命令all elements of family type; 获得的instance可用elements.geometry展示<br><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590261055/abc_hc8z9c.png" alt="族的结构"></li>
-</ol>
-</span></li>
-<li>节点export excel： data中要求输入二维列表数据</li>
-<li>Dynamo编程如果出错，应该查input output， 查lacing，查作用域即List分级</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Dynamo, revit</category>
-      </categories>
-      <tags>
-        <tag>Dynamo, revit</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BIM的一些基础概念整理</title>
     <url>/blog/2020/05/30/BIM%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E6%95%B4%E7%90%86/</url>
     <content><![CDATA[<p>基于课堂资料整理汇总了一些基本概念。</p>
@@ -324,6 +266,59 @@
       </tags>
   </entry>
   <entry>
+    <title>Excel数据处理</title>
+    <url>/blog/2020/05/22/Excel%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h3 id="数据-分列"><a href="#数据-分列" class="headerlink" title="数据-分列"></a>数据-分列</h3><p>用于统一一列中的数据类型，两种数据类型互相转换方法(常规型，文本型)<br><strong>数据透视表</strong>，行，列，值，筛选条件 -&gt; <strong>切片器</strong>更好实现: 点击数据透视表中任意一格，插入切片器，同样适用于透视表对应的图表，点击切片器，数据可视化</p>
+<h3 id="条件格式—数据条，"><a href="#条件格式—数据条，" class="headerlink" title="条件格式—数据条，"></a>条件格式—数据条，</h3><p>突出显示单元格根据不同规则如重复值，大于小于等等</p>
+<h3 id="自定义排序："><a href="#自定义排序：" class="headerlink" title="自定义排序："></a>自定义排序：</h3><ol>
+<li>手动选取表格范围，勾选数据包含表头，则表头不会作为数据参与排序</li>
+<li>选项-高级-拉到最底-自定义序列，可以手动输入定义在自定义排序中需要的次序</li>
+</ol>
+<h3 id="筛选："><a href="#筛选：" class="headerlink" title="筛选："></a>筛选：</h3><ol>
+<li>数字筛选</li>
+<li>自动筛选： 表达且的关系，高级筛选可表达或和且的关系：复制至同一行为且的条件，不同行为或的条件</li>
+</ol>
+<h3 id="分类汇总："><a href="#分类汇总：" class="headerlink" title="分类汇总："></a>分类汇总：</h3><p>先排序再分类汇总，就不会漏；有三个层级，按左侧加号展开。可以有2种分类汇总，注意不要替换当前分类。 汇总数据无法直接复制，开始查找和选择，定位条件仅可见单元格/对象为除了数据外的图片等。</p>
+<h3 id="公式与基础函数"><a href="#公式与基础函数" class="headerlink" title="公式与基础函数"></a>公式与基础函数</h3><p>开始-查找和选择-定位条件-空值-求和/数据-分类汇总<br>开始-计数count只能计算数字不能计算文本，counta可以计算数字和文本。<br>不能拖拽时，先选中区域，在第一个输入公式，control+enter。<br>数据-模拟分析-单变量求解，目标值。</p>
+<h3 id="Vlookup"><a href="#Vlookup" class="headerlink" title="Vlookup"></a>Vlookup</h3><p>通过id找公司名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x3D;vloopup(a1,a:b,查找数据的列数，0表示精确查找&#x2F;1表示近似匹配）</span><br><span class="line">&#x3D;vlookup（要匹配的范围，原数据里范围到原数据里匹配的范围，匹配的列数，精确度0）</span><br></pre></td></tr></table></figure>
+<p>数据区间（10%会用到）近似匹配，只有数字之间才有，只找小于等于自己的最大值<br>不同格式（文本和常规数字）之间不能直接vlookup，常规转文本 加<code>&amp;“”</code> 文本转常规加<code>*1</code></p>
+<h3 id="Match和Index函数"><a href="#Match和Index函数" class="headerlink" title="Match和Index函数"></a>Match和Index函数</h3><p>match函数-找，index函数-取<br>index（查询的终极对象所在范围，match（查询的原始对象，查询原始对象范围，0））<br>拖拽时-右键-不带格式填充</p>
+<h3 id="使用函数进行统计"><a href="#使用函数进行统计" class="headerlink" title="使用函数进行统计"></a>使用函数进行统计</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sumif（条件区域，条件，需求区域）:求和</span><br><span class="line">Countif （需要区域，条件）:计数</span><br><span class="line">sumif（选择所有区域，条件，固定f4条件）:变态能力解决多列循环数据问题：原始数据格式不连贯，进行多次sumif操作麻烦</span><br><span class="line">sumifs处理多个条件函数，按照括号里提示选择</span><br><span class="line">Countifs: 多条件的vlookup，写函数要左对齐，原始数据前面加一列生成条件，vlookup（要匹配的范围，原数据里范围到原数据里匹配的范围，匹配的列数，精确度0）</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用日期函数"><a href="#使用日期函数" class="headerlink" title="使用日期函数"></a>使用日期函数</h3><ol>
+<li>推算日期，给开始，给间隔，算结束（反之也可）<br>日期+天数直接可以算<br>日期+月数 <code>date（year，month+月数，day)</code><br>日期推算固定算法-先拆后组</li>
+<li>日期间隔，已知开始和结束日期<br><code>=DATEDIF(A2,B2+1更精准,”y/m/d“)</code> </li>
+<li>标记快到期的数据<br>选中数据，复制，选择性粘贴-值，条件格式，介于，=today()，=today()+15,颜色</li>
+</ol>
+<h3 id="使用表格"><a href="#使用表格" class="headerlink" title="使用表格"></a>使用表格</h3><ol>
+<li>表格与数据透视表<br>数据透视表，数据更新如何抓取数据 （如今的数据叫数据清单list/记录）<br>插入，表格，再做数据透视表可以自动更新</li>
+<li>表格与函数<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x3D;VLOOKUP(D2,J:K,2,0)</span><br><span class="line">&#x3D;IFNA(VLOOKUP(D11,J:K,2,0),&quot;&quot;)</span><br></pre></td></tr></table></figure></li>
+<li>表格与图表<br>思路一样，把list专程table</li>
+</ol>
+<h3 id="文档安全性设置"><a href="#文档安全性设置" class="headerlink" title="文档安全性设置"></a>文档安全性设置</h3><ol>
+<li>防止其他用户在表格中乱写<br>针对固定数据范围的限制：报销金额，只允许输入500～1000的整数<br>数据-数据验证/数据有效性-设置，数据-数据验证-出错警告</li>
+<li>工作表保护-防止用户乱删<br>审阅-保护工作表<br>公式-手工录入，一半保护一半不保护<br>右键-设置单元格格式-保护-取消锁定，审阅-保护工作表-依旧可以随便改<br>锁定属性仅针对于写值<br>右键-设置单元格格式-保护-取消锁定（允许写入任何值），审阅-保护工作表-允许的动作勾选</li>
+</ol>
+<h3 id="邮件合并工具"><a href="#邮件合并工具" class="headerlink" title="邮件合并工具"></a>邮件合并工具</h3><ol>
+<li>员工信息表，word更适合打印,每页一个人的信息<br>邮件-选择收件人（把word和excel建立联系）-现有收件人-选择要链接的excel-改动的地方要插入合并域-选择<br>预览结果-滚动条 完成并合并-编辑单个文档-全部<br>邮件-统一模版-抓取数据-批量打印</li>
+<li>考试卷子<br>建立连接，出完题，邮件-开始邮件合并-目录<br>邮件合并工具-抓取数据-做好布局-合并文档</li>
+</ol>
+<h3 id="数据不规范的话"><a href="#数据不规范的话" class="headerlink" title="数据不规范的话"></a>数据不规范的话</h3><ol>
+<li>不能做透视</li>
+<li>不能vlookup</li>
+<li>动态员工信息查询做不了</li>
+<li>word无法抓取数据</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Excel</category>
+      </categories>
+      <tags>
+        <tag>Excel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leistungsphasen备忘</title>
     <url>/blog/2020/05/25/Leistungsphasen/</url>
     <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" alt title="Leistungsphasen 1-9"></p>
@@ -345,6 +340,206 @@
       </categories>
       <tags>
         <tag>LP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dynamo学习笔记</title>
+    <url>/blog/2020/05/22/Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</url>
+    <content><![CDATA[<ul>
+<li>dynamo里单位是毫米</li>
+<li>var[][]表示的数据类型为二维数组，即至少有L3的列表</li>
+<li>CSV：Comma-Separated Values 用逗号分隔的数据形式，input进dynamo用节点csv import </li>
+<li>创建标高：level</li>
+<li><span style="color:red;">节点<strong>set parameter by name</strong>: 通过看revit图元中属性中的参数名字给这个参数赋值；<br>节点<strong>get parameter value by name</strong>: 可以输入参数名字来提取参数的值</span></li>
+<li><span style="color:green;">节点<strong>filter by bool mask</strong>: mask中输入一系列bool值可以筛选ture的进in里 false进out里</span></li>
+<li>ToLower : 大写转小写</li>
+<li>string类型转bool可以用==，判断俩string是不是一致，一致输出的就是bool true, 否则 bool false</li>
+<li>节点floorplan: 根据标高level创建平面视图</li>
+<li>节点type: 看值的类型</li>
+<li>如果出现结果有问题但没有报错可能是lacing连缀有问题要更改</li>
+<li>节点geometry.translate: 位移</li>
+<li>快捷键ctrl + G: 把几个模块整合成一个组</li>
+<li>鼠标右键preview 预览之前的，把其去钩表示显示最新的</li>
+<li><span style="color:red;">节点<strong>point at parameter</strong>： 根据设置的节点向量个数和曲线curve得到曲线上的点</span></li>
+<li><span style="color:red;">code block 中创建一个简单list的语法：0..1..#24：表示起始0，终点1，一共24项，注意#不能忘记</span></li>
+<li>节点Drop: 去掉list中的某个项，注意list的分级</li>
+<li>节点line: 画线，起点终点</li>
+<li>节点flatten: 把多层级的list拍平，可以用来改变list的层级结构</li>
+<li>节点plane by three points: 通过三个点来创建平面，平面不显示，但于线相交用geomery.intersect可以显示出点。</li>
+<li>节点geometry.translate也可以用来阵列具体做法是在例如z轴输入一个list,里面储存了递增的距离，如0..300..#30, 则为阵列30份，直到高度300</li>
+<li>节点polycurve by point: 根据点来画多段线弧线</li>
+<li><span style="color:red;">节点<strong>list.schiftIndices</strong>: 输入amount 1表示把列表的最后一个项放到第一位，其他的往后退一位；输入amount 2表示把列表的最后两项放到前两位，其他的往后退2位，以此类推</span></li>
+<li>节点<strong>list.transpose</strong>:转制，行变列，列变行</li>
+<li>list.count： 输出list的长度</li>
+<li><span style="color:red;">节点<strong>curve.sweepAsSolid</strong>: 输入闭合的曲线（作为截面），和线作为拉伸路径（注意这里的必须输入的是一个curve如line,bspline,nurb而不是polycurve 因为poly本质是个list），拉伸为一个实体，输入的东西可为列表，则批量拉伸</span></li>
+<li>line.byTangency创建curve的切线</li>
+<li>line.direction: 获得线方向上的向量</li>
+<li>将dynamo中的模型输入revit使其变成一个族实例用DirectSchape.ByGeometry</li>
+<li>code block 中是使用的design script即dynamo 自己的语言<ul>
+<li><span style="color:red;">code block 创建list：<ul>
+<li>codeblock 提取列表元素： a[0]<br>  [1,2,3,4] 直接输出list 1，2，3，4<br>  0..100..10; 首项..末项..项差 -&gt; range<br>  0..#100..10; 首相..项数..项差 -&gt; sequence<br>  0..100..#10； 首相..末项..项数</li>
+</ul>
+</span></li>
+</ul>
+</li>
+<li>用节点python script 可输入python code</li>
+<li><span style="color:blue;">revit中族的一个树状结构，里面包含了其的4层信息，所以想通过dynamo逆向提取revit模型中的信息或特定模型，逻辑上应该是<ol>
+<li>先找到根即category -&gt; 命令categories</li>
+<li>细化过滤筛选family type -&gt; 命令all placed family types of category</li>
+<li>筛选得到instance -&gt; 命令all elements of family type; 获得的instance可用elements.geometry展示<br><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590261055/abc_hc8z9c.png" alt="族的结构"></li>
+</ol>
+</span></li>
+<li>节点export excel： data中要求输入二维列表数据</li>
+<li>Dynamo编程如果出错，应该查input output， 查lacing，查作用域即List分级</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dynamo, revit</category>
+      </categories>
+      <tags>
+        <tag>Dynamo, revit</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Revit二次开发</title>
+    <url>/blog/2020/06/12/Revit%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<h2 id="开发环境配置"><a href="#开发环境配置" class="headerlink" title="开发环境配置"></a>开发环境配置</h2><ul>
+<li>Visual Studio 2019, .Net桌面开发</li>
+<li>Revit 2019</li>
+<li>Revit 2019 SDK(software development kit) : 在Add-In Manager文档内修改配置文件Autodesk.AddInManager.addin，在[TARGET]中写入文件当前路径。复制配置文件C:\ProgramData\Autodesk\Revit\Addins\2019。写入的配置文件出现在revit-附加模块-外部工具中。</li>
+</ul>
+<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><ol>
+<li><p>VS中新建.Net frameworkl Class Libraray(类库) 项目</p>
+</li>
+<li><p>在reference里面添加新的引用，浏览到revit安装目录下，添加RevitAPI.dll和RevitAPIUI.dll<strong>（dll类库文件，不能直接执行，需要被调用）</strong></p>
+</li>
+<li><p>选中两个dll去到属性里面把复制本地copy local改成false</p>
+</li>
+<li><p>代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using Autodesk.Revit.Attributes;</span><br><span class="line">using Autodesk.Revit.DB;</span><br><span class="line">using Autodesk.Revit.UI;</span><br><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace HelloWorld</span><br><span class="line">&#123;</span><br><span class="line">    [Transaction(TransactionMode.Manual)]</span><br><span class="line">    public class HelloRevit : IExternalCommand</span><br><span class="line">    &#123;</span><br><span class="line">        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)</span><br><span class="line">        &#123;</span><br><span class="line">            TaskDialog.Show(&quot;Window&quot;, &quot;Hello World!&quot;);</span><br><span class="line">            return Result.Succeeded;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Build - Build solution; Output中可查看生成的dll路径, 将其复制</p>
+</li>
+<li><p>打开revit，选择addin-manager,load中输入路径载入dll文件，选择run后即可加载运行。</p>
+</li>
+</ol>
+<h2 id="C-的一些基础"><a href="#C-的一些基础" class="headerlink" title="C#的一些基础"></a>C#的一些基础</h2><p>驼峰命名法：首字母小写，后面单词首字母大写</p>
+<p>帕斯卡命名法：首字母大写，后面单词首字母也大写</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace ConsoleAppTest</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        public static float GetPrice(int cout1, float singelPrice1, int cout2, float singelPrice2)</span><br><span class="line">        &#123;</span><br><span class="line">            float totalPrice &#x3D; cout1 * singelPrice1 + cout2 * singelPrice2;</span><br><span class="line">            Console.WriteLine(&quot;this is:&quot;+ totalPrice);&#x2F;&#x2F;输出语法</span><br><span class="line">            return totalPrice;</span><br><span class="line">        &#125;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            GetPrice(2, 2.5f, 4, 3.5f);&#x2F;&#x2F;小数编译器默认double双精度类型，float要在数字后加f</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="for-if-else-switch-foreach-while"><a href="#for-if-else-switch-foreach-while" class="headerlink" title="for,if else, switch, foreach,while"></a>for,if else, switch, foreach,while</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;for,if else, switch, foreach,while</span><br><span class="line">List&lt;Student&gt; students &#x3D; new List&lt;Student&gt;()&#123;student1, student2&#125;;</span><br><span class="line">&#x2F;&#x2F;for</span><br><span class="line">for (int i &#x3D;0; i&lt;students.Count; i++)</span><br><span class="line">&#123;</span><br><span class="line">    students[i].Greeting();</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;foreach</span><br><span class="line">foreach (Student i in students)</span><br><span class="line">&#123;</span><br><span class="line">    i.Greeting();</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;switch</span><br><span class="line">switch(student1.Gender)</span><br><span class="line">&#123;</span><br><span class="line">    case Gender.Female:</span><br><span class="line">    	student1.Greeting();</span><br><span class="line">    	break;</span><br><span class="line">    case Gender.Male:</span><br><span class="line">        .....</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;while</span><br><span class="line">int i &#x3D; 0;</span><br><span class="line">while(i&lt;3)</span><br><span class="line">&#123;</span><br><span class="line">    student1.Greeting();</span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="类-属性，static-字段，方法，构造函数，枚举类型"><a href="#类-属性，static-字段，方法，构造函数，枚举类型" class="headerlink" title="类,属性，static,字段，方法，构造函数，枚举类型"></a>类,属性，static,字段，方法，构造函数，枚举类型</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;类</span><br><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace ConsoleAppTest</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        public class Human</span><br><span class="line">        &#123;</span><br><span class="line">            public Human(String name, Gender gender, int age) &#x2F;&#x2F;构造函数,不写的话会自动构建空的默认构造函数</span><br><span class="line">            &#123;</span><br><span class="line">                Name &#x3D; name;</span><br><span class="line">                Gender &#x3D; gender;</span><br><span class="line">                Age &#x3D; age;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            public static long Population &#x3D; 700000000000; &#x2F;&#x2F;静态字段可以通过类名直接调用，而不用跟非静态字段一样实例化类;方法也同理，如果方法是修饰整个类的，那么就加static</span><br><span class="line">            public int age; &#x2F;&#x2F;字段</span><br><span class="line">            public int Age &#x2F;&#x2F;属性Property,相当于字段的升级版，可以对字段进行一些控制</span><br><span class="line">            &#123;</span><br><span class="line">                get &#123; return age; &#125; &#x2F;&#x2F;get 访问器获取age</span><br><span class="line">                set                 &#x2F;&#x2F;set 访问器控制字段age,age如果小于0,则输出19</span><br><span class="line">                &#123;</span><br><span class="line">                    if (value &lt; 0)</span><br><span class="line">                    &#123;</span><br><span class="line">                        age &#x3D; 19;</span><br><span class="line">                    &#125;</span><br><span class="line">                    else</span><br><span class="line">                    &#123;</span><br><span class="line">                        age &#x3D; value;</span><br><span class="line">                    &#125; </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            public string Name &#123; get; set; &#125;&#x2F;&#x2F;属性，不加get,set就是字段，但此处set没做修改，写成字段方式效果一样</span><br><span class="line">            public Gender Gender &#123; get; set; &#125;&#x2F;&#x2F;属性 &#x2F;&#x2F; 枚举类型定义在class外</span><br><span class="line">           </span><br><span class="line">            public void Greeting() &#x2F;&#x2F;方法</span><br><span class="line">            &#123;</span><br><span class="line">                string words &#x3D; string.Format(&quot;hello, my name is &#123;0&#125;, I am &#123;1&#125; years old, I am a &#123;2&#125;&quot;, Name, Age, Gender); &#x2F;&#x2F;string的一种替换转换</span><br><span class="line">                string words1 &#x3D; $&quot;hello, my name is &#123;Name&#125;, I am &#123;Age&#125; years old, I am a &#123;Gender&#125;&quot;; &#x2F;&#x2F; 简便写法，效果同上</span><br><span class="line">                Console.WriteLine(words);</span><br><span class="line">                Console.WriteLine(words1);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        public enum Gender &#123; Male, Female &#125; &#x2F;&#x2F;枚举类型定义</span><br><span class="line">        public class Student : Human &#x2F;&#x2F;继承</span><br><span class="line">        &#123;</span><br><span class="line">            public Student(string name, Gender gender, int age) : base(name, gender, age) &#x2F;&#x2F;母类有构造函数时候派生类也需要有相应的</span><br><span class="line">            &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Human person1 &#x3D; new Human(&quot;Tom&quot;,Gender.Male,17); &#x2F;&#x2F;有构造函数后这个括号不能空白,枚举类型的调用方法；实例化</span><br><span class="line">            person1.Age &#x3D; 27;</span><br><span class="line">            person1.Greeting();</span><br><span class="line">            Console.WriteLine(Human.Population);</span><br><span class="line">            Student student &#x3D; new Student(&quot;jack&quot;, Gender.Male, 20);</span><br><span class="line">            student.Greeting();</span><br><span class="line">            Console.WriteLine(Student.Population);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组，list"><a href="#数组，list" class="headerlink" title="数组，list"></a>数组，list</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;数组,容量不能变相当于arry</span><br><span class="line">int[] numbers &#x3D; new int[5];&#x2F;&#x2F;初始化</span><br><span class="line">int[] numbers &#x3D; new int[5]&#123;1,3,2,4,5&#125;;</span><br><span class="line">int number &#x3D; number[0] &#x2F;&#x2F;访问</span><br><span class="line">&#x2F;&#x2F;list，相当于vector，容量可变</span><br><span class="line">List&lt;double&gt; nums &#x3D; new List&lt;double&gt;();</span><br><span class="line">nums.Add(1.2)&#x2F;&#x2F;添加元素</span><br><span class="line">nums.Count &#x2F;&#x2F;返回list元素个数</span><br><span class="line">double num &#x3D; nums[1]&#x2F;&#x2F;访问</span><br></pre></td></tr></table></figure>
+
+<h3 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;interface接口</span><br><span class="line">namespace Autodesk.Revit.UI</span><br><span class="line">&#123;</span><br><span class="line">    public interface IExternalCommand &#x2F;&#x2F;Interface命名必须I开头，接口只做声明，定义实现要class来</span><br><span class="line">    &#123;</span><br><span class="line">        Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">namespace HelloWorld</span><br><span class="line">&#123;</span><br><span class="line">    [Transaction(TransactionMode.Manual)]</span><br><span class="line">    public class HelloRevit : IExternalCommand &#x2F;&#x2F;class实现interface</span><br><span class="line">    &#123;</span><br><span class="line">        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)&#x2F;&#x2F;格式</span><br><span class="line">        &#123;</span><br><span class="line">            TaskDialog.Show(&quot;Window&quot;, &quot;Hello World!&quot;);&#x2F;&#x2F;具体方法内部如何实现自己发挥随意</span><br><span class="line">            return Result.Succeeded;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="VS内的一些概念"><a href="#VS内的一些概念" class="headerlink" title="VS内的一些概念"></a>VS内的一些概念</h2><ul>
+<li>解决方案Solution.sln: 一个完整的软件或插件对应一个解决方案</li>
+<li>项目Project: 一个解决方案下可以添加多个项目，可以单独编译生成</li>
+<li>程序集Assemblies：项目编译生成的结果文件，如.exe或者.dll的类库文件被称为程序集</li>
+<li>同一个解决方案下的项目可以相互引用</li>
+</ul>
+<h2 id="WinForm和WPF制作用户界面UI"><a href="#WinForm和WPF制作用户界面UI" class="headerlink" title="WinForm和WPF制作用户界面UI"></a>WinForm和WPF制作用户界面UI</h2><ul>
+<li>Winform: 新建一个Windows Forms App (.Net framework); WPF:新建一个WPF APP(.Net framework)。</li>
+<li>WPF使用XAML语言设计界面，使其相比winform更加灵活，但注意要在引用中添加system.xaml，才不会报错</li>
+</ul>
+<h3 id="例子：WPF设计login窗口-在开头的Helloword项目中操作"><a href="#例子：WPF设计login窗口-在开头的Helloword项目中操作" class="headerlink" title="例子：WPF设计login窗口, 在开头的Helloword项目中操作"></a>例子：WPF设计login窗口, 在开头的Helloword项目中操作</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;Window x:Class&#x3D;&quot;HelloWorld.LoginWindow&quot;</span><br><span class="line">        xmlns&#x3D;&quot;http:&#x2F;&#x2F;schemas.microsoft.com&#x2F;winfx&#x2F;2006&#x2F;xaml&#x2F;presentation&quot;</span><br><span class="line">        xmlns:x&#x3D;&quot;http:&#x2F;&#x2F;schemas.microsoft.com&#x2F;winfx&#x2F;2006&#x2F;xaml&quot;</span><br><span class="line">        xmlns:d&#x3D;&quot;http:&#x2F;&#x2F;schemas.microsoft.com&#x2F;expression&#x2F;blend&#x2F;2008&quot;</span><br><span class="line">        xmlns:mc&#x3D;&quot;http:&#x2F;&#x2F;schemas.openxmlformats.org&#x2F;markup-compatibility&#x2F;2006&quot;</span><br><span class="line">        xmlns:local&#x3D;&quot;clr-namespace:HelloWorld&quot;</span><br><span class="line">        mc:Ignorable&#x3D;&quot;d&quot;</span><br><span class="line">        Title&#x3D;&quot;LoginWindow&quot; Height&#x3D;&quot;310&quot; Width&#x3D;&quot;310&quot;&gt;</span><br><span class="line">    &lt;Grid&gt;</span><br><span class="line">        &lt;Grid.RowDefinitions&gt; &lt;!--给窗口划分轴网，这里开始划分行，有几行就写几行RowDefination--&gt;</span><br><span class="line">            &lt;RowDefinition Height&#x3D;&quot;1.8*&quot;&gt;&lt;&#x2F;RowDefinition&gt; &lt;!--星号表示等分的行宽的1份，1.8*就是1.8倍的一份--&gt;</span><br><span class="line">            &lt;RowDefinition Height&#x3D;&quot;*&quot;&gt;&lt;&#x2F;RowDefinition&gt;</span><br><span class="line">            &lt;RowDefinition Height&#x3D;&quot;*&quot;&gt;&lt;&#x2F;RowDefinition&gt;</span><br><span class="line">            &lt;RowDefinition Height&#x3D;&quot;0.2*&quot;&gt;&lt;&#x2F;RowDefinition&gt;</span><br><span class="line">        &lt;&#x2F;Grid.RowDefinitions&gt;</span><br><span class="line">        &lt;Grid.ColumnDefinitions&gt;</span><br><span class="line">            &lt;ColumnDefinition Width&#x3D;&quot;*&quot;&gt;&lt;&#x2F;ColumnDefinition&gt;</span><br><span class="line">            &lt;ColumnDefinition Width&#x3D;&quot;2*&quot;&gt;&lt;&#x2F;ColumnDefinition&gt;</span><br><span class="line">            &lt;ColumnDefinition Width&#x3D;&quot;*&quot;&gt;&lt;&#x2F;ColumnDefinition&gt;</span><br><span class="line">        &lt;&#x2F;Grid.ColumnDefinitions&gt;1</span><br><span class="line">        &lt;!--插图，Grid.Row定位在第一行，columSpan表示图片跨度为3列，Aligment分别为水平垂直居中，路径中前面的pack:&#x2F;&#x2F;aplication:,,,&#x2F;HelloWorld;代表程序集，后面的component&#x2F;Ressource&#x2F;sb_seeaoo.jpg代表图片在程序集中所处的位置--&gt;</span><br><span class="line">        &lt;Image Grid.Row&#x3D;&quot;0&quot; Grid.ColumnSpan&#x3D;&quot;3&quot; VerticalAlignment&#x3D;&quot;Center&quot; HorizontalAlignment&#x3D;&quot;Center&quot; Source&#x3D;&quot;pack:&#x2F;&#x2F;aplication:,,,&#x2F;HelloWorld;component&#x2F;Ressource&#x2F;sb_seeaoo.jpg&quot;&gt;&lt;&#x2F;Image&gt;</span><br><span class="line">        &lt;!--Textbox是做一个给用户打字的框，x:Name是给它命名，后面Grid同理定位--&gt;</span><br><span class="line">        &lt;TextBox x:Name&#x3D;&quot;Username&quot; Grid.Row&#x3D;&quot;1&quot; Grid.Column&#x3D;&quot;1&quot; Width&#x3D;&quot;120&quot; VerticalAlignment&#x3D;&quot;Center&quot; Height&#x3D;&quot;23&quot;&#x2F;&gt;</span><br><span class="line">        &lt;!--Textblock是显示一行字，这里是Username，Grid同理定位--&gt;</span><br><span class="line">        &lt;TextBlock Grid.Row&#x3D;&quot;1&quot; Grid.Column&#x3D;&quot;0&quot; VerticalAlignment&#x3D;&quot;Center&quot; HorizontalAlignment&#x3D;&quot;Center&quot; &gt;Username&lt;&#x2F;TextBlock&gt;</span><br><span class="line">        &lt;!--passwordbox是做一个给用户打字的框，跟Textbox不同用户输入后显示星号--&gt;</span><br><span class="line">        &lt;PasswordBox x:Name&#x3D;&quot;Password&quot; Grid.Row&#x3D;&quot;2&quot; Grid.Column&#x3D;&quot;1&quot; Width&#x3D;&quot;120&quot; VerticalAlignment&#x3D;&quot;Center&quot; Height&#x3D;&quot;23&quot;&#x2F;&gt;</span><br><span class="line">        &lt;TextBlock Grid.Row&#x3D;&quot;2&quot; Grid.Column&#x3D;&quot;0&quot; VerticalAlignment&#x3D;&quot;Center&quot; HorizontalAlignment&#x3D;&quot;Center&quot; &gt;Password&lt;&#x2F;TextBlock&gt;</span><br><span class="line">        &lt;!--放置一个按钮叫做confirm,Click表示点击触发事件，事件的代码要写在.xaml.cs逻辑代码（下面）里面--&gt;</span><br><span class="line">        &lt;Button Grid.Column&#x3D;&quot;2&quot; Grid.Row&#x3D;&quot;2&quot; Width&#x3D;&quot;40&quot; Height&#x3D;&quot;25&quot; x:Name&#x3D;&quot;btnLogin&quot; Click&#x3D;&quot;btnLogin_Click&quot;&gt;Confirm&lt;&#x2F;Button&gt;</span><br><span class="line">    &lt;&#x2F;Grid&gt;</span><br><span class="line">&lt;&#x2F;Window&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;逻辑代码</span><br><span class="line">namespace HelloWorld</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;&#x2F; &lt;summary&gt;</span><br><span class="line">    &#x2F;&#x2F;&#x2F; Interaction logic for LoginWindow.xaml</span><br><span class="line">    &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;</span><br><span class="line">    public partial class LoginWindow : Window</span><br><span class="line">    &#123;</span><br><span class="line">        public LoginWindow()</span><br><span class="line">        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void btnLogin_Click(object sender, RoutedEventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            if(Username.Text &#x3D;&#x3D; &quot;admin&quot; &amp;&amp; Password.Password &#x3D;&#x3D; &quot;12345&quot;)&#x2F;&#x2F;如果输入用户密码是12345,就显示succed</span><br><span class="line">            &#123;</span><br><span class="line">                MessageBox.Show(&quot;succed!&quot;);</span><br><span class="line">                DialogResult &#x3D; true; &#x2F;&#x2F;关闭窗口</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                MessageBox.Show(&quot;Wrong username or passwort, please try again&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;helloword.cs中</span><br><span class="line">using Autodesk.Revit.Attributes;</span><br><span class="line">using Autodesk.Revit.DB;</span><br><span class="line">using Autodesk.Revit.UI;</span><br><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace HelloWorld</span><br><span class="line">&#123;</span><br><span class="line">    [Transaction(TransactionMode.Manual)]</span><br><span class="line">    public class HelloRevit : IExternalCommand</span><br><span class="line">    &#123;</span><br><span class="line">        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)</span><br><span class="line">        &#123; </span><br><span class="line">            LoginWindow loginwindow &#x3D; new LoginWindow(); &#x2F;&#x2F;实例化loginwindow,来源:逻辑代码</span><br><span class="line">            loginwindow.ShowDialog(); &#x2F;&#x2F;调用其继承自window的显示窗口的方法</span><br><span class="line">            return Result.Succeeded;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>生成解决方案后，复制dll路径，revit加载后即可显示登录框</p>
+]]></content>
+      <categories>
+        <category>Revit, C#</category>
+      </categories>
+      <tags>
+        <tag>Revit, C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python一些语法备忘</title>
+    <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>总结了一些Python的语法</p>
+<a id="more"></a>
+
+<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="1-if-else"><a href="#1-if-else" class="headerlink" title="1. if else"></a>1. if else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span></span><br><span class="line">y=<span class="string">'hello'</span></span><br><span class="line"><span class="keyword">if</span> x==<span class="number">1</span> <span class="keyword">or</span> y==<span class="string">'hello'</span>:</span><br><span class="line">	x=x+<span class="number">1</span></span><br><span class="line">	y=y+<span class="string">'world'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-Python特色语句：for-else"><a href="#2-Python特色语句：for-else" class="headerlink" title="2. Python特色语句：for else"></a>2. Python特色语句：for else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">99</span>,<span class="number">81</span>,<span class="number">-1</span>):</span><br><span class="line">	root = sqrt(n)</span><br><span class="line">	<span class="keyword">if</span> root = int(root):</span><br><span class="line">		print(n)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	print(<span class="string">'didnt find it!'</span>)</span><br></pre></td></tr></table></figure>
+<p>这条else语句对应的是知for，不是if，这个是python特有的语句。 break表示打断最近的loop, 而if不是loop，打断的是for loop， 即在for循环中，如果没有从任何一个break中退出，则会执行和for对应的else 只要从break中退出了，则else部分不执行。<br>这段话如果用C++来实现，则如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">99</span>;i&gt;<span class="number">81</span>;i--) </span><br><span class="line">&#123; </span><br><span class="line">	root=<span class="built_in">sqrt</span>(i); </span><br><span class="line">	<span class="keyword">if</span>(root==<span class="keyword">int</span>(root)) </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;i; </span><br><span class="line">		<span class="keyword">break</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span>(i==<span class="number">81</span>) <span class="comment">//边界判断 </span></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">"didn't find it!"</span>&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="3-Definations"><a href="#3-Definations" class="headerlink" title="3. Definations"></a>3. Definations</h3><p>aList = []  列表，相当于c++中的arry/vector<br>aDictionary = {}  字典, 相当于c++中的map<br>aTuple = ()  元组, 只读的，不能修改，不能像list一样有append，remove等操作</p>
+<h3 id="4-遍历输出"><a href="#4-遍历输出" class="headerlink" title="4. 遍历输出"></a>4. 遍历输出</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aList:</span><br><span class="line">	print(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> aDictionary.item()</span><br><span class="line">	print(key, value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Access Value in Dictionary by the Keys</span></span><br><span class="line">value = aDictionary[‘key’]  <span class="comment">#Key muss be string!</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-args-kwargs"><a href="#5-args-kwargs" class="headerlink" title="5. *args, **kwargs"></a>5. <code>*args</code>, <code>**kwargs</code></h3><p><code>*args</code>是位置参数，<code>**kwargs</code>是关建字参数。<code>*args</code>用来收集各种参数，其名字没有实际出现在函数签名的括号中， <code>**kwargs</code>代表了各个dictionary等关系，其名字没有实际出现在括号中，所以有了这两个东西可以在函数input括号里输入各种不同的参数而不止局限于几个自己命名的参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_kwargs</span><span class="params">(first, *args, **kwargs)</span>:</span></span><br><span class="line">	print(<span class="string">'required argument'</span>, first)</span><br><span class="line">	<span class="keyword">for</span> v <span class="keyword">in</span> args:</span><br><span class="line">		print(<span class="string">'optional argument (*args):'</span>, v)</span><br><span class="line">	<span class="keyword">for</span> k, v <span class="keyword">in</span> kwargs.item():</span><br><span class="line">		print(<span class="string">'optional argument %s (*kwargs): %s'</span>, %(k,v))</span><br><span class="line"></span><br><span class="line">test_kwargs(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,k1=<span class="number">5</span>,k2=<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#required argument: 1</span></span><br><span class="line"><span class="comment">#optional argument (*args): 2</span></span><br><span class="line"><span class="comment">#optional argument (*args): 3</span></span><br><span class="line"><span class="comment">#optional argument (*args): 4</span></span><br><span class="line"><span class="comment">#optional argument k2 (*kwargs): 6</span></span><br><span class="line"><span class="comment">#optional argument k1 (*kwargs): 5</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-装饰器"><a href="#6-装饰器" class="headerlink" title="6. 装饰器"></a>6. 装饰器</h3><p>装饰器本质上是一个 Python 函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能，装饰器的返回值也是一个函数/类对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decarator</span><span class="params">(func)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args)</span>:</span></span><br><span class="line">		<span class="comment">#可以此处添加功能如</span></span><br><span class="line">		print(<span class="string">'add funtion 1'</span>)</span><br><span class="line">		<span class="keyword">return</span> func(*args)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@decarator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(*args)</span>:</span></span><br><span class="line">	print(<span class="string">'i have'</span>, *args)</span><br><span class="line"></span><br><span class="line">test(<span class="string">'dsds'</span>,<span class="number">3</span>,<span class="string">'abc'</span>)</span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#add funtion 1</span></span><br><span class="line"><span class="comment">#i have dsds 3 abc</span></span><br></pre></td></tr></table></figure>
+<h3 id="7-列表推导式"><a href="#7-列表推导式" class="headerlink" title="7. 列表推导式"></a>7. 列表推导式</h3><p>基本语法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = [expression(i) <span class="keyword">for</span> i <span class="keyword">in</span> old_list <span class="keyword">if</span> condition(i)]</span><br></pre></td></tr></table></figure>
+<p>翻译成for循环：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> old_list:</span><br><span class="line">	<span class="keyword">if</span>(condition):</span><br><span class="line">		new_list.append(expression(i))</span><br></pre></td></tr></table></figure>
+<h3 id="8-类"><a href="#8-类" class="headerlink" title="8. 类"></a>8. 类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__int__</span><span class="params">(self, name, age)</span>:</span></span><br><span class="line">		self.name_ = name</span><br><span class="line">		self.age_ = age</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getName</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.name_)</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getAge</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.age_)</span><br><span class="line">		<span class="keyword">return</span> self.age_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">rename</span><span class="params">(self, new_name)</span>:</span></span><br><span class="line">		self.name_ = new_name</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line"></span><br><span class="line">p = person(<span class="string">'tom'</span>,<span class="number">34</span>)</span><br><span class="line">p.getName()</span><br><span class="line">p.rename(<span class="string">'alex'</span>)</span><br></pre></td></tr></table></figure>
+<p>•<code>__init__()</code>被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，相当于构造函数，一定要有self<br>•self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数, 这里于c++不同，空括号函数不能直接空着，而是要在定义时加入self<br>•self.name_ 加下滑线表示属性私有<br>•方法函数前面如果加个装饰器@property， 则调用时候直接调用函数名，不用加括号。例如直接调用p.getAge 不用加括号后面<br>•继承语法:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(Person)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span>  <span class="comment">#pass啥都不做，就是占个位</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown的一些语法</title>
+    <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
+<p>注：标准语法一般在#后跟个空格再写文字</p>
+<h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h2 id="2-1-无序列表（前带圆点）"><a href="#2-1-无序列表（前带圆点）" class="headerlink" title="2.1 无序列表（前带圆点）"></a>2.1 无序列表（前带圆点）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">- </span>列表内容</span><br><span class="line"><span class="bullet">+ </span>列表内容</span><br><span class="line"><span class="bullet">* </span>列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<ul>
+<li>列表1</li>
+</ul>
+<ul>
+<li>列表2</li>
+</ul>
+<ul>
+<li>列表3</li>
+</ul>
+<h2 id="2-1-有序列表（前带数字）"><a href="#2-1-有序列表（前带数字）" class="headerlink" title="2.1 有序列表（前带数字）"></a>2.1 有序列表（前带数字）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1. </span>列表内容</span><br><span class="line"><span class="bullet">2. </span>列表内容</span><br><span class="line"><span class="bullet">3. </span>列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<ol>
+<li>列表1</li>
+<li>列表2</li>
+<li>列表3</li>
+</ol>
+<h1 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3. 代码块"></a>3. 代码块</h1><p>在代码段落上下两行分别插入三个反逗号，若要代码高亮则要在反逗号后面注明是什么语言。 </p>
+<h1 id="4-插入图片所需代码"><a href="#4-插入图片所需代码" class="headerlink" title="4. 插入图片所需代码"></a>4. 插入图片所需代码</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">描述</span>](<span class="link">图片链接 ''图片标题''</span>)</span><br><span class="line">![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>) 连续写就是并排显示图片</span><br><span class="line"></span><br><span class="line">描述就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片标题是当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
+<p>例：<br>插入本地图片<br><img src="/blog/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/abc.png" alt="test picture"><br><code>![test picture](./Dynamo学习笔记-1/abc.png)</code> 好像不管用…所以我把所有图片存到了云盘<br><code>&quot;&quot;</code> ？？？</p>
+<h1 id="5-改变字体颜色"><a href="#5-改变字体颜色" class="headerlink" title="5. 改变字体颜色"></a>5. 改变字体颜色</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color:red;"</span>&gt;</span></span></span><br><span class="line"><span class="section">#回车换行后命令失效</span></span><br></pre></td></tr></table></figure>
+<p><span style="color:red;"> 改变字体颜色至红</span></p>
+<h1 id="6-字体"><a href="#6-字体" class="headerlink" title="6. 字体"></a>6. 字体</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**这是加粗的文字**</span></span><br><span class="line"><span class="emphasis">*这是倾斜的文字*</span>`</span><br><span class="line"><span class="strong">***这是斜体加粗的文字**</span>*</span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
+<p>例：<br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del></p>
+<h1 id="7-引用"><a href="#7-引用" class="headerlink" title="7. 引用"></a>7. 引用</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<p>这是引用的内容</p>
+</blockquote>
+</blockquote>
+<h1 id="8-分割线"><a href="#8-分割线" class="headerlink" title="8. 分割线"></a>8. 分割线</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="9-生成首页摘要"><a href="#9-生成首页摘要" class="headerlink" title="9. 生成首页摘要"></a>9. 生成首页摘要</h1><p>在Markdown文档中添加<code>&lt;!-- more --&gt;</code>，代码上面的全是摘要</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这里是摘要</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- more --&gt;</span></span></span><br><span class="line">这里是正文</span><br></pre></td></tr></table></figure>
+
+<h1 id="10-链接"><a href="#10-链接" class="headerlink" title="10. 链接"></a>10. 链接</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">超链接名</span>](<span class="link">超链接地址</span>)</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">本文参考资料</a></p>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -591,178 +786,6 @@
 <h4 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h4><p><a href="https://juejin.im/post/5a6721bd518825733201c4a2" target="_blank" rel="noopener">https://juejin.im/post/5a6721bd518825733201c4a2</a></p>
 <p><a href="https://github.com/mk43/BlogResource/blob/master/LaTex/LATEX数学符号表.pdf" target="_blank" rel="noopener">https://github.com/mk43/BlogResource/blob/master/LaTex/LATEX%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7%E8%A1%A8.pdf</a></p>
 <p><a href="https://oysz2016.github.io/post/8611e6fb.html" target="_blank" rel="noopener">https://oysz2016.github.io/post/8611e6fb.html</a></p>
-]]></content>
-      <categories>
-        <category>markdown</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Revit二次开发</title>
-    <url>/blog/2020/06/12/Revit%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<h2 id="开发环境配置"><a href="#开发环境配置" class="headerlink" title="开发环境配置"></a>开发环境配置</h2><ul>
-<li>Visual Studio 2019, .Net桌面开发</li>
-<li>Revit 2019</li>
-<li>Revit 2019 SDK(software development kit) : 在Add-In Manager文档内修改配置文件Autodesk.AddInManager.addin，在[TARGET]中写入文件当前路径。复制配置文件C:\ProgramData\Autodesk\Revit\Addins\2019。写入的配置文件出现在revit-附加模块-外部工具中。</li>
-</ul>
-<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><ol>
-<li><p>VS中新建.Net frameworkl Class Libraray(类库) 项目</p>
-</li>
-<li><p>在reference里面添加新的引用，浏览到revit安装目录下，添加RevitAPI.dll和RevitAPIUI.dll</p>
-</li>
-<li><p>选中两个dll去到属性里面把复制本地copy local改成false</p>
-</li>
-<li><p>代码</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using Autodesk.Revit.Attributes;</span><br><span class="line">using Autodesk.Revit.DB;</span><br><span class="line">using Autodesk.Revit.UI;</span><br><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace HelloWorld</span><br><span class="line">&#123;</span><br><span class="line">    [Transaction(TransactionMode.Manual)]</span><br><span class="line">    public class HelloRevit : IExternalCommand</span><br><span class="line">    &#123;</span><br><span class="line">        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)</span><br><span class="line">        &#123;</span><br><span class="line">            TaskDialog.Show(&quot;Window&quot;, &quot;Hello World!&quot;);</span><br><span class="line">            return Result.Succeeded;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Build - Build solution; Output中可查看生成的dll路径, 将其复制</p>
-</li>
-<li><p>打开revit，选择addin-manager,load中输入路径载入dll文件，选择run后即可加载运行。</p>
-</li>
-</ol>
-<h2 id="C-的一些基础"><a href="#C-的一些基础" class="headerlink" title="C#的一些基础"></a>C#的一些基础</h2><p>驼峰命名法：首字母小写，后面单词首字母大写</p>
-<p>帕斯卡命名法：首字母大写，后面单词首字母也大写</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace ConsoleAppTest</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        public static float GetPrice(int cout1, float singelPrice1, int cout2, float singelPrice2)</span><br><span class="line">        &#123;</span><br><span class="line">            float totalPrice &#x3D; cout1 * singelPrice1 + cout2 * singelPrice2;</span><br><span class="line">            Console.WriteLine(&quot;this is:&quot;+ totalPrice);&#x2F;&#x2F;输出语法</span><br><span class="line">            return totalPrice;</span><br><span class="line">        &#125;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            GetPrice(2, 2.5f, 4, 3.5f);&#x2F;&#x2F;小数编译器默认double双精度类型，float要在数字后加f</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;类</span><br><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace ConsoleAppTest</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        public class Human</span><br><span class="line">        &#123;</span><br><span class="line">            public Human(String name, Gender gender, int age) &#x2F;&#x2F;构造函数,不写的话会自动构建空的默认构造函数</span><br><span class="line">            &#123;</span><br><span class="line">                Name &#x3D; name;</span><br><span class="line">                Gender &#x3D; gender;</span><br><span class="line">                Age &#x3D; age;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            public static long Population &#x3D; 700000000000; &#x2F;&#x2F;静态字段可以通过类名直接调用，而不用跟非静态字段一样实例化类;方法也同理，如果方法是修饰整个类的，那么就加static</span><br><span class="line">            public int age; &#x2F;&#x2F;字段</span><br><span class="line">            public int Age &#x2F;&#x2F;属性Property,相当于字段的升级版，可以对字段进行一些控制</span><br><span class="line">            &#123;</span><br><span class="line">                get &#123; return age; &#125; &#x2F;&#x2F;get 访问器获取age</span><br><span class="line">                set                 &#x2F;&#x2F;set 访问器控制字段age,age如果小于0,则输出19</span><br><span class="line">                &#123;</span><br><span class="line">                    if (value &lt; 0)</span><br><span class="line">                        age &#x3D; 19;</span><br><span class="line">                    else</span><br><span class="line">                        age &#x3D; value;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            public string Name &#123; get; set; &#125;&#x2F;&#x2F;属性，不加get,set就是字段，但此处set没做修改，写成字段方式效果一样</span><br><span class="line">            public Gender Gender &#123; get; set; &#125;&#x2F;&#x2F;属性 &#x2F;&#x2F; 枚举类型定义在class外</span><br><span class="line">           </span><br><span class="line">            public void Greeting() &#x2F;&#x2F;方法</span><br><span class="line">            &#123;</span><br><span class="line">                string words &#x3D; string.Format(&quot;hello, my name is &#123;0&#125;, I am &#123;1&#125; years old, I am a &#123;2&#125;&quot;, Name, Age, Gender); &#x2F;&#x2F;string的一种替换转换</span><br><span class="line">                string words1 &#x3D; $&quot;hello, my name is &#123;Name&#125;, I am &#123;Age&#125; years old, I am a &#123;Gender&#125;&quot;; &#x2F;&#x2F; 简便写法，效果同上</span><br><span class="line">                Console.WriteLine(words);</span><br><span class="line">                Console.WriteLine(words1);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        public enum Gender &#123; Male, Female &#125; &#x2F;&#x2F;枚举类型定义</span><br><span class="line">        public class Student : Human &#x2F;&#x2F;继承</span><br><span class="line">        &#123;</span><br><span class="line">            public Student(string name, Gender gender, int age) : base(name, gender, age) &#x2F;&#x2F;母类有构造函数时候派生类也需要有相应的</span><br><span class="line">            &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Human person1 &#x3D; new Human(&quot;Tom&quot;,Gender.Male,17); &#x2F;&#x2F;有构造函数后这个括号不能空白,枚举类型的调用方法；实例化</span><br><span class="line">            person1.Age &#x3D; 27;</span><br><span class="line">            person1.Greeting();</span><br><span class="line">            Console.WriteLine(Human.Population);</span><br><span class="line">            Student student &#x3D; new Student(&quot;jack&quot;, Gender.Male, 20);</span><br><span class="line">            student.Greeting();</span><br><span class="line">            Console.WriteLine(Student.Population);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Revit, C#</category>
-      </categories>
-      <tags>
-        <tag>Revit, C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Excel数据处理</title>
-    <url>/blog/2020/05/22/Excel%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h3 id="数据-分列"><a href="#数据-分列" class="headerlink" title="数据-分列"></a>数据-分列</h3><p>用于统一一列中的数据类型，两种数据类型互相转换方法(常规型，文本型)<br><strong>数据透视表</strong>，行，列，值，筛选条件 -&gt; <strong>切片器</strong>更好实现: 点击数据透视表中任意一格，插入切片器，同样适用于透视表对应的图表，点击切片器，数据可视化</p>
-<h3 id="条件格式—数据条，"><a href="#条件格式—数据条，" class="headerlink" title="条件格式—数据条，"></a>条件格式—数据条，</h3><p>突出显示单元格根据不同规则如重复值，大于小于等等</p>
-<h3 id="自定义排序："><a href="#自定义排序：" class="headerlink" title="自定义排序："></a>自定义排序：</h3><ol>
-<li>手动选取表格范围，勾选数据包含表头，则表头不会作为数据参与排序</li>
-<li>选项-高级-拉到最底-自定义序列，可以手动输入定义在自定义排序中需要的次序</li>
-</ol>
-<h3 id="筛选："><a href="#筛选：" class="headerlink" title="筛选："></a>筛选：</h3><ol>
-<li>数字筛选</li>
-<li>自动筛选： 表达且的关系，高级筛选可表达或和且的关系：复制至同一行为且的条件，不同行为或的条件</li>
-</ol>
-<h3 id="分类汇总："><a href="#分类汇总：" class="headerlink" title="分类汇总："></a>分类汇总：</h3><p>先排序再分类汇总，就不会漏；有三个层级，按左侧加号展开。可以有2种分类汇总，注意不要替换当前分类。 汇总数据无法直接复制，开始查找和选择，定位条件仅可见单元格/对象为除了数据外的图片等。</p>
-<h3 id="公式与基础函数"><a href="#公式与基础函数" class="headerlink" title="公式与基础函数"></a>公式与基础函数</h3><p>开始-查找和选择-定位条件-空值-求和/数据-分类汇总<br>开始-计数count只能计算数字不能计算文本，counta可以计算数字和文本。<br>不能拖拽时，先选中区域，在第一个输入公式，control+enter。<br>数据-模拟分析-单变量求解，目标值。</p>
-<h3 id="Vlookup"><a href="#Vlookup" class="headerlink" title="Vlookup"></a>Vlookup</h3><p>通过id找公司名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x3D;vloopup(a1,a:b,查找数据的列数，0表示精确查找&#x2F;1表示近似匹配）</span><br><span class="line">&#x3D;vlookup（要匹配的范围，原数据里范围到原数据里匹配的范围，匹配的列数，精确度0）</span><br></pre></td></tr></table></figure>
-<p>数据区间（10%会用到）近似匹配，只有数字之间才有，只找小于等于自己的最大值<br>不同格式（文本和常规数字）之间不能直接vlookup，常规转文本 加<code>&amp;“”</code> 文本转常规加<code>*1</code></p>
-<h3 id="Match和Index函数"><a href="#Match和Index函数" class="headerlink" title="Match和Index函数"></a>Match和Index函数</h3><p>match函数-找，index函数-取<br>index（查询的终极对象所在范围，match（查询的原始对象，查询原始对象范围，0））<br>拖拽时-右键-不带格式填充</p>
-<h3 id="使用函数进行统计"><a href="#使用函数进行统计" class="headerlink" title="使用函数进行统计"></a>使用函数进行统计</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sumif（条件区域，条件，需求区域）:求和</span><br><span class="line">Countif （需要区域，条件）:计数</span><br><span class="line">sumif（选择所有区域，条件，固定f4条件）:变态能力解决多列循环数据问题：原始数据格式不连贯，进行多次sumif操作麻烦</span><br><span class="line">sumifs处理多个条件函数，按照括号里提示选择</span><br><span class="line">Countifs: 多条件的vlookup，写函数要左对齐，原始数据前面加一列生成条件，vlookup（要匹配的范围，原数据里范围到原数据里匹配的范围，匹配的列数，精确度0）</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用日期函数"><a href="#使用日期函数" class="headerlink" title="使用日期函数"></a>使用日期函数</h3><ol>
-<li>推算日期，给开始，给间隔，算结束（反之也可）<br>日期+天数直接可以算<br>日期+月数 <code>date（year，month+月数，day)</code><br>日期推算固定算法-先拆后组</li>
-<li>日期间隔，已知开始和结束日期<br><code>=DATEDIF(A2,B2+1更精准,”y/m/d“)</code> </li>
-<li>标记快到期的数据<br>选中数据，复制，选择性粘贴-值，条件格式，介于，=today()，=today()+15,颜色</li>
-</ol>
-<h3 id="使用表格"><a href="#使用表格" class="headerlink" title="使用表格"></a>使用表格</h3><ol>
-<li>表格与数据透视表<br>数据透视表，数据更新如何抓取数据 （如今的数据叫数据清单list/记录）<br>插入，表格，再做数据透视表可以自动更新</li>
-<li>表格与函数<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x3D;VLOOKUP(D2,J:K,2,0)</span><br><span class="line">&#x3D;IFNA(VLOOKUP(D11,J:K,2,0),&quot;&quot;)</span><br></pre></td></tr></table></figure></li>
-<li>表格与图表<br>思路一样，把list专程table</li>
-</ol>
-<h3 id="文档安全性设置"><a href="#文档安全性设置" class="headerlink" title="文档安全性设置"></a>文档安全性设置</h3><ol>
-<li>防止其他用户在表格中乱写<br>针对固定数据范围的限制：报销金额，只允许输入500～1000的整数<br>数据-数据验证/数据有效性-设置，数据-数据验证-出错警告</li>
-<li>工作表保护-防止用户乱删<br>审阅-保护工作表<br>公式-手工录入，一半保护一半不保护<br>右键-设置单元格格式-保护-取消锁定，审阅-保护工作表-依旧可以随便改<br>锁定属性仅针对于写值<br>右键-设置单元格格式-保护-取消锁定（允许写入任何值），审阅-保护工作表-允许的动作勾选</li>
-</ol>
-<h3 id="邮件合并工具"><a href="#邮件合并工具" class="headerlink" title="邮件合并工具"></a>邮件合并工具</h3><ol>
-<li>员工信息表，word更适合打印,每页一个人的信息<br>邮件-选择收件人（把word和excel建立联系）-现有收件人-选择要链接的excel-改动的地方要插入合并域-选择<br>预览结果-滚动条 完成并合并-编辑单个文档-全部<br>邮件-统一模版-抓取数据-批量打印</li>
-<li>考试卷子<br>建立连接，出完题，邮件-开始邮件合并-目录<br>邮件合并工具-抓取数据-做好布局-合并文档</li>
-</ol>
-<h3 id="数据不规范的话"><a href="#数据不规范的话" class="headerlink" title="数据不规范的话"></a>数据不规范的话</h3><ol>
-<li>不能做透视</li>
-<li>不能vlookup</li>
-<li>动态员工信息查询做不了</li>
-<li>word无法抓取数据</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Excel</category>
-      </categories>
-      <tags>
-        <tag>Excel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python一些语法备忘</title>
-    <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>总结了一些Python的语法</p>
-<a id="more"></a>
-
-<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="1-if-else"><a href="#1-if-else" class="headerlink" title="1. if else"></a>1. if else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span></span><br><span class="line">y=<span class="string">'hello'</span></span><br><span class="line"><span class="keyword">if</span> x==<span class="number">1</span> <span class="keyword">or</span> y==<span class="string">'hello'</span>:</span><br><span class="line">	x=x+<span class="number">1</span></span><br><span class="line">	y=y+<span class="string">'world'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-Python特色语句：for-else"><a href="#2-Python特色语句：for-else" class="headerlink" title="2. Python特色语句：for else"></a>2. Python特色语句：for else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">99</span>,<span class="number">81</span>,<span class="number">-1</span>):</span><br><span class="line">	root = sqrt(n)</span><br><span class="line">	<span class="keyword">if</span> root = int(root):</span><br><span class="line">		print(n)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	print(<span class="string">'didnt find it!'</span>)</span><br></pre></td></tr></table></figure>
-<p>这条else语句对应的是知for，不是if，这个是python特有的语句。 break表示打断最近的loop, 而if不是loop，打断的是for loop， 即在for循环中，如果没有从任何一个break中退出，则会执行和for对应的else 只要从break中退出了，则else部分不执行。<br>这段话如果用C++来实现，则如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">99</span>;i&gt;<span class="number">81</span>;i--) </span><br><span class="line">&#123; </span><br><span class="line">	root=<span class="built_in">sqrt</span>(i); </span><br><span class="line">	<span class="keyword">if</span>(root==<span class="keyword">int</span>(root)) </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;i; </span><br><span class="line">		<span class="keyword">break</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span>(i==<span class="number">81</span>) <span class="comment">//边界判断 </span></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">"didn't find it!"</span>&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="3-Definations"><a href="#3-Definations" class="headerlink" title="3. Definations"></a>3. Definations</h3><p>aList = []  列表，相当于c++中的arry/vector<br>aDictionary = {}  字典, 相当于c++中的map<br>aTuple = ()  元组, 只读的，不能修改，不能像list一样有append，remove等操作</p>
-<h3 id="4-遍历输出"><a href="#4-遍历输出" class="headerlink" title="4. 遍历输出"></a>4. 遍历输出</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aList:</span><br><span class="line">	print(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> aDictionary.item()</span><br><span class="line">	print(key, value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Access Value in Dictionary by the Keys</span></span><br><span class="line">value = aDictionary[‘key’]  <span class="comment">#Key muss be string!</span></span><br></pre></td></tr></table></figure>
-<h3 id="5-args-kwargs"><a href="#5-args-kwargs" class="headerlink" title="5. *args, **kwargs"></a>5. <code>*args</code>, <code>**kwargs</code></h3><p><code>*args</code>是位置参数，<code>**kwargs</code>是关建字参数。<code>*args</code>用来收集各种参数，其名字没有实际出现在函数签名的括号中， <code>**kwargs</code>代表了各个dictionary等关系，其名字没有实际出现在括号中，所以有了这两个东西可以在函数input括号里输入各种不同的参数而不止局限于几个自己命名的参数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_kwargs</span><span class="params">(first, *args, **kwargs)</span>:</span></span><br><span class="line">	print(<span class="string">'required argument'</span>, first)</span><br><span class="line">	<span class="keyword">for</span> v <span class="keyword">in</span> args:</span><br><span class="line">		print(<span class="string">'optional argument (*args):'</span>, v)</span><br><span class="line">	<span class="keyword">for</span> k, v <span class="keyword">in</span> kwargs.item():</span><br><span class="line">		print(<span class="string">'optional argument %s (*kwargs): %s'</span>, %(k,v))</span><br><span class="line"></span><br><span class="line">test_kwargs(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,k1=<span class="number">5</span>,k2=<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#required argument: 1</span></span><br><span class="line"><span class="comment">#optional argument (*args): 2</span></span><br><span class="line"><span class="comment">#optional argument (*args): 3</span></span><br><span class="line"><span class="comment">#optional argument (*args): 4</span></span><br><span class="line"><span class="comment">#optional argument k2 (*kwargs): 6</span></span><br><span class="line"><span class="comment">#optional argument k1 (*kwargs): 5</span></span><br></pre></td></tr></table></figure>
-<h3 id="6-装饰器"><a href="#6-装饰器" class="headerlink" title="6. 装饰器"></a>6. 装饰器</h3><p>装饰器本质上是一个 Python 函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能，装饰器的返回值也是一个函数/类对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decarator</span><span class="params">(func)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args)</span>:</span></span><br><span class="line">		<span class="comment">#可以此处添加功能如</span></span><br><span class="line">		print(<span class="string">'add funtion 1'</span>)</span><br><span class="line">		<span class="keyword">return</span> func(*args)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@decarator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(*args)</span>:</span></span><br><span class="line">	print(<span class="string">'i have'</span>, *args)</span><br><span class="line"></span><br><span class="line">test(<span class="string">'dsds'</span>,<span class="number">3</span>,<span class="string">'abc'</span>)</span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#add funtion 1</span></span><br><span class="line"><span class="comment">#i have dsds 3 abc</span></span><br></pre></td></tr></table></figure>
-<h3 id="7-列表推导式"><a href="#7-列表推导式" class="headerlink" title="7. 列表推导式"></a>7. 列表推导式</h3><p>基本语法：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = [expression(i) <span class="keyword">for</span> i <span class="keyword">in</span> old_list <span class="keyword">if</span> condition(i)]</span><br></pre></td></tr></table></figure>
-<p>翻译成for循环：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> old_list:</span><br><span class="line">	<span class="keyword">if</span>(condition):</span><br><span class="line">		new_list.append(expression(i))</span><br></pre></td></tr></table></figure>
-<h3 id="8-类"><a href="#8-类" class="headerlink" title="8. 类"></a>8. 类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__int__</span><span class="params">(self, name, age)</span>:</span></span><br><span class="line">		self.name_ = name</span><br><span class="line">		self.age_ = age</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getName</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.name_)</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">getAge</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(self.age_)</span><br><span class="line">		<span class="keyword">return</span> self.age_</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">rename</span><span class="params">(self, new_name)</span>:</span></span><br><span class="line">		self.name_ = new_name</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line"></span><br><span class="line">p = person(<span class="string">'tom'</span>,<span class="number">34</span>)</span><br><span class="line">p.getName()</span><br><span class="line">p.rename(<span class="string">'alex'</span>)</span><br></pre></td></tr></table></figure>
-<p>•<code>__init__()</code>被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，相当于构造函数，一定要有self<br>•self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数, 这里于c++不同，空括号函数不能直接空着，而是要在定义时加入self<br>•self.name_ 加下滑线表示属性私有<br>•方法函数前面如果加个装饰器@property， 则调用时候直接调用函数名，不用加括号。例如直接调用p.getAge 不用加括号后面<br>•继承语法:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(Person)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span>  <span class="comment">#pass啥都不做，就是占个位</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdown的一些语法</title>
-    <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
-<p>注：标准语法一般在#后跟个空格再写文字</p>
-<h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h2 id="2-1-无序列表（前带圆点）"><a href="#2-1-无序列表（前带圆点）" class="headerlink" title="2.1 无序列表（前带圆点）"></a>2.1 无序列表（前带圆点）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">- </span>列表内容</span><br><span class="line"><span class="bullet">+ </span>列表内容</span><br><span class="line"><span class="bullet">* </span>列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<ul>
-<li>列表1</li>
-</ul>
-<ul>
-<li>列表2</li>
-</ul>
-<ul>
-<li>列表3</li>
-</ul>
-<h2 id="2-1-有序列表（前带数字）"><a href="#2-1-有序列表（前带数字）" class="headerlink" title="2.1 有序列表（前带数字）"></a>2.1 有序列表（前带数字）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1. </span>列表内容</span><br><span class="line"><span class="bullet">2. </span>列表内容</span><br><span class="line"><span class="bullet">3. </span>列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<ol>
-<li>列表1</li>
-<li>列表2</li>
-<li>列表3</li>
-</ol>
-<h1 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3. 代码块"></a>3. 代码块</h1><p>在代码段落上下两行分别插入三个反逗号，若要代码高亮则要在反逗号后面注明是什么语言。 </p>
-<h1 id="4-插入图片所需代码"><a href="#4-插入图片所需代码" class="headerlink" title="4. 插入图片所需代码"></a>4. 插入图片所需代码</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">描述</span>](<span class="link">图片链接 ''图片标题''</span>)</span><br><span class="line">![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>) 连续写就是并排显示图片</span><br><span class="line"></span><br><span class="line">描述就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片标题是当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
-<p>例：<br>插入本地图片<br><img src="/blog/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/abc.png" alt="test picture"><br><code>![test picture](./Dynamo学习笔记-1/abc.png)</code> 好像不管用…所以我把所有图片存到了云盘<br><code>&quot;&quot;</code> ？？？</p>
-<h1 id="5-改变字体颜色"><a href="#5-改变字体颜色" class="headerlink" title="5. 改变字体颜色"></a>5. 改变字体颜色</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color:red;"</span>&gt;</span></span></span><br><span class="line"><span class="section">#回车换行后命令失效</span></span><br></pre></td></tr></table></figure>
-<p><span style="color:red;"> 改变字体颜色至红</span></p>
-<h1 id="6-字体"><a href="#6-字体" class="headerlink" title="6. 字体"></a>6. 字体</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**这是加粗的文字**</span></span><br><span class="line"><span class="emphasis">*这是倾斜的文字*</span>`</span><br><span class="line"><span class="strong">***这是斜体加粗的文字**</span>*</span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
-<p>例：<br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del></p>
-<h1 id="7-引用"><a href="#7-引用" class="headerlink" title="7. 引用"></a>7. 引用</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这是引用的内容</p>
-<blockquote>
-<p>这是引用的内容</p>
-</blockquote>
-</blockquote>
-<h1 id="8-分割线"><a href="#8-分割线" class="headerlink" title="8. 分割线"></a>8. 分割线</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="9-生成首页摘要"><a href="#9-生成首页摘要" class="headerlink" title="9. 生成首页摘要"></a>9. 生成首页摘要</h1><p>在Markdown文档中添加<code>&lt;!-- more --&gt;</code>，代码上面的全是摘要</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这里是摘要</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- more --&gt;</span></span></span><br><span class="line">这里是正文</span><br></pre></td></tr></table></figure>
-
-<h1 id="10-链接"><a href="#10-链接" class="headerlink" title="10. 链接"></a>10. 链接</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">超链接名</span>](<span class="link">超链接地址</span>)</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">本文参考资料</a></p>
 ]]></content>
       <categories>
         <category>markdown</category>
