@@ -19,88 +19,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Dynamo学习笔记</title>
-    <url>/blog/2020/05/22/Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</url>
-    <content><![CDATA[<ul>
-<li>dynamo里单位是毫米</li>
-<li>var[][]表示的数据类型为二维数组，即至少有L3的列表</li>
-<li>CSV：Comma-Separated Values 用逗号分隔的数据形式，input进dynamo用节点csv import </li>
-<li>创建标高：level</li>
-<li><span style="color:red;">节点<strong>set parameter by name</strong>: 通过看revit图元中属性中的参数名字给这个参数赋值；<br>节点<strong>get parameter value by name</strong>: 可以输入参数名字来提取参数的值</span></li>
-<li><span style="color:green;">节点<strong>filter by bool mask</strong>: mask中输入一系列bool值可以筛选ture的进in里 false进out里</span></li>
-<li>ToLower : 大写转小写</li>
-<li>string类型转bool可以用==，判断俩string是不是一致，一致输出的就是bool true, 否则 bool false</li>
-<li>节点floorplan: 根据标高level创建平面视图</li>
-<li>节点type: 看值的类型</li>
-<li>如果出现结果有问题但没有报错可能是lacing连缀有问题要更改</li>
-<li>节点geometry.translate: 位移</li>
-<li>快捷键ctrl + G: 把几个模块整合成一个组</li>
-<li>鼠标右键preview 预览之前的，把其去钩表示显示最新的</li>
-<li><span style="color:red;">节点<strong>point at parameter</strong>： 根据设置的节点向量个数和曲线curve得到曲线上的点</span></li>
-<li><span style="color:red;">code block 中创建一个简单list的语法：0..1..#24：表示起始0，终点1，一共24项，注意#不能忘记</span></li>
-<li>节点Drop: 去掉list中的某个项，注意list的分级</li>
-<li>节点line: 画线，起点终点</li>
-<li>节点flatten: 把多层级的list拍平，可以用来改变list的层级结构</li>
-<li>节点plane by three points: 通过三个点来创建平面，平面不显示，但于线相交用geomery.intersect可以显示出点。</li>
-<li>节点geometry.translate也可以用来阵列具体做法是在例如z轴输入一个list,里面储存了递增的距离，如0..300..#30, 则为阵列30份，直到高度300</li>
-<li>节点polycurve by point: 根据点来画多段线弧线</li>
-<li><span style="color:red;">节点<strong>list.schiftIndices</strong>: 输入amount 1表示把列表的最后一个项放到第一位，其他的往后退一位；输入amount 2表示把列表的最后两项放到前两位，其他的往后退2位，以此类推</span></li>
-<li>节点<strong>list.transpose</strong>:转制，行变列，列变行</li>
-<li>list.count： 输出list的长度</li>
-<li><span style="color:red;">节点<strong>curve.sweepAsSolid</strong>: 输入闭合的曲线（作为截面），和线作为拉伸路径（注意这里的必须输入的是一个curve如line,bspline,nurb而不是polycurve 因为poly本质是个list），拉伸为一个实体，输入的东西可为列表，则批量拉伸</span></li>
-<li>line.byTangency创建curve的切线</li>
-<li>line.direction: 获得线方向上的向量</li>
-<li>将dynamo中的模型输入revit使其变成一个族实例用DirectSchape.ByGeometry</li>
-<li>code block 中是使用的design script即dynamo 自己的语言<ul>
-<li><span style="color:red;">code block 创建list：<ul>
-<li>codeblock 提取列表元素： a[0]<br>  [1,2,3,4] 直接输出list 1，2，3，4<br>  0..100..10; 首项..末项..项差 -&gt; range<br>  0..#100..10; 首相..项数..项差 -&gt; sequence<br>  0..100..#10； 首相..末项..项数</li>
-</ul>
-</span></li>
-</ul>
-</li>
-<li>用节点python script 可输入python code</li>
-<li><span style="color:blue;">revit中族的一个树状结构，里面包含了其的4层信息，所以想通过dynamo逆向提取revit模型中的信息或特定模型，逻辑上应该是<ol>
-<li>先找到根即category -&gt; 命令categories</li>
-<li>细化过滤筛选family type -&gt; 命令all placed family types of category</li>
-<li>筛选得到instance -&gt; 命令all elements of family type; 获得的instance可用elements.geometry展示<br><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590261055/abc_hc8z9c.png" alt="族的结构"></li>
-</ol>
-</span></li>
-<li>节点export excel： data中要求输入二维列表数据</li>
-<li>Dynamo编程如果出错，应该查input output， 查lacing，查作用域即List分级</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Dynamo, revit</category>
-      </categories>
-      <tags>
-        <tag>Dynamo, revit</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leistungsphasen备忘</title>
-    <url>/blog/2020/05/25/Leistungsphasen/</url>
-    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" alt title="Leistungsphasen 1-9"></p>
-<h2 id="LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung"><a href="#LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung" class="headerlink" title="LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung"></a>LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung</h2><p>Der Bauantrag ist schriftlich bei der unteren Bauaufsichtsbehörde einzureichen. Mit dem Bauantrag sind alle für die Beurteilung des Bauvorhabens und die Bearbeitung des Bauantrags erforderlichen Unterlagen (Bauvorlagen) einzureichen. Näheres regeln in Deutschland die entsprechenden Rechtsverordnungen der Bundesländer (Bauvorlagenverordnungen).</p>
-<p>Ein Bauantrag besteht in Deutschland meist aus folgenden Teilen:</p>
-<ol>
-<li>Eingabeplan mit Grundrissen, Ansichten und Schnitten im Maßstab 1:100</li>
-<li>Bauantragsformular</li>
-<li>Baubeschreibung</li>
-<li>statistischer Erhebungsbogen</li>
-<li>Wärmeschutznachweis</li>
-<li>Standsicherheitsnachweis (Statische Berechnung, Statik)</li>
-<li>amtlicher Lageplan zum Bauantrag, meist im Maßstab 1:200 (kleinere Maßstäbe nur bei großen Grundstücken)</li>
-<li>ggf. weiteren notwendigen Nachweisen und Angaben, die zur Erteilung der Genehmigung von der Bauaufsichtsbehörde gefordert werden.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>informations</category>
-      </categories>
-      <tags>
-        <tag>LP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BIM的一些基础概念整理</title>
     <url>/blog/2020/05/30/BIM%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E6%95%B4%E7%90%86/</url>
     <content><![CDATA[<p>基于课堂资料整理汇总了一些基本概念。</p>
@@ -348,56 +266,85 @@
       </tags>
   </entry>
   <entry>
-    <title>Excel数据处理</title>
-    <url>/blog/2020/05/22/Excel%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h3 id="数据-分列"><a href="#数据-分列" class="headerlink" title="数据-分列"></a>数据-分列</h3><p>用于统一一列中的数据类型，两种数据类型互相转换方法(常规型，文本型)<br><strong>数据透视表</strong>，行，列，值，筛选条件 -&gt; <strong>切片器</strong>更好实现: 点击数据透视表中任意一格，插入切片器，同样适用于透视表对应的图表，点击切片器，数据可视化</p>
-<h3 id="条件格式—数据条，"><a href="#条件格式—数据条，" class="headerlink" title="条件格式—数据条，"></a>条件格式—数据条，</h3><p>突出显示单元格根据不同规则如重复值，大于小于等等</p>
-<h3 id="自定义排序："><a href="#自定义排序：" class="headerlink" title="自定义排序："></a>自定义排序：</h3><ol>
-<li>手动选取表格范围，勾选数据包含表头，则表头不会作为数据参与排序</li>
-<li>选项-高级-拉到最底-自定义序列，可以手动输入定义在自定义排序中需要的次序</li>
-</ol>
-<h3 id="筛选："><a href="#筛选：" class="headerlink" title="筛选："></a>筛选：</h3><ol>
-<li>数字筛选</li>
-<li>自动筛选： 表达且的关系，高级筛选可表达或和且的关系：复制至同一行为且的条件，不同行为或的条件</li>
-</ol>
-<h3 id="分类汇总："><a href="#分类汇总：" class="headerlink" title="分类汇总："></a>分类汇总：</h3><p>先排序再分类汇总，就不会漏；有三个层级，按左侧加号展开。可以有2种分类汇总，注意不要替换当前分类。 汇总数据无法直接复制，开始查找和选择，定位条件仅可见单元格/对象为除了数据外的图片等。</p>
-<h3 id="公式与基础函数"><a href="#公式与基础函数" class="headerlink" title="公式与基础函数"></a>公式与基础函数</h3><p>开始-查找和选择-定位条件-空值-求和/数据-分类汇总<br>开始-计数count只能计算数字不能计算文本，counta可以计算数字和文本。<br>不能拖拽时，先选中区域，在第一个输入公式，control+enter。<br>数据-模拟分析-单变量求解，目标值。</p>
-<h3 id="Vlookup"><a href="#Vlookup" class="headerlink" title="Vlookup"></a>Vlookup</h3><p>通过id找公司名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x3D;vloopup(a1,a:b,查找数据的列数，0表示精确查找&#x2F;1表示近似匹配）</span><br><span class="line">&#x3D;vlookup（要匹配的范围，原数据里范围到原数据里匹配的范围，匹配的列数，精确度0）</span><br></pre></td></tr></table></figure>
-<p>数据区间（10%会用到）近似匹配，只有数字之间才有，只找小于等于自己的最大值<br>不同格式（文本和常规数字）之间不能直接vlookup，常规转文本 加<code>&amp;“”</code> 文本转常规加<code>*1</code></p>
-<h3 id="Match和Index函数"><a href="#Match和Index函数" class="headerlink" title="Match和Index函数"></a>Match和Index函数</h3><p>match函数-找，index函数-取<br>index（查询的终极对象所在范围，match（查询的原始对象，查询原始对象范围，0））<br>拖拽时-右键-不带格式填充</p>
-<h3 id="使用函数进行统计"><a href="#使用函数进行统计" class="headerlink" title="使用函数进行统计"></a>使用函数进行统计</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sumif（条件区域，条件，需求区域）:求和</span><br><span class="line">Countif （需要区域，条件）:计数</span><br><span class="line">sumif（选择所有区域，条件，固定f4条件）:变态能力解决多列循环数据问题：原始数据格式不连贯，进行多次sumif操作麻烦</span><br><span class="line">sumifs处理多个条件函数，按照括号里提示选择</span><br><span class="line">Countifs: 多条件的vlookup，写函数要左对齐，原始数据前面加一列生成条件，vlookup（要匹配的范围，原数据里范围到原数据里匹配的范围，匹配的列数，精确度0）</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用日期函数"><a href="#使用日期函数" class="headerlink" title="使用日期函数"></a>使用日期函数</h3><ol>
-<li>推算日期，给开始，给间隔，算结束（反之也可）<br>日期+天数直接可以算<br>日期+月数 <code>date（year，month+月数，day)</code><br>日期推算固定算法-先拆后组</li>
-<li>日期间隔，已知开始和结束日期<br><code>=DATEDIF(A2,B2+1更精准,”y/m/d“)</code> </li>
-<li>标记快到期的数据<br>选中数据，复制，选择性粘贴-值，条件格式，介于，=today()，=today()+15,颜色</li>
-</ol>
-<h3 id="使用表格"><a href="#使用表格" class="headerlink" title="使用表格"></a>使用表格</h3><ol>
-<li>表格与数据透视表<br>数据透视表，数据更新如何抓取数据 （如今的数据叫数据清单list/记录）<br>插入，表格，再做数据透视表可以自动更新</li>
-<li>表格与函数<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x3D;VLOOKUP(D2,J:K,2,0)</span><br><span class="line">&#x3D;IFNA(VLOOKUP(D11,J:K,2,0),&quot;&quot;)</span><br></pre></td></tr></table></figure></li>
-<li>表格与图表<br>思路一样，把list专程table</li>
-</ol>
-<h3 id="文档安全性设置"><a href="#文档安全性设置" class="headerlink" title="文档安全性设置"></a>文档安全性设置</h3><ol>
-<li>防止其他用户在表格中乱写<br>针对固定数据范围的限制：报销金额，只允许输入500～1000的整数<br>数据-数据验证/数据有效性-设置，数据-数据验证-出错警告</li>
-<li>工作表保护-防止用户乱删<br>审阅-保护工作表<br>公式-手工录入，一半保护一半不保护<br>右键-设置单元格格式-保护-取消锁定，审阅-保护工作表-依旧可以随便改<br>锁定属性仅针对于写值<br>右键-设置单元格格式-保护-取消锁定（允许写入任何值），审阅-保护工作表-允许的动作勾选</li>
-</ol>
-<h3 id="邮件合并工具"><a href="#邮件合并工具" class="headerlink" title="邮件合并工具"></a>邮件合并工具</h3><ol>
-<li>员工信息表，word更适合打印,每页一个人的信息<br>邮件-选择收件人（把word和excel建立联系）-现有收件人-选择要链接的excel-改动的地方要插入合并域-选择<br>预览结果-滚动条 完成并合并-编辑单个文档-全部<br>邮件-统一模版-抓取数据-批量打印</li>
-<li>考试卷子<br>建立连接，出完题，邮件-开始邮件合并-目录<br>邮件合并工具-抓取数据-做好布局-合并文档</li>
-</ol>
-<h3 id="数据不规范的话"><a href="#数据不规范的话" class="headerlink" title="数据不规范的话"></a>数据不规范的话</h3><ol>
-<li>不能做透视</li>
-<li>不能vlookup</li>
-<li>动态员工信息查询做不了</li>
-<li>word无法抓取数据</li>
+    <title>Leistungsphasen备忘</title>
+    <url>/blog/2020/05/25/Leistungsphasen/</url>
+    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" alt title="Leistungsphasen 1-9"></p>
+<h2 id="LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung"><a href="#LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung" class="headerlink" title="LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung"></a>LP4 Genehmigungsplanung / Eingabeplanung / Einreichplanung</h2><p>Der Bauantrag ist schriftlich bei der unteren Bauaufsichtsbehörde einzureichen. Mit dem Bauantrag sind alle für die Beurteilung des Bauvorhabens und die Bearbeitung des Bauantrags erforderlichen Unterlagen (Bauvorlagen) einzureichen. Näheres regeln in Deutschland die entsprechenden Rechtsverordnungen der Bundesländer (Bauvorlagenverordnungen).</p>
+<p>Ein Bauantrag besteht in Deutschland meist aus folgenden Teilen:</p>
+<ol>
+<li>Eingabeplan mit Grundrissen, Ansichten und Schnitten im Maßstab 1:100</li>
+<li>Bauantragsformular</li>
+<li>Baubeschreibung</li>
+<li>statistischer Erhebungsbogen</li>
+<li>Wärmeschutznachweis</li>
+<li>Standsicherheitsnachweis (Statische Berechnung, Statik)</li>
+<li>amtlicher Lageplan zum Bauantrag, meist im Maßstab 1:200 (kleinere Maßstäbe nur bei großen Grundstücken)</li>
+<li>ggf. weiteren notwendigen Nachweisen und Angaben, die zur Erteilung der Genehmigung von der Bauaufsichtsbehörde gefordert werden.</li>
 </ol>
 ]]></content>
       <categories>
-        <category>Excel</category>
+        <category>informations</category>
       </categories>
       <tags>
-        <tag>Excel</tag>
+        <tag>LP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dynamo学习笔记</title>
+    <url>/blog/2020/05/22/Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</url>
+    <content><![CDATA[<ul>
+<li>dynamo里单位是毫米</li>
+<li>var[][]表示的数据类型为二维数组，即至少有L3的列表</li>
+<li>CSV：Comma-Separated Values 用逗号分隔的数据形式，input进dynamo用节点csv import </li>
+<li>创建标高：level</li>
+<li><span style="color:red;">节点<strong>set parameter by name</strong>: 通过看revit图元中属性中的参数名字给这个参数赋值；<br>节点<strong>get parameter value by name</strong>: 可以输入参数名字来提取参数的值</span></li>
+<li><span style="color:green;">节点<strong>filter by bool mask</strong>: mask中输入一系列bool值可以筛选ture的进in里 false进out里</span></li>
+<li>ToLower : 大写转小写</li>
+<li>string类型转bool可以用==，判断俩string是不是一致，一致输出的就是bool true, 否则 bool false</li>
+<li>节点floorplan: 根据标高level创建平面视图</li>
+<li>节点type: 看值的类型</li>
+<li>如果出现结果有问题但没有报错可能是lacing连缀有问题要更改</li>
+<li>节点geometry.translate: 位移</li>
+<li>快捷键ctrl + G: 把几个模块整合成一个组</li>
+<li>鼠标右键preview 预览之前的，把其去钩表示显示最新的</li>
+<li><span style="color:red;">节点<strong>point at parameter</strong>： 根据设置的节点向量个数和曲线curve得到曲线上的点</span></li>
+<li><span style="color:red;">code block 中创建一个简单list的语法：0..1..#24：表示起始0，终点1，一共24项，注意#不能忘记</span></li>
+<li>节点Drop: 去掉list中的某个项，注意list的分级</li>
+<li>节点line: 画线，起点终点</li>
+<li>节点flatten: 把多层级的list拍平，可以用来改变list的层级结构</li>
+<li>节点plane by three points: 通过三个点来创建平面，平面不显示，但于线相交用geomery.intersect可以显示出点。</li>
+<li>节点geometry.translate也可以用来阵列具体做法是在例如z轴输入一个list,里面储存了递增的距离，如0..300..#30, 则为阵列30份，直到高度300</li>
+<li>节点polycurve by point: 根据点来画多段线弧线</li>
+<li><span style="color:red;">节点<strong>list.schiftIndices</strong>: 输入amount 1表示把列表的最后一个项放到第一位，其他的往后退一位；输入amount 2表示把列表的最后两项放到前两位，其他的往后退2位，以此类推</span></li>
+<li>节点<strong>list.transpose</strong>:转制，行变列，列变行</li>
+<li>list.count： 输出list的长度</li>
+<li><span style="color:red;">节点<strong>curve.sweepAsSolid</strong>: 输入闭合的曲线（作为截面），和线作为拉伸路径（注意这里的必须输入的是一个curve如line,bspline,nurb而不是polycurve 因为poly本质是个list），拉伸为一个实体，输入的东西可为列表，则批量拉伸</span></li>
+<li>line.byTangency创建curve的切线</li>
+<li>line.direction: 获得线方向上的向量</li>
+<li>将dynamo中的模型输入revit使其变成一个族实例用DirectSchape.ByGeometry</li>
+<li>code block 中是使用的design script即dynamo 自己的语言<ul>
+<li><span style="color:red;">code block 创建list：<ul>
+<li>codeblock 提取列表元素： a[0]<br>  [1,2,3,4] 直接输出list 1，2，3，4<br>  0..100..10; 首项..末项..项差 -&gt; range<br>  0..#100..10; 首相..项数..项差 -&gt; sequence<br>  0..100..#10； 首相..末项..项数</li>
+</ul>
+</span></li>
+</ul>
+</li>
+<li>用节点python script 可输入python code</li>
+<li><span style="color:blue;">revit中族的一个树状结构，里面包含了其的4层信息，所以想通过dynamo逆向提取revit模型中的信息或特定模型，逻辑上应该是<ol>
+<li>先找到根即category -&gt; 命令categories</li>
+<li>细化过滤筛选family type -&gt; 命令all placed family types of category</li>
+<li>筛选得到instance -&gt; 命令all elements of family type; 获得的instance可用elements.geometry展示<br><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590261055/abc_hc8z9c.png" alt="族的结构"></li>
+</ol>
+</span></li>
+<li>节点export excel： data中要求输入二维列表数据</li>
+<li>Dynamo编程如果出错，应该查input output， 查lacing，查作用域即List分级</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dynamo, revit</category>
+      </categories>
+      <tags>
+        <tag>Dynamo, revit</tag>
       </tags>
   </entry>
   <entry>
@@ -500,75 +447,24 @@
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="comment">//获取选定窗的位置</span></span><br><span class="line"><span class="keyword">using</span> Autodesk.Revit.Attributes;</span><br><span class="line"><span class="keyword">using</span> Autodesk.Revit.DB;</span><br><span class="line"><span class="keyword">using</span> Autodesk.Revit.UI;</span><br><span class="line"><span class="keyword">using</span> Autodesk.Revit.UI.Selection;</span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">RetrieveInformation</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">Transaction(TransactionMode.ReadOnly)</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SelectionDemo</span> : <span class="title">IExternalCommand</span> <span class="comment">//实现的接口跟helloWorld一样</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> Result <span class="title">Execute</span>(<span class="params">ExternalCommandData commandData, <span class="keyword">ref</span> <span class="keyword">string</span> message, ElementSet elements</span>) <span class="comment">//输入的commandData 里面包含了所有需要的信息</span></span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">try</span> </span><br><span class="line">            &#123;</span><br><span class="line">                UIDocument uiDoc = commandData.Application.ActiveUIDocument; <span class="comment">//先通过commandData获取一个UIDocument</span></span><br><span class="line">                Document Doc = uiDoc.Document;<span class="comment">// 通过uiDoc获得文档，即当前打开的revit文件</span></span><br><span class="line">                Reference r = uiDoc.Selection.PickObject(Autodesk.Revit.UI.Selection.ObjectType.Element); <span class="comment">//pickobject方法有重载允许输入ISelectionFilter类型</span></span><br><span class="line">                Element element = Doc.GetElement(r.ElementId);</span><br><span class="line">                <span class="keyword">var</span> window = element <span class="keyword">as</span> FamilyInstance;</span><br><span class="line">                <span class="keyword">var</span> location = wall.Location <span class="keyword">as</span> LocationPoint;</span><br><span class="line">                <span class="keyword">var</span> point = location.Point;</span><br><span class="line">                TaskDialog.Show(<span class="string">"tip"</span>, <span class="string">$"选择窗的位置是<span class="subst">&#123;point.ToString()&#125;</span>"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">catch</span>(Autodesk.Revit.Exceptions.OperationCanceledException e) <span class="comment">//捕捉异常，不让其抛出显示窗口</span></span><br><span class="line">            &#123;</span><br><span class="line">                TaskDialog.Show(<span class="string">"tip"</span>, <span class="string">"please select"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> Result.Succeeded;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="获取几何空间信息"><a href="#获取几何空间信息" class="headerlink" title="获取几何空间信息"></a>获取几何空间信息</h3><p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1592168099/41123PNG_m2nrtg.png" alt></p>
-<p>GeometryElement Class</p>
-<p>This class contains geometric primitives that are generated from the parametric  description of the element. The member geometric primitives can be obtained  directly from this object using the capabilities of IEnumerable. 此类包含根据元素的参数描述生成的几何图元。 几何数据可以通过实现IEnumerable的接口的方法获取。是几何体的集合，可以通过枚举器把其包含的几何实体都枚举出来。</p>
+<h4 id="GeometryElement-Class"><a href="#GeometryElement-Class" class="headerlink" title="GeometryElement Class"></a>GeometryElement Class</h4><p>This class contains geometric primitives that are generated from the parametric  description of the element. The member geometric primitives can be obtained  directly from this object using the capabilities of IEnumerable. 此类包含根据元素的参数描述生成的几何图元。 几何数据可以通过实现IEnumerable的接口的方法获取。是几何体的集合，可以通过枚举器把其包含的几何实体都枚举出来。<em>墙，楼板，MEP？</em></p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">GeometryElement</span> : <span class="title">GeometryObject</span>, </span><br><span class="line">	IEnumerable&lt;GeometryObject&gt;</span><br></pre></td></tr></table></figure>
 
-<p>GeometryInstance Class</p>
-<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">GeometryInstance</span> : <span class="title">GeometryObject</span></span><br></pre></td></tr></table></figure>
+<h4 id="GeometryInstance-Class"><a href="#GeometryInstance-Class" class="headerlink" title="GeometryInstance Class"></a>GeometryInstance Class</h4><figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">GeometryInstance</span> : <span class="title">GeometryObject</span></span><br></pre></td></tr></table></figure>
 
 <p>A GeometryInstance represents a set of geometry stored by Revit in a default  configuration, and then transformed into the proper location as a result of the  properties of the element. The most common situation where GeometryInstances are  encountered is in Family instances. Revit uses GeometryInstances to allow it to  store a single copy of the geometry for a given family and reuse it in multiple  instances. Note that not all Family instances will include GeometryInstances.  When Revit needs to make a unique copy of the family geometry for a given  instance (because of the effect of local joins, intersections, and other factors  related to the instance placement) no GeometryInstance will be encountered;  instead the Solid geometry will be found at the top level of the hierarchy. A  GeometryInstance offers the ability to read its geometry through the  GetSymbolGeometry() and GetInstanceGeometry() methods. These methods return  another Autodesk.Revit.DB.GeometryElement which can be parsed just like the  first level return. </p>
-<p>GeometryInstance表示实例化后的几何数据，并且多个族实例公用一份GeometryInstance。请注意，并非所有Family实例都将包含GeometryInstances（都有值）。当Revit需要为给定实例制作族几何的唯一副本时（由于局部连接，相交以及与实例放置相关的其他因素的影响），将不会有GeometryInstance，而是通过solid几何体表示。GeometryInstance提供了通过GetSymbolGeometry（）和GetInstanceGeometry（）方法读取其几何的信息。这些方法返回另一个Autodesk.Revit.DB.GeometryElement，可以像第一级返回一样对其进行解析。</p>
-<p>小结：系统族生成的模型，通过GeometryElement获取几何信息，标准族生成的模型用GeometryInstance。下图族实例下的元素都是标准族和可载入族生成的模型，而宿主对象下的是由系统族生成的。</p>
+<p>GeometryInstance表示实例化后的几何数据，并且多个族实例公用一份GeometryInstance。一般一个构件由GeometryInstance，它里面的SymbolGeometry包含了solid几何实体。但是请注意，并非所有Family实例都将包含GeometryInstances（GeometryInstances里面都有值，非空）。当两个构件相交的时候，就将不会有GeometryInstance，它是空的，而是直接由solid几何实体表示。</p>
+<p>GeometryInstance提供了通过GetSymbolGeometry（）和GetInstanceGeometry（）方法读取其几何的信息。这些方法返回另一个Autodesk.Revit.DB.GeometryElement，可以像第一级返回一样对其进行解析。<em>窗，柱，梁？</em></p>
+<p><strong>小结：系统族生成的模型，通过GeometryElement获取几何信息，标准族生成的模型用GeometryInstance。下图族实例下的元素都是标准族和可载入族生成的模型，而宿主对象下的是由系统族生成的。</strong></p>
 <p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1592141316/12313_nxrxuh.png" alt></p>
+<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="comment">//获取元素的空间信息</span></span><br><span class="line"><span class="keyword">using</span> Autodesk.Revit.DB;</span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Diagnostics;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">RetrieveInformation</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="comment">//扩展方法：1.方法所在的类必须是静态的static </span></span><br><span class="line">   <span class="comment">//2.方法函数本身也不需是静态的 </span></span><br><span class="line">   <span class="comment">//3.这个方法的第一个参数必须是想要扩展方法的类，并且前面必须要加this关键字修饰</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">GeometryObjectHelper</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 获取元素所有的几何实体（solid）</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="element"&gt;</span>选取的元素<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="options"&gt;</span>限制条件<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span><span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line">        <span class="comment">//Element类的扩展方法，可选参数options表示获取几何信息的时候，对它进行的一些限制条件。</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;GeometryObject&gt; <span class="title">GetGeometryObjects</span>(<span class="params"><span class="keyword">this</span> Element element, Options options = <span class="keyword">default</span>(Options</span>))</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">var</span> results = <span class="keyword">new</span> List&lt;GeometryObject&gt;(); <span class="comment">//results接收获取的GeometryObjects</span></span><br><span class="line">            options = options ?? <span class="keyword">new</span> Options();<span class="comment">//检查options是否是空值。问好表示如果前面变量为空，执行后面，不为空执行前面</span></span><br><span class="line">            <span class="keyword">var</span> geometry = element.get_Geometry(options);<span class="comment">//获得GeomentryElement,但不是最终目标几何实体solid</span></span><br><span class="line">            RecurseObject(geometry, <span class="keyword">ref</span> results);<span class="comment">//geometry.RecurseObject(ref results);这样调用效果一样，所以可以知道声明扩展方法时候那个this后面的只是格式，调用的时候传入的参数不包括this参数。</span></span><br><span class="line">            <span class="keyword">return</span> results;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 递归遍历所有的几何对象</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="geometryElement"&gt;</span>初始的几何元素<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="geometryObjects"&gt;</span>递归结果<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="comment">//GeometryElement类的扩展方法，ref关键字表示把这个参数传进来，然后通过函数内的方法改变，最后再传出去</span></span><br><span class="line">        <span class="comment">//递归函数</span></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">RecurseObject</span>(<span class="params"><span class="keyword">this</span> GeometryElement geometryElement, <span class="keyword">ref</span> List&lt;GeometryObject&gt; geometryObjects</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">if</span> (geometryElement == <span class="literal">null</span>) <span class="keyword">return</span>;</span><br><span class="line">            <span class="keyword">var</span> enumerator = geometryElement.GetEnumerator();<span class="comment">//返回获得一个迭代器，迭代器相当于数据库的游标,即一个集合中的某个位置,</span></span><br><span class="line">            <span class="keyword">while</span> (enumerator.MoveNext())<span class="comment">//返回真如果游标成功从一个集合中一个元素移到下一个，返回假如果到头了</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">var</span> current = enumerator.Current;<span class="comment">//当前元素（geometryobject）</span></span><br><span class="line">                <span class="keyword">switch</span>(current)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">//如果是GeometryInstance，这个里面的SymbolGeometry可能包含solid或GeometryElement或GeometryInstance，</span></span><br><span class="line">                    <span class="comment">//如果碰到Instance就再次调用方法自己本身，一致循环直到到达instance时候break出来</span></span><br><span class="line">                    <span class="keyword">case</span> GeometryInstance instance:</span><br><span class="line">                        instance.SymbolGeometry.RecurseObject(<span class="keyword">ref</span> geometryObjects);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="comment">//如果是element,就调用方法本身，寻找element下面的solid实体，把结果返回到geometryObjects，否则一致递归循环查找</span></span><br><span class="line">                    <span class="keyword">case</span> GeometryElement element:</span><br><span class="line">                        element.RecurseObject(<span class="keyword">ref</span> geometryObjects);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> Solid solid:</span><br><span class="line">                        <span class="keyword">if</span> (solid.Faces.Size == <span class="number">0</span> || solid.Edges.Size == <span class="number">0</span>)</span><br><span class="line">                            <span class="keyword">continue</span>;<span class="comment">//跳过</span></span><br><span class="line">                        <span class="keyword">else</span> geometryObjects.Add(solid);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">default</span>:<span class="comment">//其他情况</span></span><br><span class="line">                        geometryObjects.Add(current);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>Revit, C#</category>
       </categories>
       <tags>
         <tag>Revit, C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdown的一些语法</title>
-    <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
-<p>注：标准语法一般在#后跟个空格再写文字</p>
-<h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h2 id="2-1-无序列表（前带圆点）"><a href="#2-1-无序列表（前带圆点）" class="headerlink" title="2.1 无序列表（前带圆点）"></a>2.1 无序列表（前带圆点）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">- </span>列表内容</span><br><span class="line"><span class="bullet">+ </span>列表内容</span><br><span class="line"><span class="bullet">* </span>列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<ul>
-<li>列表1</li>
-</ul>
-<ul>
-<li>列表2</li>
-</ul>
-<ul>
-<li>列表3</li>
-</ul>
-<h2 id="2-1-有序列表（前带数字）"><a href="#2-1-有序列表（前带数字）" class="headerlink" title="2.1 有序列表（前带数字）"></a>2.1 有序列表（前带数字）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1. </span>列表内容</span><br><span class="line"><span class="bullet">2. </span>列表内容</span><br><span class="line"><span class="bullet">3. </span>列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<ol>
-<li>列表1</li>
-<li>列表2</li>
-<li>列表3</li>
-</ol>
-<h1 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3. 代码块"></a>3. 代码块</h1><p>在代码段落上下两行分别插入三个反逗号，若要代码高亮则要在反逗号后面注明是什么语言。 </p>
-<h1 id="4-插入图片所需代码"><a href="#4-插入图片所需代码" class="headerlink" title="4. 插入图片所需代码"></a>4. 插入图片所需代码</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">描述</span>](<span class="link">图片链接 ''图片标题''</span>)</span><br><span class="line">![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>) 连续写就是并排显示图片</span><br><span class="line"></span><br><span class="line">描述就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片标题是当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
-<p>例：<br>插入本地图片<br><img src="/blog/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/abc.png" alt="test picture"><br><code>![test picture](./Dynamo学习笔记-1/abc.png)</code> 好像不管用…所以我把所有图片存到了云盘<br><code>&quot;&quot;</code> ？？？</p>
-<h1 id="5-改变字体颜色"><a href="#5-改变字体颜色" class="headerlink" title="5. 改变字体颜色"></a>5. 改变字体颜色</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color:red;"</span>&gt;</span></span></span><br><span class="line"><span class="section">#回车换行后命令失效</span></span><br></pre></td></tr></table></figure>
-<p><span style="color:red;"> 改变字体颜色至红</span></p>
-<h1 id="6-字体"><a href="#6-字体" class="headerlink" title="6. 字体"></a>6. 字体</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**这是加粗的文字**</span></span><br><span class="line"><span class="emphasis">*这是倾斜的文字*</span>`</span><br><span class="line"><span class="strong">***这是斜体加粗的文字**</span>*</span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
-<p>例：<br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del></p>
-<h1 id="7-引用"><a href="#7-引用" class="headerlink" title="7. 引用"></a>7. 引用</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这是引用的内容</p>
-<blockquote>
-<p>这是引用的内容</p>
-</blockquote>
-</blockquote>
-<h1 id="8-分割线"><a href="#8-分割线" class="headerlink" title="8. 分割线"></a>8. 分割线</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="9-生成首页摘要"><a href="#9-生成首页摘要" class="headerlink" title="9. 生成首页摘要"></a>9. 生成首页摘要</h1><p>在Markdown文档中添加<code>&lt;!-- more --&gt;</code>，代码上面的全是摘要</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这里是摘要</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- more --&gt;</span></span></span><br><span class="line">这里是正文</span><br></pre></td></tr></table></figure>
-
-<h1 id="10-链接"><a href="#10-链接" class="headerlink" title="10. 链接"></a>10. 链接</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">超链接名</span>](<span class="link">超链接地址</span>)</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">本文参考资料</a></p>
-]]></content>
-      <categories>
-        <category>markdown</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -917,6 +813,111 @@
       </categories>
       <tags>
         <tag>Optimierungsverfahren</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown的一些语法</title>
+    <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
+<p>注：标准语法一般在#后跟个空格再写文字</p>
+<h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h2 id="2-1-无序列表（前带圆点）"><a href="#2-1-无序列表（前带圆点）" class="headerlink" title="2.1 无序列表（前带圆点）"></a>2.1 无序列表（前带圆点）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">- </span>列表内容</span><br><span class="line"><span class="bullet">+ </span>列表内容</span><br><span class="line"><span class="bullet">* </span>列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<ul>
+<li>列表1</li>
+</ul>
+<ul>
+<li>列表2</li>
+</ul>
+<ul>
+<li>列表3</li>
+</ul>
+<h2 id="2-1-有序列表（前带数字）"><a href="#2-1-有序列表（前带数字）" class="headerlink" title="2.1 有序列表（前带数字）"></a>2.1 有序列表（前带数字）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1. </span>列表内容</span><br><span class="line"><span class="bullet">2. </span>列表内容</span><br><span class="line"><span class="bullet">3. </span>列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<ol>
+<li>列表1</li>
+<li>列表2</li>
+<li>列表3</li>
+</ol>
+<h1 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3. 代码块"></a>3. 代码块</h1><p>在代码段落上下两行分别插入三个反逗号，若要代码高亮则要在反逗号后面注明是什么语言。 </p>
+<h1 id="4-插入图片所需代码"><a href="#4-插入图片所需代码" class="headerlink" title="4. 插入图片所需代码"></a>4. 插入图片所需代码</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">描述</span>](<span class="link">图片链接 ''图片标题''</span>)</span><br><span class="line">![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>) 连续写就是并排显示图片</span><br><span class="line"></span><br><span class="line">描述就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片标题是当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
+<p>例：<br>插入本地图片<br><img src="/blog/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/abc.png" alt="test picture"><br><code>![test picture](./Dynamo学习笔记-1/abc.png)</code> 好像不管用…所以我把所有图片存到了云盘<br><code>&quot;&quot;</code> ？？？</p>
+<h1 id="5-改变字体颜色"><a href="#5-改变字体颜色" class="headerlink" title="5. 改变字体颜色"></a>5. 改变字体颜色</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color:red;"</span>&gt;</span></span></span><br><span class="line"><span class="section">#回车换行后命令失效</span></span><br></pre></td></tr></table></figure>
+<p><span style="color:red;"> 改变字体颜色至红</span></p>
+<h1 id="6-字体"><a href="#6-字体" class="headerlink" title="6. 字体"></a>6. 字体</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**这是加粗的文字**</span></span><br><span class="line"><span class="emphasis">*这是倾斜的文字*</span>`</span><br><span class="line"><span class="strong">***这是斜体加粗的文字**</span>*</span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
+<p>例：<br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del></p>
+<h1 id="7-引用"><a href="#7-引用" class="headerlink" title="7. 引用"></a>7. 引用</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<p>这是引用的内容</p>
+</blockquote>
+</blockquote>
+<h1 id="8-分割线"><a href="#8-分割线" class="headerlink" title="8. 分割线"></a>8. 分割线</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="9-生成首页摘要"><a href="#9-生成首页摘要" class="headerlink" title="9. 生成首页摘要"></a>9. 生成首页摘要</h1><p>在Markdown文档中添加<code>&lt;!-- more --&gt;</code>，代码上面的全是摘要</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这里是摘要</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- more --&gt;</span></span></span><br><span class="line">这里是正文</span><br></pre></td></tr></table></figure>
+
+<h1 id="10-链接"><a href="#10-链接" class="headerlink" title="10. 链接"></a>10. 链接</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">超链接名</span>](<span class="link">超链接地址</span>)</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">本文参考资料</a></p>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Excel数据处理</title>
+    <url>/blog/2020/05/22/Excel%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h3 id="数据-分列"><a href="#数据-分列" class="headerlink" title="数据-分列"></a>数据-分列</h3><p>用于统一一列中的数据类型，两种数据类型互相转换方法(常规型，文本型)<br><strong>数据透视表</strong>，行，列，值，筛选条件 -&gt; <strong>切片器</strong>更好实现: 点击数据透视表中任意一格，插入切片器，同样适用于透视表对应的图表，点击切片器，数据可视化</p>
+<h3 id="条件格式—数据条，"><a href="#条件格式—数据条，" class="headerlink" title="条件格式—数据条，"></a>条件格式—数据条，</h3><p>突出显示单元格根据不同规则如重复值，大于小于等等</p>
+<h3 id="自定义排序："><a href="#自定义排序：" class="headerlink" title="自定义排序："></a>自定义排序：</h3><ol>
+<li>手动选取表格范围，勾选数据包含表头，则表头不会作为数据参与排序</li>
+<li>选项-高级-拉到最底-自定义序列，可以手动输入定义在自定义排序中需要的次序</li>
+</ol>
+<h3 id="筛选："><a href="#筛选：" class="headerlink" title="筛选："></a>筛选：</h3><ol>
+<li>数字筛选</li>
+<li>自动筛选： 表达且的关系，高级筛选可表达或和且的关系：复制至同一行为且的条件，不同行为或的条件</li>
+</ol>
+<h3 id="分类汇总："><a href="#分类汇总：" class="headerlink" title="分类汇总："></a>分类汇总：</h3><p>先排序再分类汇总，就不会漏；有三个层级，按左侧加号展开。可以有2种分类汇总，注意不要替换当前分类。 汇总数据无法直接复制，开始查找和选择，定位条件仅可见单元格/对象为除了数据外的图片等。</p>
+<h3 id="公式与基础函数"><a href="#公式与基础函数" class="headerlink" title="公式与基础函数"></a>公式与基础函数</h3><p>开始-查找和选择-定位条件-空值-求和/数据-分类汇总<br>开始-计数count只能计算数字不能计算文本，counta可以计算数字和文本。<br>不能拖拽时，先选中区域，在第一个输入公式，control+enter。<br>数据-模拟分析-单变量求解，目标值。</p>
+<h3 id="Vlookup"><a href="#Vlookup" class="headerlink" title="Vlookup"></a>Vlookup</h3><p>通过id找公司名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x3D;vloopup(a1,a:b,查找数据的列数，0表示精确查找&#x2F;1表示近似匹配）</span><br><span class="line">&#x3D;vlookup（要匹配的范围，原数据里范围到原数据里匹配的范围，匹配的列数，精确度0）</span><br></pre></td></tr></table></figure>
+<p>数据区间（10%会用到）近似匹配，只有数字之间才有，只找小于等于自己的最大值<br>不同格式（文本和常规数字）之间不能直接vlookup，常规转文本 加<code>&amp;“”</code> 文本转常规加<code>*1</code></p>
+<h3 id="Match和Index函数"><a href="#Match和Index函数" class="headerlink" title="Match和Index函数"></a>Match和Index函数</h3><p>match函数-找，index函数-取<br>index（查询的终极对象所在范围，match（查询的原始对象，查询原始对象范围，0））<br>拖拽时-右键-不带格式填充</p>
+<h3 id="使用函数进行统计"><a href="#使用函数进行统计" class="headerlink" title="使用函数进行统计"></a>使用函数进行统计</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sumif（条件区域，条件，需求区域）:求和</span><br><span class="line">Countif （需要区域，条件）:计数</span><br><span class="line">sumif（选择所有区域，条件，固定f4条件）:变态能力解决多列循环数据问题：原始数据格式不连贯，进行多次sumif操作麻烦</span><br><span class="line">sumifs处理多个条件函数，按照括号里提示选择</span><br><span class="line">Countifs: 多条件的vlookup，写函数要左对齐，原始数据前面加一列生成条件，vlookup（要匹配的范围，原数据里范围到原数据里匹配的范围，匹配的列数，精确度0）</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用日期函数"><a href="#使用日期函数" class="headerlink" title="使用日期函数"></a>使用日期函数</h3><ol>
+<li>推算日期，给开始，给间隔，算结束（反之也可）<br>日期+天数直接可以算<br>日期+月数 <code>date（year，month+月数，day)</code><br>日期推算固定算法-先拆后组</li>
+<li>日期间隔，已知开始和结束日期<br><code>=DATEDIF(A2,B2+1更精准,”y/m/d“)</code> </li>
+<li>标记快到期的数据<br>选中数据，复制，选择性粘贴-值，条件格式，介于，=today()，=today()+15,颜色</li>
+</ol>
+<h3 id="使用表格"><a href="#使用表格" class="headerlink" title="使用表格"></a>使用表格</h3><ol>
+<li>表格与数据透视表<br>数据透视表，数据更新如何抓取数据 （如今的数据叫数据清单list/记录）<br>插入，表格，再做数据透视表可以自动更新</li>
+<li>表格与函数<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x3D;VLOOKUP(D2,J:K,2,0)</span><br><span class="line">&#x3D;IFNA(VLOOKUP(D11,J:K,2,0),&quot;&quot;)</span><br></pre></td></tr></table></figure></li>
+<li>表格与图表<br>思路一样，把list专程table</li>
+</ol>
+<h3 id="文档安全性设置"><a href="#文档安全性设置" class="headerlink" title="文档安全性设置"></a>文档安全性设置</h3><ol>
+<li>防止其他用户在表格中乱写<br>针对固定数据范围的限制：报销金额，只允许输入500～1000的整数<br>数据-数据验证/数据有效性-设置，数据-数据验证-出错警告</li>
+<li>工作表保护-防止用户乱删<br>审阅-保护工作表<br>公式-手工录入，一半保护一半不保护<br>右键-设置单元格格式-保护-取消锁定，审阅-保护工作表-依旧可以随便改<br>锁定属性仅针对于写值<br>右键-设置单元格格式-保护-取消锁定（允许写入任何值），审阅-保护工作表-允许的动作勾选</li>
+</ol>
+<h3 id="邮件合并工具"><a href="#邮件合并工具" class="headerlink" title="邮件合并工具"></a>邮件合并工具</h3><ol>
+<li>员工信息表，word更适合打印,每页一个人的信息<br>邮件-选择收件人（把word和excel建立联系）-现有收件人-选择要链接的excel-改动的地方要插入合并域-选择<br>预览结果-滚动条 完成并合并-编辑单个文档-全部<br>邮件-统一模版-抓取数据-批量打印</li>
+<li>考试卷子<br>建立连接，出完题，邮件-开始邮件合并-目录<br>邮件合并工具-抓取数据-做好布局-合并文档</li>
+</ol>
+<h3 id="数据不规范的话"><a href="#数据不规范的话" class="headerlink" title="数据不规范的话"></a>数据不规范的话</h3><ol>
+<li>不能做透视</li>
+<li>不能vlookup</li>
+<li>动态员工信息查询做不了</li>
+<li>word无法抓取数据</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Excel</category>
+      </categories>
+      <tags>
+        <tag>Excel</tag>
       </tags>
   </entry>
   <entry>
