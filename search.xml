@@ -1374,4 +1374,36 @@
         <tag>Revit, C#</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Revit 二次开发电缆布置</title>
+    <url>/blog/2020/09/19/Revit-%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E7%94%B5%E7%BC%86%E5%B8%83%E7%BD%AE/</url>
+    <content><![CDATA[<h3 id="C-中的goto跳转语句"><a href="#C-中的goto跳转语句" class="headerlink" title="C#中的goto跳转语句"></a>C#中的goto跳转语句</h3><ol>
+<li>goto语句不可以跳到for循环中</li>
+<li>goto语句不可以跳到类的外面。</li>
+<li>goto语句不可以退出try{}catch()finally{}语句。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">goto label;&#x2F;&#x2F;自己命名一个label</span><br><span class="line">statement01;  &#x2F;&#x2F;这句是跳过的语句</span><br><span class="line">label:&#x2F;&#x2F;goto到这个标签，从这里开始执行语句</span><br><span class="line">statement02;  &#x2F;&#x2F;执行的语句</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Revit, C#</category>
+      </categories>
+      <tags>
+        <tag>Revit, C#, MEP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tekla Structure</title>
+    <url>/blog/2020/11/15/Tekla-Structure/</url>
+    <content><![CDATA[<h2 id="建立轴网"><a href="#建立轴网" class="headerlink" title="建立轴网"></a>建立轴网</h2><p>编辑轴网窗口，只有先点修改，轴网才会进行实时改变。<strong>修改：</strong>实时修改； <strong>保存：</strong>把你对这种轴网的设置保存到后台，作为一个版本；<strong>获取</strong>：选择视图中的轴网，点获取，可以在轴网窗口里读取到选中轴网的属性数值。坐标xyz里面的数字表示一个个轴网之间的距离，默认为毫米，如果距离都一样的可以用数字乘距离， 这里Z为高程，线延伸为轴线延长到标签的长度</p>
+<p>磁性轴线面后面的方框打勾：可以使在轴网上的部件随着轴网位置的改变而改变。</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1605469935/12344523_jngfvh.png" alt></p>
+]]></content>
+      <categories>
+        <category>Tekla, BIM</category>
+      </categories>
+      <tags>
+        <tag>Tekla</tag>
+      </tags>
+  </entry>
 </search>
