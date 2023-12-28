@@ -1,37 +1,579 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dcy0577.github.io","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="基于课堂资料整理汇总了一些基本概念。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BIM的一些基础概念整理">
+<meta property="og:url" content="http://dcy0577.github.io/blog/2020/05/30/BIM%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="基于课堂资料整理汇总了一些基本概念。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/1_tnsgfn.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/3_eqeew1.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/4_gokpjf.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590846748/BIM/1231_mkzcxs.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/5_uoiesj.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/6_rgptkj.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/7_lxjolm.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/8_dvbkoo.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/9_tlac26.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/10_fefza5.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/11_llivns.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/12_mjwdfq.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/13_yhnw8d.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845966/BIM/14_tpyy5g.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/15_smhrlz.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/16_kmuw6j.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/17_n8rouk.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845963/BIM/19_hmypkm.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/20_z7szrv.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/21_n0rpqr.png">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/22_wy7fl0.png">
+<meta property="article:published_time" content="2020-05-30T13:19:08.000Z">
+<meta property="article:modified_time" content="2023-12-28T20:01:01.770Z">
+<meta property="article:author" content="dcy0577">
+<meta property="article:tag" content="BIM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/1_tnsgfn.png">
 
 
-{% block content %}
+<link rel="canonical" href="http://dcy0577.github.io/blog/2020/05/30/BIM%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E6%95%B4%E7%90%86/">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://dcy0577.github.io/blog/2020/05/30/BIM%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E6%95%B4%E7%90%86/","path":"2020/05/30/BIM的一些基础概念整理/","title":"BIM的一些基础概念整理"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>BIM的一些基础概念整理 | Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">welcome to my blog</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Explicit-models"><span class="nav-number">1.</span> <span class="nav-text">Explicit models</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Implicit-Models"><span class="nav-number">2.</span> <span class="nav-text">Implicit Models</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Constructive-Solid-Geometry-CSG"><span class="nav-number">2.1.</span> <span class="nav-text">Constructive Solid Geometry (CSG)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parametric-Modeling"><span class="nav-number">3.</span> <span class="nav-text">Parametric Modeling</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-based-parametric-modelling-autocad-architecture"><span class="nav-number">3.1.</span> <span class="nav-text">Object-based parametric modelling: autocad architecture</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sketch-based-parametric-modelling-autocad"><span class="nav-number">3.2.</span> <span class="nav-text">Sketch-based parametric modelling: autocad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Graph-based-parametric-modeling-rhnio"><span class="nav-number">3.3.</span> <span class="nav-text">Graph-based parametric modeling: rhnio</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Parametric-BIM-Modelers-revit"><span class="nav-number">3.4.</span> <span class="nav-text">Parametric BIM Modelers: revit</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Industry-Foundation-Classes-IFC"><span class="nav-number">4.</span> <span class="nav-text">Industry Foundation Classes (IFC)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-View-Definition-MVD"><span class="nav-number">5.</span> <span class="nav-text">Model View Definition (MVD)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Standard-IFC-Export-from-Revit"><span class="nav-number">6.</span> <span class="nav-text">Standard IFC-Export from Revit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sustainability"><span class="nav-number">7.</span> <span class="nav-text">Sustainability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Daylight-Autonomy-DA"><span class="nav-number">8.</span> <span class="nav-text">Daylight Autonomy (DA)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Useful-Daylight-Illuminances-UDI"><span class="nav-number">9.</span> <span class="nav-text">Useful Daylight Illuminances (UDI)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spatial-Daylight-Autonomy-sDA"><span class="nav-number">10.</span> <span class="nav-text">spatial Daylight Autonomy (sDA)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LCA"><span class="nav-number">11.</span> <span class="nav-text">LCA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Collaboration"><span class="nav-number">12.</span> <span class="nav-text">Collaboration</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Synchronous-collaboration"><span class="nav-number">12.1.</span> <span class="nav-text">Synchronous collaboration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Asynchronous-collaboration"><span class="nav-number">12.2.</span> <span class="nav-text">Asynchronous collaboration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Synchronous-collaboration-1"><span class="nav-number">12.3.</span> <span class="nav-text">Synchronous collaboration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Issue-Tracking-in-asynchronous-collaboration"><span class="nav-number">12.4.</span> <span class="nav-text">Issue Tracking in asynchronous collaboration</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BIM-Collaboration-Format-BCF-Usage-of-BCF-for-Issue-Management"><span class="nav-number">13.</span> <span class="nav-text">BIM Collaboration Format (BCF) : Usage of BCF for Issue Management</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Data-Environment-CDE-defines-principles-of-how-models-are-stored-and-accessed-in-a-central-system"><span class="nav-number">14.</span> <span class="nav-text">Common Data Environment (CDE) : defines principles of how models are stored and accessed in a central system</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BS-PAS-1192-2-2013-BIM-project-execution"><span class="nav-number">15.</span> <span class="nav-text">BS PAS 1192-2:2013 -&gt; BIM project execution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Level-of-Development-LOD-Level-of-Geometry-Level-of-Information"><span class="nav-number">16.</span> <span class="nav-text">Level of Development (LOD) : Level of Geometry + Level of Information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Classification-Systems"><span class="nav-number">17.</span> <span class="nav-text">Classification Systems :</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BIM-Execution-Plan-%EF%BC%88BEP%EF%BC%89"><span class="nav-number">18.</span> <span class="nav-text">BIM Execution Plan （BEP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Information-Delivery-Manual-IDM"><span class="nav-number">19.</span> <span class="nav-text">Information Delivery Manual (IDM):</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-View-Definition-MVD-1"><span class="nav-number">20.</span> <span class="nav-text">Model View Definition (MVD)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BuildingSMART-Development-and-maintenance-of-international-standards-for-open-BIM"><span class="nav-number">21.</span> <span class="nav-text">BuildingSMART: Development and maintenance of international standards for open BIM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CityGML-City-Geography-Markup-Language"><span class="nav-number">22.</span> <span class="nav-text">CityGML &#x3D; City Geography Markup Language</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="dcy0577"
+      src="/blog/images/touxiang.jpg">
+  <p class="site-author-name" itemprop="name">dcy0577</p>
+  <div class="site-description" itemprop="description">今天工地的砖好烫手</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="mailto:1227262551@qq.com" title="E-Mail → mailto:1227262551@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://dcy0577.github.io/blog/2020/05/30/BIM%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E6%95%B4%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/touxiang.jpg">
+      <meta itemprop="name" content="dcy0577">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+      <meta itemprop="description" content="今天工地的砖好烫手">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="BIM的一些基础概念整理 | Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          BIM的一些基础概念整理
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-05-30 15:19:08" itemprop="dateCreated datePublished" datetime="2020-05-30T15:19:08+02:00">2020-05-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-28 21:01:01" itemprop="dateModified" datetime="2023-12-28T21:01:01+01:00">2023-12-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/BIM/" itemprop="url" rel="index"><span itemprop="name">BIM</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>基于课堂资料整理汇总了一些基本概念。</p>
+<span id="more"></span>
+
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/1_tnsgfn.png"></p>
+<p>3D Geometric model: 3D wireframe + 3D surface models + 3D solid models</p>
+<p>Solid model : explicit models  + implicit models</p>
+<h3 id="Explicit-models"><a href="#Explicit-models" class="headerlink" title="Explicit models"></a>Explicit models</h3><p>Boundary representation: describe a solid by means of its boundary, basic components: faces, edges, vertices</p>
+<p>Example:</p>
+<ol>
+<li><p>Triangulated Face Set : 缺点: </p>
+<ul>
+<li><p>only plane faces </p>
+</li>
+<li><p>curved surfaces -&gt; many triangles </p>
+</li>
+<li><p>vertices are stored multiple times </p>
+</li>
+<li><p>neighbourhood relationships are not stored -&gt; gaps and overlaps are hard to detect</p>
+</li>
+</ul>
+</li>
+<li><p>Indexed Face Set: IFC  </p>
+<ul>
+<li>vertex coordinates are stored only once </li>
+<li>each vertex gets an ID (&#x3D;Index) </li>
+<li>faces refer to indices</li>
+</ul>
+</li>
+<li><p>High-end Boundary Models: </p>
+<ul>
+<li>additional edge table </li>
+<li>faces refer to edges, edges refer to vertices </li>
+<li>each edge is referred by two faces; consistency checks </li>
+<li>allows to describe curved edges</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/3_eqeew1.png"></p>
+<p><strong>ACIS</strong> is a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Geometric_modeling_kernel">geometric modeling kernel</a>, SAT file read it</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/4_gokpjf.png"></p>
+<h3 id="Implicit-Models"><a href="#Implicit-Models" class="headerlink" title="Implicit Models"></a>Implicit Models</h3><p>Extrusion 推 and Rotation Geometry几何图形 to build a solid</p>
+<h4 id="Constructive-Solid-Geometry-CSG"><a href="#Constructive-Solid-Geometry-CSG" class="headerlink" title="Constructive Solid Geometry (CSG)"></a>Constructive Solid Geometry (CSG)</h4><ul>
+<li>set of primitive objects </li>
+<li>combination by Boolean operations (union, intersection, difference) </li>
+<li>tree structure</li>
+</ul>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590846748/BIM/1231_mkzcxs.png"></p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/5_uoiesj.png"></p>
+<h3 id="Parametric-Modeling"><a href="#Parametric-Modeling" class="headerlink" title="Parametric Modeling"></a>Parametric Modeling</h3><h4 id="Object-based-parametric-modelling-autocad-architecture"><a href="#Object-based-parametric-modelling-autocad-architecture" class="headerlink" title="Object-based parametric modelling: autocad architecture"></a><strong>Object-based parametric modelling</strong>: autocad architecture</h4><ul>
+<li><p>parameters &#x3D; attributes of objects defining shape and&#x2F;or location</p>
+</li>
+<li><p>objects have pre-defined geometric and non-geometric attributes</p>
+</li>
+<li><p>Advantages : pre-defined types offer tight integration of geometry and semantics-&gt; important for downstream applications </p>
+</li>
+<li><p>Limitations : inflexibility regarding „non standard“ types &#x2F; shapes</p>
+</li>
+</ul>
+<h4 id="Sketch-based-parametric-modelling-autocad"><a href="#Sketch-based-parametric-modelling-autocad" class="headerlink" title="Sketch-based parametric modelling: autocad"></a><strong>Sketch-based parametric modelling:</strong> autocad</h4><ul>
+<li><p>Parameters &#x3D; explicitly defined parameters of the geometric model</p>
+</li>
+<li><p>Advantages: 1. very powerful constraint system 2. rapid development of the parametric model Limitations</p>
+</li>
+<li><p>Limitations : 1. no semantics 2. complexity can become very high (hardly manageable)</p>
+</li>
+</ul>
+<h4 id="Graph-based-parametric-modeling-rhnio"><a href="#Graph-based-parametric-modeling-rhnio" class="headerlink" title="Graph-based parametric modeling: rhnio"></a><strong>Graph-based parametric modeling:</strong> rhnio</h4><ul>
+<li><p>Parametrics &#x3D; Location and shape of model elements is steered by visual program </p>
+</li>
+<li><p>Advantages: widely adopted by designers; form-finding process </p>
+</li>
+<li><p>Limitations: pure 3D, no semantics -&gt;no standards-conforming drawings -&gt; limited usability for downstream applications (simulations etc.)</p>
+</li>
+</ul>
+<h4 id="Parametric-BIM-Modelers-revit"><a href="#Parametric-BIM-Modelers-revit" class="headerlink" title="Parametric BIM Modelers: revit"></a><strong>Parametric BIM Modelers:</strong> revit</h4><ul>
+<li>combine object-based modeling with parametric geometry -&gt; user define families</li>
+</ul>
+<p>-&gt; <strong>Object-oriented Modeling:</strong>  Objects combining geometry and semantics</p>
+<ul>
+<li>Catalogue of parametric object types (Walls, Columns, Doors, Windows, etc.) </li>
+<li>objects have geometric and non-geometric attributes </li>
+<li>necessary for downstream applications (simulation, analysis, quantity take-off)</li>
+</ul>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/6_rgptkj.png"></p>
+<h3 id="Industry-Foundation-Classes-IFC"><a href="#Industry-Foundation-Classes-IFC" class="headerlink" title="Industry Foundation Classes (IFC)"></a>Industry Foundation Classes (IFC)</h3><ul>
+<li><p>standardized data model for the exchange of Building Information Models -&gt; geometry and semantics!!</p>
+</li>
+<li><p>IFC is based on the ISO-Standard STEP (ISO 10303) </p>
+</li>
+<li><p>STEP: <strong>ST</strong>andard for the <strong>E</strong>xchange of <strong>P</strong>roduct model data: Product Model &#x3D; Geometry + Semantics</p>
+</li>
+</ul>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/7_lxjolm.png"></p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/8_dvbkoo.png"></p>
+<h3 id="Model-View-Definition-MVD"><a href="#Model-View-Definition-MVD" class="headerlink" title="Model View Definition (MVD)"></a>Model View Definition (MVD)</h3><ul>
+<li><p>a model view defines a subset of the full IFC schema; 以下是Pre-defined IFC Model Views by buildingSMART </p>
+</li>
+<li><p>IFC 2x3:  - Coordination view - Structural analysis view - Facility management handover view </p>
+</li>
+<li><p>IFC 4: - Reference view - Design Transfer View</p>
+</li>
+</ul>
+<h3 id="Standard-IFC-Export-from-Revit"><a href="#Standard-IFC-Export-from-Revit" class="headerlink" title="Standard IFC-Export from Revit"></a>Standard IFC-Export from Revit</h3><p>All user-defined Revit Families will be exported as <em>IfcBuildingElementProxy,</em> Revit-Parameters will not exported correctly &#x2F; completely</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/9_tlac26.png"></p>
+<p><strong>Solution:</strong> Use of familiy parameters IfcExportAs &#x2F; IfcExportType </p>
+<ul>
+<li><p>IfcExportAs (sets a specific IFC class or prevents export: DontExport) </p>
+</li>
+<li><p>IfcExportType (sets a defined type [subcategory] of an IFC class)</p>
+</li>
+</ul>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/10_fefza5.png"></p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/11_llivns.png"></p>
+<h3 id="Sustainability"><a href="#Sustainability" class="headerlink" title="Sustainability"></a>Sustainability</h3><p>Green building certification system; DGNB; BIM 又多了2个D</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/12_mjwdfq.png"></p>
+<p><strong>Daylight factor (DF)</strong> </p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845965/BIM/13_yhnw8d.png"></p>
+<p>It is defined as the ratio of the indoor illuminance to the outdoor horizontal illuminance under the overcast CIE sky. The major weakness of the daylight factor is that the orientation of the investigated building does not influence the daylight factor since the CIE reference sky is rotationally invariant and independent of the geographical latitude of the investigated building.</p>
+<h3 id="Daylight-Autonomy-DA"><a href="#Daylight-Autonomy-DA" class="headerlink" title="Daylight Autonomy (DA)"></a>Daylight Autonomy (DA)</h3><p>The daylight autonomy at a point in a building is defined as the percentage of occupied hours per year, when the minimum illuminance level can be maintained by daylight alone.单独仅使用自然光照的时间百分比 In contrast to the more commonly used daylight factor, the daylight autonomy considers all sky conditions throughout the year. A daylight autonomy of 70% for a work place with working hours on weekdays between 8 a.m. and 6 p.m. and a minimum illuminance levels of 500 lux implies that the occupant can – in principle – work 70% of the year by daylight alone.</p>
+<h3 id="Useful-Daylight-Illuminances-UDI"><a href="#Useful-Daylight-Illuminances-UDI" class="headerlink" title="Useful Daylight Illuminances (UDI)"></a>Useful Daylight Illuminances (UDI)</h3><p>As its name suggests, it aims to determine when daylight levels are ‘useful’ for the occupant, i.e. neither too dark（&lt; 100 lux）nor too bright (&gt;2000 lux). Based on the upper and lower thresholds of 2000 lux and 100 lux, UDI results in three metrics, i.e. the percentages of the occupied times of the year when the UDI was achieved (100-2000lux), fell-short (&lt;100 lux), or was exceeded (&gt; 2000 lux).</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845966/BIM/14_tpyy5g.png"></p>
+<h3 id="spatial-Daylight-Autonomy-sDA"><a href="#spatial-Daylight-Autonomy-sDA" class="headerlink" title="spatial Daylight Autonomy (sDA)"></a>spatial Daylight Autonomy (sDA)</h3><p>sDA is the percent of analysis points across the analysis area that meet or exceed _DLAIllumThresholds value (set to 300 lux for LEED) for at least 50% of the analysis period. One number for the space.</p>
+<h3 id="LCA"><a href="#LCA" class="headerlink" title="LCA"></a>LCA</h3><p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/15_smhrlz.png"></p>
+<h3 id="Collaboration"><a href="#Collaboration" class="headerlink" title="Collaboration"></a><strong>Collaboration</strong></h3><h4 id="Synchronous-collaboration"><a href="#Synchronous-collaboration" class="headerlink" title="Synchronous collaboration"></a>Synchronous collaboration</h4><ul>
+<li><p>simultaneous work on the same subject </p>
+</li>
+<li><p>examples: Google Docs, Microsoft OneDrive (Collaborative writing)</p>
+</li>
+</ul>
+<h4 id="Asynchronous-collaboration"><a href="#Asynchronous-collaboration" class="headerlink" title="Asynchronous collaboration"></a>Asynchronous collaboration</h4><ul>
+<li><p>temporally separated collaboration </p>
+</li>
+<li><p>examples: email, DropBox; <strong>major form of collaboration in design &amp; engineering</strong></p>
+</li>
+</ul>
+<h4 id="Synchronous-collaboration-1"><a href="#Synchronous-collaboration-1" class="headerlink" title="Synchronous collaboration"></a>Synchronous collaboration</h4><ul>
+<li><p>explicit synchronization &#x3D; invoked by the user </p>
+</li>
+<li><p>implicit synchronization &#x3D; done automatically in the background</p>
+</li>
+</ul>
+<p>Concurrency Control: Locks prevent the simultaneous modification of the same object.</p>
+<p><u>retrieve lock-&gt; modification -&gt;release lock</u></p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/16_kmuw6j.png"></p>
+<h4 id="Issue-Tracking-in-asynchronous-collaboration"><a href="#Issue-Tracking-in-asynchronous-collaboration" class="headerlink" title="Issue Tracking in asynchronous collaboration"></a>Issue Tracking in asynchronous collaboration</h4><ul>
+<li><p>Errors &#x2F; issues to the responsible model authors </p>
+</li>
+<li><p>BIM Collaboration Format (BCF)</p>
+</li>
+</ul>
+<h3 id="BIM-Collaboration-Format-BCF-Usage-of-BCF-for-Issue-Management"><a href="#BIM-Collaboration-Format-BCF-Usage-of-BCF-for-Issue-Management" class="headerlink" title="BIM Collaboration Format (BCF) : Usage of BCF for Issue Management"></a>BIM Collaboration Format (BCF) : Usage of BCF for Issue Management</h3><ul>
+<li>BuildingSMART standard </li>
+<li>transports issues <ul>
+<li>Request for Information (RFI) </li>
+<li>Request for Change (RFC)</li>
+</ul>
+</li>
+<li>very helpful technology for cross-discipline coordination </li>
+<li>ZIP-File containing : <ul>
+<li>XML-File: which model element are highlighted, shown, hidden; camera position, direction and zoom ; textual description of the issue </li>
+<li>Screenshot</li>
+</ul>
+</li>
+</ul>
+<h3 id="Common-Data-Environment-CDE-defines-principles-of-how-models-are-stored-and-accessed-in-a-central-system"><a href="#Common-Data-Environment-CDE-defines-principles-of-how-models-are-stored-and-accessed-in-a-central-system" class="headerlink" title="Common Data Environment (CDE) : defines principles of how models are stored and accessed in a central system"></a><strong>Common Data Environment (CDE) :</strong> defines principles of how models are stored and accessed in a central system</h3><ul>
+<li>sub-models are created independently</li>
+<li>merged in regular intervals into a coordination model </li>
+<li>resolve all clashes </li>
+<li>model statuses: - work in progress (WIP) - shared - published - archived </li>
+<li>transition between statuses requires approval</li>
+</ul>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/17_n8rouk.png"></p>
+<h3 id="BS-PAS-1192-2-2013-BIM-project-execution"><a href="#BS-PAS-1192-2-2013-BIM-project-execution" class="headerlink" title="BS PAS 1192-2:2013 -&gt; BIM project execution"></a>BS PAS 1192-2:2013 -&gt; BIM project execution</h3><ul>
+<li>describes general BIM practices </li>
+<li>BIM project procurement; BIM requirements; data management </li>
+<li>leaves details to individual projects </li>
+<li>used throughout out the world as basis for BIM contracts</li>
+</ul>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845963/BIM/19_hmypkm.png"></p>
+<p>Start point of BIM project: <strong>Employer‘s Information Requirements (EIR):</strong> they set out clearly to the bidder <strong>what models are required</strong> and <strong>what the purposes of the models will be ; defines goals of the BIM project, define BIM use cases, define model content, e.g. level of development, classification system</strong> </p>
+<h3 id="Level-of-Development-LOD-Level-of-Geometry-Level-of-Information"><a href="#Level-of-Development-LOD-Level-of-Geometry-Level-of-Information" class="headerlink" title="Level of Development (LOD) : Level of Geometry + Level of Information"></a>Level of Development (LOD) : Level of Geometry + Level of Information</h3><p> <img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/20_z7szrv.png"></p>
+<ul>
+<li>LOD100: symbol or other generic representation. </li>
+<li>LOD200: approximate quantities, size, shape, location, and orientation. </li>
+<li>LOD300: specific system, object or assembly </li>
+<li>LOD350: and interfaces with other building systems. </li>
+<li>LOD400: with detailing, fabrication, assembly, and installation information. </li>
+<li>LOD500: The Model Element is a <strong>field verified r</strong>epresentation in terms of size, shape, location, quantity, and orientation.</li>
+</ul>
+<p><strong>There is no strict correspondence between LODs and design phases:</strong> project models at any stage of delivery will invariably contain elements at different levels of development.</p>
+<h3 id="Classification-Systems"><a href="#Classification-Systems" class="headerlink" title="Classification Systems :"></a>Classification Systems :</h3><p>OmniClass (US), Uniclass (UK), DIN276 (DE), ASB-ING</p>
+<h3 id="BIM-Execution-Plan-（BEP）"><a href="#BIM-Execution-Plan-（BEP）" class="headerlink" title="BIM Execution Plan （BEP）"></a>BIM Execution Plan （BEP）</h3><ul>
+<li><p>Created by the bidder(投标人) in response to the <strong>Employer’s Information Requirements (EIR)</strong></p>
+</li>
+<li><p>Typically includes detailed information: </p>
+<ul>
+<li>BIM use cases: </li>
+<li>BIM workflow and data management </li>
+<li>Model contents: model elements, classification, levels of detail, file formats, coordinate system, etc. </li>
+<li>Delivery: responsibilities, milestones, 2D and 3D, etc</li>
+</ul>
+</li>
+<li><p>Master Information Delivery Plan：part of BEP, lists information deliverables</p>
+</li>
+</ul>
+<h3 id="Information-Delivery-Manual-IDM"><a href="#Information-Delivery-Manual-IDM" class="headerlink" title="Information Delivery Manual (IDM):"></a>Information Delivery Manual (IDM):</h3><ul>
+<li><p>describes processes and information flows for planning, constructing and operating buildings</p>
+</li>
+<li><p>definition of the information, which is exchanged between the participants</p>
+</li>
+<li><p>the resulting document forms the basis for contracts and software implementation &#x2F; certification</p>
+</li>
+<li><p>describes processes and exchange requirements </p>
+</li>
+<li><p>Business Process Modeling Notation (BPMN)</p>
+</li>
+</ul>
+<h3 id="Model-View-Definition-MVD-1"><a href="#Model-View-Definition-MVD-1" class="headerlink" title="Model View Definition (MVD)"></a>Model View Definition (MVD)</h3><ul>
+<li><p>technical implementation for specifying data needs </p>
+</li>
+<li><p>defines a subset of the IFC schema </p>
+</li>
+<li><p>for realizing a specific data-exchange scenario</p>
+</li>
+</ul>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/21_n0rpqr.png"></p>
+<h3 id="BuildingSMART-Development-and-maintenance-of-international-standards-for-open-BIM"><a href="#BuildingSMART-Development-and-maintenance-of-international-standards-for-open-BIM" class="headerlink" title="BuildingSMART: Development and maintenance of international standards for open BIM"></a>BuildingSMART: Development and maintenance of international standards for open BIM</h3><ul>
+<li>Processes - information delivery manuals </li>
+<li>Data Dictionary - it maintains the <strong>International Framework for Dictionaries</strong> (IFD) Library </li>
+<li>Data model - the organization manages the software neutral <strong>Industry Foundation Classes (IFC)</strong> data model </li>
+<li>BIM Collaboration Format - structured file format suited to issue tracking (BCF)</li>
+</ul>
+<h3 id="CityGML-City-Geography-Markup-Language"><a href="#CityGML-City-Geography-Markup-Language" class="headerlink" title="CityGML &#x3D; City Geography Markup Language"></a>CityGML &#x3D; City Geography Markup Language</h3><p>Standard for storing and transferring virtual 3D city and regional models, Representation in four aspects - <strong>geometry , topology, semantics and appearance for all 3D geo-objects</strong></p>
+<p>UIM – Urban Information Model : It aims at modeling the knowledge of urban environment.</p>
+<p>CIM – City Information Model</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590845964/BIM/22_wy7fl0.png"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/BIM/" rel="tag"># BIM</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2020/05/30/Advanced-BIM-Seminar/" rel="prev" title="Advanced BIM Seminar">
+                  <i class="fa fa-angle-left"></i> Advanced BIM Seminar
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/2020/05/30/%E5%9F%BA%E4%BA%8Esimplex%E7%AE%97%E6%B3%95%E7%9A%84%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/" rel="next" title="基于simplex算法的非线性优化">
+                  基于simplex算法的非线性优化 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">dcy0577</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,37 +1,372 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dcy0577.github.io","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="some notes about Dynamo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dynamo学习笔记">
+<meta property="og:url" content="http://dcy0577.github.io/blog/2020/05/22/Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="some notes about Dynamo">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590261055/abc_hc8z9c.png">
+<meta property="article:published_time" content="2020-05-22T18:33:50.000Z">
+<meta property="article:modified_time" content="2023-12-28T21:40:01.594Z">
+<meta property="article:author" content="dcy0577">
+<meta property="article:tag" content="Dynamo, revit">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590261055/abc_hc8z9c.png">
 
 
-{% block content %}
+<link rel="canonical" href="http://dcy0577.github.io/blog/2020/05/22/Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://dcy0577.github.io/blog/2020/05/22/Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/","path":"2020/05/22/Dynamo学习笔记-1/","title":"Dynamo学习笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Dynamo学习笔记 | Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">welcome to my blog</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="dcy0577"
+      src="/blog/images/touxiang.jpg">
+  <p class="site-author-name" itemprop="name">dcy0577</p>
+  <div class="site-description" itemprop="description">今天工地的砖好烫手</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="mailto:1227262551@qq.com" title="E-Mail → mailto:1227262551@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://dcy0577.github.io/blog/2020/05/22/Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/touxiang.jpg">
+      <meta itemprop="name" content="dcy0577">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+      <meta itemprop="description" content="今天工地的砖好烫手">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Dynamo学习笔记 | Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Dynamo学习笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-05-22 20:33:50" itemprop="dateCreated datePublished" datetime="2020-05-22T20:33:50+02:00">2020-05-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-28 22:40:01" itemprop="dateModified" datetime="2023-12-28T22:40:01+01:00">2023-12-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Dynamo-revit/" itemprop="url" rel="index"><span itemprop="name">Dynamo, revit</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>some notes about Dynamo</p>
+<span id="more"></span>
+
+<ul>
+<li>dynamo里单位是毫米</li>
+<li>var[][]表示的数据类型为二维数组，即至少有L3的列表</li>
+<li>CSV：Comma-Separated Values 用逗号分隔的数据形式，input进dynamo用节点csv import </li>
+<li>创建标高：level</li>
+<li><span style="color:red;">节点<strong>set parameter by name</strong>: 通过看revit图元中属性中的参数名字给这个参数赋值；<br>节点<strong>get parameter value by name</strong>: 可以输入参数名字来提取参数的值</li>
+<li><span style="color:green;">节点<strong>filter by bool mask</strong>: mask中输入一系列bool值可以筛选ture的进in里 false进out里</li>
+<li>ToLower : 大写转小写</li>
+<li>string类型转bool可以用&#x3D;&#x3D;，判断俩string是不是一致，一致输出的就是bool true, 否则 bool false</li>
+<li>节点floorplan: 根据标高level创建平面视图</li>
+<li>节点type: 看值的类型</li>
+<li>如果出现结果有问题但没有报错可能是lacing连缀有问题要更改</li>
+<li>节点geometry.translate: 位移</li>
+<li>快捷键ctrl + G: 把几个模块整合成一个组</li>
+<li>鼠标右键preview 预览之前的，把其去钩表示显示最新的</li>
+<li><span style="color:red;">节点<strong>point at parameter</strong>： 根据设置的节点向量个数和曲线curve得到曲线上的点</li>
+<li><span style="color:red;">code block 中创建一个简单list的语法：0..1..#24：表示起始0，终点1，一共24项，注意#不能忘记</li>
+<li>节点Drop: 去掉list中的某个项，注意list的分级</li>
+<li>节点line: 画线，起点终点</li>
+<li>节点flatten: 把多层级的list拍平，可以用来改变list的层级结构</li>
+<li>节点plane by three points: 通过三个点来创建平面，平面不显示，但于线相交用geomery.intersect可以显示出点。</li>
+<li>节点geometry.translate也可以用来阵列具体做法是在例如z轴输入一个list,里面储存了递增的距离，如0..300..#30, 则为阵列30份，直到高度300</li>
+<li>节点polycurve by point: 根据点来画多段线弧线</li>
+<li><span style="color:red;">节点<strong>list.schiftIndices</strong>: 输入amount 1表示把列表的最后一个项放到第一位，其他的往后退一位；输入amount 2表示把列表的最后两项放到前两位，其他的往后退2位，以此类推</li>
+<li>节点<strong>list.transpose</strong>:转制，行变列，列变行</li>
+<li>list.count： 输出list的长度</li>
+<li><span style="color:red;">节点<strong>curve.sweepAsSolid</strong>: 输入闭合的曲线（作为截面），和线作为拉伸路径（注意这里的必须输入的是一个curve如line,bspline,nurb而不是polycurve 因为poly本质是个list），拉伸为一个实体，输入的东西可为列表，则批量拉伸</li>
+<li>line.byTangency创建curve的切线</li>
+<li>line.direction: 获得线方向上的向量</li>
+<li>将dynamo中的模型输入revit使其变成一个族实例用DirectSchape.ByGeometry</li>
+<li>code block 中是使用的design script即dynamo 自己的语言<ul>
+<li><span style="color:red;">code block 创建list：<ul>
+<li>codeblock 提取列表元素： a[0]<br>  [1,2,3,4] 直接输出list 1，2，3，4<br>  0..100..10; 首项..末项..项差 -&gt; range<br>  0..#100..10; 首相..项数..项差 -&gt; sequence<br>  0..100..#10； 首相..末项..项数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>用节点python script 可输入python code</li>
+<li><span style="color:blue;">revit中族的一个树状结构，里面包含了其的4层信息，所以想通过dynamo逆向提取revit模型中的信息或特定模型，逻辑上应该是<ol>
+<li>先找到根即category -&gt; 命令categories</li>
+<li>细化过滤筛选family type -&gt; 命令all placed family types of category</li>
+<li>筛选得到instance -&gt; 命令all elements of family type; 获得的instance可用elements.geometry展示<br><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590261055/abc_hc8z9c.png" alt="族的结构"></li>
+</ol>
+</li>
+<li>节点export excel： data中要求输入二维列表数据</li>
+<li>Dynamo编程如果出错，应该查input output， 查lacing，查作用域即List分级</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/Dynamo-revit/" rel="tag"># Dynamo, revit</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/" rel="prev" title="Markdown的一些语法">
+                  <i class="fa fa-angle-left"></i> Markdown的一些语法
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="Python一些语法备忘">
+                  Python一些语法备忘 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">dcy0577</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -20,6 +20,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Leistungsphasen备忘</title>
+    <url>/blog/2020/05/25/Leistungsphasen/</url>
+    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" title="Leistungsphasen 1-9"></p>
+<span id="more"></span>
+
+<h2 id="LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung"><a href="#LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung" class="headerlink" title="LP4 Genehmigungsplanung &#x2F; Eingabeplanung &#x2F; Einreichplanung"></a>LP4 Genehmigungsplanung &#x2F; Eingabeplanung &#x2F; Einreichplanung</h2><p>Der Bauantrag ist schriftlich bei der unteren Bauaufsichtsbehörde einzureichen. Mit dem Bauantrag sind alle für die Beurteilung des Bauvorhabens und die Bearbeitung des Bauantrags erforderlichen Unterlagen (Bauvorlagen) einzureichen. Näheres regeln in Deutschland die entsprechenden Rechtsverordnungen der Bundesländer (Bauvorlagenverordnungen).</p>
+<p>Ein Bauantrag besteht in Deutschland meist aus folgenden Teilen:</p>
+<ol>
+<li>Eingabeplan mit Grundrissen, Ansichten und Schnitten im Maßstab 1:100</li>
+<li>Bauantragsformular</li>
+<li>Baubeschreibung</li>
+<li>statistischer Erhebungsbogen</li>
+<li>Wärmeschutznachweis</li>
+<li>Standsicherheitsnachweis (Statische Berechnung, Statik)</li>
+<li>amtlicher Lageplan zum Bauantrag, meist im Maßstab 1:200 (kleinere Maßstäbe nur bei großen Grundstücken)</li>
+<li>ggf. weiteren notwendigen Nachweisen und Angaben, die zur Erteilung der Genehmigung von der Bauaufsichtsbehörde gefordert werden.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>informations</category>
+      </categories>
+      <tags>
+        <tag>LP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>BIM的一些基础概念整理</title>
     <url>/blog/2020/05/30/BIM%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E6%95%B4%E7%90%86/</url>
     <content><![CDATA[<p>基于课堂资料整理汇总了一些基本概念。</p>
@@ -267,51 +293,12 @@
       </tags>
   </entry>
   <entry>
-    <title>Revit 二次开发电缆布置</title>
-    <url>/blog/2020/09/19/Revit-%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E7%94%B5%E7%BC%86%E5%B8%83%E7%BD%AE/</url>
-    <content><![CDATA[<h3 id="C-中的goto跳转语句"><a href="#C-中的goto跳转语句" class="headerlink" title="C#中的goto跳转语句"></a>C#中的goto跳转语句</h3><ol>
-<li>goto语句不可以跳到for循环中</li>
-<li>goto语句不可以跳到类的外面。</li>
-<li>goto语句不可以退出try{}catch()finally{}语句。</li>
-</ol>
-<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">goto</span> label;<span class="comment">//自己命名一个label</span></span><br><span class="line">statement01;  <span class="comment">//这句是跳过的语句</span></span><br><span class="line">label:<span class="comment">//goto到这个标签，从这里开始执行语句</span></span><br><span class="line">statement02;  <span class="comment">//执行的语句</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Revit, C#</category>
-      </categories>
-      <tags>
-        <tag>Revit, C#, MEP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leistungsphasen备忘</title>
-    <url>/blog/2020/05/25/Leistungsphasen/</url>
-    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" title="Leistungsphasen 1-9"></p>
-<h2 id="LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung"><a href="#LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung" class="headerlink" title="LP4 Genehmigungsplanung &#x2F; Eingabeplanung &#x2F; Einreichplanung"></a>LP4 Genehmigungsplanung &#x2F; Eingabeplanung &#x2F; Einreichplanung</h2><p>Der Bauantrag ist schriftlich bei der unteren Bauaufsichtsbehörde einzureichen. Mit dem Bauantrag sind alle für die Beurteilung des Bauvorhabens und die Bearbeitung des Bauantrags erforderlichen Unterlagen (Bauvorlagen) einzureichen. Näheres regeln in Deutschland die entsprechenden Rechtsverordnungen der Bundesländer (Bauvorlagenverordnungen).</p>
-<p>Ein Bauantrag besteht in Deutschland meist aus folgenden Teilen:</p>
-<ol>
-<li>Eingabeplan mit Grundrissen, Ansichten und Schnitten im Maßstab 1:100</li>
-<li>Bauantragsformular</li>
-<li>Baubeschreibung</li>
-<li>statistischer Erhebungsbogen</li>
-<li>Wärmeschutznachweis</li>
-<li>Standsicherheitsnachweis (Statische Berechnung, Statik)</li>
-<li>amtlicher Lageplan zum Bauantrag, meist im Maßstab 1:200 (kleinere Maßstäbe nur bei großen Grundstücken)</li>
-<li>ggf. weiteren notwendigen Nachweisen und Angaben, die zur Erteilung der Genehmigung von der Bauaufsichtsbehörde gefordert werden.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>informations</category>
-      </categories>
-      <tags>
-        <tag>LP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Dynamo学习笔记</title>
     <url>/blog/2020/05/22/Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</url>
-    <content><![CDATA[<ul>
+    <content><![CDATA[<p>some notes about Dynamo</p>
+<span id="more"></span>
+
+<ul>
 <li>dynamo里单位是毫米</li>
 <li>var[][]表示的数据类型为二维数组，即至少有L3的列表</li>
 <li>CSV：Comma-Separated Values 用逗号分隔的数据形式，input进dynamo用节点csv import </li>
@@ -364,6 +351,82 @@
       </categories>
       <tags>
         <tag>Dynamo, revit</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Revit 二次开发电缆布置</title>
+    <url>/blog/2020/09/19/Revit-%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E7%94%B5%E7%BC%86%E5%B8%83%E7%BD%AE/</url>
+    <content><![CDATA[<p>some useful syntax in C#</p>
+<span id="more"></span>
+
+<h3 id="C-中的goto跳转语句"><a href="#C-中的goto跳转语句" class="headerlink" title="C#中的goto跳转语句"></a>C#中的goto跳转语句</h3><ol>
+<li>goto语句不可以跳到for循环中</li>
+<li>goto语句不可以跳到类的外面。</li>
+<li>goto语句不可以退出try{}catch()finally{}语句。</li>
+</ol>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">goto</span> label;<span class="comment">//自己命名一个label</span></span><br><span class="line">statement01;  <span class="comment">//这句是跳过的语句</span></span><br><span class="line">label:<span class="comment">//goto到这个标签，从这里开始执行语句</span></span><br><span class="line">statement02;  <span class="comment">//执行的语句</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Revit, C#</category>
+      </categories>
+      <tags>
+        <tag>Revit, C#, MEP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown的一些语法</title>
+    <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p>Some useful grammar in Markdown</p>
+<span id="more"></span>
+
+<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
+<p>注：标准语法一般在#后跟个空格再写文字</p>
+<h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h2 id="2-1-无序列表（前带圆点）"><a href="#2-1-无序列表（前带圆点）" class="headerlink" title="2.1 无序列表（前带圆点）"></a>2.1 无序列表（前带圆点）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> 列表内容</span><br><span class="line"><span class="bullet">+</span> 列表内容</span><br><span class="line"><span class="bullet">*</span> 列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<ul>
+<li>列表1</li>
+</ul>
+<ul>
+<li>列表2</li>
+</ul>
+<ul>
+<li>列表3</li>
+</ul>
+<h2 id="2-1-有序列表（前带数字）"><a href="#2-1-有序列表（前带数字）" class="headerlink" title="2.1 有序列表（前带数字）"></a>2.1 有序列表（前带数字）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 列表内容</span><br><span class="line"><span class="bullet">2.</span> 列表内容</span><br><span class="line"><span class="bullet">3.</span> 列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<ol>
+<li>列表1</li>
+<li>列表2</li>
+<li>列表3</li>
+</ol>
+<h1 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3. 代码块"></a>3. 代码块</h1><p>在代码段落上下两行分别插入三个反逗号，若要代码高亮则要在反逗号后面注明是什么语言。 </p>
+<h1 id="4-插入图片所需代码"><a href="#4-插入图片所需代码" class="headerlink" title="4. 插入图片所需代码"></a>4. 插入图片所需代码</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">描述</span>](<span class="link">图片链接 &#x27;&#x27;图片标题&#x27;&#x27;</span>)</span><br><span class="line">![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>) 连续写就是并排显示图片</span><br><span class="line"></span><br><span class="line">描述就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片标题是当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
+<p>例：<br>插入本地图片<br><img src="/blog/./Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/abc.png" alt="test picture"><br><code>![test picture](./Dynamo学习笔记-1/abc.png)</code> 好像不管用…所以我把所有图片存到了云盘<br><code>&quot;&#123;% asset_img abc.PNG This is an image %&#125;&quot;</code> ？？？</p>
+<h1 id="5-改变字体颜色"><a href="#5-改变字体颜色" class="headerlink" title="5. 改变字体颜色"></a>5. 改变字体颜色</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;color:red;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="section">#回车换行后命令失效</span></span><br></pre></td></tr></table></figure>
+<p><span style="color:red;"> 改变字体颜色至红</p>
+<h1 id="6-字体"><a href="#6-字体" class="headerlink" title="6. 字体"></a>6. 字体</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**这是加粗的文字**</span></span><br><span class="line"><span class="emphasis">*这是倾斜的文字*</span>`</span><br><span class="line"><span class="strong">**<span class="emphasis">*这是斜体加粗的文字*</span>**</span></span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
+<p>例：<br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><em><strong>这是斜体加粗的文字</strong></em><br><del>这是加删除线的文字</del></p>
+<h1 id="7-引用"><a href="#7-引用" class="headerlink" title="7. 引用"></a>7. 引用</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<p>这是引用的内容</p>
+</blockquote>
+</blockquote>
+<h1 id="8-分割线"><a href="#8-分割线" class="headerlink" title="8. 分割线"></a>8. 分割线</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="9-生成首页摘要"><a href="#9-生成首页摘要" class="headerlink" title="9. 生成首页摘要"></a>9. 生成首页摘要</h1><p>在Markdown文档中添加<code>&lt;!-- more --&gt;</code>，代码上面的全是摘要</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这里是摘要</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">这里是正文</span><br></pre></td></tr></table></figure>
+
+<h1 id="10-链接"><a href="#10-链接" class="headerlink" title="10. 链接"></a>10. 链接</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">超链接名</span>](<span class="link">超链接地址</span>)</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.jianshu.com/p/191d1e21f7ed">本文参考资料</a></p>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -651,7 +714,10 @@
   <entry>
     <title>Revit二次开发</title>
     <url>/blog/2020/06/12/Revit%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<h2 id="开发环境配置"><a href="#开发环境配置" class="headerlink" title="开发环境配置"></a>开发环境配置</h2><ul>
+    <content><![CDATA[<p>Step by step tutorial of creating plugin in Revit</p>
+<span id="more"></span>
+
+<h2 id="开发环境配置"><a href="#开发环境配置" class="headerlink" title="开发环境配置"></a>开发环境配置</h2><ul>
 <li>Visual Studio 2019, .Net桌面开发</li>
 <li>Revit 2019</li>
 <li>Revit 2019 SDK(software development kit) : 在Add-In Manager文档内修改配置文件Autodesk.AddInManager.addin，在[TARGET]中写入文件当前路径。复制配置文件C:\ProgramData\Autodesk\Revit\Addins\2019。写入的配置文件出现在revit-附加模块-外部工具中。</li>
@@ -823,61 +889,117 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown的一些语法</title>
-    <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
-<p>注：标准语法一般在#后跟个空格再写文字</p>
-<h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h2 id="2-1-无序列表（前带圆点）"><a href="#2-1-无序列表（前带圆点）" class="headerlink" title="2.1 无序列表（前带圆点）"></a>2.1 无序列表（前带圆点）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> 列表内容</span><br><span class="line"><span class="bullet">+</span> 列表内容</span><br><span class="line"><span class="bullet">*</span> 列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<ul>
-<li>列表1</li>
-</ul>
-<ul>
-<li>列表2</li>
-</ul>
-<ul>
-<li>列表3</li>
-</ul>
-<h2 id="2-1-有序列表（前带数字）"><a href="#2-1-有序列表（前带数字）" class="headerlink" title="2.1 有序列表（前带数字）"></a>2.1 有序列表（前带数字）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 列表内容</span><br><span class="line"><span class="bullet">2.</span> 列表内容</span><br><span class="line"><span class="bullet">3.</span> 列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<ol>
-<li>列表1</li>
-<li>列表2</li>
-<li>列表3</li>
-</ol>
-<h1 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3. 代码块"></a>3. 代码块</h1><p>在代码段落上下两行分别插入三个反逗号，若要代码高亮则要在反逗号后面注明是什么语言。 </p>
-<h1 id="4-插入图片所需代码"><a href="#4-插入图片所需代码" class="headerlink" title="4. 插入图片所需代码"></a>4. 插入图片所需代码</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">描述</span>](<span class="link">图片链接 &#x27;&#x27;图片标题&#x27;&#x27;</span>)</span><br><span class="line">![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>) 连续写就是并排显示图片</span><br><span class="line"></span><br><span class="line">描述就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片标题是当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
-<p>例：<br>插入本地图片<br><img src="/blog/./Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/abc.png" alt="test picture"><br><code>![test picture](./Dynamo学习笔记-1/abc.png)</code> 好像不管用…所以我把所有图片存到了云盘<br><code>&quot;&#123;% asset_img abc.PNG This is an image %&#125;&quot;</code> ？？？</p>
-<h1 id="5-改变字体颜色"><a href="#5-改变字体颜色" class="headerlink" title="5. 改变字体颜色"></a>5. 改变字体颜色</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;color:red;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="section">#回车换行后命令失效</span></span><br></pre></td></tr></table></figure>
-<p><span style="color:red;"> 改变字体颜色至红</p>
-<h1 id="6-字体"><a href="#6-字体" class="headerlink" title="6. 字体"></a>6. 字体</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**这是加粗的文字**</span></span><br><span class="line"><span class="emphasis">*这是倾斜的文字*</span>`</span><br><span class="line"><span class="strong">**<span class="emphasis">*这是斜体加粗的文字*</span>**</span></span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
-<p>例：<br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><em><strong>这是斜体加粗的文字</strong></em><br><del>这是加删除线的文字</del></p>
-<h1 id="7-引用"><a href="#7-引用" class="headerlink" title="7. 引用"></a>7. 引用</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这是引用的内容</p>
-<blockquote>
-<p>这是引用的内容</p>
-</blockquote>
-</blockquote>
-<h1 id="8-分割线"><a href="#8-分割线" class="headerlink" title="8. 分割线"></a>8. 分割线</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="9-生成首页摘要"><a href="#9-生成首页摘要" class="headerlink" title="9. 生成首页摘要"></a>9. 生成首页摘要</h1><p>在Markdown文档中添加<code>&lt;!-- more --&gt;</code>，代码上面的全是摘要</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这里是摘要</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">这里是正文</span><br></pre></td></tr></table></figure>
+    <title>基于simplex算法的非线性优化</title>
+    <url>/blog/2020/05/30/%E5%9F%BA%E4%BA%8Esimplex%E7%AE%97%E6%B3%95%E7%9A%84%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<p>Documentation of a small thesis in master study</p>
+<span id="more"></span>
 
-<h1 id="10-链接"><a href="#10-链接" class="headerlink" title="10. 链接"></a>10. 链接</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">超链接名</span>](<span class="link">超链接地址</span>)</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.jianshu.com/p/191d1e21f7ed">本文参考资料</a></p>
+<h1 id="Non-linear-Optimisation-Linearisation"><a href="#Non-linear-Optimisation-Linearisation" class="headerlink" title="Non-linear Optimisation&#x2F;Linearisation"></a>Non-linear Optimisation&#x2F;Linearisation</h1><h2 id="1-1-Assignment"><a href="#1-1-Assignment" class="headerlink" title="1.1           Assignment"></a>1.1           Assignment</h2><p>Within the activities to rearrange the outside facilities of an IGA (Internationale Gartenausstellung) area at several locations one of two mobile units – a mobile drill unit and a mobile crane - will be required. Since installation efforts are high a many operations as possible should be combined to one more extended operation. Yet, shifting single activities to fit into the lager operation also requires effort leading to a two-dimensional optimisation problem: The construction period will be 3 years and these data are given furthermore:</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852710/Optimiereung/1_uuxxiy.png"></p>
+<p>Elaborate, how many assignments are optimally to be combined. Therefore, linearise the target function regarding total cost sufficiently accurate and use the Simplex-Algorithm to calculate.</p>
+<h2 id="1-2-The-Target-Functions"><a href="#1-2-The-Target-Functions" class="headerlink" title="1.2           The Target Functions"></a>1.2           The Target Functions</h2><p>After collating the information in the above task, we can obtain the parameters needed to build the target functions and mark them in red in the following table. The local cost c is obtained by multiplying the parameter  s1  by the parameter s2. In addition, based on the total number of assignments and the construction period, we can get the number of assignments e in one year. </p>
+<p>Table 1.1 Parameters of target functions</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th>mobile dill</th>
+<th>mobile crane</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Fixed cost  E (€)</td>
+<td>1250</td>
+<td>1915</td>
+</tr>
+<tr>
+<td align="left">duration s1 (h)</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr>
+<td align="left">cost&#x2F;h  s2  (€&#x2F;h)</td>
+<td>450</td>
+<td>250</td>
+</tr>
+<tr>
+<td align="left">local cost  c (€)</td>
+<td>1800</td>
+<td>750</td>
+</tr>
+<tr>
+<td align="left">relocate device cost (€) s3</td>
+<td>100</td>
+<td>70</td>
+</tr>
+<tr>
+<td align="left">Total number of assignments e</td>
+<td>90</td>
+<td>150</td>
+</tr>
+<tr>
+<td align="left">construction period (a)</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td align="left">number of assignments  e (in one  year)</td>
+<td>30</td>
+<td>50</td>
+</tr>
+<tr>
+<td align="left">cost v for reschedule an assignment (€&#x2F;day)</td>
+<td>47</td>
+<td>35</td>
+</tr>
+</tbody></table>
+<p>The formula of the Target function is as follows. It mainly describes the relationship between the number of assignments and the cost. It is obviously non-linear.<br>$$<br>k(x)&#x3D;E\ast e&#x2F;x+e\ast(c+s_3)+x&#x2F;5\ast v\ast 365<br>$$<br>By substituting the values in the above table into the formula, the cost curve k1 of mobile drill and the cost curve k2 of mobile crane can be obtained respectively:</p>
+<p>mobile drill k1:<br>$$<br>k(x)&#x3D;  37500&#x2F;x+3431x+57000<br>$$<br>mobile crane k2:<br>$$<br>k(x)&#x3D;  95750&#x2F;x+2555x+41000<br>$$<br>Table 1.2 Excel-table: Costs for different x</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852709/Optimiereung/231_lkuhu6.png"></p>
+<p>Figure 1.1 Cost curves k1 and k2</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530172644434_ggju3v.png"></p>
+<h2 id="1-3-Linearisation"><a href="#1-3-Linearisation" class="headerlink" title="1.3           Linearisation"></a>1.3           Linearisation</h2><h3 id="1-3-1-General-Approach"><a href="#1-3-1-General-Approach" class="headerlink" title="1.3.1        General Approach"></a>1.3.1        General Approach</h3><p>Non-linear target functions can be modified using linearization approach. The principle of this approach is replacing the non-linear function by polygonal chains. The function can be written as a summation over terms which contain only one variable each. Then these terms can be approximated as polygonal chain. (Eber, 10&#x2F;2018) Hence, a function G (x1, x2 ,…xi) needs to be given as: </p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530172915979_tm1kik.png"> <img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530172938109_llyscb.png"></p>
+<p>Then each of the terms can be approximated:</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530172951156_auepkj.png"></p>
+<h3 id="1-3-2-Linearisation-mobile-drill-k1"><a href="#1-3-2-Linearisation-mobile-drill-k1" class="headerlink" title="1.3.2        Linearisation mobile drill k1"></a>1.3.2        Linearisation mobile drill k1</h3><p>From the table and diagram in the previous chapter we can estimate the range where the optimal number of assignments is located. So we intercepted the curve of the target function in the x range of 1 to 11, and then divided x in 10 intervals form 1 to 11.</p>
+<p>Figure 1.3 Divide x in 10 intervals</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530173000798_sd7iwr.png"><br>$$<br>k(x)&#x3D;  37500&#x2F;x+3431x+57000<br>$$<br><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590853827/Optimiereung/123123_kgcdor.png"></p>
+<p>In order to simplify the polynomial, the constant terms such as k(1), k(2),…k(10) can be ignored because they don’t influence our x - value. In addition, (x-1), (x-2),…(x-10) in the polynomial are equivalent to x1, x2,… x10. From the above two points we can simplify the polynomial and make it to our new target function as follows:</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590853827/Optimiereung/23144_hkwkjc.png"></p>
+<p>The new boundary conditions:<br>$$<br>0≤x_1,x_2,…x_{10}≤1<br>$$<br>We can now solve this linear problem using the online simplex calculator: (<a href="https://linprog.com/main-simplex-method/result">https://linprog.com/main-simplex-method/result</a>)</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530173013193_sitym2.png"></p>
+<p>which means:<br>$$<br>x_1&#x3D;x_2&#x3D;1,x_3…x_{10}&#x3D;0<br>$$<br>Figure 1.4 Using polygonal chain to find x</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530173019715_kgqo70.png"><br>$$<br>∴x&#x3D;1+[1+1]&#x3D;3,k(3)&#x3D;79793<br>$$<br><strong>Solution:</strong> For mobile drill, 3 assignments per year cause the least cost.</p>
+<h3 id="1-3-3-Linearisation-mobile-crane-k2"><a href="#1-3-3-Linearisation-mobile-crane-k2" class="headerlink" title="1.3.3       Linearisation mobile crane k2"></a>1.3.3       Linearisation mobile crane k2</h3><p>Similar to the mobile drill we also intercepted the curve of the target function in the x range of 1 to 11, and then divided x in 10 intervals from 1 to 11.<br>$$<br>k(x)&#x3D;  95750&#x2F;x+2555x+41000<br>$$<br><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590853827/Optimiereung/21312412_e7nhzx.png"></p>
+<p>Simplify the polynomial to get new target function:</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590853827/Optimiereung/3123_gji19b.png"></p>
+<p>Boundary conditions:<br>$$<br>0≤x_1,x_2,…x_{10}≤1<br>$$<br>Solve this linear problem using the online simplex calculator: (<a href="https://linprog.com/main-simplex-method/result">https://linprog.com/main-simplex-method/result</a>)</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530173027453_jbew8r.png"></p>
+<p>which means:<br>$$<br>x_1&#x3D;x_2&#x3D;x_3&#x3D;x_4&#x3D;x_5&#x3D;1,x_6…x_{10}&#x3D;0<br>$$<br>Figure 1.5 Using polygonal chain to find x</p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852676/Optimiereung/image-20200530173035374_zwp1if.png"><br>$$<br>∴x&#x3D;1+[1+1+1+1+1]&#x3D;6,k(6)&#x3D;72288.33<br>$$<br><strong>Solution:</strong> For mobile crane, 6 assignments per year cause the least cost.</p>
+<h2 id="1-4-Conclusion"><a href="#1-4-Conclusion" class="headerlink" title="1.4           Conclusion"></a>1.4           Conclusion</h2><p>According to the calculation, the optimal assignment combination is: 3 assignments per year for mobile drill + 6 assignments per year for mobile crane. The cost of this combination is 152,081.33€ per year.</p>
 ]]></content>
       <categories>
-        <category>markdown</category>
+        <category>Optimiereungsverfahren</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
+        <tag>Optimierungsverfahren</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/blog/2023/12/28/test/</url>
+    <content><![CDATA[<p>test, test</p>
+<span id="more"></span>]]></content>
   </entry>
   <entry>
     <title>Revit族学习笔记</title>
     <url>/blog/2020/05/26/revit%E6%97%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<ul>
+    <content><![CDATA[<p>Learning notes of revit family</p>
+<span id="more"></span>
+
+<ul>
 <li>墙的踢脚线可以用墙-墙饰条来画，把偏移量设置为0就好了</li>
 <li>revit 画二维节点详图，剖面出来后，用注释- 区域- 填充区域来画各种材料轮廓。注释- 构件里面可以添加已经载入的详图构件族，可以直接添加到详图里。详图里面的所有图形，选中后上方菜单可以调整显示顺序，遮盖或者不遮盖</li>
 <li>tab键可以选择一个物体上的一部分点或面</li>
@@ -1228,107 +1350,5 @@
       <tags>
         <tag>revit</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>基于simplex算法的非线性优化</title>
-    <url>/blog/2020/05/30/%E5%9F%BA%E4%BA%8Esimplex%E7%AE%97%E6%B3%95%E7%9A%84%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<h1 id="Non-linear-Optimisation-Linearisation"><a href="#Non-linear-Optimisation-Linearisation" class="headerlink" title="Non-linear Optimisation&#x2F;Linearisation"></a>Non-linear Optimisation&#x2F;Linearisation</h1><h2 id="1-1-Assignment"><a href="#1-1-Assignment" class="headerlink" title="1.1           Assignment"></a>1.1           Assignment</h2><p>Within the activities to rearrange the outside facilities of an IGA (Internationale Gartenausstellung) area at several locations one of two mobile units – a mobile drill unit and a mobile crane - will be required. Since installation efforts are high a many operations as possible should be combined to one more extended operation. Yet, shifting single activities to fit into the lager operation also requires effort leading to a two-dimensional optimisation problem: The construction period will be 3 years and these data are given furthermore:</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852710/Optimiereung/1_uuxxiy.png"></p>
-<p>Elaborate, how many assignments are optimally to be combined. Therefore, linearise the target function regarding total cost sufficiently accurate and use the Simplex-Algorithm to calculate.</p>
-<h2 id="1-2-The-Target-Functions"><a href="#1-2-The-Target-Functions" class="headerlink" title="1.2           The Target Functions"></a>1.2           The Target Functions</h2><p>After collating the information in the above task, we can obtain the parameters needed to build the target functions and mark them in red in the following table. The local cost c is obtained by multiplying the parameter  s1  by the parameter s2. In addition, based on the total number of assignments and the construction period, we can get the number of assignments e in one year. </p>
-<p>Table 1.1 Parameters of target functions</p>
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th>mobile dill</th>
-<th>mobile crane</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">Fixed cost  E (€)</td>
-<td>1250</td>
-<td>1915</td>
-</tr>
-<tr>
-<td align="left">duration s1 (h)</td>
-<td>4</td>
-<td>3</td>
-</tr>
-<tr>
-<td align="left">cost&#x2F;h  s2  (€&#x2F;h)</td>
-<td>450</td>
-<td>250</td>
-</tr>
-<tr>
-<td align="left">local cost  c (€)</td>
-<td>1800</td>
-<td>750</td>
-</tr>
-<tr>
-<td align="left">relocate device cost (€) s3</td>
-<td>100</td>
-<td>70</td>
-</tr>
-<tr>
-<td align="left">Total number of assignments e</td>
-<td>90</td>
-<td>150</td>
-</tr>
-<tr>
-<td align="left">construction period (a)</td>
-<td>3</td>
-<td>3</td>
-</tr>
-<tr>
-<td align="left">number of assignments  e (in one  year)</td>
-<td>30</td>
-<td>50</td>
-</tr>
-<tr>
-<td align="left">cost v for reschedule an assignment (€&#x2F;day)</td>
-<td>47</td>
-<td>35</td>
-</tr>
-</tbody></table>
-<p>The formula of the Target function is as follows. It mainly describes the relationship between the number of assignments and the cost. It is obviously non-linear.<br>$$<br>k(x)&#x3D;E\ast e&#x2F;x+e\ast(c+s_3)+x&#x2F;5\ast v\ast 365<br>$$<br>By substituting the values in the above table into the formula, the cost curve k1 of mobile drill and the cost curve k2 of mobile crane can be obtained respectively:</p>
-<p>mobile drill k1:<br>$$<br>k(x)&#x3D;  37500&#x2F;x+3431x+57000<br>$$<br>mobile crane k2:<br>$$<br>k(x)&#x3D;  95750&#x2F;x+2555x+41000<br>$$<br>Table 1.2 Excel-table: Costs for different x</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852709/Optimiereung/231_lkuhu6.png"></p>
-<p>Figure 1.1 Cost curves k1 and k2</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530172644434_ggju3v.png"></p>
-<h2 id="1-3-Linearisation"><a href="#1-3-Linearisation" class="headerlink" title="1.3           Linearisation"></a>1.3           Linearisation</h2><h3 id="1-3-1-General-Approach"><a href="#1-3-1-General-Approach" class="headerlink" title="1.3.1        General Approach"></a>1.3.1        General Approach</h3><p>Non-linear target functions can be modified using linearization approach. The principle of this approach is replacing the non-linear function by polygonal chains. The function can be written as a summation over terms which contain only one variable each. Then these terms can be approximated as polygonal chain. (Eber, 10&#x2F;2018) Hence, a function G (x1, x2 ,…xi) needs to be given as: </p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530172915979_tm1kik.png"> <img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530172938109_llyscb.png"></p>
-<p>Then each of the terms can be approximated:</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530172951156_auepkj.png"></p>
-<h3 id="1-3-2-Linearisation-mobile-drill-k1"><a href="#1-3-2-Linearisation-mobile-drill-k1" class="headerlink" title="1.3.2        Linearisation mobile drill k1"></a>1.3.2        Linearisation mobile drill k1</h3><p>From the table and diagram in the previous chapter we can estimate the range where the optimal number of assignments is located. So we intercepted the curve of the target function in the x range of 1 to 11, and then divided x in 10 intervals form 1 to 11.</p>
-<p>Figure 1.3 Divide x in 10 intervals</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530173000798_sd7iwr.png"><br>$$<br>k(x)&#x3D;  37500&#x2F;x+3431x+57000<br>$$<br><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590853827/Optimiereung/123123_kgcdor.png"></p>
-<p>In order to simplify the polynomial, the constant terms such as k(1), k(2),…k(10) can be ignored because they don’t influence our x - value. In addition, (x-1), (x-2),…(x-10) in the polynomial are equivalent to x1, x2,… x10. From the above two points we can simplify the polynomial and make it to our new target function as follows:</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590853827/Optimiereung/23144_hkwkjc.png"></p>
-<p>The new boundary conditions:<br>$$<br>0≤x_1,x_2,…x_{10}≤1<br>$$<br>We can now solve this linear problem using the online simplex calculator: (<a href="https://linprog.com/main-simplex-method/result">https://linprog.com/main-simplex-method/result</a>)</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530173013193_sitym2.png"></p>
-<p>which means:<br>$$<br>x_1&#x3D;x_2&#x3D;1,x_3…x_{10}&#x3D;0<br>$$<br>Figure 1.4 Using polygonal chain to find x</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530173019715_kgqo70.png"><br>$$<br>∴x&#x3D;1+[1+1]&#x3D;3,k(3)&#x3D;79793<br>$$<br><strong>Solution:</strong> For mobile drill, 3 assignments per year cause the least cost.</p>
-<h3 id="1-3-3-Linearisation-mobile-crane-k2"><a href="#1-3-3-Linearisation-mobile-crane-k2" class="headerlink" title="1.3.3       Linearisation mobile crane k2"></a>1.3.3       Linearisation mobile crane k2</h3><p>Similar to the mobile drill we also intercepted the curve of the target function in the x range of 1 to 11, and then divided x in 10 intervals from 1 to 11.<br>$$<br>k(x)&#x3D;  95750&#x2F;x+2555x+41000<br>$$<br><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590853827/Optimiereung/21312412_e7nhzx.png"></p>
-<p>Simplify the polynomial to get new target function:</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590853827/Optimiereung/3123_gji19b.png"></p>
-<p>Boundary conditions:<br>$$<br>0≤x_1,x_2,…x_{10}≤1<br>$$<br>Solve this linear problem using the online simplex calculator: (<a href="https://linprog.com/main-simplex-method/result">https://linprog.com/main-simplex-method/result</a>)</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852675/Optimiereung/image-20200530173027453_jbew8r.png"></p>
-<p>which means:<br>$$<br>x_1&#x3D;x_2&#x3D;x_3&#x3D;x_4&#x3D;x_5&#x3D;1,x_6…x_{10}&#x3D;0<br>$$<br>Figure 1.5 Using polygonal chain to find x</p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590852676/Optimiereung/image-20200530173035374_zwp1if.png"><br>$$<br>∴x&#x3D;1+[1+1+1+1+1]&#x3D;6,k(6)&#x3D;72288.33<br>$$<br><strong>Solution:</strong> For mobile crane, 6 assignments per year cause the least cost.</p>
-<h2 id="1-4-Conclusion"><a href="#1-4-Conclusion" class="headerlink" title="1.4           Conclusion"></a>1.4           Conclusion</h2><p>According to the calculation, the optimal assignment combination is: 3 assignments per year for mobile drill + 6 assignments per year for mobile crane. The cost of this combination is 152,081.33€ per year.</p>
-]]></content>
-      <categories>
-        <category>Optimiereungsverfahren</category>
-      </categories>
-      <tags>
-        <tag>Optimierungsverfahren</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/blog/2023/12/28/test/</url>
-    <content><![CDATA[<p>test, test</p>
-]]></content>
   </entry>
 </search>
