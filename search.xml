@@ -20,255 +20,33 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown插入数学公式</title>
-    <url>/blog/2020/05/22/Markdown%E6%8F%92%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
-    <content><![CDATA[<p>原生的Hexo并不支持数学公式的显示，需要加载Mathjax插件。MathJax使用网络字体（大部分浏览器都支持）去产生高质量的排版，使其在所有分辨率都可缩放和显示，这远比使用包含公式的图片要有效得多。使用MathJax显示数学公式是基于文本的，而非图片。它可以被搜索引擎使用，这意味着方程式和页面上的文字一样是可以被搜索的。 MathJax允许页面作者使用TeX、LaTeX符号和 MathML 或者 AsciiMath 去书写公式。</p>
+    <title>Python一些语法备忘</title>
+    <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>总结了一些Python的语法</p>
 <span id="more"></span>
-<h2 id="需要在文章头添加mathjax开关"><a href="#需要在文章头添加mathjax开关" class="headerlink" title="需要在文章头添加mathjax开关"></a>需要在文章头添加mathjax开关</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: Markdown插入数学公式</span><br><span class="line">date:</span><br><span class="line">tags: markdown</span><br><span class="line">categories: markdown</span><br><span class="line">mathjax: true</span><br></pre></td></tr></table></figure>
 
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><ul>
-<li><p>在正文中同一行插入LaTeX公式用<code>$...$</code>定义</p>
-<ul>
-<li>例如语句为<code>$\sum_&#123;i=0&#125;^N\int_&#123;a&#125;^&#123;b&#125;g(t,i)\text&#123;d&#125;t$</code></li>
-<li>显示为$\sum_{i&#x3D;0}^N\int_{a}^{b}g(t,i)\text{d}t$</li>
-</ul>
-</li>
-<li><p>另起一行显示LaTeX公式用</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$$...$$</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>例如语句为<code>$$W_G^&#123;mn&#125;=max\&#123;0,W_G.\xi_G(f_G^m,f_G^n)\&#125;$$</code></li>
-<li>显示为$$W_G^{mn}&#x3D;max{0,W_G.\xi_G(f_G^m,f_G^n)}$$</li>
-</ul>
-</li>
-</ul>
-<h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><p>注意乘法不能直接打*而是要打表中命令</p>
-<table>
-<thead>
-<tr>
-<th align="left">显示</th>
-<th align="left">命令</th>
-<th align="left">显示</th>
-<th align="left">命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">±</td>
-<td align="left">\pm</td>
-<td align="left">∓</td>
-<td align="left">\mp</td>
-</tr>
-<tr>
-<td align="left">×</td>
-<td align="left">\times</td>
-<td align="left">∗</td>
-<td align="left">\ast</td>
-</tr>
-<tr>
-<td align="left">⋆</td>
-<td align="left">\star</td>
-<td align="left">∘</td>
-<td align="left">\circ</td>
-</tr>
-<tr>
-<td align="left">∙</td>
-<td align="left">\bullet</td>
-<td align="left">⋅</td>
-<td align="left">\cdot</td>
-</tr>
-<tr>
-<td align="left">÷</td>
-<td align="left">\div</td>
-<td align="left">∑</td>
-<td align="left">\sum</td>
-</tr>
-<tr>
-<td align="left">∏</td>
-<td align="left">\prod</td>
-<td align="left">∐</td>
-<td align="left">\coprod</td>
-</tr>
-<tr>
-<td align="left">⊕</td>
-<td align="left">\oplus</td>
-<td align="left">⨁</td>
-<td align="left">\bigoplus</td>
-</tr>
-<tr>
-<td align="left">⊖</td>
-<td align="left">\ominus</td>
-<td align="left">⊗</td>
-<td align="left">\otimes</td>
-</tr>
-<tr>
-<td align="left">⨂</td>
-<td align="left">\bigotimes</td>
-<td align="left">⊘</td>
-<td align="left">\oslash</td>
-</tr>
-<tr>
-<td align="left">⊙</td>
-<td align="left">\odot</td>
-<td align="left">⨀</td>
-<td align="left">\bigodot</td>
-</tr>
-<tr>
-<td align="left">⋄</td>
-<td align="left">\diamond</td>
-<td align="left">△</td>
-<td align="left">\bigtriangleup</td>
-</tr>
-<tr>
-<td align="left">▽</td>
-<td align="left">\bigtriangledown</td>
-<td align="left">◃</td>
-<td align="left">\triangleleft$</td>
-</tr>
-<tr>
-<td align="left">▹</td>
-<td align="left">\triangleright</td>
-<td align="left">▹</td>
-<td align="left">\triangleright</td>
-</tr>
-<tr>
-<td align="left">◯</td>
-<td align="left">\bigcirc</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><table>
-<thead>
-<tr>
-<th align="left">显示</th>
-<th align="left">命令</th>
-<th align="left">显示</th>
-<th align="left">命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">∣</td>
-<td align="left">\mid</td>
-<td align="left">∤</td>
-<td align="left">\nmid</td>
-</tr>
-<tr>
-<td align="left">⋅</td>
-<td align="left">\cdot</td>
-<td align="left">≤</td>
-<td align="left">\leq</td>
-</tr>
-<tr>
-<td align="left">≥</td>
-<td align="left">\geq</td>
-<td align="left">≠</td>
-<td align="left">\neq</td>
-</tr>
-<tr>
-<td align="left">≈</td>
-<td align="left">\approx</td>
-<td align="left">≡</td>
-<td align="left">\equiv</td>
-</tr>
-<tr>
-<td align="left">≺</td>
-<td align="left">\prec</td>
-<td align="left">⪯</td>
-<td align="left">\preceq</td>
-</tr>
-<tr>
-<td align="left">≪</td>
-<td align="left">\ll</td>
-<td align="left">≻</td>
-<td align="left">\succ</td>
-</tr>
-<tr>
-<td align="left">⪰</td>
-<td align="left">\succeq</td>
-<td align="left">≫</td>
-<td align="left">\gg</td>
-</tr>
-<tr>
-<td align="left">∼</td>
-<td align="left">\sim</td>
-<td align="left">≃</td>
-<td align="left">\simeq</td>
-</tr>
-<tr>
-<td align="left">≍</td>
-<td align="left">\asymp</td>
-<td align="left">≅</td>
-<td align="left">\cong</td>
-</tr>
-<tr>
-<td align="left">≐</td>
-<td align="left">\doteq</td>
-<td align="left">∝</td>
-<td align="left">\propto</td>
-</tr>
-<tr>
-<td align="left">⊨</td>
-<td align="left">\models</td>
-<td align="left">∥</td>
-<td align="left">\parallel</td>
-</tr>
-<tr>
-<td align="left">⋈</td>
-<td align="left">\bowtie</td>
-<td align="left">⊥</td>
-<td align="left">\perp</td>
-</tr>
-<tr>
-<td align="left">∘</td>
-<td align="left">\circ</td>
-<td align="left">∗</td>
-<td align="left">\ast</td>
-</tr>
-<tr>
-<td align="left">⨀</td>
-<td align="left">\bigodot</td>
-<td align="left">⨂</td>
-<td align="left">\bigotimes</td>
-</tr>
-<tr>
-<td align="left">⨁</td>
-<td align="left">\bigoplus</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<h2 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span>x<span class="built_in">_</span>1<span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span>x<span class="built_in">_</span>1<span class="built_in">^</span>2<span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span>x<span class="built_in">^</span>2<span class="built_in">_</span>1<span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span>x<span class="built_in">_</span>&#123;22&#125;<span class="built_in">^</span>&#123;(n)&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span>x<span class="built_in">_</span>&#123;123&#125;<span class="built_in">^</span>&#123;1234&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
-<p>$$<br>x_1<br>$$</p>
-<p>$$<br>x_1^2<br>$$</p>
-<p>$$<br>x_{22}^{(n)}<br>$$</p>
-<p>$$<br>x_{123}^{1234}<br>$$</p>
-<h2 id="分式"><a href="#分式" class="headerlink" title="分式"></a>分式</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span><span class="keyword">\frac</span>&#123;x+y&#125;&#123;2&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span><span class="keyword">\frac</span>&#123;1&#125;&#123;1+<span class="keyword">\frac</span>&#123;1&#125;&#123;2&#125;&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\frac{x+y}{2}<br>$$</p>
-<p>$$<br>\frac{1}{1+\frac{1}{2}}<br>$$</p>
-<h2 id="根式"><a href="#根式" class="headerlink" title="根式"></a>根式</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span><span class="keyword">\sqrt</span>&#123;2&#125;&lt;<span class="keyword">\sqrt</span>[3]&#123;3&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span><span class="keyword">\sqrt</span>&#123;1+<span class="keyword">\sqrt</span>[p]&#123;1+a<span class="built_in">^</span>2&#125;&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\sqrt{2}&lt;\sqrt[3]{3}<br>$$</p>
-<p>$$<br>\sqrt{1+\sqrt[p]{1+a^2}}<br>$$</p>
-<h2 id="求和"><a href="#求和" class="headerlink" title="求和"></a>求和</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span><span class="keyword">\sum</span><span class="built_in">_</span>&#123;k=1&#125;<span class="built_in">^</span>&#123;n&#125;<span class="keyword">\frac</span>&#123;1&#125;&#123;k&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\sum_{k&#x3D;1}^{n}\frac{1}{k}<br>$$</p>
-<h2 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span><span class="keyword">\int</span><span class="built_in">_</span>a<span class="built_in">^</span>b f(x)dx<span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\int_a^b f(x)dx<br>$$</p>
-<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span><span class="keyword">\begin</span>&#123;bmatrix&#125;1 <span class="built_in">&amp;</span> 2<span class="keyword">\\</span><span class="keyword">\\</span>3 <span class="built_in">&amp;</span>4<span class="keyword">\end</span>&#123;bmatrix&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\begin{bmatrix}1 &amp; 2\\3 &amp;4\end{bmatrix}<br>$$</p>
-<h2 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h2><p>$$<br>\begin{array}{|c|c|c|c|c|c|c|c|}<br>\hline<br>{\alpha} &amp; {\backslash alpha} &amp; {\theta} &amp; {\backslash theta} &amp; {o} &amp; {o} &amp; {\upsilon} &amp; {\backslash upsilon} \\<br>\hline<br>{\beta} &amp; {\backslash beta} &amp; {\vartheta} &amp; {\backslash vartheta} &amp; {\pi} &amp; {\backslash pi} &amp; {\phi} &amp; {\backslash phi} \\<br>\hline<br>{\gamma} &amp; {\backslash gamma} &amp; {\iota} &amp; {\backslash iota} &amp; {\varpi} &amp; {\backslash varpi} &amp; {\varphi} &amp; {\backslash varphi} \\<br>\hline<br>{\delta} &amp; {\backslash delta} &amp; {\kappa} &amp; {\backslash kappa} &amp; {\rho} &amp; {\backslash rho} &amp; {\chi} &amp; {\backslash chi} \\<br>\hline<br>{\epsilon} &amp; {\backslash epsilon} &amp; {\lambda} &amp; {\backslash lambda} &amp; {\varrho} &amp; {\backslash varrho} &amp; {\psi} &amp; {\backslash psi} \\<br>\hline<br>{\varepsilon} &amp; {\backslash varepsilon} &amp; {\mu} &amp; {\backslash mu} &amp; {\sigma} &amp; {\backslash sigma} &amp; {\omega} &amp; {\backslash omega} \\<br>\hline<br>{\zeta} &amp; {\backslash zeta} &amp; {\nu} &amp; {\backslash nu} &amp; {\varsigma} &amp; {\backslash varsigma} &amp; {} &amp; {} \\<br>\hline<br>{\eta} &amp; {\backslash eta} &amp; {\xi} &amp; {\backslash xi} &amp; {\tau} &amp; {\backslash tau} &amp; {} &amp; {} \\<br>\hline<br>{\Gamma} &amp; {\backslash Gamma} &amp; {\Lambda} &amp; {\backslash Lambda} &amp; {\Sigma} &amp; {\backslash Sigma} &amp; {\Psi} &amp; {\backslash Psi} \\<br>\hline<br>{\Delta} &amp; {\backslash Delta} &amp; {\Xi} &amp; {\backslash Xi} &amp; {\Upsilon} &amp; {\backslash Upsilon} &amp; {\Omega} &amp; {\backslash Omega} \\<br>\hline<br>{\Omega} &amp; {\backslash Omega} &amp; {\Pi} &amp; {\backslash Pi} &amp; {\Phi} &amp; {\backslash Phi} &amp; {} &amp; {} \\<br>\hline<br>\end{array}<br>$$</p>
-<h4 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h4><p><a href="https://juejin.im/post/5a6721bd518825733201c4a2">https://juejin.im/post/5a6721bd518825733201c4a2</a></p>
-<p><a href="https://github.com/mk43/BlogResource/blob/master/LaTex/LATEX%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7%E8%A1%A8.pdf">https://github.com/mk43/BlogResource/blob/master/LaTex/LATEX%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7%E8%A1%A8.pdf</a></p>
-<p><a href="https://oysz2016.github.io/post/8611e6fb.html">https://oysz2016.github.io/post/8611e6fb.html</a></p>
-]]></content>
+<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="1-if-else"><a href="#1-if-else" class="headerlink" title="1. if else"></a>1. if else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span></span><br><span class="line">y=<span class="string">&#x27;hello&#x27;</span></span><br><span class="line"><span class="keyword">if</span> x==<span class="number">1</span> <span class="keyword">or</span> y==<span class="string">&#x27;hello&#x27;</span>:</span><br><span class="line">	x=x+<span class="number">1</span></span><br><span class="line">	y=y+<span class="string">&#x27;world&#x27;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="2-Python特色语句：for-else"><a href="#2-Python特色语句：for-else" class="headerlink" title="2. Python特色语句：for else"></a>2. Python特色语句：for else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">99</span>,<span class="number">81</span>,-<span class="number">1</span>):</span><br><span class="line">	root = sqrt(n)</span><br><span class="line">	<span class="keyword">if</span> root = <span class="built_in">int</span>(root):</span><br><span class="line">		<span class="built_in">print</span>(n)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;didnt find it!&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>这条else语句对应的是知for，不是if，这个是python特有的语句。 break表示打断最近的loop, 而if不是loop，打断的是for loop， 即在for循环中，如果没有从任何一个break中退出，则会执行和for对应的else 只要从break中退出了，则else部分不执行。<br>这段话如果用C++来实现，则如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">99</span>;i&gt;<span class="number">81</span>;i--) </span><br><span class="line">&#123; </span><br><span class="line">	root=<span class="built_in">sqrt</span>(i); </span><br><span class="line">	<span class="keyword">if</span>(root==<span class="built_in">int</span>(root)) </span><br><span class="line">	&#123; </span><br><span class="line">		std::cout&lt;&lt;i; </span><br><span class="line">		<span class="keyword">break</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span>(i==<span class="number">81</span>) <span class="comment">//边界判断 </span></span><br><span class="line">std::cout&lt;&lt;<span class="string">&quot;didn&#x27;t find it!&quot;</span>&lt;&lt;std::endl; </span><br></pre></td></tr></table></figure>
+<h3 id="3-Definations"><a href="#3-Definations" class="headerlink" title="3. Definations"></a>3. Definations</h3><p>aList &#x3D; []  列表，相当于c++中的arry&#x2F;vector<br>aDictionary &#x3D; {}  字典, 相当于c++中的map<br>aTuple &#x3D; ()  元组, 只读的，不能修改，不能像list一样有append，remove等操作</p>
+<h3 id="4-遍历输出"><a href="#4-遍历输出" class="headerlink" title="4. 遍历输出"></a>4. 遍历输出</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aList:</span><br><span class="line">	<span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> aDictionary.item()</span><br><span class="line">	<span class="built_in">print</span>(key, value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Access Value in Dictionary by the Keys</span></span><br><span class="line">value = aDictionary[‘key’]  <span class="comment">#Key muss be string!</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-args-kwargs"><a href="#5-args-kwargs" class="headerlink" title="5. *args, **kwargs"></a>5. <code>*args</code>, <code>**kwargs</code></h3><p><code>*args</code>是位置参数，<code>**kwargs</code>是关建字参数。<code>*args</code>用来收集各种参数，其名字没有实际出现在函数签名的括号中， <code>**kwargs</code>代表了各个dictionary等关系，其名字没有实际出现在括号中，所以有了这两个东西可以在函数input括号里输入各种不同的参数而不止局限于几个自己命名的参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test_kwargs</span>(<span class="params">first, *args, **kwargs</span>):</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;required argument&#x27;</span>, first)</span><br><span class="line">	<span class="keyword">for</span> v <span class="keyword">in</span> args:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;optional argument (*args):&#x27;</span>, v)</span><br><span class="line">	<span class="keyword">for</span> k, v <span class="keyword">in</span> kwargs.item():</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;optional argument %s (*kwargs): %s&#x27;</span>, %(k,v))</span><br><span class="line"></span><br><span class="line">test_kwargs(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,k1=<span class="number">5</span>,k2=<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#required argument: 1</span></span><br><span class="line"><span class="comment">#optional argument (*args): 2</span></span><br><span class="line"><span class="comment">#optional argument (*args): 3</span></span><br><span class="line"><span class="comment">#optional argument (*args): 4</span></span><br><span class="line"><span class="comment">#optional argument k2 (*kwargs): 6</span></span><br><span class="line"><span class="comment">#optional argument k1 (*kwargs): 5</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-装饰器"><a href="#6-装饰器" class="headerlink" title="6. 装饰器"></a>6. 装饰器</h3><p>装饰器本质上是一个 Python 函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能，装饰器的返回值也是一个函数&#x2F;类对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">decarator</span>(<span class="params">func</span>):</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args</span>):</span><br><span class="line">		<span class="comment">#可以此处添加功能如</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;add funtion 1&#x27;</span>)</span><br><span class="line">		<span class="keyword">return</span> func(*args)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@decarator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>(<span class="params">*args</span>):</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;i have&#x27;</span>, *args)</span><br><span class="line"></span><br><span class="line">test(<span class="string">&#x27;dsds&#x27;</span>,<span class="number">3</span>,<span class="string">&#x27;abc&#x27;</span>)</span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#add funtion 1</span></span><br><span class="line"><span class="comment">#i have dsds 3 abc</span></span><br></pre></td></tr></table></figure>
+<h3 id="7-列表推导式"><a href="#7-列表推导式" class="headerlink" title="7. 列表推导式"></a>7. 列表推导式</h3><p>基本语法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = [expression(i) <span class="keyword">for</span> i <span class="keyword">in</span> old_list <span class="keyword">if</span> condition(i)]</span><br></pre></td></tr></table></figure>
+<p>翻译成for循环：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> old_list:</span><br><span class="line">	<span class="keyword">if</span>(condition):</span><br><span class="line">		new_list.append(expression(i))</span><br></pre></td></tr></table></figure>
+<h3 id="8-类"><a href="#8-类" class="headerlink" title="8. 类"></a>8. 类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">person</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__int__</span>(<span class="params">self, name, age</span>):</span><br><span class="line">		self.name_ = name</span><br><span class="line">		self.age_ = age</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">getName</span>(<span class="params">self</span>):</span><br><span class="line">		<span class="built_in">print</span>(self.name_)</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">getAge</span>(<span class="params">self</span>):</span><br><span class="line">		<span class="built_in">print</span>(self.age_)</span><br><span class="line">		<span class="keyword">return</span> self.age_</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">rename</span>(<span class="params">self, new_name</span>):</span><br><span class="line">		self.name_ = new_name</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line"></span><br><span class="line">p = person(<span class="string">&#x27;tom&#x27;</span>,<span class="number">34</span>)</span><br><span class="line">p.getName()</span><br><span class="line">p.rename(<span class="string">&#x27;alex&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>•<code>__init__()</code>被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，相当于构造函数，一定要有self<br>•self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数, 这里于c++不同，空括号函数不能直接空着，而是要在定义时加入self<br>•self.name_ 加下滑线表示属性私有<br>•方法函数前面如果加个装饰器@property， 则调用时候直接调用函数名，不用加括号。例如直接调用p.getAge 不用加括号后面<br>•继承语法:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>(<span class="title class_ inherited__">Person</span>):</span><br><span class="line">	<span class="keyword">pass</span>  <span class="comment">#pass啥都不做，就是占个位</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>markdown</category>
+        <category>Python</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -577,6 +355,282 @@
       </tags>
   </entry>
   <entry>
+    <title>Leistungsphasen备忘</title>
+    <url>/blog/2020/05/25/Leistungsphasen/</url>
+    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" title="Leistungsphasen 1-9"></p>
+<h2 id="LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung"><a href="#LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung" class="headerlink" title="LP4 Genehmigungsplanung &#x2F; Eingabeplanung &#x2F; Einreichplanung"></a>LP4 Genehmigungsplanung &#x2F; Eingabeplanung &#x2F; Einreichplanung</h2><p>Der Bauantrag ist schriftlich bei der unteren Bauaufsichtsbehörde einzureichen. Mit dem Bauantrag sind alle für die Beurteilung des Bauvorhabens und die Bearbeitung des Bauantrags erforderlichen Unterlagen (Bauvorlagen) einzureichen. Näheres regeln in Deutschland die entsprechenden Rechtsverordnungen der Bundesländer (Bauvorlagenverordnungen).</p>
+<p>Ein Bauantrag besteht in Deutschland meist aus folgenden Teilen:</p>
+<ol>
+<li>Eingabeplan mit Grundrissen, Ansichten und Schnitten im Maßstab 1:100</li>
+<li>Bauantragsformular</li>
+<li>Baubeschreibung</li>
+<li>statistischer Erhebungsbogen</li>
+<li>Wärmeschutznachweis</li>
+<li>Standsicherheitsnachweis (Statische Berechnung, Statik)</li>
+<li>amtlicher Lageplan zum Bauantrag, meist im Maßstab 1:200 (kleinere Maßstäbe nur bei großen Grundstücken)</li>
+<li>ggf. weiteren notwendigen Nachweisen und Angaben, die zur Erteilung der Genehmigung von der Bauaufsichtsbehörde gefordert werden.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>informations</category>
+      </categories>
+      <tags>
+        <tag>LP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown插入数学公式</title>
+    <url>/blog/2020/05/22/Markdown%E6%8F%92%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
+    <content><![CDATA[<p>原生的Hexo并不支持数学公式的显示，需要加载Mathjax插件。MathJax使用网络字体（大部分浏览器都支持）去产生高质量的排版，使其在所有分辨率都可缩放和显示，这远比使用包含公式的图片要有效得多。使用MathJax显示数学公式是基于文本的，而非图片。它可以被搜索引擎使用，这意味着方程式和页面上的文字一样是可以被搜索的。 MathJax允许页面作者使用TeX、LaTeX符号和 MathML 或者 AsciiMath 去书写公式。</p>
+<span id="more"></span>
+<h2 id="需要在文章头添加mathjax开关"><a href="#需要在文章头添加mathjax开关" class="headerlink" title="需要在文章头添加mathjax开关"></a>需要在文章头添加mathjax开关</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: Markdown插入数学公式</span><br><span class="line">date:</span><br><span class="line">tags: markdown</span><br><span class="line">categories: markdown</span><br><span class="line">mathjax: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><ul>
+<li><p>在正文中同一行插入LaTeX公式用<code>$...$</code>定义</p>
+<ul>
+<li>例如语句为<code>$\sum_&#123;i=0&#125;^N\int_&#123;a&#125;^&#123;b&#125;g(t,i)\text&#123;d&#125;t$</code></li>
+<li>显示为$\sum_{i&#x3D;0}^N\int_{a}^{b}g(t,i)\text{d}t$</li>
+</ul>
+</li>
+<li><p>另起一行显示LaTeX公式用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$$...$$</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>例如语句为<code>$$W_G^&#123;mn&#125;=max\&#123;0,W_G.\xi_G(f_G^m,f_G^n)\&#125;$$</code></li>
+<li>显示为$$W_G^{mn}&#x3D;max{0,W_G.\xi_G(f_G^m,f_G^n)}$$</li>
+</ul>
+</li>
+</ul>
+<h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><p>注意乘法不能直接打*而是要打表中命令</p>
+<table>
+<thead>
+<tr>
+<th align="left">显示</th>
+<th align="left">命令</th>
+<th align="left">显示</th>
+<th align="left">命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">±</td>
+<td align="left">\pm</td>
+<td align="left">∓</td>
+<td align="left">\mp</td>
+</tr>
+<tr>
+<td align="left">×</td>
+<td align="left">\times</td>
+<td align="left">∗</td>
+<td align="left">\ast</td>
+</tr>
+<tr>
+<td align="left">⋆</td>
+<td align="left">\star</td>
+<td align="left">∘</td>
+<td align="left">\circ</td>
+</tr>
+<tr>
+<td align="left">∙</td>
+<td align="left">\bullet</td>
+<td align="left">⋅</td>
+<td align="left">\cdot</td>
+</tr>
+<tr>
+<td align="left">÷</td>
+<td align="left">\div</td>
+<td align="left">∑</td>
+<td align="left">\sum</td>
+</tr>
+<tr>
+<td align="left">∏</td>
+<td align="left">\prod</td>
+<td align="left">∐</td>
+<td align="left">\coprod</td>
+</tr>
+<tr>
+<td align="left">⊕</td>
+<td align="left">\oplus</td>
+<td align="left">⨁</td>
+<td align="left">\bigoplus</td>
+</tr>
+<tr>
+<td align="left">⊖</td>
+<td align="left">\ominus</td>
+<td align="left">⊗</td>
+<td align="left">\otimes</td>
+</tr>
+<tr>
+<td align="left">⨂</td>
+<td align="left">\bigotimes</td>
+<td align="left">⊘</td>
+<td align="left">\oslash</td>
+</tr>
+<tr>
+<td align="left">⊙</td>
+<td align="left">\odot</td>
+<td align="left">⨀</td>
+<td align="left">\bigodot</td>
+</tr>
+<tr>
+<td align="left">⋄</td>
+<td align="left">\diamond</td>
+<td align="left">△</td>
+<td align="left">\bigtriangleup</td>
+</tr>
+<tr>
+<td align="left">▽</td>
+<td align="left">\bigtriangledown</td>
+<td align="left">◃</td>
+<td align="left">\triangleleft$</td>
+</tr>
+<tr>
+<td align="left">▹</td>
+<td align="left">\triangleright</td>
+<td align="left">▹</td>
+<td align="left">\triangleright</td>
+</tr>
+<tr>
+<td align="left">◯</td>
+<td align="left">\bigcirc</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><table>
+<thead>
+<tr>
+<th align="left">显示</th>
+<th align="left">命令</th>
+<th align="left">显示</th>
+<th align="left">命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">∣</td>
+<td align="left">\mid</td>
+<td align="left">∤</td>
+<td align="left">\nmid</td>
+</tr>
+<tr>
+<td align="left">⋅</td>
+<td align="left">\cdot</td>
+<td align="left">≤</td>
+<td align="left">\leq</td>
+</tr>
+<tr>
+<td align="left">≥</td>
+<td align="left">\geq</td>
+<td align="left">≠</td>
+<td align="left">\neq</td>
+</tr>
+<tr>
+<td align="left">≈</td>
+<td align="left">\approx</td>
+<td align="left">≡</td>
+<td align="left">\equiv</td>
+</tr>
+<tr>
+<td align="left">≺</td>
+<td align="left">\prec</td>
+<td align="left">⪯</td>
+<td align="left">\preceq</td>
+</tr>
+<tr>
+<td align="left">≪</td>
+<td align="left">\ll</td>
+<td align="left">≻</td>
+<td align="left">\succ</td>
+</tr>
+<tr>
+<td align="left">⪰</td>
+<td align="left">\succeq</td>
+<td align="left">≫</td>
+<td align="left">\gg</td>
+</tr>
+<tr>
+<td align="left">∼</td>
+<td align="left">\sim</td>
+<td align="left">≃</td>
+<td align="left">\simeq</td>
+</tr>
+<tr>
+<td align="left">≍</td>
+<td align="left">\asymp</td>
+<td align="left">≅</td>
+<td align="left">\cong</td>
+</tr>
+<tr>
+<td align="left">≐</td>
+<td align="left">\doteq</td>
+<td align="left">∝</td>
+<td align="left">\propto</td>
+</tr>
+<tr>
+<td align="left">⊨</td>
+<td align="left">\models</td>
+<td align="left">∥</td>
+<td align="left">\parallel</td>
+</tr>
+<tr>
+<td align="left">⋈</td>
+<td align="left">\bowtie</td>
+<td align="left">⊥</td>
+<td align="left">\perp</td>
+</tr>
+<tr>
+<td align="left">∘</td>
+<td align="left">\circ</td>
+<td align="left">∗</td>
+<td align="left">\ast</td>
+</tr>
+<tr>
+<td align="left">⨀</td>
+<td align="left">\bigodot</td>
+<td align="left">⨂</td>
+<td align="left">\bigotimes</td>
+</tr>
+<tr>
+<td align="left">⨁</td>
+<td align="left">\bigoplus</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span>x<span class="built_in">_</span>1<span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span>x<span class="built_in">_</span>1<span class="built_in">^</span>2<span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span>x<span class="built_in">^</span>2<span class="built_in">_</span>1<span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span>x<span class="built_in">_</span>&#123;22&#125;<span class="built_in">^</span>&#123;(n)&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span>x<span class="built_in">_</span>&#123;123&#125;<span class="built_in">^</span>&#123;1234&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+<p>$$<br>x_1<br>$$</p>
+<p>$$<br>x_1^2<br>$$</p>
+<p>$$<br>x_{22}^{(n)}<br>$$</p>
+<p>$$<br>x_{123}^{1234}<br>$$</p>
+<h2 id="分式"><a href="#分式" class="headerlink" title="分式"></a>分式</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span><span class="keyword">\frac</span>&#123;x+y&#125;&#123;2&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span><span class="keyword">\frac</span>&#123;1&#125;&#123;1+<span class="keyword">\frac</span>&#123;1&#125;&#123;2&#125;&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\frac{x+y}{2}<br>$$</p>
+<p>$$<br>\frac{1}{1+\frac{1}{2}}<br>$$</p>
+<h2 id="根式"><a href="#根式" class="headerlink" title="根式"></a>根式</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span><span class="keyword">\sqrt</span>&#123;2&#125;&lt;<span class="keyword">\sqrt</span>[3]&#123;3&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span><span class="keyword">\sqrt</span>&#123;1+<span class="keyword">\sqrt</span>[p]&#123;1+a<span class="built_in">^</span>2&#125;&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\sqrt{2}&lt;\sqrt[3]{3}<br>$$</p>
+<p>$$<br>\sqrt{1+\sqrt[p]{1+a^2}}<br>$$</p>
+<h2 id="求和"><a href="#求和" class="headerlink" title="求和"></a>求和</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span><span class="keyword">\sum</span><span class="built_in">_</span>&#123;k=1&#125;<span class="built_in">^</span>&#123;n&#125;<span class="keyword">\frac</span>&#123;1&#125;&#123;k&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\sum_{k&#x3D;1}^{n}\frac{1}{k}<br>$$</p>
+<h2 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span><span class="keyword">\int</span><span class="built_in">_</span>a<span class="built_in">^</span>b f(x)dx<span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\int_a^b f(x)dx<br>$$</p>
+<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span><span class="keyword">\begin</span>&#123;bmatrix&#125;1 <span class="built_in">&amp;</span> 2<span class="keyword">\\</span><span class="keyword">\\</span>3 <span class="built_in">&amp;</span>4<span class="keyword">\end</span>&#123;bmatrix&#125;<span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\begin{bmatrix}1 &amp; 2\\3 &amp;4\end{bmatrix}<br>$$</p>
+<h2 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h2><p>$$<br>\begin{array}{|c|c|c|c|c|c|c|c|}<br>\hline<br>{\alpha} &amp; {\backslash alpha} &amp; {\theta} &amp; {\backslash theta} &amp; {o} &amp; {o} &amp; {\upsilon} &amp; {\backslash upsilon} \\<br>\hline<br>{\beta} &amp; {\backslash beta} &amp; {\vartheta} &amp; {\backslash vartheta} &amp; {\pi} &amp; {\backslash pi} &amp; {\phi} &amp; {\backslash phi} \\<br>\hline<br>{\gamma} &amp; {\backslash gamma} &amp; {\iota} &amp; {\backslash iota} &amp; {\varpi} &amp; {\backslash varpi} &amp; {\varphi} &amp; {\backslash varphi} \\<br>\hline<br>{\delta} &amp; {\backslash delta} &amp; {\kappa} &amp; {\backslash kappa} &amp; {\rho} &amp; {\backslash rho} &amp; {\chi} &amp; {\backslash chi} \\<br>\hline<br>{\epsilon} &amp; {\backslash epsilon} &amp; {\lambda} &amp; {\backslash lambda} &amp; {\varrho} &amp; {\backslash varrho} &amp; {\psi} &amp; {\backslash psi} \\<br>\hline<br>{\varepsilon} &amp; {\backslash varepsilon} &amp; {\mu} &amp; {\backslash mu} &amp; {\sigma} &amp; {\backslash sigma} &amp; {\omega} &amp; {\backslash omega} \\<br>\hline<br>{\zeta} &amp; {\backslash zeta} &amp; {\nu} &amp; {\backslash nu} &amp; {\varsigma} &amp; {\backslash varsigma} &amp; {} &amp; {} \\<br>\hline<br>{\eta} &amp; {\backslash eta} &amp; {\xi} &amp; {\backslash xi} &amp; {\tau} &amp; {\backslash tau} &amp; {} &amp; {} \\<br>\hline<br>{\Gamma} &amp; {\backslash Gamma} &amp; {\Lambda} &amp; {\backslash Lambda} &amp; {\Sigma} &amp; {\backslash Sigma} &amp; {\Psi} &amp; {\backslash Psi} \\<br>\hline<br>{\Delta} &amp; {\backslash Delta} &amp; {\Xi} &amp; {\backslash Xi} &amp; {\Upsilon} &amp; {\backslash Upsilon} &amp; {\Omega} &amp; {\backslash Omega} \\<br>\hline<br>{\Omega} &amp; {\backslash Omega} &amp; {\Pi} &amp; {\backslash Pi} &amp; {\Phi} &amp; {\backslash Phi} &amp; {} &amp; {} \\<br>\hline<br>\end{array}<br>$$</p>
+<h4 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h4><p><a href="https://juejin.im/post/5a6721bd518825733201c4a2">https://juejin.im/post/5a6721bd518825733201c4a2</a></p>
+<p><a href="https://github.com/mk43/BlogResource/blob/master/LaTex/LATEX%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7%E8%A1%A8.pdf">https://github.com/mk43/BlogResource/blob/master/LaTex/LATEX%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7%E8%A1%A8.pdf</a></p>
+<p><a href="https://oysz2016.github.io/post/8611e6fb.html">https://oysz2016.github.io/post/8611e6fb.html</a></p>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Revit二次开发</title>
     <url>/blog/2020/06/12/Revit%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/</url>
     <content><![CDATA[<h2 id="开发环境配置"><a href="#开发环境配置" class="headerlink" title="开发环境配置"></a>开发环境配置</h2><ul>
@@ -748,112 +802,6 @@
       </categories>
       <tags>
         <tag>Revit, C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python一些语法备忘</title>
-    <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>总结了一些Python的语法</p>
-<span id="more"></span>
-
-<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="1-if-else"><a href="#1-if-else" class="headerlink" title="1. if else"></a>1. if else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span></span><br><span class="line">y=<span class="string">&#x27;hello&#x27;</span></span><br><span class="line"><span class="keyword">if</span> x==<span class="number">1</span> <span class="keyword">or</span> y==<span class="string">&#x27;hello&#x27;</span>:</span><br><span class="line">	x=x+<span class="number">1</span></span><br><span class="line">	y=y+<span class="string">&#x27;world&#x27;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="2-Python特色语句：for-else"><a href="#2-Python特色语句：for-else" class="headerlink" title="2. Python特色语句：for else"></a>2. Python特色语句：for else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">99</span>,<span class="number">81</span>,-<span class="number">1</span>):</span><br><span class="line">	root = sqrt(n)</span><br><span class="line">	<span class="keyword">if</span> root = <span class="built_in">int</span>(root):</span><br><span class="line">		<span class="built_in">print</span>(n)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;didnt find it!&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>这条else语句对应的是知for，不是if，这个是python特有的语句。 break表示打断最近的loop, 而if不是loop，打断的是for loop， 即在for循环中，如果没有从任何一个break中退出，则会执行和for对应的else 只要从break中退出了，则else部分不执行。<br>这段话如果用C++来实现，则如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">99</span>;i&gt;<span class="number">81</span>;i--) </span><br><span class="line">&#123; </span><br><span class="line">	root=<span class="built_in">sqrt</span>(i); </span><br><span class="line">	<span class="keyword">if</span>(root==<span class="built_in">int</span>(root)) </span><br><span class="line">	&#123; </span><br><span class="line">		std::cout&lt;&lt;i; </span><br><span class="line">		<span class="keyword">break</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span>(i==<span class="number">81</span>) <span class="comment">//边界判断 </span></span><br><span class="line">std::cout&lt;&lt;<span class="string">&quot;didn&#x27;t find it!&quot;</span>&lt;&lt;std::endl; </span><br></pre></td></tr></table></figure>
-<h3 id="3-Definations"><a href="#3-Definations" class="headerlink" title="3. Definations"></a>3. Definations</h3><p>aList &#x3D; []  列表，相当于c++中的arry&#x2F;vector<br>aDictionary &#x3D; {}  字典, 相当于c++中的map<br>aTuple &#x3D; ()  元组, 只读的，不能修改，不能像list一样有append，remove等操作</p>
-<h3 id="4-遍历输出"><a href="#4-遍历输出" class="headerlink" title="4. 遍历输出"></a>4. 遍历输出</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aList:</span><br><span class="line">	<span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> aDictionary.item()</span><br><span class="line">	<span class="built_in">print</span>(key, value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Access Value in Dictionary by the Keys</span></span><br><span class="line">value = aDictionary[‘key’]  <span class="comment">#Key muss be string!</span></span><br></pre></td></tr></table></figure>
-<h3 id="5-args-kwargs"><a href="#5-args-kwargs" class="headerlink" title="5. *args, **kwargs"></a>5. <code>*args</code>, <code>**kwargs</code></h3><p><code>*args</code>是位置参数，<code>**kwargs</code>是关建字参数。<code>*args</code>用来收集各种参数，其名字没有实际出现在函数签名的括号中， <code>**kwargs</code>代表了各个dictionary等关系，其名字没有实际出现在括号中，所以有了这两个东西可以在函数input括号里输入各种不同的参数而不止局限于几个自己命名的参数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test_kwargs</span>(<span class="params">first, *args, **kwargs</span>):</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;required argument&#x27;</span>, first)</span><br><span class="line">	<span class="keyword">for</span> v <span class="keyword">in</span> args:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;optional argument (*args):&#x27;</span>, v)</span><br><span class="line">	<span class="keyword">for</span> k, v <span class="keyword">in</span> kwargs.item():</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;optional argument %s (*kwargs): %s&#x27;</span>, %(k,v))</span><br><span class="line"></span><br><span class="line">test_kwargs(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,k1=<span class="number">5</span>,k2=<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#required argument: 1</span></span><br><span class="line"><span class="comment">#optional argument (*args): 2</span></span><br><span class="line"><span class="comment">#optional argument (*args): 3</span></span><br><span class="line"><span class="comment">#optional argument (*args): 4</span></span><br><span class="line"><span class="comment">#optional argument k2 (*kwargs): 6</span></span><br><span class="line"><span class="comment">#optional argument k1 (*kwargs): 5</span></span><br></pre></td></tr></table></figure>
-<h3 id="6-装饰器"><a href="#6-装饰器" class="headerlink" title="6. 装饰器"></a>6. 装饰器</h3><p>装饰器本质上是一个 Python 函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能，装饰器的返回值也是一个函数&#x2F;类对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">decarator</span>(<span class="params">func</span>):</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args</span>):</span><br><span class="line">		<span class="comment">#可以此处添加功能如</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;add funtion 1&#x27;</span>)</span><br><span class="line">		<span class="keyword">return</span> func(*args)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@decarator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>(<span class="params">*args</span>):</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;i have&#x27;</span>, *args)</span><br><span class="line"></span><br><span class="line">test(<span class="string">&#x27;dsds&#x27;</span>,<span class="number">3</span>,<span class="string">&#x27;abc&#x27;</span>)</span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#add funtion 1</span></span><br><span class="line"><span class="comment">#i have dsds 3 abc</span></span><br></pre></td></tr></table></figure>
-<h3 id="7-列表推导式"><a href="#7-列表推导式" class="headerlink" title="7. 列表推导式"></a>7. 列表推导式</h3><p>基本语法：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = [expression(i) <span class="keyword">for</span> i <span class="keyword">in</span> old_list <span class="keyword">if</span> condition(i)]</span><br></pre></td></tr></table></figure>
-<p>翻译成for循环：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> old_list:</span><br><span class="line">	<span class="keyword">if</span>(condition):</span><br><span class="line">		new_list.append(expression(i))</span><br></pre></td></tr></table></figure>
-<h3 id="8-类"><a href="#8-类" class="headerlink" title="8. 类"></a>8. 类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">person</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__int__</span>(<span class="params">self, name, age</span>):</span><br><span class="line">		self.name_ = name</span><br><span class="line">		self.age_ = age</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">getName</span>(<span class="params">self</span>):</span><br><span class="line">		<span class="built_in">print</span>(self.name_)</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">getAge</span>(<span class="params">self</span>):</span><br><span class="line">		<span class="built_in">print</span>(self.age_)</span><br><span class="line">		<span class="keyword">return</span> self.age_</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">rename</span>(<span class="params">self, new_name</span>):</span><br><span class="line">		self.name_ = new_name</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line"></span><br><span class="line">p = person(<span class="string">&#x27;tom&#x27;</span>,<span class="number">34</span>)</span><br><span class="line">p.getName()</span><br><span class="line">p.rename(<span class="string">&#x27;alex&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>•<code>__init__()</code>被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，相当于构造函数，一定要有self<br>•self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数, 这里于c++不同，空括号函数不能直接空着，而是要在定义时加入self<br>•self.name_ 加下滑线表示属性私有<br>•方法函数前面如果加个装饰器@property， 则调用时候直接调用函数名，不用加括号。例如直接调用p.getAge 不用加括号后面<br>•继承语法:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>(<span class="title class_ inherited__">Person</span>):</span><br><span class="line">	<span class="keyword">pass</span>  <span class="comment">#pass啥都不做，就是占个位</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leistungsphasen备忘</title>
-    <url>/blog/2020/05/25/Leistungsphasen/</url>
-    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" title="Leistungsphasen 1-9"></p>
-<h2 id="LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung"><a href="#LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung" class="headerlink" title="LP4 Genehmigungsplanung &#x2F; Eingabeplanung &#x2F; Einreichplanung"></a>LP4 Genehmigungsplanung &#x2F; Eingabeplanung &#x2F; Einreichplanung</h2><p>Der Bauantrag ist schriftlich bei der unteren Bauaufsichtsbehörde einzureichen. Mit dem Bauantrag sind alle für die Beurteilung des Bauvorhabens und die Bearbeitung des Bauantrags erforderlichen Unterlagen (Bauvorlagen) einzureichen. Näheres regeln in Deutschland die entsprechenden Rechtsverordnungen der Bundesländer (Bauvorlagenverordnungen).</p>
-<p>Ein Bauantrag besteht in Deutschland meist aus folgenden Teilen:</p>
-<ol>
-<li>Eingabeplan mit Grundrissen, Ansichten und Schnitten im Maßstab 1:100</li>
-<li>Bauantragsformular</li>
-<li>Baubeschreibung</li>
-<li>statistischer Erhebungsbogen</li>
-<li>Wärmeschutznachweis</li>
-<li>Standsicherheitsnachweis (Statische Berechnung, Statik)</li>
-<li>amtlicher Lageplan zum Bauantrag, meist im Maßstab 1:200 (kleinere Maßstäbe nur bei großen Grundstücken)</li>
-<li>ggf. weiteren notwendigen Nachweisen und Angaben, die zur Erteilung der Genehmigung von der Bauaufsichtsbehörde gefordert werden.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>informations</category>
-      </categories>
-      <tags>
-        <tag>LP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdown的一些语法</title>
-    <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
-<p>注：标准语法一般在#后跟个空格再写文字</p>
-<h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h2 id="2-1-无序列表（前带圆点）"><a href="#2-1-无序列表（前带圆点）" class="headerlink" title="2.1 无序列表（前带圆点）"></a>2.1 无序列表（前带圆点）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> 列表内容</span><br><span class="line"><span class="bullet">+</span> 列表内容</span><br><span class="line"><span class="bullet">*</span> 列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<ul>
-<li>列表1</li>
-</ul>
-<ul>
-<li>列表2</li>
-</ul>
-<ul>
-<li>列表3</li>
-</ul>
-<h2 id="2-1-有序列表（前带数字）"><a href="#2-1-有序列表（前带数字）" class="headerlink" title="2.1 有序列表（前带数字）"></a>2.1 有序列表（前带数字）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 列表内容</span><br><span class="line"><span class="bullet">2.</span> 列表内容</span><br><span class="line"><span class="bullet">3.</span> 列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
-<p>例：</p>
-<ol>
-<li>列表1</li>
-<li>列表2</li>
-<li>列表3</li>
-</ol>
-<h1 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3. 代码块"></a>3. 代码块</h1><p>在代码段落上下两行分别插入三个反逗号，若要代码高亮则要在反逗号后面注明是什么语言。 </p>
-<h1 id="4-插入图片所需代码"><a href="#4-插入图片所需代码" class="headerlink" title="4. 插入图片所需代码"></a>4. 插入图片所需代码</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">描述</span>](<span class="link">图片链接 &#x27;&#x27;图片标题&#x27;&#x27;</span>)</span><br><span class="line">![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>) 连续写就是并排显示图片</span><br><span class="line"></span><br><span class="line">描述就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片标题是当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
-<p>例：<br>插入本地图片<br><img src="/blog/./Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/abc.png" alt="test picture"><br><code>![test picture](./Dynamo学习笔记-1/abc.png)</code> 好像不管用…所以我把所有图片存到了云盘<br><code>&quot;&#123;% asset_img abc.PNG This is an image %&#125;&quot;</code> ？？？</p>
-<h1 id="5-改变字体颜色"><a href="#5-改变字体颜色" class="headerlink" title="5. 改变字体颜色"></a>5. 改变字体颜色</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;color:red;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="section">#回车换行后命令失效</span></span><br></pre></td></tr></table></figure>
-<p><span style="color:red;"> 改变字体颜色至红</p>
-<h1 id="6-字体"><a href="#6-字体" class="headerlink" title="6. 字体"></a>6. 字体</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**这是加粗的文字**</span></span><br><span class="line"><span class="emphasis">*这是倾斜的文字*</span>`</span><br><span class="line"><span class="strong">**<span class="emphasis">*这是斜体加粗的文字*</span>**</span></span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
-<p>例：<br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><em><strong>这是斜体加粗的文字</strong></em><br><del>这是加删除线的文字</del></p>
-<h1 id="7-引用"><a href="#7-引用" class="headerlink" title="7. 引用"></a>7. 引用</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这是引用的内容</p>
-<blockquote>
-<p>这是引用的内容</p>
-</blockquote>
-</blockquote>
-<h1 id="8-分割线"><a href="#8-分割线" class="headerlink" title="8. 分割线"></a>8. 分割线</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="9-生成首页摘要"><a href="#9-生成首页摘要" class="headerlink" title="9. 生成首页摘要"></a>9. 生成首页摘要</h1><p>在Markdown文档中添加<code>&lt;!-- more --&gt;</code>，代码上面的全是摘要</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这里是摘要</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">这里是正文</span><br></pre></td></tr></table></figure>
-
-<h1 id="10-链接"><a href="#10-链接" class="headerlink" title="10. 链接"></a>10. 链接</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">超链接名</span>](<span class="link">超链接地址</span>)</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.jianshu.com/p/191d1e21f7ed">本文参考资料</a></p>
-]]></content>
-      <categories>
-        <category>markdown</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -1233,6 +1181,58 @@
       </categories>
       <tags>
         <tag>revit</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown的一些语法</title>
+    <url>/blog/2020/05/22/markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题，标题等级越高字体越小。</p>
+<p>注：标准语法一般在#后跟个空格再写文字</p>
+<h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h2 id="2-1-无序列表（前带圆点）"><a href="#2-1-无序列表（前带圆点）" class="headerlink" title="2.1 无序列表（前带圆点）"></a>2.1 无序列表（前带圆点）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> 列表内容</span><br><span class="line"><span class="bullet">+</span> 列表内容</span><br><span class="line"><span class="bullet">*</span> 列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<ul>
+<li>列表1</li>
+</ul>
+<ul>
+<li>列表2</li>
+</ul>
+<ul>
+<li>列表3</li>
+</ul>
+<h2 id="2-1-有序列表（前带数字）"><a href="#2-1-有序列表（前带数字）" class="headerlink" title="2.1 有序列表（前带数字）"></a>2.1 有序列表（前带数字）</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 列表内容</span><br><span class="line"><span class="bullet">2.</span> 列表内容</span><br><span class="line"><span class="bullet">3.</span> 列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<ol>
+<li>列表1</li>
+<li>列表2</li>
+<li>列表3</li>
+</ol>
+<h1 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3. 代码块"></a>3. 代码块</h1><p>在代码段落上下两行分别插入三个反逗号，若要代码高亮则要在反逗号后面注明是什么语言。 </p>
+<h1 id="4-插入图片所需代码"><a href="#4-插入图片所需代码" class="headerlink" title="4. 插入图片所需代码"></a>4. 插入图片所需代码</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">描述</span>](<span class="link">图片链接 &#x27;&#x27;图片标题&#x27;&#x27;</span>)</span><br><span class="line">![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>)![<span class="string">描述</span>](<span class="link">图片链接</span>) 连续写就是并排显示图片</span><br><span class="line"></span><br><span class="line">描述就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片标题是当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
+<p>例：<br>插入本地图片<br><img src="/blog/./Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/abc.png" alt="test picture"><br><code>![test picture](./Dynamo学习笔记-1/abc.png)</code> 好像不管用…所以我把所有图片存到了云盘<br><code>&quot;&#123;% asset_img abc.PNG This is an image %&#125;&quot;</code> ？？？</p>
+<h1 id="5-改变字体颜色"><a href="#5-改变字体颜色" class="headerlink" title="5. 改变字体颜色"></a>5. 改变字体颜色</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;color:red;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="section">#回车换行后命令失效</span></span><br></pre></td></tr></table></figure>
+<p><span style="color:red;"> 改变字体颜色至红</p>
+<h1 id="6-字体"><a href="#6-字体" class="headerlink" title="6. 字体"></a>6. 字体</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**这是加粗的文字**</span></span><br><span class="line"><span class="emphasis">*这是倾斜的文字*</span>`</span><br><span class="line"><span class="strong">**<span class="emphasis">*这是斜体加粗的文字*</span>**</span></span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
+<p>例：<br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><em><strong>这是斜体加粗的文字</strong></em><br><del>这是加删除线的文字</del></p>
+<h1 id="7-引用"><a href="#7-引用" class="headerlink" title="7. 引用"></a>7. 引用</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<p>这是引用的内容</p>
+</blockquote>
+</blockquote>
+<h1 id="8-分割线"><a href="#8-分割线" class="headerlink" title="8. 分割线"></a>8. 分割线</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="9-生成首页摘要"><a href="#9-生成首页摘要" class="headerlink" title="9. 生成首页摘要"></a>9. 生成首页摘要</h1><p>在Markdown文档中添加<code>&lt;!-- more --&gt;</code>，代码上面的全是摘要</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这里是摘要</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">这里是正文</span><br></pre></td></tr></table></figure>
+
+<h1 id="10-链接"><a href="#10-链接" class="headerlink" title="10. 链接"></a>10. 链接</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">超链接名</span>](<span class="link">超链接地址</span>)</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.jianshu.com/p/191d1e21f7ed">本文参考资料</a></p>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
