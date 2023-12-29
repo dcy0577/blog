@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Leistungsphasen备忘</title>
-    <url>/blog/2020/05/25/Leistungsphasen/</url>
-    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" title="Leistungsphasen 1-9"></p>
-<span id="more"></span>
-
-<h2 id="LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung"><a href="#LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung" class="headerlink" title="LP4 Genehmigungsplanung &#x2F; Eingabeplanung &#x2F; Einreichplanung"></a>LP4 Genehmigungsplanung &#x2F; Eingabeplanung &#x2F; Einreichplanung</h2><p>Der Bauantrag ist schriftlich bei der unteren Bauaufsichtsbehörde einzureichen. Mit dem Bauantrag sind alle für die Beurteilung des Bauvorhabens und die Bearbeitung des Bauantrags erforderlichen Unterlagen (Bauvorlagen) einzureichen. Näheres regeln in Deutschland die entsprechenden Rechtsverordnungen der Bundesländer (Bauvorlagenverordnungen).</p>
-<p>Ein Bauantrag besteht in Deutschland meist aus folgenden Teilen:</p>
-<ol>
-<li>Eingabeplan mit Grundrissen, Ansichten und Schnitten im Maßstab 1:100</li>
-<li>Bauantragsformular</li>
-<li>Baubeschreibung</li>
-<li>statistischer Erhebungsbogen</li>
-<li>Wärmeschutznachweis</li>
-<li>Standsicherheitsnachweis (Statische Berechnung, Statik)</li>
-<li>amtlicher Lageplan zum Bauantrag, meist im Maßstab 1:200 (kleinere Maßstäbe nur bei großen Grundstücken)</li>
-<li>ggf. weiteren notwendigen Nachweisen und Angaben, die zur Erteilung der Genehmigung von der Bauaufsichtsbehörde gefordert werden.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>informations</category>
-      </categories>
-      <tags>
-        <tag>LP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BIM的一些基础概念整理</title>
     <url>/blog/2020/05/30/BIM%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E6%95%B4%E7%90%86/</url>
     <content><![CDATA[<p>基于课堂资料整理汇总了一些基本概念。</p>
@@ -274,25 +248,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Advanced BIM Seminar</title>
-    <url>/blog/2020/05/30/Advanced-BIM-Seminar/</url>
-    <content><![CDATA[<p>整理收集了一些课堂资料</p>
-<span id="more"></span>
-
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590844248/BIM/123_xsfpnp.png" title="AIA und BAP"></p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590844249/BIM/421241_ijpchl.png" title="LOD的一些定义"></p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590844249/BIM/123124_ax7re2.png" title="一些节点上实际运用的软件"></p>
-<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590844249/BIM/15135_j9en3b.png" title="两个有用的族库：BIMObject和BIMcatalogs.net"></p>
-<p>test<br>test2</p>
-]]></content>
-      <categories>
-        <category>BIM</category>
-      </categories>
-      <tags>
-        <tag>BIM</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Dynamo学习笔记</title>
     <url>/blog/2020/05/22/Dynamo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</url>
     <content><![CDATA[<p>some notes about Dynamo</p>
@@ -351,6 +306,55 @@
       </categories>
       <tags>
         <tag>Dynamo, revit</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Advanced BIM Seminar</title>
+    <url>/blog/2020/05/30/Advanced-BIM-Seminar/</url>
+    <content><![CDATA[<p>整理收集了一些课堂资料</p>
+<span id="more"></span>
+
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590844248/BIM/123_xsfpnp.png" title="AIA und BAP"></p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590844249/BIM/421241_ijpchl.png" title="LOD的一些定义"></p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590844249/BIM/123124_ax7re2.png" title="一些节点上实际运用的软件"></p>
+<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590844249/BIM/15135_j9en3b.png" title="两个有用的族库：BIMObject和BIMcatalogs.net"></p>
+<p>test<br>test2</p>
+]]></content>
+      <categories>
+        <category>BIM</category>
+      </categories>
+      <tags>
+        <tag>BIM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python一些语法备忘</title>
+    <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>总结了一些Python的语法</p>
+<span id="more"></span>
+
+<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="1-if-else"><a href="#1-if-else" class="headerlink" title="1. if else"></a>1. if else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span></span><br><span class="line">y=<span class="string">&#x27;hello&#x27;</span></span><br><span class="line"><span class="keyword">if</span> x==<span class="number">1</span> <span class="keyword">or</span> y==<span class="string">&#x27;hello&#x27;</span>:</span><br><span class="line">	x=x+<span class="number">1</span></span><br><span class="line">	y=y+<span class="string">&#x27;world&#x27;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="2-Python特色语句：for-else"><a href="#2-Python特色语句：for-else" class="headerlink" title="2. Python特色语句：for else"></a>2. Python特色语句：for else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">99</span>,<span class="number">81</span>,-<span class="number">1</span>):</span><br><span class="line">	root = sqrt(n)</span><br><span class="line">	<span class="keyword">if</span> root = <span class="built_in">int</span>(root):</span><br><span class="line">		<span class="built_in">print</span>(n)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;didnt find it!&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>这条else语句对应的是知for，不是if，这个是python特有的语句。 break表示打断最近的loop, 而if不是loop，打断的是for loop， 即在for循环中，如果没有从任何一个break中退出，则会执行和for对应的else 只要从break中退出了，则else部分不执行。<br>这段话如果用C++来实现，则如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">99</span>;i&gt;<span class="number">81</span>;i--) </span><br><span class="line">&#123; </span><br><span class="line">	root=<span class="built_in">sqrt</span>(i); </span><br><span class="line">	<span class="keyword">if</span>(root==<span class="built_in">int</span>(root)) </span><br><span class="line">	&#123; </span><br><span class="line">		std::cout&lt;&lt;i; </span><br><span class="line">		<span class="keyword">break</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span>(i==<span class="number">81</span>) <span class="comment">//边界判断 </span></span><br><span class="line">std::cout&lt;&lt;<span class="string">&quot;didn&#x27;t find it!&quot;</span>&lt;&lt;std::endl; </span><br></pre></td></tr></table></figure>
+<h3 id="3-Definations"><a href="#3-Definations" class="headerlink" title="3. Definations"></a>3. Definations</h3><p>aList &#x3D; []  列表，相当于c++中的arry&#x2F;vector<br>aDictionary &#x3D; {}  字典, 相当于c++中的map<br>aTuple &#x3D; ()  元组, 只读的，不能修改，不能像list一样有append，remove等操作</p>
+<h3 id="4-遍历输出"><a href="#4-遍历输出" class="headerlink" title="4. 遍历输出"></a>4. 遍历输出</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aList:</span><br><span class="line">	<span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> aDictionary.item()</span><br><span class="line">	<span class="built_in">print</span>(key, value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Access Value in Dictionary by the Keys</span></span><br><span class="line">value = aDictionary[‘key’]  <span class="comment">#Key muss be string!</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-args-kwargs"><a href="#5-args-kwargs" class="headerlink" title="5. *args, **kwargs"></a>5. <code>*args</code>, <code>**kwargs</code></h3><p><code>*args</code>是位置参数，<code>**kwargs</code>是关建字参数。<code>*args</code>用来收集各种参数，其名字没有实际出现在函数签名的括号中， <code>**kwargs</code>代表了各个dictionary等关系，其名字没有实际出现在括号中，所以有了这两个东西可以在函数input括号里输入各种不同的参数而不止局限于几个自己命名的参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test_kwargs</span>(<span class="params">first, *args, **kwargs</span>):</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;required argument&#x27;</span>, first)</span><br><span class="line">	<span class="keyword">for</span> v <span class="keyword">in</span> args:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;optional argument (*args):&#x27;</span>, v)</span><br><span class="line">	<span class="keyword">for</span> k, v <span class="keyword">in</span> kwargs.item():</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;optional argument %s (*kwargs): %s&#x27;</span>, %(k,v))</span><br><span class="line"></span><br><span class="line">test_kwargs(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,k1=<span class="number">5</span>,k2=<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#required argument: 1</span></span><br><span class="line"><span class="comment">#optional argument (*args): 2</span></span><br><span class="line"><span class="comment">#optional argument (*args): 3</span></span><br><span class="line"><span class="comment">#optional argument (*args): 4</span></span><br><span class="line"><span class="comment">#optional argument k2 (*kwargs): 6</span></span><br><span class="line"><span class="comment">#optional argument k1 (*kwargs): 5</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-装饰器"><a href="#6-装饰器" class="headerlink" title="6. 装饰器"></a>6. 装饰器</h3><p>装饰器本质上是一个 Python 函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能，装饰器的返回值也是一个函数&#x2F;类对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">decarator</span>(<span class="params">func</span>):</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args</span>):</span><br><span class="line">		<span class="comment">#可以此处添加功能如</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;add funtion 1&#x27;</span>)</span><br><span class="line">		<span class="keyword">return</span> func(*args)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@decarator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>(<span class="params">*args</span>):</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;i have&#x27;</span>, *args)</span><br><span class="line"></span><br><span class="line">test(<span class="string">&#x27;dsds&#x27;</span>,<span class="number">3</span>,<span class="string">&#x27;abc&#x27;</span>)</span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#add funtion 1</span></span><br><span class="line"><span class="comment">#i have dsds 3 abc</span></span><br></pre></td></tr></table></figure>
+<h3 id="7-列表推导式"><a href="#7-列表推导式" class="headerlink" title="7. 列表推导式"></a>7. 列表推导式</h3><p>基本语法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = [expression(i) <span class="keyword">for</span> i <span class="keyword">in</span> old_list <span class="keyword">if</span> condition(i)]</span><br></pre></td></tr></table></figure>
+<p>翻译成for循环：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> old_list:</span><br><span class="line">	<span class="keyword">if</span>(condition):</span><br><span class="line">		new_list.append(expression(i))</span><br></pre></td></tr></table></figure>
+<h3 id="8-类"><a href="#8-类" class="headerlink" title="8. 类"></a>8. 类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">person</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__int__</span>(<span class="params">self, name, age</span>):</span><br><span class="line">		self.name_ = name</span><br><span class="line">		self.age_ = age</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">getName</span>(<span class="params">self</span>):</span><br><span class="line">		<span class="built_in">print</span>(self.name_)</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">getAge</span>(<span class="params">self</span>):</span><br><span class="line">		<span class="built_in">print</span>(self.age_)</span><br><span class="line">		<span class="keyword">return</span> self.age_</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">rename</span>(<span class="params">self, new_name</span>):</span><br><span class="line">		self.name_ = new_name</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line"></span><br><span class="line">p = person(<span class="string">&#x27;tom&#x27;</span>,<span class="number">34</span>)</span><br><span class="line">p.getName()</span><br><span class="line">p.rename(<span class="string">&#x27;alex&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>•<code>__init__()</code>被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，相当于构造函数，一定要有self<br>•self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数, 这里于c++不同，空括号函数不能直接空着，而是要在定义时加入self<br>•self.name_ 加下滑线表示属性私有<br>•方法函数前面如果加个装饰器@property， 则调用时候直接调用函数名，不用加括号。例如直接调用p.getAge 不用加括号后面<br>•继承语法:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>(<span class="title class_ inherited__">Person</span>):</span><br><span class="line">	<span class="keyword">pass</span>  <span class="comment">#pass啥都不做，就是占个位</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -606,36 +610,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python一些语法备忘</title>
-    <url>/blog/2020/05/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>总结了一些Python的语法</p>
-<span id="more"></span>
-
-<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="1-if-else"><a href="#1-if-else" class="headerlink" title="1. if else"></a>1. if else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span></span><br><span class="line">y=<span class="string">&#x27;hello&#x27;</span></span><br><span class="line"><span class="keyword">if</span> x==<span class="number">1</span> <span class="keyword">or</span> y==<span class="string">&#x27;hello&#x27;</span>:</span><br><span class="line">	x=x+<span class="number">1</span></span><br><span class="line">	y=y+<span class="string">&#x27;world&#x27;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="2-Python特色语句：for-else"><a href="#2-Python特色语句：for-else" class="headerlink" title="2. Python特色语句：for else"></a>2. Python特色语句：for else</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">99</span>,<span class="number">81</span>,-<span class="number">1</span>):</span><br><span class="line">	root = sqrt(n)</span><br><span class="line">	<span class="keyword">if</span> root = <span class="built_in">int</span>(root):</span><br><span class="line">		<span class="built_in">print</span>(n)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;didnt find it!&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>这条else语句对应的是知for，不是if，这个是python特有的语句。 break表示打断最近的loop, 而if不是loop，打断的是for loop， 即在for循环中，如果没有从任何一个break中退出，则会执行和for对应的else 只要从break中退出了，则else部分不执行。<br>这段话如果用C++来实现，则如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">99</span>;i&gt;<span class="number">81</span>;i--) </span><br><span class="line">&#123; </span><br><span class="line">	root=<span class="built_in">sqrt</span>(i); </span><br><span class="line">	<span class="keyword">if</span>(root==<span class="built_in">int</span>(root)) </span><br><span class="line">	&#123; </span><br><span class="line">		std::cout&lt;&lt;i; </span><br><span class="line">		<span class="keyword">break</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span>(i==<span class="number">81</span>) <span class="comment">//边界判断 </span></span><br><span class="line">std::cout&lt;&lt;<span class="string">&quot;didn&#x27;t find it!&quot;</span>&lt;&lt;std::endl; </span><br></pre></td></tr></table></figure>
-<h3 id="3-Definations"><a href="#3-Definations" class="headerlink" title="3. Definations"></a>3. Definations</h3><p>aList &#x3D; []  列表，相当于c++中的arry&#x2F;vector<br>aDictionary &#x3D; {}  字典, 相当于c++中的map<br>aTuple &#x3D; ()  元组, 只读的，不能修改，不能像list一样有append，remove等操作</p>
-<h3 id="4-遍历输出"><a href="#4-遍历输出" class="headerlink" title="4. 遍历输出"></a>4. 遍历输出</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aList:</span><br><span class="line">	<span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> aDictionary.item()</span><br><span class="line">	<span class="built_in">print</span>(key, value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Access Value in Dictionary by the Keys</span></span><br><span class="line">value = aDictionary[‘key’]  <span class="comment">#Key muss be string!</span></span><br></pre></td></tr></table></figure>
-<h3 id="5-args-kwargs"><a href="#5-args-kwargs" class="headerlink" title="5. *args, **kwargs"></a>5. <code>*args</code>, <code>**kwargs</code></h3><p><code>*args</code>是位置参数，<code>**kwargs</code>是关建字参数。<code>*args</code>用来收集各种参数，其名字没有实际出现在函数签名的括号中， <code>**kwargs</code>代表了各个dictionary等关系，其名字没有实际出现在括号中，所以有了这两个东西可以在函数input括号里输入各种不同的参数而不止局限于几个自己命名的参数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test_kwargs</span>(<span class="params">first, *args, **kwargs</span>):</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;required argument&#x27;</span>, first)</span><br><span class="line">	<span class="keyword">for</span> v <span class="keyword">in</span> args:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;optional argument (*args):&#x27;</span>, v)</span><br><span class="line">	<span class="keyword">for</span> k, v <span class="keyword">in</span> kwargs.item():</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;optional argument %s (*kwargs): %s&#x27;</span>, %(k,v))</span><br><span class="line"></span><br><span class="line">test_kwargs(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,k1=<span class="number">5</span>,k2=<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#required argument: 1</span></span><br><span class="line"><span class="comment">#optional argument (*args): 2</span></span><br><span class="line"><span class="comment">#optional argument (*args): 3</span></span><br><span class="line"><span class="comment">#optional argument (*args): 4</span></span><br><span class="line"><span class="comment">#optional argument k2 (*kwargs): 6</span></span><br><span class="line"><span class="comment">#optional argument k1 (*kwargs): 5</span></span><br></pre></td></tr></table></figure>
-<h3 id="6-装饰器"><a href="#6-装饰器" class="headerlink" title="6. 装饰器"></a>6. 装饰器</h3><p>装饰器本质上是一个 Python 函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能，装饰器的返回值也是一个函数&#x2F;类对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">decarator</span>(<span class="params">func</span>):</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args</span>):</span><br><span class="line">		<span class="comment">#可以此处添加功能如</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;add funtion 1&#x27;</span>)</span><br><span class="line">		<span class="keyword">return</span> func(*args)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@decarator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>(<span class="params">*args</span>):</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;i have&#x27;</span>, *args)</span><br><span class="line"></span><br><span class="line">test(<span class="string">&#x27;dsds&#x27;</span>,<span class="number">3</span>,<span class="string">&#x27;abc&#x27;</span>)</span><br><span class="line"><span class="comment">#输出结果：</span></span><br><span class="line"><span class="comment">#add funtion 1</span></span><br><span class="line"><span class="comment">#i have dsds 3 abc</span></span><br></pre></td></tr></table></figure>
-<h3 id="7-列表推导式"><a href="#7-列表推导式" class="headerlink" title="7. 列表推导式"></a>7. 列表推导式</h3><p>基本语法：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = [expression(i) <span class="keyword">for</span> i <span class="keyword">in</span> old_list <span class="keyword">if</span> condition(i)]</span><br></pre></td></tr></table></figure>
-<p>翻译成for循环：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">new_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> old_list:</span><br><span class="line">	<span class="keyword">if</span>(condition):</span><br><span class="line">		new_list.append(expression(i))</span><br></pre></td></tr></table></figure>
-<h3 id="8-类"><a href="#8-类" class="headerlink" title="8. 类"></a>8. 类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">person</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__int__</span>(<span class="params">self, name, age</span>):</span><br><span class="line">		self.name_ = name</span><br><span class="line">		self.age_ = age</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">getName</span>(<span class="params">self</span>):</span><br><span class="line">		<span class="built_in">print</span>(self.name_)</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">getAge</span>(<span class="params">self</span>):</span><br><span class="line">		<span class="built_in">print</span>(self.age_)</span><br><span class="line">		<span class="keyword">return</span> self.age_</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">rename</span>(<span class="params">self, new_name</span>):</span><br><span class="line">		self.name_ = new_name</span><br><span class="line">		<span class="keyword">return</span> self.name_</span><br><span class="line"></span><br><span class="line">p = person(<span class="string">&#x27;tom&#x27;</span>,<span class="number">34</span>)</span><br><span class="line">p.getName()</span><br><span class="line">p.rename(<span class="string">&#x27;alex&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>•<code>__init__()</code>被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，相当于构造函数，一定要有self<br>•self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数, 这里于c++不同，空括号函数不能直接空着，而是要在定义时加入self<br>•self.name_ 加下滑线表示属性私有<br>•方法函数前面如果加个装饰器@property， 则调用时候直接调用函数名，不用加括号。例如直接调用p.getAge 不用加括号后面<br>•继承语法:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>(<span class="title class_ inherited__">Person</span>):</span><br><span class="line">	<span class="keyword">pass</span>  <span class="comment">#pass啥都不做，就是占个位</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Revit 二次开发电缆布置</title>
     <url>/blog/2020/09/19/Revit-%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E7%94%B5%E7%BC%86%E5%B8%83%E7%BD%AE/</url>
     <content><![CDATA[<p>some useful syntax in C#</p>
@@ -654,6 +628,32 @@
       </categories>
       <tags>
         <tag>Revit, C#, MEP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leistungsphasen备忘</title>
+    <url>/blog/2020/05/25/Leistungsphasen/</url>
+    <content><![CDATA[<p><img src="https://res.cloudinary.com/dpf7ofkmq/image/upload/v1590418440/2334_kbjm9v.png" title="Leistungsphasen 1-9"></p>
+<span id="more"></span>
+
+<h2 id="LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung"><a href="#LP4-Genehmigungsplanung-Eingabeplanung-Einreichplanung" class="headerlink" title="LP4 Genehmigungsplanung &#x2F; Eingabeplanung &#x2F; Einreichplanung"></a>LP4 Genehmigungsplanung &#x2F; Eingabeplanung &#x2F; Einreichplanung</h2><p>Der Bauantrag ist schriftlich bei der unteren Bauaufsichtsbehörde einzureichen. Mit dem Bauantrag sind alle für die Beurteilung des Bauvorhabens und die Bearbeitung des Bauantrags erforderlichen Unterlagen (Bauvorlagen) einzureichen. Näheres regeln in Deutschland die entsprechenden Rechtsverordnungen der Bundesländer (Bauvorlagenverordnungen).</p>
+<p>Ein Bauantrag besteht in Deutschland meist aus folgenden Teilen:</p>
+<ol>
+<li>Eingabeplan mit Grundrissen, Ansichten und Schnitten im Maßstab 1:100</li>
+<li>Bauantragsformular</li>
+<li>Baubeschreibung</li>
+<li>statistischer Erhebungsbogen</li>
+<li>Wärmeschutznachweis</li>
+<li>Standsicherheitsnachweis (Statische Berechnung, Statik)</li>
+<li>amtlicher Lageplan zum Bauantrag, meist im Maßstab 1:200 (kleinere Maßstäbe nur bei großen Grundstücken)</li>
+<li>ggf. weiteren notwendigen Nachweisen und Angaben, die zur Erteilung der Genehmigung von der Bauaufsichtsbehörde gefordert werden.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>informations</category>
+      </categories>
+      <tags>
+        <tag>LP</tag>
       </tags>
   </entry>
   <entry>
